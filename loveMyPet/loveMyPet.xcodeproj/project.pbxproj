@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
-		641AEB0F2A1EC48C00F2CE34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0E2A1EC48C00F2CE34 /* ContentView.swift */; };
 		641AEB112A1EC48C00F2CE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB102A1EC48C00F2CE34 /* Assets.xcassets */; };
 		641AEB142A1EC48C00F2CE34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB132A1EC48C00F2CE34 /* Preview Assets.xcassets */; };
+		641AEB292A1ED89900F2CE34 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB282A1ED89900F2CE34 /* Components.swift */; };
+		641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB2A2A1ED8A700F2CE34 /* Extensions.swift */; };
+		641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB2C2A1ED8C500F2CE34 /* Entities.swift */; };
+		641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB2E2A1ED8D300F2CE34 /* Enums.swift */; };
+		641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */; };
+		641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB322A1ED8FC00F2CE34 /* HomeView.swift */; };
+		641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveMyPetApp.swift; sourceTree = "<group>"; };
-		641AEB0E2A1EC48C00F2CE34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		641AEB102A1EC48C00F2CE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		641AEB132A1EC48C00F2CE34 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		641AEB282A1ED89900F2CE34 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		641AEB2A2A1ED8A700F2CE34 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		641AEB2C2A1ED8C500F2CE34 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
+		641AEB2E2A1ED8D300F2CE34 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		641AEB322A1ED8FC00F2CE34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +67,6 @@
 				641AEB1A2A1EC93000F2CE34 /* Resources */,
 				641AEB1B2A1EC94900F2CE34 /* Common */,
 				641AEB1C2A1ECAE800F2CE34 /* Modules */,
-				641AEB0E2A1EC48C00F2CE34 /* ContentView.swift */,
 				641AEB122A1EC48C00F2CE34 /* Preview Content */,
 			);
 			path = loveMyPet;
@@ -99,6 +110,7 @@
 		641AEB1F2A1ECDED00F2CE34 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB2E2A1ED8D300F2CE34 /* Enums.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -106,6 +118,7 @@
 		641AEB202A1ECDF800F2CE34 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB2C2A1ED8C500F2CE34 /* Entities.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -113,6 +126,7 @@
 		641AEB212A1ECE9B00F2CE34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB2A2A1ED8A700F2CE34 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -120,6 +134,7 @@
 		641AEB222A1ECF1D00F2CE34 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB282A1ED89900F2CE34 /* Components.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -137,6 +152,7 @@
 		641AEB242A1ED02600F2CE34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +160,7 @@
 		641AEB252A1ED02D00F2CE34 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -151,6 +168,7 @@
 		641AEB262A1ED03500F2CE34 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				641AEB322A1ED8FC00F2CE34 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,8 +251,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				641AEB0F2A1EC48C00F2CE34 /* ContentView.swift in Sources */,
+				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
+				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
+				641AEB292A1ED89900F2CE34 /* Components.swift in Sources */,
+				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
+				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
+				641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */,
+				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
