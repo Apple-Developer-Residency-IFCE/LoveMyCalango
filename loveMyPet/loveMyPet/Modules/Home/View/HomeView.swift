@@ -21,7 +21,6 @@ struct HomeView: View {
                             NavigationLink(destination: EmptyView()) {
                                 CardPet(item: pet)
                             }
-                            .foregroundColor(.black)
                         }
                     }
                 }
