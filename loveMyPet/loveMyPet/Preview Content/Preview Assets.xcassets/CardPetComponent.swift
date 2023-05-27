@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CardPet: View{
-    static let mockPet = Pet(petName: "Bud", petRace: "Rusky Siberiano", petImage: "teste1")
 
     let item: Pet 
 
@@ -47,10 +46,10 @@ struct CardPet: View{
 }
 
 
-struct CardPet_Previews: PreviewProvider {
-    static var previews: some View {
-        CardPet(item: CardPet.mockPet)
-    }
-}
+//struct CardPet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardPet(item: Pet.init(id: UUID(), petName: "", petRace: "", petImage: ""))
+//    }
+//}
 
 
