@@ -31,25 +31,13 @@ struct CardPet: View{
             Image("IconArrow")
                 .foregroundColor(.black.opacity(0.61))
                 .padding(.trailing, 16)
-
         }
+        .foregroundColor(.black)
         .frame(width: UIScreen.main.bounds.size.width * 0.80,height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(.gray.opacity(0.4), lineWidth: 2)
+                .stroke(Color("Gray-DBDBDA"), lineWidth: 2)
         )
-
     }
-
-
 }
-
-
-//struct CardPet_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardPet(item: Pet.init(id: UUID(), petName: "", petRace: "", petImage: ""))
-//    }
-//}
-
-
