@@ -11,28 +11,18 @@ struct HomeView: View {
     
     @StateObject private var viewModel = HomeViewModel()
     
-    
     var body: some View {
         
-        NavigationView {
-            Grid {
-                ForEach(viewModel.pets) { pet in
-                    GridRow {
-                        //                        NavigationLink(destination: EmptyView()) {
-                        CardPet(item: pet)
-                            .swipeActions(edge: .leading) {
-                                Button {  }label: {
-                                    
-                                    Label("Unread", systemImage:"envelope.badge")
-                                }
+        ScrollView(.vertical) {
+            NavigationView {
+                Grid {
+                    ForEach(viewModel.pets) { pet in
+                        GridRow {
+                            NavigationLink(destination: EmptyView()) {
+                                CardPet(item: pet)
                             }
-                            .swipeActions(edge: .trailing) {
-                                Button {  }label: {
-                                    Label("Unread", systemImage:"envelope.badge")
-                                }
-                            }
-                        //                        }
-                        //                        .foregroundColor(.black)
+                            .foregroundColor(.black)
+                        }
                     }
                 }
             }

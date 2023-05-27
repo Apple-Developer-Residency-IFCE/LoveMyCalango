@@ -10,9 +10,9 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     
-    @Published var pets = [Pet(id: UUID(), petName: "Carlos", petRace: "Carneiro", petImage: ""),
-                           Pet(id: UUID(), petName: "Sergio", petRace: "Bode", petImage: ""),
-                           Pet(id: UUID(), petName: "Joana", petRace: "Cabra", petImage: "")]
+    @Published var pets = [Pet(id: UUID(), petName: "Carlos", petRace: "Carneiro", petImage: Image("AvatarDog1")),
+                           Pet(id: UUID(), petName: "Sergio", petRace: "Bode", petImage: Image("AvatarCat1")),
+                           Pet(id: UUID(), petName: "Joana", petRace: "Cabra", petImage: Image("AvatarCat2"))]
     
     private func getPets() {}
 }

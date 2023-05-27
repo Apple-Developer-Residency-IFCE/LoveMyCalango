@@ -13,12 +13,10 @@ struct CardPet: View{
 
     var body: some View {
         HStack() {
-            Image(item.petImage)
+            item.petImage
                 .resizable()
+                .frame(width: 64, height: 64)
                 .clipShape(Circle())
-                .frame(width: 66,height: 100)
-                .padding(.leading, -1)
-                .padding(.trailing, 5)
 
             VStack(alignment: .leading) {
                 Text(item.petName)
@@ -28,9 +26,11 @@ struct CardPet: View{
                 Text(item.petRace)
                     .font(.system(size: 15))
             }
+            .padding(.leading, 16)
             Spacer()
-            Image(systemName: "arrow.right")
+            Image("IconArrow")
                 .foregroundColor(.black.opacity(0.61))
+                .padding(.trailing, 16)
 
         }
         .frame(width: UIScreen.main.bounds.size.width * 0.80,height: 60)
