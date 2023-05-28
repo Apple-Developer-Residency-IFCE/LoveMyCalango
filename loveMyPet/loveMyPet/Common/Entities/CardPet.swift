@@ -9,15 +9,21 @@ import SwiftUI
 
 struct Pet: Identifiable{
     
-    let id: UUID
-    let petName: String
-    let petRace: String
-    let petImage: Image
+    static let mock = Pet(id: UUID(), name: "Hanna", breed: "SRD", image: Image("AvatarCat1"), specie: .cat, gender: .female)
     
-    init(id: UUID, petName: String, petRace: String, petImage: Image) {
+    var id: UUID
+    var name: String
+    var breed: String
+    var image: Image
+    var specie: Specie
+    var gender: Gender
+    
+    init(id: UUID, name: String, breed: String, image: Image, specie: Specie, gender: Gender) {
         self.id = id
-        self.petName = petName
-        self.petRace = petRace
-        self.petImage = petImage
+        self.name = name
+        self.breed = breed
+        self.image = image
+        self.specie = specie
+        self.gender = gender
     }
 }
