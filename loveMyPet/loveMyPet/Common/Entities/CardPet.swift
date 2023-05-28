@@ -9,7 +9,12 @@ import SwiftUI
 
 struct Pet: Identifiable{
     
-    static let mock = Pet(id: UUID(), name: "Hanna", breed: "SRD", image: Image("AvatarCat1"), specie: .cat, gender: .female)
+    static let mock = Pet(id: UUID(),
+                          name: "Hanna",
+                          breed: "SRD",
+                          image: Image("AvatarCat1"),
+                          specie: .cat,
+                          gender: .female)
     
     var id: UUID
     var name: String

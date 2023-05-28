@@ -12,7 +12,7 @@ struct loveMyPetApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                FormView(pet: .mock)
+                EditPetView()
                 .navigationTitle("Title")
                 .navigationBarTitleDisplayMode(.inline)
             }

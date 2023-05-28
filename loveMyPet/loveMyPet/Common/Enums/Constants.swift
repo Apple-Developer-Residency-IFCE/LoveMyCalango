@@ -34,4 +34,3 @@ enum Constants {
         static let MediumItalic = "Poppins-MediumItalic"
     }
 }
-

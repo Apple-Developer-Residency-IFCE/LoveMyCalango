@@ -10,11 +10,12 @@ import SwiftUI
 struct EditPetView: View {
     
     @StateObject private var viewModel: EditPetViewModel = .init()
+    @State private var selectedSpecie: Specie = .none
     
     var body: some View {
         VStack {
             VStack {
-                Image("AvatarDog1")
+                Image("AvatarCat2")
                     .resizable()
                     .frame(width: 64, height: 64)
                     .clipShape(Circle())
@@ -22,9 +23,7 @@ struct EditPetView: View {
                     .font(.custom(Constants.Font.Regular, size: 13))
             }
             .padding(.top, 16)
-            Form {
-                
-            }
+            FormView(pet: viewModel.pet, selectedSpecie: $selectedSpecie)
         }
     }
 }
