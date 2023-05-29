@@ -16,10 +16,8 @@ struct CardPet: View{
         HStack() {
             Image(item.petImage)
                 .resizable()
+                .frame(width: 64, height: 64)
                 .clipShape(Circle())
-                .frame(width: 66,height: 100)
-                .padding(.leading, -1)
-                .padding(.trailing, 5)
 
             VStack(alignment: .leading) {
                 Text(item.petName)
