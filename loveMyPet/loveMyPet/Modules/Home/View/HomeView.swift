@@ -23,6 +23,7 @@ struct HomeView: View {
                             GridRow {
                                 NavigationLink(destination: EmptyView()) {
                                     CardPet(item: pet)
+                                        .padding(.horizontal, 24)
                                 }
                             }
                         }

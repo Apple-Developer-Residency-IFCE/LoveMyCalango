@@ -33,7 +33,7 @@ struct CardPet: View{
                 .padding(.trailing, 16)
         }
         .foregroundColor(.black)
-        .frame(width: UIScreen.main.bounds.size.width * 0.80,height: 60)
+        .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
