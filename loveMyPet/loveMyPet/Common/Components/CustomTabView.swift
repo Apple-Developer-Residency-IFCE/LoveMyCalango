@@ -10,16 +10,18 @@ import SwiftUI
 struct CustomTabView: View {
     var body: some View {
         TabView {
-            //HomeView()
-            EmptyView()
+            //PetsView()
+            Text("Tela de Pets")
                 .tabItem {
-                    Label("Pets", systemImage: "heart.fill")
+                    Label("Pets", systemImage: "")
                 }
+                .toolbarBackground(.visible, for: .tabBar)
             //ConfigView()
-            EmptyView()
+            Text("Tela de Configuraçoes")
                 .tabItem {
-                    Label("Configuraçoes", systemImage: "gearshape.fill")
+                    Label("Configuraçoes", systemImage: "")
                 }
+            
         }
     }
 }
