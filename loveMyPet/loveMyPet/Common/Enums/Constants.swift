@@ -26,7 +26,7 @@ enum Constants {
         static let Blackitalic = "Poppins-Blackitalic"
         static let Regular = "Poppins-Regular"
         static let Lightitalic = "Poppins-Lightitalic"
-        static let Bold = "Poppins-Bold."
+        static let Bold = "Poppins-Bold"
         static let Black = "Poppins-Black"
         static let Thin = "Poppins-Thin"
         static let SemiBold = "Poppins-SemiBold"
