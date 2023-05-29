@@ -10,11 +10,7 @@ import SwiftUI
 // Use with the .applyCustomHome View modifier
 struct CustomHomeNavigation: ViewModifier {
     @State private var showingPopover = false
-    
     var showingView: AnyView
-    init(showingView: AnyView) {
-        self.showingView = showingView
-    }
     
     func body(content: Content) -> some View {
         NavigationView {
@@ -46,8 +42,6 @@ struct CustomHomeNavigation: ViewModifier {
                             }
                     }
                 }
-            
         }
-        
     }
 }
