@@ -17,6 +17,7 @@
 		641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */; };
 		641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB322A1ED8FC00F2CE34 /* HomeView.swift */; };
 		641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */; };
+		64679DE82A2552390078690E /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64679DE72A2552390078690E /* CustomTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		641AEB322A1ED8FC00F2CE34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		64679DE72A2552390078690E /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				641AEB282A1ED89900F2CE34 /* Components.swift */,
+				64679DE72A2552390078690E /* CustomTabView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
+				64679DE82A2552390078690E /* CustomTabView.swift in Sources */,
 				641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
 			);

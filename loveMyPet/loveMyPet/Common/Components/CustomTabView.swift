@@ -2,14 +2,25 @@
 //  CustomTabView.swift
 //  loveMyPet
 //
-//  Created by userext on 26/05/23.
+//  Created by userext on 29/05/23.
 //
 
 import SwiftUI
 
 struct CustomTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            //HomeView()
+            EmptyView()
+                .tabItem {
+                    Label("Pets", systemImage: "heart.fill")
+                }
+            //ConfigView()
+            EmptyView()
+                .tabItem {
+                    Label("Configuraçoes", systemImage: "gearshape.fill")
+                }
+        }
     }
 }
 
@@ -18,3 +29,4 @@ struct CustomTabView_Previews: PreviewProvider {
         CustomTabView()
     }
 }
+
