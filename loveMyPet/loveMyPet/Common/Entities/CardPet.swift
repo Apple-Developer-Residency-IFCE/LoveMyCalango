@@ -13,11 +13,4 @@ struct Pet: Identifiable{
     let petName: String
     let petRace: String
     let petImage: Image
-    
-    init(id: UUID, petName: String, petRace: String, petImage: Image) {
-        self.id = id
-        self.petName = petName
-        self.petRace = petRace
-        self.petImage = petImage
-    }
 }
