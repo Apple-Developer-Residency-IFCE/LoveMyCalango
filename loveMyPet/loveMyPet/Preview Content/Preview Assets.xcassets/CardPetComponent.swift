@@ -30,14 +30,17 @@ struct CardPet: View{
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundColor(.black.opacity(0.61))
+                .padding(.trailing, 16)
 
         }
+        .foregroundColor(.black)
         .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(.gray.opacity(0.4), lineWidth: 2)
         )
+        .padding(.horizontal, 24)
     }
 }
 
