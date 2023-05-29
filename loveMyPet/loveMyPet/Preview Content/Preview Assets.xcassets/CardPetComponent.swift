@@ -10,7 +10,7 @@ import SwiftUI
 struct CardPet: View{
     static let mockPet = Pet(petName: "Bud", petRace: "Rusky Siberiano", petImage: "teste1")
 
-    let item: Pet 
+    let item: Pet
 
     var body: some View {
         HStack() {
@@ -30,20 +30,17 @@ struct CardPet: View{
                     .font(.system(size: 15))
             }
             Spacer()
-            Image(systemName: "arrow.right")
+            Image(systemName: "chevron.right")
                 .foregroundColor(.black.opacity(0.61))
 
         }
-        .frame(width: UIScreen.main.bounds.size.width * 0.80,height: 60)
+        .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(.gray.opacity(0.4), lineWidth: 2)
         )
-
     }
-
-
 }
 
 
