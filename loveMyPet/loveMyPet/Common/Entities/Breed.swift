@@ -9,7 +9,7 @@ import Foundation
 
 var breedDict: [Specie: [String]] = [
     .none = ["Não Escolhido"]
-        .gato = [ "Siamês",
+        .cat = [ "Siamês",
                   "Persa",
                   "Maine Coon",
                   "Ragdoll",
@@ -20,7 +20,7 @@ var breedDict: [Specie: [String]] = [
                   "Sphinx",
                   "Birmanês",
                   "SRD"]
-        .cachorro = ["Poodle",
+        .dog = ["Poodle",
                      "Labrador Retriever",
                      "Bulldog Francês",
                      "Golden Retriever",
@@ -31,7 +31,7 @@ var breedDict: [Specie: [String]] = [
                      "Pastor Alemão",
                      "Chihuahua",
                      "SRD"]
-        .passaro = [    "Canário",
+        .bird = [    "Canário",
                         "Calopsita (Caturra)",
                         "Agapornis",
                         "Periquito-australiano",
@@ -42,7 +42,7 @@ var breedDict: [Specie: [String]] = [
                         "Periquito-inglês",
                         "Caturrita",
                         "SRD"]
-        .coelho = [    "Mini Lion Head",
+        .rabbit = [    "Mini Lion Head",
                        "Holland Lop",
                        "Fuzzy Lop",
                        "Rex",
@@ -64,7 +64,7 @@ var breedDict: [Specie: [String]] = [
                         "Angorá (Hamster-angorá)",
                         "Dourado Mosaico (Hamster-dourado-mosaico)",
                         "SRD"]
-        .tartaruga = [    "Jabuti",
+        .turtle = [    "Jabuti",
                           "Tartaruga-da-Terra",
                           "Tartaruga-de-Agua",
                           "Tartaruga-Leopardo",
@@ -75,7 +75,7 @@ var breedDict: [Specie: [String]] = [
                           "Tartaruga-Russa",
                           "Tartaruga-Mapa",
                           "SRD"]
-        .cavalo = [    "Puro-sangue Inglês",
+        .horse = [    "Puro-sangue Inglês",
                        "Quarto de Milha",
                        "Pampa",
                        "Appaloosa",
