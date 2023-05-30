@@ -10,12 +10,12 @@ enum Specie: String, CaseIterable, Identifiable {
     var id: Self { self }
 
     case none = "Não escolhida"
-    case gato = "Gato"
-    case cachorro = "Cachorro"
-    case passaro = "Pássaro"
-    case coelho = "Coelho"
+    case cat = "Gato"
+    case dog = "Cachorro"
+    case bird = "Pássaro"
+    case rabbit = "Coelho"
     case hamster = "Hamster"
-    case tartaruga = "Tartaruga"
-    case cavalo = "Cavalo"
+    case turtle = "Tartaruga"
+    case horse = "Cavalo"
     case custom = "Outros"
 }
