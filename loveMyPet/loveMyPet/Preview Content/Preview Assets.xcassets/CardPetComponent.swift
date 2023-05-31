@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CardPet: View{
-    static let mockPet = Pet(petName: "Bud", petRace: "Rusky Siberiano", petImage: "teste1")
 
     let item: Pet
 
     var body: some View {
         HStack() {
-            Image(item.petImage)
+            item.petImage
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())
@@ -27,6 +26,7 @@ struct CardPet: View{
                 Text(item.petRace)
                     .font(.system(size: 15))
             }
+            .padding(.leading, 16)
             Spacer()
             Image(systemName: "chevron.right")
                 .foregroundColor(.black.opacity(0.61))
@@ -38,7 +38,7 @@ struct CardPet: View{
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(.gray.opacity(0.4), lineWidth: 2)
+                .stroke(Color("Gray-DBDBDA"), lineWidth: 2)
         )
         .padding(.horizontal, 24)
     }
@@ -50,5 +50,3 @@ struct CardPet_Previews: PreviewProvider {
         CardPet(item: CardPet.mockPet)
     }
 }
-
-
