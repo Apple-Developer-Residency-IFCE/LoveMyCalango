@@ -138,7 +138,6 @@
 		641AEB1B2A1EC94900F2CE34 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				64D7BFED2A216066009DAD83 /* Modifiers */,
 				641AEB222A1ECF1D00F2CE34 /* Components */,
 				641AEB212A1ECE9B00F2CE34 /* Extensions */,
 				641AEB202A1ECDF800F2CE34 /* Entities */,
@@ -356,7 +355,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
-				64D7BFEF2A216092009DAD83 /* HomeModifier.swift in Sources */,
 				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
 				641AEB292A1ED89900F2CE34 /* Components.swift in Sources */,
 				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
