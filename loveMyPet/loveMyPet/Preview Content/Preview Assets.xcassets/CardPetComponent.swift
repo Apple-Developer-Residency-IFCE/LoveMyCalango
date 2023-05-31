@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CardPet: View{
 
-    let item: Pet 
+    let item: Pet
 
     var body: some View {
         HStack() {
@@ -28,16 +28,26 @@ struct CardPet: View{
             }
             .padding(.leading, 16)
             Spacer()
-            Image("IconArrow")
+            Image(systemName: "chevron.right")
                 .foregroundColor(.black.opacity(0.61))
                 .padding(.trailing, 16)
+
         }
         .foregroundColor(.black)
-        .frame(width: UIScreen.main.bounds.size.width * 0.80,height: 60)
+        .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color("Gray-DBDBDA"), lineWidth: 2)
         )
+        .padding(.horizontal, 24)
+    }
+}
+
+
+struct CardPet_Previews: PreviewProvider {
+    static var previews: some View {
+        CardPet(item: CardPet.mockPet)
+>>>>>>> dev
     }
 }
