@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+extension View {
+    func applyCustomHome(showing showingView: AnyView) -> some View {
+        modifier(CustomHomeNavigation(showingView: showingView))
+    }
+}

@@ -19,17 +19,16 @@ struct HomeView: View {
                     Text("Adicione um pet")
                 }
             } else {
-                NavigationView {
-                    Grid {
-                        ForEach(viewModel.pets) { pet in
-                            GridRow {
-                                NavigationLink(destination: EmptyView()) {
-                                    CardPet(item: pet)
-                                }
+                Grid {
+                    ForEach(viewModel.pets) { pet in
+                        GridRow {
+                            NavigationLink(destination: EmptyView()) {
+                                CardPet(item: pet)
                             }
                         }
                     }
                 }
+                .padding(.top, 53)
             }
         }
     }

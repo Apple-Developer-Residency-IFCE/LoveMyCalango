@@ -45,8 +45,8 @@ struct CardPet: View{
 }
 
 
-struct CardPet_Previews: PreviewProvider {
-    static var previews: some View {
-        CardPet(item: CardPet.mockPet)
-    }
-}
+//struct CardPet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardPet(item: CardPet.mockPet)
+//    }
+//}

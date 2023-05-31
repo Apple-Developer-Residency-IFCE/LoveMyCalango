@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
 		640920D22A202C840090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920D12A202C840090A364 /* CardPet.swift */; };
+		640F232D2A27F9E1006AA6B7 /* HomeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640F232C2A27F9E1006AA6B7 /* HomeModifier.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
 		641AEB112A1EC48C00F2CE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB102A1EC48C00F2CE34 /* Assets.xcassets */; };
 		641AEB142A1EC48C00F2CE34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB132A1EC48C00F2CE34 /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
 		640920D12A202C840090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPet.swift; sourceTree = "<group>"; };
+		640F232C2A27F9E1006AA6B7 /* HomeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModifier.swift; sourceTree = "<group>"; };
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveMyPetApp.swift; sourceTree = "<group>"; };
 		641AEB102A1EC48C00F2CE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		640F232B2A27F9C3006AA6B7 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				640F232C2A27F9E1006AA6B7 /* HomeModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		641AEB002A1EC48C00F2CE34 = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +150,7 @@
 		641AEB1B2A1EC94900F2CE34 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				6474CEC62A27F7EC004BF16E /* New Group */,
+				640F232B2A27F9C3006AA6B7 /* Modifiers */,
 				641AEB222A1ECF1D00F2CE34 /* Components */,
 				641AEB212A1ECE9B00F2CE34 /* Extensions */,
 				641AEB202A1ECDF800F2CE34 /* Entities */,
@@ -233,13 +243,6 @@
 				641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		6474CEC62A27F7EC004BF16E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		DF5C02132A22C66000E9898E /* Font */ = {
@@ -374,6 +377,7 @@
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
 				641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */,
 				646834302A26C9F4004A782D /* Specie.swift in Sources */,
+				640F232D2A27F9E1006AA6B7 /* HomeModifier.swift in Sources */,
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
 				640920D22A202C840090A364 /* CardPet.swift in Sources */,

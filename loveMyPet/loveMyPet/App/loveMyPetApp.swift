@@ -11,11 +11,8 @@ import SwiftUI
 struct loveMyPetApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                HomeView()
-                .navigationTitle("Title")
-                .navigationBarTitleDisplayMode(.inline)
-            }
+            HomeView()
+                .applyCustomHome(showing: AnyView(Text("oi")))
         }
     }
 }
