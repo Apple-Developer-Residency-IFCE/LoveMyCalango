@@ -11,7 +11,11 @@ import SwiftUI
 struct loveMyPetApp: App {
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            NavigationView {
+                HomeView()
+                .navigationTitle("Title")
+                .navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 }
