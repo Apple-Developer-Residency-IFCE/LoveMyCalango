@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct loveMyPetApp: App {
+    @State private var showingPopover = false
     var body: some Scene {
         WindowGroup {
             NavigationView {
