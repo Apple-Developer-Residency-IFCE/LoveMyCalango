@@ -7,19 +7,8 @@
 
 import Foundation
 
-enum Gender: CaseIterable {
-    case male
-    case female
-    case none
-    
-    var rawValue: String {
-        switch self {
-        case .male:
-            return "Macho"
-        case .female:
-            return "Fêmea"
-        case .none:
-            return "Nenhum"
-        }
-    }
+enum Gender: String, CaseIterable {
+    case male = "Macho"
+    case female = "Fêmea"
+    case none = "Nenhum"
 }
