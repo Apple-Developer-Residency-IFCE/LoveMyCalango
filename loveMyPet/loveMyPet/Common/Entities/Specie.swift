@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
  enum Specie: String, CaseIterable, Identifiable {
      var id: Self { self }
 
