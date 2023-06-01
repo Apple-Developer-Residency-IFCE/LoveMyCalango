@@ -11,29 +11,18 @@ struct FormRowCell: View {
     
     private var type: TypeFormRow
     
-    @Binding var pet: Pet
-    
+    @EnvironmentObject private var viewModel: EditPetViewModel
+
     @State private var date: Date = .init()
     @State private var gender: String = ""
     @State private var specie: String = ""
     @State private var breed: String = ""
     @State private var customSpecie: String = .init()
-    @State private var castred: Castred = .no
     @State private var showWeightPicker = false
-    @State private var selectedSpecie: Specie
-    @State private var selectedGender: Gender
     @State private var weight: Double = 0
     
     private let kgRange = 0...100
     private let gRange = stride(from: 0, through: 900, by: 100).map { $0 }
-    
-    init(type: TypeFormRow, pet: Binding<Pet>) {
-        self.type = type
-        self._pet = pet
-        self._selectedGender = State(initialValue: pet.wrappedValue.gender)
-        self._selectedSpecie = State(initialValue: pet.wrappedValue.specie)
-        self._breed = State(initialValue: pet.wrappedValue.breed)
-    }
     
     var body: some View {
         HStack {
@@ -42,9 +31,9 @@ struct FormRowCell: View {
                 .font(.custom(Constants.Font.Regular, size: 16))
             switch type {
             case .gender:
-                GenderPicker(gender: $selectedGender)
+                GenderPicker(gender: viewModel.selectedPet.gender)
             case .specie:
-                SpeciePicker(specie: $selectedSpecie)
+                SpeciePicker(specie: viewModel.selectedPet.specie)
             case .breed:
                 BreedPicker(breed: $pet.breed, breeds: selectedSpecie.breeds)
             case .birth:

@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+final class SpecieWrapper: ObservableObject {
+    
+}
+
 struct EditPetView: View {
     
-    @StateObject private var viewModel: EditPetViewModel = .init()
-    @State private var selectedSpecie: Specie = .none
+    @EnvironmentObject private var viewModel: EditPetViewModel
     
     var body: some View {
         VStack {
@@ -23,7 +26,7 @@ struct EditPetView: View {
                     .font(.custom(Constants.Font.Regular, size: 13))
             }
             .padding(.top, 16)
-            FormView(pet: viewModel.pet, selectedSpecie: $selectedSpecie)
+            FormView(pet: viewModel.pet)
         }
     }
 }

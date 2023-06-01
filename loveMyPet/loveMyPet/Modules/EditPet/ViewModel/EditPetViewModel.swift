@@ -8,6 +8,10 @@
 import SwiftUI
 
 final class EditPetViewModel: ObservableObject {
+
+    @Published var selectedPet: Pet
     
-    @Published var pet: Pet = .mock
+    init(selectedPet: Pet) {
+        self.selectedPet = selectedPet
+    }
 }

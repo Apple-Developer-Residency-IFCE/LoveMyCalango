@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct loveMyPetApp: App {
+    
+    let viewmodel: EditPetViewModel = .init()
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
                 EditPetView()
+                    .environmentObject(viewmodel)
                 .navigationTitle("Title")
                 .navigationBarTitleDisplayMode(.inline)
             }

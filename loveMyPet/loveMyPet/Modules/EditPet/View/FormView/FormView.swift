@@ -9,25 +9,24 @@ import SwiftUI
 
 struct FormView: View {
     
-    @State var pet: Pet
-    @Binding var selectedSpecie: Specie
+    @EnvironmentObject private var viewModel: EditPetViewModel
     
     var body: some View {
         VStack {
             Form {
                 Section {
-                    Text(pet.name)
+                    Text(viewModel.selectedPet.name)
                         .foregroundColor(Color("Gray-8C8C8B"))
                         .font(.custom(Constants.Font.Regular, size: 16))
                         .listRowBackground(Color("White-F4F3FA"))
-                    FormRowCell(type: .gender, pet: $pet)
-                    FormRowCell(type: .specie, pet: $pet)
-                    FormRowCell(type: .breed, pet: $pet)
-                    FormRowCell(type: .birth, pet: $pet)
+                    FormRowCell(type: .gender)
+                    FormRowCell(type: .specie)
+                    FormRowCell(type: .breed)
+                    FormRowCell(type: .birth)
                 }
                 Section {
-                    FormRowCell(type: .weight, pet: $pet)
-                    FormRowCell(type: .castrated, pet: $pet)
+                    FormRowCell(type: .weight)
+                    FormRowCell(type: .castrated)
                 }
             }
             .scrollContentBackground(.hidden)
@@ -51,9 +50,10 @@ struct FormView: View {
 }
 
 struct FormView_Previews: PreviewProvider {
-   
+    
     static var previews: some View {
+        @EnvironmentObject var viewModel: EditPetViewModel
         let specie: Binding<Specie> = .constant(.cat)
-        FormView(pet: .mock, selectedSpecie: specie)
+        FormView()
     }
 }

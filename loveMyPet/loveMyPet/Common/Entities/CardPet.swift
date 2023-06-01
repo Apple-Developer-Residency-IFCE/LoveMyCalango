@@ -22,13 +22,4 @@ struct Pet: Identifiable{
     var image: Image
     var specie: Specie
     var gender: Gender
-    
-    init(id: UUID, name: String, breed: String, image: Image, specie: Specie, gender: Gender) {
-        self.id = id
-        self.name = name
-        self.breed = breed
-        self.image = image
-        self.specie = specie
-        self.gender = gender
-    }
 }
