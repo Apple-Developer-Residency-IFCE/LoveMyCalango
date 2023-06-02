@@ -38,57 +38,68 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 16.0) {
                 HStack{
                     Text("Informações")
-                        .font(.title2)
+                        .font(.custom(Font.SemiBold), size: 20))
                     Spacer()
                     Image("IconFemale")
                 }
                 
                 HStack {
                     Text("Nome")
-                        .font(.headline)
+                        .font(.custom(Font.SemiBold), size: 16))
                     Spacer()
                     Text(pet.name)
+                        .font(.custom(Font.Regular), size: 16))
+
                 }
                 
                 HStack {
                     Text("Espécie")
-                        .font(.headline)
+                        .font(.custom(Font.SemiBold), size: 16))
                     Spacer()
                     Text(pet.specie)
+                        .font(.custom(Font.Regular), size: 16))
+
                 }
                 
                 HStack {
                     Text("Nascimento")
-                        .font(.headline)
+                        .font(.custom(Font.SemiBold), size: 16))
                     Spacer()
                     Text(formattedBirthDate)
+                        .font(.custom(Font.Regular), size: 16))
+
                 }
                 
                 HStack {
                     Text("Raça")
-                        .font(.headline)
+                        .font(.custom(Font.SemiBold), size: 16))
                     Spacer()
                     Text(pet.breed)
+                        .font(.custom(Font.Regular), size: 16))
+
                 }
                 
                 HStack {
                     Text("Peso")
-                        .font(.headline)
+                        .font(.custom(Font.SemiBold), size: 16))
                     Spacer()
                     Text("\(String(format: "%.1f", pet.weight)) kg")
+                        .font(.custom(Font.Regular), size: 16))
+
                 }
                 
                 Divider().frame(height: 4).overlay(Color("Neutral300"))
                 
                 VStack(alignment: .leading, spacing: 14){
                     Text("Adicionais")
-                        .font(.title2)
+                        .font(.custom(Font.SemiBold), size: 20))
                     
                     HStack {
                         Text("Castrado(a)?")
-                            .font(.headline)
+                            .font(.custom(Font.SemiBold), size: 16))
                         Spacer()
                         Text(pet.isNeutered ? "Sim" : "Não")
+                            .font(.custom(Font.Regular), size: 16))
                     }
                 }
                 
