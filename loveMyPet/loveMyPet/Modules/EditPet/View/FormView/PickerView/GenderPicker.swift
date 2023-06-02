@@ -8,27 +8,17 @@
 import SwiftUI
 
 struct GenderPicker: View {
-    @Binding var selectedGender: Gender
     
-    init(gender selectedGender: Binding<Gender>) {
-        self._selectedGender = selectedGender
-    }
-    
+    @EnvironmentObject private var viewModel: EditPetViewModel
+
     var body: some View {
-        Picker("", selection: $selectedGender) {
-            ForEach(Gender.allCases) { gender in
+        Picker("", selection: $viewModel.selectedPet.gender) {
+            ForEach(Gender.allCases, id: \.id) { gender in
                 Text(gender.rawValue)
             }
         }
         .accentColor(Color("Gray-8C8C8B"))
         .font(.custom(Constants.Font.Regular, size: 16))
         .pickerStyle(.menu)
-    }
-}
-
-struct GenderPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        let gender = Binding.constant(Gender.female)
-        GenderPicker(gender: gender)
     }
 }

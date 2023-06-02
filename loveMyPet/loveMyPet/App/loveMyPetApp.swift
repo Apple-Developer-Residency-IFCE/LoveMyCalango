@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct loveMyPetApp: App {
     
-    let viewmodel: EditPetViewModel = .init()
+    let viewmodel: EditPetViewModel = .init(selectedPet: .mock)
     
     var body: some Scene {
         WindowGroup {

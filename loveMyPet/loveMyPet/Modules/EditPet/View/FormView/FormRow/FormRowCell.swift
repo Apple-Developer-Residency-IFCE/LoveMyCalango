@@ -9,13 +9,12 @@ import SwiftUI
 
 struct FormRowCell: View {
     
-    private var type: TypeFormRow
+    var type: TypeFormRow
     
     @EnvironmentObject private var viewModel: EditPetViewModel
 
     @State private var date: Date = .init()
-    @State private var gender: String = ""
-    @State private var specie: String = ""
+    
     @State private var breed: String = ""
     @State private var customSpecie: String = .init()
     @State private var showWeightPicker = false
@@ -31,11 +30,11 @@ struct FormRowCell: View {
                 .font(.custom(Constants.Font.Regular, size: 16))
             switch type {
             case .gender:
-                GenderPicker(gender: viewModel.selectedPet.gender)
+                GenderPicker()
             case .specie:
-                SpeciePicker(specie: viewModel.selectedPet.specie)
+                SpeciePicker()
             case .breed:
-                BreedPicker(breed: $pet.breed, breeds: selectedSpecie.breeds)
+                BreedPicker()
             case .birth:
                 DatePicker("", selection: $date, displayedComponents: .date)
                     .font(.custom(Constants.Font.Regular, size: 16))
@@ -43,22 +42,9 @@ struct FormRowCell: View {
             case .weight:
                 WeightPicker(for: $weight, show: $showWeightPicker)
             case .castrated:
-               CastradPicker(is: $castred)
+                CastradPicker()
             }
         }
         .listRowBackground(Color("White-F4F3FA"))
-    }
-}
-
-struct FormRowCell_Previews: PreviewProvider {
-    static var previews: some View {
-        let pet = Binding.constant(Pet.mock)
-        Form {
-            FormRowCell(type: .specie, pet: pet)
-            FormRowCell(type: .gender, pet: pet)
-            FormRowCell(type: .breed, pet: pet)
-            FormRowCell(type: .castrated, pet: pet)
-            FormRowCell(type: .weight, pet: pet)
-        }
     }
 }

@@ -12,7 +12,6 @@ enum Constants {
     enum Home {
         static let emptyPets = "Você não possui nenhum pet\n cadastrado :("
     }
-    
     enum Font {
         static let ExtraLight = "Poppins-ExtraLight"
         static let Thinitalic = "Poppins-Thinitalic"

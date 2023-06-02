@@ -8,14 +8,10 @@
 import SwiftUI
 
 struct SpeciePicker: View {
-    @Binding var selectedSpecie: Specie
+    @EnvironmentObject private var viewModel: EditPetViewModel
 
-    init(specie selectedSpecie: Binding<Specie>) {
-        self._selectedSpecie = selectedSpecie
-    }
-    
     var body: some View {
-        Picker("", selection: $selectedSpecie) {
+        Picker("", selection: $viewModel.selectedPet.specie) {
             ForEach(Specie.allCases) { specie in
                 Text(specie.rawValue)
             }
@@ -26,10 +22,3 @@ struct SpeciePicker: View {
     }
 }
 
-
-struct SpecieProvider_Previews: PreviewProvider {
-    static var previews: some View {
-        let specie = Binding.constant(Specie.cat)
-        SpeciePicker(specie: specie)
-    }
-}

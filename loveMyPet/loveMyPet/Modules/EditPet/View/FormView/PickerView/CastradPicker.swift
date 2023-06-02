@@ -9,11 +9,7 @@ import SwiftUI
 
 struct CastradPicker: View {
     
-    @Binding private var castred: Castred
-    
-    init(is castred: Binding<Castred>) {
-        self._castred = castred
-    }
+    @Binding var castred: Castred
     
     var body: some View {
         Picker("", selection: $castred) {
@@ -21,12 +17,5 @@ struct CastradPicker: View {
                 Text(castred.rawValue)
             }
         }
-    }
-}
-
-struct CastradPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        let castred = Binding.constant(Castred.no)
-        CastradPicker(is: castred)
     }
 }

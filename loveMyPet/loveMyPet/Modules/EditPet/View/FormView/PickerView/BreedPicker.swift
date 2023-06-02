@@ -10,11 +10,10 @@ import SwiftUI
 struct BreedPicker: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
-    let breeds: [String]
-    
+        
     var body: some View {
-        Picker("", selection: viewModel.selectedPet.breed) {
-            ForEach(breeds, id: \.self) { breed in
+        Picker("", selection: ) {
+            ForEach(Breed.for[$viewModel.selectedPet.specie] ?? [], id: \.self) { breed in
                 Text(breed)
                     .tag(breed)
             }

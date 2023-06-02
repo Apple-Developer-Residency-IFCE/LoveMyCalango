@@ -48,12 +48,3 @@ struct FormView: View {
         }
     }
 }
-
-struct FormView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        @EnvironmentObject var viewModel: EditPetViewModel
-        let specie: Binding<Specie> = .constant(.cat)
-        FormView()
-    }
-}

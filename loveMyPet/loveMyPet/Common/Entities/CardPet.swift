@@ -14,7 +14,8 @@ struct Pet: Identifiable{
                           breed: "SRD",
                           image: Image("AvatarCat1"),
                           specie: .cat,
-                          gender: .female)
+                          gender: .female,
+                          castred: .yes)
     
     var id: UUID
     var name: String
@@ -22,4 +23,5 @@ struct Pet: Identifiable{
     var image: Image
     var specie: Specie
     var gender: Gender
+    var castred: Castred
 }

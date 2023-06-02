@@ -12,9 +12,7 @@ final class SpecieWrapper: ObservableObject {
 }
 
 struct EditPetView: View {
-    
-    @EnvironmentObject private var viewModel: EditPetViewModel
-    
+        
     var body: some View {
         VStack {
             VStack {
@@ -26,7 +24,7 @@ struct EditPetView: View {
                     .font(.custom(Constants.Font.Regular, size: 13))
             }
             .padding(.top, 16)
-            FormView(pet: viewModel.pet)
+            FormView()
         }
     }
 }
