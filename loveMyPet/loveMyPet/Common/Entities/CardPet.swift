@@ -12,16 +12,18 @@ struct Pet: Identifiable{
     static let mock = Pet(id: UUID(),
                           name: "Hanna",
                           breed: "SRD",
-                          image: Image("AvatarCat1"),
+                          image: "AvatarCat1",
                           specie: .cat,
                           gender: .female,
-                          castred: .yes)
+                          castred: .yes,
+                          date: Date())
     
     var id: UUID
     var name: String
     var breed: String
-    var image: Image
+    var image: String
     var specie: Specie
     var gender: Gender
     var castred: Castred
+    var date: Date
 }

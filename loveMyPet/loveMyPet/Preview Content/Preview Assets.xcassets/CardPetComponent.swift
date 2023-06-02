@@ -9,11 +9,11 @@ import SwiftUI
 
 struct CardPet: View{
 
-    let item: Pet
-
+    @State var item: Pet
+    
     var body: some View {
         HStack() {
-            item.image
+            Image(item.image)
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CastradPicker: View {
     
-    @Binding var castred: Castred
+    @EnvironmentObject private var viewModel: EditPetViewModel
     
     var body: some View {
-        Picker("", selection: $castred) {
+        Picker("", selection: $viewModel.selectedPet.castred) {
             ForEach(Castred.allCases) { castred in
                 Text(castred.rawValue)
             }

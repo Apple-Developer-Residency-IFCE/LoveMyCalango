@@ -8,21 +8,16 @@
 import SwiftUI
 
 struct WeightPicker: View {
-    @Binding private var weight: Double
-    @Binding private var showWeightPicker: Bool
+    
+    @Binding private var weightKg: Double
+    @Binding private var weightG: Double
 
     private let kgRange = 0...100
     private let gRange = stride(from: 0, through: 900, by: 100).map { $0 }
-
-    init(for weight: Binding<Double>, show showWeightPicker: Binding<Bool>) {
-        self._weight = weight
-        self._showWeightPicker = showWeightPicker
-    }
     
     var body: some View {
         HStack {
-            
-            Picker("Selecione o Peso", selection: $weight) {
+            Picker("", selection: $weightKg) {
                 ForEach(kgRange, id: \.self) { kg in
                     Text("\(kg) kg")
                 }
@@ -31,7 +26,7 @@ struct WeightPicker: View {
             .labelsHidden()
             .frame(width: 100)
             
-            Picker("", selection: $weight) {
+            Picker("", selection: $weightG) {
                 ForEach(gRange, id: \.self) { g in
                     Text("\(g) g")
                 }
@@ -42,11 +37,5 @@ struct WeightPicker: View {
         }
         .frame(height: 100)
         .padding(.horizontal, 24)
-    }
-}
-
-struct WeightPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        WeightPicker(for: .constant(0), show: .constant(true))
     }
 }

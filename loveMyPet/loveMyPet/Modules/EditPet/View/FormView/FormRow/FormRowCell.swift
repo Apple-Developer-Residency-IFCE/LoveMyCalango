@@ -15,13 +15,8 @@ struct FormRowCell: View {
 
     @State private var date: Date = .init()
     
-    @State private var breed: String = ""
-    @State private var customSpecie: String = .init()
     @State private var showWeightPicker = false
-    @State private var weight: Double = 0
-    
-    private let kgRange = 0...100
-    private let gRange = stride(from: 0, through: 900, by: 100).map { $0 }
+
     
     var body: some View {
         HStack {
@@ -40,11 +35,28 @@ struct FormRowCell: View {
                     .font(.custom(Constants.Font.Regular, size: 16))
                     .accentColor(Color("MainColor"))
             case .weight:
-                WeightPicker(for: $weight, show: $showWeightPicker)
+                Button("") {
+                    withAnimation(.ripple(index: 3)) {
+                        showWeightPicker.toggle()
+                    }
+                }
+                
+                if showWeightPicker {
+                    WeightPicker(weightKg: $weightKG, weightG: $weightG)
+                }
+                
             case .castrated:
                 CastradPicker()
             }
         }
         .listRowBackground(Color("White-F4F3FA"))
+    }
+}
+
+extension Animation {
+    static func ripple(index: Int) -> Animation {
+        Animation.spring(dampingFraction: 0.5)
+            .speed(2)
+            .delay(0.03 * Double(index))
     }
 }

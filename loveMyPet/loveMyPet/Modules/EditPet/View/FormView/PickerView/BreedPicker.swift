@@ -12,8 +12,8 @@ struct BreedPicker: View {
     @EnvironmentObject private var viewModel: EditPetViewModel
         
     var body: some View {
-        Picker("", selection: ) {
-            ForEach(Breed.for[$viewModel.selectedPet.specie] ?? [], id: \.self) { breed in
+        Picker("", selection: $viewModel.selectedPet.breed) {
+            ForEach(Breed.for[viewModel.selectedPet.specie] ?? [], id: \.self) { breed in
                 Text(breed)
                     .tag(breed)
             }
