@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189C12A296B0B00813E20 /* AlertMessage.swift */; };
+		640189C02A29543000813E20 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* Pet.swift */; };
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
-		640920D22A202C840090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920D12A202C840090A364 /* CardPet.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
 		641AEB112A1EC48C00F2CE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB102A1EC48C00F2CE34 /* Assets.xcassets */; };
 		641AEB142A1EC48C00F2CE34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB132A1EC48C00F2CE34 /* Preview Assets.xcassets */; };
@@ -47,8 +47,8 @@
 
 /* Begin PBXFileReference section */
 		640189C12A296B0B00813E20 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		640189BF2A29543000813E20 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
-		640920D12A202C840090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPet.swift; sourceTree = "<group>"; };
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveMyPetApp.swift; sourceTree = "<group>"; };
 		641AEB102A1EC48C00F2CE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				641AEB2E2A1ED8D300F2CE34 /* Enums.swift */,
-				64990CA22A26C93B0089E440 /* Gender.swift */,
 				DF5C023C2A22C86900E9898E /* Constants.swift */,
 			);
 			path = Enums;
@@ -176,9 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				641AEB2C2A1ED8C500F2CE34 /* Entities.swift */,
-				640920D12A202C840090A364 /* CardPet.swift */,
 				64990CA42A26CA570089E440 /* Breed.swift */,
+				64990CA22A26C93B0089E440 /* Gender.swift */,
 				6468342F2A26C9F4004A782D /* Specie.swift */,
+				640189BF2A29543000813E20 /* Pet.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -366,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640189C02A29543000813E20 /* Pet.swift in Sources */,
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
 				640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */,
 				64990CA32A26C93B0089E440 /* Gender.swift in Sources */,
@@ -379,7 +380,6 @@
 				646834302A26C9F4004A782D /* Specie.swift in Sources */,
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
-				640920D22A202C840090A364 /* CardPet.swift in Sources */,
 				64990CA52A26CA570089E440 /* Breed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
