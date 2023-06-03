@@ -15,12 +15,9 @@ struct FormRowCell: View {
 
     @State private var date: Date = .init()
     
-    @State private var showWeightPicker = false
-
-    
     var body: some View {
         HStack {
-            Text(type.title)
+            Text(type == .weight ? "" : type.title)
                 .foregroundColor(Color("Black-15181D"))
                 .font(.custom(Constants.Font.Regular, size: 16))
             switch type {
@@ -33,30 +30,16 @@ struct FormRowCell: View {
             case .birth:
                 DatePicker("", selection: $date, displayedComponents: .date)
                     .font(.custom(Constants.Font.Regular, size: 16))
-                    .accentColor(Color("MainColor"))
+                    .datePickerStyle(.compact)
             case .weight:
-                Button("") {
-                    withAnimation(.ripple(index: 3)) {
-                        showWeightPicker.toggle()
-                    }
+                WeightPicker(weightKg: $viewModel.weightKG, weightG: $viewModel.weightG) {
+                    viewModel.updateFormattedWeight()
                 }
-                
-                if showWeightPicker {
-                    WeightPicker(weightKg: $weightKG, weightG: $weightG)
-                }
-                
+                .frame(minHeight: 0, idealHeight: 100, maxHeight: 120)
             case .castrated:
                 CastradPicker()
             }
         }
         .listRowBackground(Color("White-F4F3FA"))
-    }
-}
-
-extension Animation {
-    static func ripple(index: Int) -> Animation {
-        Animation.spring(dampingFraction: 0.5)
-            .speed(2)
-            .delay(0.03 * Double(index))
     }
 }

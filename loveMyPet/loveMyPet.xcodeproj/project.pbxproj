@@ -53,6 +53,9 @@
 		DF5C02402A22DBFD00E9898E /* EditPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C023F2A22DBFD00E9898E /* EditPetView.swift */; };
 		DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C02412A22DC0E00E9898E /* EditPetViewModel.swift */; };
 		DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF912F6E2A22DFF000F15799 /* FormView.swift */; };
+		DFAC1C402A2AE72400966782 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C3F2A2AE72400966782 /* Animation.swift */; };
+		DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C422A2AF26200966782 /* RemovePetButton.swift */; };
+		DFAC1C452A2AF2A400966782 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C442A2AF2A400966782 /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +107,9 @@
 		DF5C023F2A22DBFD00E9898E /* EditPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetView.swift; sourceTree = "<group>"; };
 		DF5C02412A22DC0E00E9898E /* EditPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewModel.swift; sourceTree = "<group>"; };
 		DF912F6E2A22DFF000F15799 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		DFAC1C3F2A2AE72400966782 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		DFAC1C422A2AF26200966782 /* RemovePetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePetButton.swift; sourceTree = "<group>"; };
+		DFAC1C442A2AF2A400966782 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				641AEB2A2A1ED8A700F2CE34 /* Extensions.swift */,
+				DFAC1C3F2A2AE72400966782 /* Animation.swift */,
+				DFAC1C442A2AF2A400966782 /* View.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 		DF36E1C22A239BB300CEE0A9 /* FormView */ = {
 			isa = PBXGroup;
 			children = (
+				DFAC1C412A2AF24900966782 /* RemovePetButton */,
 				DF912F6E2A22DFF000F15799 /* FormView.swift */,
 				DF36E1CA2A239C5300CEE0A9 /* FormRow */,
 				DF36E1C32A239BCB00CEE0A9 /* PickerView */,
@@ -353,6 +362,14 @@
 				DF36E1C22A239BB300CEE0A9 /* FormView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DFAC1C412A2AF24900966782 /* RemovePetButton */ = {
+			isa = PBXGroup;
+			children = (
+				DFAC1C422A2AF26200966782 /* RemovePetButton.swift */,
+			);
+			path = RemovePetButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +473,9 @@
 				DF36E1CC2A239C6700CEE0A9 /* FormRowCell.swift in Sources */,
 				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
+				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
+				DFAC1C402A2AE72400966782 /* Animation.swift in Sources */,
+				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
 				DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */,

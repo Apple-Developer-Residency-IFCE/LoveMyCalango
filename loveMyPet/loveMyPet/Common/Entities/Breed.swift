@@ -10,7 +10,7 @@ import Foundation
 struct Breed {
     
     static let `for`: Dictionary<Specie, [String]> = [
-        .none: ["Não E scolhido"],
+        .none: ["Não escolhida"],
         .cat: ["Siamês", "Persa", "Bengal", "Maine Coon", "Ragdoll", "SRD"],
         .dog: ["Labrador Retriever", "Bulldog Francês", "Golden Retriever", "Poodle", "Pastor Alemão", "SRD"],
         .bird: ["Canário", "Calopsita", "Periquito", "Papagaio", "Agapornis", "SRD"],

@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-final class SpecieWrapper: ObservableObject {
-    
-}
-
 struct EditPetView: View {
         
     var body: some View {
