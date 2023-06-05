@@ -12,21 +12,18 @@ struct loveMyPetApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                NavigationView {
-                    HomeView()
-                        .navigationTitle("Title")
-                        .navigationBarTitleDisplayMode(.inline)
-                }
-                .tabItem {
-                    Label("Pets", systemImage: "")
-                }
-                .toolbarBackground(.visible, for: .tabBar)
+                HomeView()
+                    .navigationTitle("Title")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .tabItem {
+                        Label("Pets", image: "IconPetFilled")
+                    }
+                    .toolbarBackground(.visible, for: .tabBar)
                 //ConfigView()
                 Text("Tela de Configuraçoes")
                     .tabItem {
-                        Label("Configuraçoes", systemImage: "")
+                        Label("Configuraçoes", image: "IconConfigFilled")
                     }
-                
             }
         }
     }
