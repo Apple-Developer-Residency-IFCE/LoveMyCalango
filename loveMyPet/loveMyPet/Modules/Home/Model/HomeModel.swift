@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+final class HomeViewModel: ObservableObject {
+    
+    @Published var pets: [Pet] = [.init(),.init(),.init()]
+    
+    private func getPets() {}
+}
