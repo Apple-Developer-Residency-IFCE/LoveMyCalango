@@ -13,17 +13,17 @@ struct CardPet: View{
 
     var body: some View {
         HStack() {
-            item.petImage
+            Image(item.image)
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())
 
             VStack(alignment: .leading) {
-                Text(item.petName)
+                Text(item.name)
                     .font(.system(size: 17, weight: .bold))
                     .padding(.bottom,1)
 
-                Text(item.petRace)
+                Text(item.breed)
                     .font(.system(size: 15))
             }
             .padding(.leading, 16)
@@ -47,6 +47,6 @@ struct CardPet: View{
 
 struct CardPet_Previews: PreviewProvider {
     static var previews: some View {
-        CardPet(item: CardPet.mockPet)
+        CardPet(item: .init())
     }
 }
