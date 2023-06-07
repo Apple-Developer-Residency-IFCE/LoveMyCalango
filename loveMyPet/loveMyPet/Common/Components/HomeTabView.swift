@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct HomeTabView<Home: View, Config: View>: View {
-    let homeView: Home
-    let configView: Config
+    @ViewBuilder let homeView: Home
+    @ViewBuilder let configView: Config
     
     @State private var selectedTab = "pets"
     
-    init(@ViewBuilder homeView: () -> Home, @ViewBuilder configView: () -> Config) {
+    init(homeView: () -> Home, configView: () -> Config) {
         self.homeView = homeView()
         self.configView = configView()
     }
