@@ -17,5 +17,8 @@ struct CastradPicker: View {
                 Text(castred.rawValue)
             }
         }
+        .accentColor(Color("Gray-8C8C8B"))
+        .font(.custom(Constants.Font.Regular, size: 16))
+        .pickerStyle(.menu)
     }
 }

@@ -17,8 +17,6 @@ struct loveMyPetApp: App {
             NavigationView {
                 EditPetView()
                     .environmentObject(viewmodel)
-                    .navigationTitle("Title")
-                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }

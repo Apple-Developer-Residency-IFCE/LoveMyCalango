@@ -15,43 +15,31 @@ struct WeightRowFlow: View {
     var body: some View {
         Section {
             VStack {
-                ZStack {
-                    HStack {
-                        ZStack {
-                            HStack {
-                                Text("Peso")
-                                    .foregroundColor(Color("Black-15181D"))
-                                    .font(.custom(Constants.Font.Regular, size: 16))
-                                Spacer()
-                            }
-                            HStack() {
-                                Button("") {
-                                    withAnimation(.ripple(index: 3)) {
-                                        showWeightPicker.toggle()
-                                    }
-                                }
-                            }
+                HStack {
+                    Text("Peso")
+                        .foregroundColor(Color("Black-15181D"))
+                        .font(.custom(Constants.Font.Regular, size: 16))
+                    Spacer()
+                    Text(viewModel.formattedWeight)
+                        .font(.custom(Constants.Font.Regular, size: 13))
+                        .padding(3)
+                        .padding(.horizontal, 4)
+                        .background(RoundedRectangle(cornerRadius: 4)
+                            .fill(Color("Gray-DBDBDA")))
+                }
+                .onTapGesture(perform: {
+                    if showWeightPicker {
+                        showWeightPicker.toggle()
+                    } else {
+                        withAnimation(.ripple()) {
+                            showWeightPicker.toggle()
                         }
-                    } //:HStack
-                    HStack {
-                        Spacer()
-                        Text(viewModel.formattedWeight)
-                            .font(.custom(Constants.Font.Regular, size: 13))
-                            .padding(3)
-                            .padding(.horizontal, 4)
-                            .background(RoundedRectangle(cornerRadius: 4).fill(Color("Gray-DBDBDA")))
-                    } //:HStack
-                   
-                } //:ZStack
-//                .scaleEffect(showWeightPicker ? 0.9 : 1.0, anchor: .bottom)
-                .animation(.ripple(index: 3), value: showWeightPicker)
-                
+                    }
+                })
                 if showWeightPicker {
                     FormRowCell(type: .weight)
-                        
                 }
-            } //:VStack
-            .animation(.spring(), value: showWeightPicker)
+            }
             .listRowBackground(Color("White-F4F3FA"))
         }
     }

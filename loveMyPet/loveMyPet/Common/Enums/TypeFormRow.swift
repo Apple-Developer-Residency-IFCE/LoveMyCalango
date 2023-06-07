@@ -7,11 +7,13 @@
 
 import Foundation
 
-enum TypeFormRow {
+enum TypeFormRow: CaseIterable, Identifiable {
+    var id: Self { self }
+    
     case gender
+    case birth
     case specie
     case breed
-    case birth
     case weight
     case castrated
     case none

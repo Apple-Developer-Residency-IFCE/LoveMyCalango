@@ -8,9 +8,9 @@
 import SwiftUI
 
 extension Animation {
-    static func ripple(index: Int) -> Animation {
+    static func ripple() -> Animation {
         Animation.spring(dampingFraction: 0.5)
             .speed(1)
-            .delay(0.03 * Double(index))
+            .delay(0.3)
     }
 }

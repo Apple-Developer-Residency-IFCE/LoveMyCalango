@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894872A314C2600C9AE02 /* ImagePicker.swift */; };
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
 		640920D22A202C840090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920D12A202C840090A364 /* CardPet.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41F894872A314C2600C9AE02 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
 		640920D12A202C840090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPet.swift; sourceTree = "<group>"; };
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,6 +289,7 @@
 		DF36E1C32A239BCB00CEE0A9 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
+				41F894872A314C2600C9AE02 /* ImagePicker.swift */,
 				DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */,
 				DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */,
 				DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */,
@@ -478,6 +481,7 @@
 				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
+				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
 				DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */,
 				DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */,
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,

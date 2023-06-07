@@ -33,7 +33,7 @@ struct FormRowCell: View {
                     .datePickerStyle(.compact)
             case .weight:
                 WeightPicker(weightKg: $viewModel.weightKG, weightG: $viewModel.weightG)
-                .frame(minHeight: 0, idealHeight: 100, maxHeight: 120)
+                .frame(height: 100)
             case .castrated:
                 CastradPicker()
             case .none:
