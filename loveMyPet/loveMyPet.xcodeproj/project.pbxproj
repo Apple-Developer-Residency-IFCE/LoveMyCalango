@@ -22,6 +22,7 @@
 		646834302A26C9F4004A782D /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6468342F2A26C9F4004A782D /* Specie.swift */; };
 		64990CA32A26C93B0089E440 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA22A26C93B0089E440 /* Gender.swift */; };
 		64990CA52A26CA570089E440 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA42A26CA570089E440 /* Breed.swift */; };
+		A393B5C82A300097006FA0F1 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393B5C72A300097006FA0F1 /* HomeTabView.swift */; };
 		DF5C02282A22C67900E9898E /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */; };
 		DF5C02292A22C67900E9898E /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */; };
 		DF5C022A2A22C67900E9898E /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02172A22C67900E9898E /* Poppins-ExtraLightItalic.ttf */; };
@@ -61,6 +62,7 @@
 		6468342F2A26C9F4004A782D /* Specie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
 		64990CA22A26C93B0089E440 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		64990CA42A26CA570089E440 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		A393B5C72A300097006FA0F1 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		DF5C02172A22C67900E9898E /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				641AEB282A1ED89900F2CE34 /* Components.swift */,
 				640920CF2A2008FE0090A364 /* CardPetComponent.swift */,
+				A393B5C72A300097006FA0F1 /* HomeTabView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */,
 				646834302A26C9F4004A782D /* Specie.swift in Sources */,
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
+				A393B5C82A300097006FA0F1 /* HomeTabView.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
 				64990CA52A26CA570089E440 /* Breed.swift in Sources */,
 			);
