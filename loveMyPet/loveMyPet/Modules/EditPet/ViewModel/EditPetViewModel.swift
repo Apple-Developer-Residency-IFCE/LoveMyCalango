@@ -13,6 +13,7 @@ final class EditPetViewModel: ObservableObject {
     @Published var weight: String = ""
     @Published var weightKG: Int = 0
     @Published var weightG: Int = 0
+    
     @Published var isAddPetFlow: Bool
     
     init(selectedPet: Pet, isAdding: Bool) {

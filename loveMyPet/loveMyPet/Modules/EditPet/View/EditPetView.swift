@@ -16,6 +16,9 @@ struct EditPetView: View {
                     .resizable()
                     .frame(width: 64, height: 64)
                     .clipShape(Circle())
+                    .onTapGesture {
+                        
+                    }
                Text("Trocar foto")
                     .font(.custom(Constants.Font.Regular, size: 13))
             }

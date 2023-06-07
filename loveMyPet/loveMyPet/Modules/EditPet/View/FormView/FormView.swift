@@ -29,6 +29,7 @@ struct FormView: View {
                             .listRowBackground(Color("White-F4F3FA"))
                     }
                     FormRowCell(type: .gender)
+                    FormRowCell(type: .birth, isBirth: true)
                     FormRowCell(type: .specie)
                     FormRowCell(type: .breed)
                     FormRowCell(type: .birth)
@@ -39,9 +40,10 @@ struct FormView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            
-            RemovePetButton()
-            Spacer()
+            if !viewModel.isAddPetFlow {
+                RemovePetButton()
+                    .padding(.bottom, 8)
+            }
         }
         .onTapGesture {
             hideKeyboard()

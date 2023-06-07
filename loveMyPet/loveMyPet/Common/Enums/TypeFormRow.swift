@@ -14,6 +14,7 @@ enum TypeFormRow {
     case birth
     case weight
     case castrated
+    case none
     
     var title: String {
         switch self {
@@ -29,6 +30,8 @@ enum TypeFormRow {
             return "Peso"
         case .castrated:
             return "Castrado(a)?"
+        case .none:
+            return ""
         }
     }
 }

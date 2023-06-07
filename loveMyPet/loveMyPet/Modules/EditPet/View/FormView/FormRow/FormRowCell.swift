@@ -32,12 +32,12 @@ struct FormRowCell: View {
                     .font(.custom(Constants.Font.Regular, size: 16))
                     .datePickerStyle(.compact)
             case .weight:
-                WeightPicker(weightKg: $viewModel.weightKG, weightG: $viewModel.weightG) {
-                    viewModel.updateFormattedWeight()
-                }
+                WeightPicker(weightKg: $viewModel.weightKG, weightG: $viewModel.weightG)
                 .frame(minHeight: 0, idealHeight: 100, maxHeight: 120)
             case .castrated:
                 CastradPicker()
+            case .none:
+                Text("")
             }
         }
         .listRowBackground(Color("White-F4F3FA"))

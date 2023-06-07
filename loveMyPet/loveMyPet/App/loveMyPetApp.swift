@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct loveMyPetApp: App {
+    
     let viewmodel: EditPetViewModel = .init(selectedPet: .mock, isAdding: false)
     
     var body: some Scene {
@@ -16,8 +17,8 @@ struct loveMyPetApp: App {
             NavigationView {
                 EditPetView()
                     .environmentObject(viewmodel)
-                .navigationTitle("Title")
-                .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle("Title")
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }

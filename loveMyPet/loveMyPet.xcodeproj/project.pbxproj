@@ -276,8 +276,8 @@
 		DF36E1C22A239BB300CEE0A9 /* FormView */ = {
 			isa = PBXGroup;
 			children = (
-				DFAC1C412A2AF24900966782 /* RemovePetButton */,
 				DF912F6E2A22DFF000F15799 /* FormView.swift */,
+				DFAC1C412A2AF24900966782 /* RemovePetButton */,
 				DF36E1CA2A239C5300CEE0A9 /* FormRow */,
 				DF36E1C32A239BCB00CEE0A9 /* PickerView */,
 			);
@@ -341,8 +341,8 @@
 		DF5C023E2A22DBCF00E9898E /* EditPet */ = {
 			isa = PBXGroup;
 			children = (
-				DF5C02442A22DC2C00E9898E /* View */,
 				DF5C02432A22DC1E00E9898E /* ViewModel */,
+				DF5C02442A22DC2C00E9898E /* View */,
 			);
 			path = EditPet;
 			sourceTree = "<group>";
