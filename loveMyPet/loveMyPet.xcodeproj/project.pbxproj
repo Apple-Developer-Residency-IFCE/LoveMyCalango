@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A2F537D2A2FDFED0059F7FF /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F537C2A2FDFED0059F7FF /* Gender.swift */; };
+		4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A54C83E2A3134120049CEC0 /* ColorScheme.swift */; };
 		640189C02A29543000813E20 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* Pet.swift */; };
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
@@ -21,7 +23,6 @@
 		641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */; };
 		645458C72A29708D008C4B53 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C62A29708D008C4B53 /* Fonts.swift */; };
 		646834302A26C9F4004A782D /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6468342F2A26C9F4004A782D /* Specie.swift */; };
-		64990CA32A26C93B0089E440 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA22A26C93B0089E440 /* Gender.swift */; };
 		64990CA52A26CA570089E440 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA42A26CA570089E440 /* Breed.swift */; };
 		DF5C02282A22C67900E9898E /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */; };
 		DF5C02292A22C67900E9898E /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */; };
@@ -46,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A2F537C2A2FDFED0059F7FF /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		4A54C83E2A3134120049CEC0 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		640189BF2A29543000813E20 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +64,6 @@
 		641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		645458C62A29708D008C4B53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6468342F2A26C9F4004A782D /* Specie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
-		64990CA22A26C93B0089E440 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		64990CA42A26CA570089E440 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
@@ -167,8 +169,8 @@
 			children = (
 				641AEB2E2A1ED8D300F2CE34 /* Enums.swift */,
 				645458C62A29708D008C4B53 /* Fonts.swift */,
-				64990CA22A26C93B0089E440 /* Gender.swift */,
 				DF5C023C2A22C86900E9898E /* Constants.swift */,
+				4A54C83E2A3134120049CEC0 /* ColorScheme.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -176,9 +178,9 @@
 		641AEB202A1ECDF800F2CE34 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				4A2F537C2A2FDFED0059F7FF /* Gender.swift */,
 				641AEB2C2A1ED8C500F2CE34 /* Entities.swift */,
 				64990CA42A26CA570089E440 /* Breed.swift */,
-				64990CA22A26C93B0089E440 /* Gender.swift */,
 				6468342F2A26C9F4004A782D /* Specie.swift */,
 				640189BF2A29543000813E20 /* Pet.swift */,
 			);
@@ -367,13 +369,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */,
 				640189C02A29543000813E20 /* Pet.swift in Sources */,
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
 				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
-				64990CA32A26C93B0089E440 /* Gender.swift in Sources */,
 				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
 				641AEB292A1ED89900F2CE34 /* Components.swift in Sources */,
 				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
+				4A2F537D2A2FDFED0059F7FF /* Gender.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */,
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
@@ -510,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"loveMyPet/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ANN3WL84D;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loveMyPet/Info.plist;
@@ -541,7 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"loveMyPet/Preview Content\"";
-				DEVELOPMENT_TEAM = 2ANN3WL84D;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = loveMyPet/Info.plist;

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CardPet: View{
-
+//    @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
+    @Environment(\.colorScheme) var colorScheme
+    
     let item: Pet
 
     var body: some View {
@@ -20,26 +22,31 @@ struct CardPet: View{
 
             VStack(alignment: .leading) {
                 Text(item.name)
-                    .font(.system(size: 17, weight: .bold))
-                    .padding(.bottom,1)
-
+                    .font(.custom(Font.SemiBold, size: 17))
+                    .padding(.bottom, 1)
+                    .foregroundColor(Color("FontColor"))
+                
                 Text(item.breed)
-                    .font(.system(size: 15))
+                    .font(.custom(Font.Light, size: 15))
+                    .foregroundColor(Color("FontColor"))
             }
             .padding(.leading, 16)
+            
             Spacer()
-            Image(systemName: "chevron.right")
+            Image("IconArrow")
                 .foregroundColor(.black.opacity(0.61))
                 .padding(.trailing, 16)
 
         }
-        .foregroundColor(.black)
         .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color("Gray-DBDBDA"), lineWidth: 2)
+                .stroke(Color("BorderCardPet"), lineWidth: 2)
         )
+        .background(
+        RoundedRectangle(cornerRadius: 12)
+            .fill(Color("CardPetBackground")))
         .padding(.horizontal, 24)
     }
 }
