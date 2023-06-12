@@ -18,10 +18,10 @@ struct WeightRowFlow: View {
                 HStack {
                     Text("Peso")
                         .foregroundColor(Color("Black-15181D"))
-                        .font(.custom(Constants.Font.Regular, size: 16))
+                        .font(.custom(Font.Regular, size: 16))
                     Spacer()
                     Text(viewModel.formattedWeight)
-                        .font(.custom(Constants.Font.Regular, size: 13))
+                        .font(.custom(Font.Regular, size: 13))
                         .padding(3)
                         .padding(.horizontal, 4)
                         .background(RoundedRectangle(cornerRadius: 4)
@@ -54,8 +54,21 @@ struct WeightPicker: View {
     var body: some View {
         HStack(alignment: .center) {
             Picker(selection: $weightKg, label: Text("")) {
-                ForEach(0..<100) { kg in
+                ForEach(0..<4000) { kg in
                     Text("\(kg)").tag(kg)
+                }
+            }
+            .pickerStyle(WheelPickerStyle())
+            .frame(width: 80)
+            
+            Text(",")
+                .foregroundColor(Color("Black-15181D"))
+                .font(.custom(Font.Regular, size: 20))
+                .background()
+            
+            Picker(selection: $weightG, label: Text("")) {
+                ForEach(0..<200) { g in
+                    Text("\(g % 10)").tag(g % 10)
                 }
             }
             .pickerStyle(WheelPickerStyle())
@@ -63,21 +76,9 @@ struct WeightPicker: View {
             
             Text("kg")
                 .foregroundColor(Color("Black-15181D"))
-                .font(.custom(Constants.Font.Regular, size: 20))
-            
-            Picker(selection: $weightG, label: Text("")) {
-                ForEach(0..<10) { g in
-                    Text("\(g * 100)").tag(g * 100)
-                }
-            }
-            .pickerStyle(WheelPickerStyle())
-            .frame(width: 80)
-            
-            Text("g")
-                .foregroundColor(Color("Black-15181D"))
-                .font(.custom(Constants.Font.Regular, size: 20))
+                .font(.custom(Font.Regular, size: 20))
         }
-        .padding(.leading, 32)
+        .padding(.leading, 0)
         .onChange(of: weightKg) { _ in
             viewModel.updateFormattedWeight()
         }

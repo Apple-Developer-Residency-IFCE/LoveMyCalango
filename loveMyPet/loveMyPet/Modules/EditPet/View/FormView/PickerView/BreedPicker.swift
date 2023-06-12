@@ -13,13 +13,13 @@ struct BreedPicker: View {
         
     var body: some View {
         Picker("", selection: $viewModel.selectedPet.breed) {
-            ForEach(Breed.for[viewModel.selectedPet.specie] ?? [], id: \.self) { breed in
+            ForEach(viewModel.selectedPet.specie.breed , id: \.self) { breed in
                 Text(breed)
                     .tag(breed)
             }
         }
         .accentColor(Color("Gray-8C8C8B"))
-        .font(.custom(Constants.Font.Regular, size: 16))
+        .font(.custom(Font.Regular, size: 16))
         .pickerStyle(.menu)
     }
 }

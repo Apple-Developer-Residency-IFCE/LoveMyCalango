@@ -54,7 +54,7 @@ struct EmptyHome: View {
             Text(Constants.Home.emptyPets)
                 .foregroundColor(Color("Gray-B3B3B2"))
                 .multilineTextAlignment(.center)
-                .font(.custom(Constants.Font.Medium, size: 18))
+                .font(.custom(Font.Medium, size: 18))
             Spacer()
         }
         .padding(.top, 32)

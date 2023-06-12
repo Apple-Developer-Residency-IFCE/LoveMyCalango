@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "DarkMode.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "DarkMode@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "DarkMode@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "DarkMode.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

@@ -21,7 +21,7 @@ struct RemovePetButton: View {
                          Color("Red-D12929")
                          Text("Excluir Cadastro")
                              .foregroundColor(.white)
-                             .font(.custom(Constants.Font.SemiBold, size: 16))
+                             .font(.custom(Font.SemiBold, size: 16))
                      }
                      .frame(height: 50)
                      .cornerRadius(10)

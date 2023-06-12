@@ -33,7 +33,7 @@ struct EditPetView: View {
                     isShowingImagePicker = true
                 }
                 Text("Trocar foto")
-                    .font(.custom(Constants.Font.Regular, size: 13))
+                    .font(.custom(Font.Regular, size: 13))
             }
             .padding(.top, 16)
             FormView()

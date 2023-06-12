@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894872A314C2600C9AE02 /* ImagePicker.swift */; };
+		41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894892A3153FA00C9AE02 /* Gender.swift */; };
+		41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8948B2A37C43000C9AE02 /* Specie.swift */; };
+		640189C02A29543000813E20 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* Pet.swift */; };
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
-		640920D22A202C840090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920D12A202C840090A364 /* CardPet.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
 		641AEB112A1EC48C00F2CE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB102A1EC48C00F2CE34 /* Assets.xcassets */; };
 		641AEB142A1EC48C00F2CE34 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 641AEB132A1EC48C00F2CE34 /* Preview Assets.xcassets */; };
@@ -20,9 +22,7 @@
 		641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */; };
 		641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB322A1ED8FC00F2CE34 /* HomeView.swift */; };
 		641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */; };
-		6460813C2A295859000B172B /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6460813B2A295859000B172B /* Specie.swift */; };
-		64990CA32A26C93B0089E440 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA22A26C93B0089E440 /* Gender.swift */; };
-		64990CA52A26CA570089E440 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA42A26CA570089E440 /* Breed.swift */; };
+		645458C72A29708D008C4B53 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C62A29708D008C4B53 /* Fonts.swift */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
 		DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */; };
 		DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */; };
@@ -61,8 +61,10 @@
 
 /* Begin PBXFileReference section */
 		41F894872A314C2600C9AE02 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		41F894892A3153FA00C9AE02 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		41F8948B2A37C43000C9AE02 /* Specie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
+		640189BF2A29543000813E20 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
-		640920D12A202C840090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPet.swift; sourceTree = "<group>"; };
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loveMyPetApp.swift; sourceTree = "<group>"; };
 		641AEB102A1EC48C00F2CE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,9 +76,7 @@
 		641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		641AEB322A1ED8FC00F2CE34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		6460813B2A295859000B172B /* Specie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
-		64990CA22A26C93B0089E440 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
-		64990CA42A26CA570089E440 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		645458C62A29708D008C4B53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePicker.swift; sourceTree = "<group>"; };
 		DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicker.swift; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				641AEB2E2A1ED8D300F2CE34 /* Enums.swift */,
-				64990CA22A26C93B0089E440 /* Gender.swift */,
+				645458C62A29708D008C4B53 /* Fonts.swift */,
 				DF5C023C2A22C86900E9898E /* Constants.swift */,
 				DF36E1D52A23A74800CEE0A9 /* TypeFormRow.swift */,
 			);
@@ -206,10 +206,10 @@
 			isa = PBXGroup;
 			children = (
 				641AEB2C2A1ED8C500F2CE34 /* Entities.swift */,
-				640920D12A202C840090A364 /* CardPet.swift */,
+				41F894892A3153FA00C9AE02 /* Gender.swift */,
 				DF36E1D32A23A72A00CEE0A9 /* Castred.swift */,
-				6460813B2A295859000B172B /* Specie.swift */,
-				64990CA42A26CA570089E440 /* Breed.swift */,
+				41F8948B2A37C43000C9AE02 /* Specie.swift */,
+				640189BF2A29543000813E20 /* Pet.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -464,11 +464,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				640189C02A29543000813E20 /* Pet.swift in Sources */,
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
 				DF36E1D62A23A74800CEE0A9 /* TypeFormRow.swift in Sources */,
 				DF36E1D82A23A7DE00CEE0A9 /* WeightPicker.swift in Sources */,
-				64990CA32A26C93B0089E440 /* Gender.swift in Sources */,
+				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
 				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
+				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
 				DF5C02402A22DBFD00E9898E /* EditPetView.swift in Sources */,
 				DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */,
@@ -477,6 +479,7 @@
 				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
+				41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */,
 				DFAC1C402A2AE72400966782 /* Animation.swift in Sources */,
 				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */,
@@ -488,11 +491,8 @@
 				641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */,
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
 				DF36E1CE2A239F1B00CEE0A9 /* CastradPicker.swift in Sources */,
-				6460813C2A295859000B172B /* Specie.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
 				DF36E1D42A23A72A00CEE0A9 /* Castred.swift in Sources */,
-				640920D22A202C840090A364 /* CardPet.swift in Sources */,
-				64990CA52A26CA570089E440 /* Breed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

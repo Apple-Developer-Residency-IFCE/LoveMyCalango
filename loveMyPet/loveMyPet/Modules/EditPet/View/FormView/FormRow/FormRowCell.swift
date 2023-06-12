@@ -19,7 +19,7 @@ struct FormRowCell: View {
         HStack {
             Text(type == .weight ? "" : type.title)
                 .foregroundColor(Color("Black-15181D"))
-                .font(.custom(Constants.Font.Regular, size: 16))
+                .font(.custom(Font.Regular, size: 16))
             switch type {
             case .gender:
                 GenderPicker()
@@ -29,7 +29,7 @@ struct FormRowCell: View {
                 BreedPicker()
             case .birth:
                 DatePicker("", selection: $date, in: ...date, displayedComponents: .date)
-                    .font(.custom(Constants.Font.Regular, size: 16))
+                    .font(.custom(Font.Regular, size: 16))
                     .datePickerStyle(.compact)
             case .weight:
                 WeightPicker(weightKg: $viewModel.weightKG, weightG: $viewModel.weightG)

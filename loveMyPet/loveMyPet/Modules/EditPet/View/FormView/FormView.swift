@@ -19,7 +19,7 @@ struct FormView: View {
                 Section {
                     TextField("Nome do pet", text: $viewModel.selectedPet.name)
                         .foregroundColor(Color("Gray-8C8C8B"))
-                        .font(.custom(Constants.Font.Regular, size: 16))
+                        .font(.custom(Font.Regular, size: 16))
                         .listRowBackground(Color("White-F4F3FA"))
                     
                     ForEach(TypeFormRow.allCases.prefix(4)) { caseValue in

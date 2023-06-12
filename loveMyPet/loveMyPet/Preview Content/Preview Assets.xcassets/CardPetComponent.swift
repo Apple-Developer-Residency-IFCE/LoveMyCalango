@@ -43,3 +43,9 @@ struct CardPet: View{
         .padding(.horizontal, 24)
     }
 }
+
+struct CardPet_Previews: PreviewProvider {
+    static var previews: some View {
+        CardPet(item: .init())
+    }
+}

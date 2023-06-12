@@ -12,13 +12,16 @@ struct CastradPicker: View {
     @EnvironmentObject private var viewModel: EditPetViewModel
     
     var body: some View {
-        Picker("", selection: $viewModel.selectedPet.castred) {
-            ForEach(Castred.allCases) { castred in
-                Text(castred.rawValue)
+        Picker("", selection: $viewModel.selectedPet.isNeutered) {
+            ForEach(0..<2, id: \.self) {
+                Text(($0 == 0) ? "Sim" : "Não")
+                    .tag($0 == 0)
             }
         }
         .accentColor(Color("Gray-8C8C8B"))
-        .font(.custom(Constants.Font.Regular, size: 16))
+        .font(.custom(Font.Regular, size: 16))
         .pickerStyle(.menu)
     }
 }
+
+
