@@ -10,13 +10,14 @@ import SwiftUI
 @main
 struct loveMyPetApp: App {
     
-    let viewmodel: EditPetViewModel = .init(selectedPet: .init(), isAdding: false)
-    
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                EditPetView()
-                    .environmentObject(viewmodel)
+            HomeTabView {
+                HomeView()
+                   
+                    
+            } configView: {
+                Text("")
             }
         }
     }

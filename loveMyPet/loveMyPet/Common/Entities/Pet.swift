@@ -12,7 +12,7 @@ struct Pet: Identifiable {
     var name: String = "Carlos"
     var specie: Specie = .dog
     var breed: String = "Pastor Alemão"
-    var image: String = "Imagem"
+    var image: String = "AvatarCat2"
     var gender: Gender = Gender.male
     var birthDate: Date = Date()
     var weight: Double = 10.0

@@ -13,11 +13,11 @@ struct HomeView: View {
     
     var body: some View {
         
+        NavigationStack {
         ScrollView(.vertical) {
             if viewModel.pets.isEmpty {
                 EmptyHome()
             } else {
-                NavigationView {
                     Grid {
                         ForEach(viewModel.pets) { pet in
                             GridRow {
