@@ -24,11 +24,11 @@ struct CardPet: View{
                 Text(item.name)
                     .font(.custom(Font.SemiBold, size: 17))
                     .padding(.bottom, 1)
-                    .foregroundColor(Color("FontColor"))
+                    .foregroundColor(Color(CustomColor.FontColor))
                 
                 Text(item.breed)
                     .font(.custom(Font.Light, size: 15))
-                    .foregroundColor(Color("FontColor"))
+                    .foregroundColor(Color(CustomColor.FontColor))
             }
             .padding(.leading, 16)
             
@@ -42,11 +42,11 @@ struct CardPet: View{
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color("BorderCardPet"), lineWidth: 2)
+                .stroke(Color(CustomColor.BorderCardPet), lineWidth: 2)
         )
         .background(
         RoundedRectangle(cornerRadius: 12)
-            .fill(Color("CardPetBackground")))
+            .fill(Color(CustomColor.PetBackground)))
         .padding(.horizontal, 24)
     }
 }

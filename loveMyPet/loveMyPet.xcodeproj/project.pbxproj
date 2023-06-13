@@ -24,6 +24,7 @@
 		645458C72A29708D008C4B53 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C62A29708D008C4B53 /* Fonts.swift */; };
 		646834302A26C9F4004A782D /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6468342F2A26C9F4004A782D /* Specie.swift */; };
 		64990CA52A26CA570089E440 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA42A26CA570089E440 /* Breed.swift */; };
+		B14689FC2A3922760070382B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14689FB2A3922760070382B /* Color.swift */; };
 		DF5C02282A22C67900E9898E /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */; };
 		DF5C02292A22C67900E9898E /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */; };
 		DF5C022A2A22C67900E9898E /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02172A22C67900E9898E /* Poppins-ExtraLightItalic.ttf */; };
@@ -65,6 +66,7 @@
 		645458C62A29708D008C4B53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6468342F2A26C9F4004A782D /* Specie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
 		64990CA42A26CA570089E440 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		DF5C02172A22C67900E9898E /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				641AEB2E2A1ED8D300F2CE34 /* Enums.swift */,
 				645458C62A29708D008C4B53 /* Fonts.swift */,
+				B14689FB2A3922760070382B /* Color.swift */,
 				DF5C023C2A22C86900E9898E /* Constants.swift */,
 				4A54C83E2A3134120049CEC0 /* ColorScheme.swift */,
 			);
@@ -373,6 +376,7 @@
 				640189C02A29543000813E20 /* Pet.swift in Sources */,
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
 				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
+				B14689FC2A3922760070382B /* Color.swift in Sources */,
 				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
 				641AEB292A1ED89900F2CE34 /* Components.swift in Sources */,
 				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
