@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A2F537D2A2FDFED0059F7FF /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F537C2A2FDFED0059F7FF /* Gender.swift */; };
 		4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A54C83E2A3134120049CEC0 /* ColorScheme.swift */; };
+		640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189C12A296B0B00813E20 /* AlertMessage.swift */; };
 		640189C02A29543000813E20 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* Pet.swift */; };
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */; };
@@ -21,10 +22,12 @@
 		641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */; };
 		641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB322A1ED8FC00F2CE34 /* HomeView.swift */; };
 		641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */; };
+		645458C32A294317008C4B53 /* PetDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C22A294317008C4B53 /* PetDetail.swift */; };
 		645458C72A29708D008C4B53 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C62A29708D008C4B53 /* Fonts.swift */; };
 		646834302A26C9F4004A782D /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6468342F2A26C9F4004A782D /* Specie.swift */; };
-		64990CA52A26CA570089E440 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64990CA42A26CA570089E440 /* Breed.swift */; };
 		B14689FC2A3922760070382B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14689FB2A3922760070382B /* Color.swift */; };
+		B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */; };
+		B10598042A37C9F50029CFE3 /* PetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10598032A37C9F50029CFE3 /* PetData.swift */; };
 		DF5C02282A22C67900E9898E /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */; };
 		DF5C02292A22C67900E9898E /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */; };
 		DF5C022A2A22C67900E9898E /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DF5C02172A22C67900E9898E /* Poppins-ExtraLightItalic.ttf */; };
@@ -50,6 +53,7 @@
 /* Begin PBXFileReference section */
 		4A2F537C2A2FDFED0059F7FF /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		4A54C83E2A3134120049CEC0 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		640189C12A296B0B00813E20 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		640189BF2A29543000813E20 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
 		641AEB092A1EC48C00F2CE34 /* loveMyPet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loveMyPet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,10 +67,12 @@
 		641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		641AEB322A1ED8FC00F2CE34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		645458C22A294317008C4B53 /* PetDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetail.swift; sourceTree = "<group>"; };
 		645458C62A29708D008C4B53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6468342F2A26C9F4004A782D /* Specie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
-		64990CA42A26CA570089E440 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewModel.swift; sourceTree = "<group>"; };
+		B10598032A37C9F50029CFE3 /* PetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetData.swift; sourceTree = "<group>"; };
 		DF5C02152A22C67900E9898E /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		DF5C02162A22C67900E9898E /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		DF5C02172A22C67900E9898E /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 		641AEB1C2A1ECAE800F2CE34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				645458C02A2942F3008C4B53 /* PetDetail */,
 				641AEB232A1ED01C00F2CE34 /* Home */,
 			);
 			path = Modules;
@@ -183,7 +190,6 @@
 			children = (
 				4A2F537C2A2FDFED0059F7FF /* Gender.swift */,
 				641AEB2C2A1ED8C500F2CE34 /* Entities.swift */,
-				64990CA42A26CA570089E440 /* Breed.swift */,
 				6468342F2A26C9F4004A782D /* Specie.swift */,
 				640189BF2A29543000813E20 /* Pet.swift */,
 			);
@@ -203,6 +209,7 @@
 			children = (
 				641AEB282A1ED89900F2CE34 /* Components.swift */,
 				640920CF2A2008FE0090A364 /* CardPetComponent.swift */,
+				640189C12A296B0B00813E20 /* AlertMessage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -247,6 +254,40 @@
 				641AEB0C2A1EC48C00F2CE34 /* loveMyPetApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		645458C02A2942F3008C4B53 /* PetDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B10597FD2A37C97B0029CFE3 /* ViewModel */,
+				645458C12A294307008C4B53 /* View */,
+			);
+			path = PetDetail;
+			sourceTree = "<group>";
+		};
+		645458C12A294307008C4B53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B10598002A37C9B90029CFE3 /* PetData */,
+				645458C22A294317008C4B53 /* PetDetail.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B10597FD2A37C97B0029CFE3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B10598002A37C9B90029CFE3 /* PetData */ = {
+			isa = PBXGroup;
+			children = (
+				B10598032A37C9F50029CFE3 /* PetData.swift */,
+			);
+			path = PetData;
 			sourceTree = "<group>";
 		};
 		DF5C02132A22C66000E9898E /* Font */ = {
@@ -375,6 +416,7 @@
 				4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */,
 				640189C02A29543000813E20 /* Pet.swift in Sources */,
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
+				640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */,
 				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
 				B14689FC2A3922760070382B /* Color.swift in Sources */,
 				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
@@ -384,11 +426,13 @@
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */,
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
+				645458C32A294317008C4B53 /* PetDetail.swift in Sources */,
+				B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */,
 				641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */,
+				B10598042A37C9F50029CFE3 /* PetData.swift in Sources */,
 				646834302A26C9F4004A782D /* Specie.swift in Sources */,
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
-				64990CA52A26CA570089E440 /* Breed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
