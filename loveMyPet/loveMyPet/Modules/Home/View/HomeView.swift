@@ -12,22 +12,20 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
-        
-        NavigationStack {
         ScrollView(.vertical) {
             if viewModel.pets.isEmpty {
                 EmptyHome()
             } else {
-                    Grid {
-                        ForEach(viewModel.pets) { pet in
-                            GridRow {
-                                NavigationLink(destination: EmptyView()) {
-                                    CardPet(item: pet)
-                                }
+                Grid {
+                    ForEach(viewModel.pets) { pet in
+                        GridRow {
+                            NavigationLink(destination: EmptyView()) {
+                                CardPet(item: pet)
                             }
                         }
                     }
                 }
+                .padding(.top, 48)
             }
         }
     }

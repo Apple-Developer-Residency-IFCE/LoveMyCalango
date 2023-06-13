@@ -27,8 +27,8 @@ final class EditPetViewModel: ObservableObject {
     }
     
     func updateFormattedWeight() {
-        var kg = (weightKG != 0) ? "\(weightKG)" : ""
-        var g = (weightG != 0) ? ",\(weightG) kg" : "kg"
+        let kg = (weightKG != 0) ? "\(weightKG)" : ""
+        let g = (weightG != 0) ? ",\(weightG) kg" : "kg"
         weight = kg + g
     }
 }
