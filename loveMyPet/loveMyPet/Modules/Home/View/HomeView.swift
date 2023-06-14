@@ -35,20 +35,10 @@ struct EmptyHome: View {
     
     var body: some View {
         VStack {
-            RoundedRectangle(cornerRadius: 16)
-                .stroke(style: .init(lineWidth: 3))
-                .foregroundColor(Color("Gray-DBDBDA"))
+            Image(Assets.Image.emptyPet)
+                .resizable()
                 .padding(.horizontal, 24)
-                .frame(height: 100)
-                .overlay {
-                    VStack {
-                        Image(systemName: Assets.Icon.plus)
-                            .resizable()
-                            .foregroundColor(Color("Gray-DBDBDA"))
-                            .frame(width: 42, height: 42)
-                            .padding()
-                    }
-                }
+                .padding(.bottom, 18)
             Text(Constants.Home.emptyPets)
                 .foregroundColor(Color("Gray-B3B3B2"))
                 .multilineTextAlignment(.center)

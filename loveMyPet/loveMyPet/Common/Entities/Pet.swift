@@ -17,6 +17,6 @@ struct Pet: Identifiable {
     var image: String = "AvatarCat2"
     var gender: Gender = .none
     var birthDate: Date = Date()
-    var weight: Double = 10.0
+    var weight: Double = 0
     var isNeutered: Bool = false
 }

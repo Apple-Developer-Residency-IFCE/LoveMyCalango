@@ -10,6 +10,7 @@ import Foundation
 enum Assets {
     enum Image {
         static let avatarCat2 = "AvatarCat2"
+        static let emptyPet = "emptyPet"
     }
     
     enum Icon {
