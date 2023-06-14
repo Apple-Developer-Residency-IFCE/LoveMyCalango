@@ -14,12 +14,10 @@ struct loveMyPetApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                TabView {
-                    ConfigView()
+                        HomeView()
                         .navigationTitle("Title")
                         .navigationBarTitleDisplayMode(.inline)
                         .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
-                }
             }
         }
     }
