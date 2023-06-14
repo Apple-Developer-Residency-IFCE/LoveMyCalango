@@ -9,6 +9,6 @@ import Foundation
 
 enum AppColorScheme: Int {
     case system = 0
-    case dark = 1
-    case light = 2
+    case light = 1
+    case dark = 2
 }

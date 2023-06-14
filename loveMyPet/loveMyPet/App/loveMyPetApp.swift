@@ -9,12 +9,17 @@ import SwiftUI
 
 @main
 struct loveMyPetApp: App {
+    @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeView()
-                .navigationTitle("Title")
-                .navigationBarTitleDisplayMode(.inline)
+                TabView {
+                    ConfigView()
+                        .navigationTitle("Title")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
+                }
             }
         }
     }
