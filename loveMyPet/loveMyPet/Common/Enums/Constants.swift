@@ -9,13 +9,19 @@ import Foundation
 
 enum Constants {
     
+    static let yes = "Sim"
+    static let no = "Não"
+    
     enum Home {
         static let emptyPets = "Você não possui nenhum pet\n cadastrado :("
         static let addPetTitle = "Adicionar Pet"
-    }
-    
-    enum App {
         static let cancel = "Cancelar"
         static let add = "Adicionar"
+        static let changePictore = "Trocar foto"
+        static let deletePet = "Excluir Cadastro"
+        
+        enum Placeholder {
+            static let petName = "Nome do pet"
+        }
     }
 }

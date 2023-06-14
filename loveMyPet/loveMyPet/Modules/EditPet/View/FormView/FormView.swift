@@ -17,7 +17,7 @@ struct FormView: View {
         VStack {
             Form {
                 Section {
-                    TextField("Nome do pet", text: $viewModel.selectedPet.name)
+                    TextField(Constants.Home.Placeholder.petName, text: $viewModel.selectedPet.name)
                         .foregroundColor(Color("Gray-8C8C8B"))
                         .font(.custom(Font.Regular, size: 16))
                         .listRowBackground(Color("White-F4F3FA"))

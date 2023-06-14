@@ -23,7 +23,7 @@ struct EditPetView: View {
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
                     } else {
-                        Image("AvatarCat2")
+                        Image(Assets.Image.avatarCat2)
                             .resizable()
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
@@ -32,7 +32,7 @@ struct EditPetView: View {
                 .onTapGesture {
                     isShowingImagePicker = true
                 }
-                Text("Trocar foto")
+                Text(Constants.Home.changePictore)
                     .font(.custom(Font.Regular, size: 13))
             }
             .padding(.top, 16)

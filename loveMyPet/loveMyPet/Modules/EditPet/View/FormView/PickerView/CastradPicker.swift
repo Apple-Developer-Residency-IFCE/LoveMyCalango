@@ -14,7 +14,7 @@ struct CastradPicker: View {
     var body: some View {
         Picker("", selection: $viewModel.selectedPet.isNeutered) {
             ForEach(0..<2, id: \.self) {
-                Text(($0 == 0) ? "Sim" : "Não")
+                Text(($0 == 0) ? Constants.yes : Constants.no)
                     .tag($0 == 0)
             }
         }

@@ -42,7 +42,7 @@ struct EmptyHome: View {
                 .frame(height: 100)
                 .overlay {
                     VStack {
-                        Image(systemName: "plus")
+                        Image(systemName: Assets.Icon.plus)
                             .resizable()
                             .foregroundColor(Color("Gray-DBDBDA"))
                             .frame(width: 42, height: 42)

@@ -19,7 +19,7 @@ struct RemovePetButton: View {
                  }) {
                      ZStack {
                          Color("Red-D12929")
-                         Text("Excluir Cadastro")
+                         Text(Constants.Home.deletePet)
                              .foregroundColor(.white)
                              .font(.custom(Font.SemiBold, size: 16))
                      }

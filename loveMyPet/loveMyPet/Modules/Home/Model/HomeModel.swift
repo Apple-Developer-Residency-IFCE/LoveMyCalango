@@ -10,7 +10,7 @@ import SwiftUI
 
 final class HomeViewModel: ObservableObject {
     
-    @Published var pets: [Pet] = [.init(),.init(),.init()]
+    @Published var pets: [Pet] = []
     
     private func getPets() {}
 }

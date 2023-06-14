@@ -29,7 +29,7 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                         Button {
                             showingPopover = true
                         } label: {
-                            Text(Constants.App.add)
+                            Text(Constants.Home.add)
                                 .foregroundColor(Color("MainColor"))
                                 .font(.custom(Font.SemiBold, size: 16))
                         }
@@ -44,7 +44,7 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                                 Button {
                                     showingPopover = false
                                 } label: {
-                                    Text(Constants.App.cancel)
+                                    Text(Constants.Home.cancel)
                                         .foregroundColor(Color("MainColor"))
                                         .font(.custom(Font.Regular, size: 16))
                                 }
@@ -53,7 +53,7 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                                 Button {
                                     print(Constants.Home.addPetTitle)
                                 } label: {
-                                    Text(Constants.App.add)
+                                    Text(Constants.Home.add)
                                         .foregroundColor(Color("MainColor"))
                                         .font(.custom(Font.SemiBold, size: 16))
                                 }
