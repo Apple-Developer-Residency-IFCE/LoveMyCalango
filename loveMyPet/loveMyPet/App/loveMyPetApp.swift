@@ -10,26 +10,27 @@ import SwiftUI
 @main
 struct loveMyPetApp: App {
     
+    @StateObject private var initialModel: EditPetViewModel = .init(selectedPet: .init(), isAdding: true)
+    
+    @State private var selectedTab: TabContextView = .pets
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeTabView {
-                    HomeView()
-                        .toolbar {
-                            Button {
-                                
-                            } label: {
-                                Text("Adicionar")
-                                    .foregroundColor(Color("Gray-8C8C8B"))
-                                    .font(.custom(Font.Regular, size: 16))
-                            }
-
-                        }
+                HomeTabView(selected: $selectedTab) {
+                    CustomHomeNavigation(selected: $selectedTab) {
+                        HomeView()
+                    } editView: {
+                        EditPetView()
+                            .environmentObject(initialModel)
+                            .navigationTitle(Constants.Home.addPetTitle)
+                            .navigationBarTitleDisplayMode(.inline)
+                    }
                 } configView: {
                     Text("")
                 }
-                .navigationTitle("Pets")
-                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : TabContextView.config.rawValue)
+                .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
             }
         }
     }

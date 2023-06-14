@@ -8,48 +8,48 @@
 import SwiftUI
 
 struct HomeTabView<Home: View, Config: View>: View {
+    
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
     
-    @State private var selectedTab = "pets"
+    @Binding var selectedTab: TabContextView
     
-    init(homeView: () -> Home, configView: () -> Config) {
+    init(selected: Binding<TabContextView>, homeView: () -> Home, configView: () -> Config) {
         self.homeView = homeView()
         self.configView = configView()
+        self._selectedTab = selected
     }
     
     var body: some View {
         TabView(selection: $selectedTab){
             homeView
-                .navigationTitle("Title")
-                .navigationBarTitleDisplayMode(.inline)
                 .tabItem {
-                    Label("Pets", image: selectedTab == "pets" ? "IconPetFilled" : "IconPet")
+                    Label(TabContextView.pets.rawValue, image: selectedTab == .pets ? Assets.Icon.petFilled : Assets.Icon.pet)
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .onTapGesture {
-                    selectedTab = "pets"
+                    selectedTab = .pets
                 }
-                .tag("pets")
+                .tag(TabContextView.pets)
             configView
                 .tabItem {
-                    Label("Configurações", image: selectedTab == "config" ? "IconConfigFilled" :"IconConfig")
+                    Label(TabContextView.config.rawValue, image: selectedTab == .config ? Assets.Icon.configFilled : Assets.Icon.config)
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .onTapGesture {
-                    selectedTab = "config"
+                    selectedTab = .config
                 }
-                .tag("config")
+                .tag(TabContextView.config)
         }
     }
 }
 
 struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTabView {
+        HomeTabView(selected: .constant(.pets)) {
             HomeView()
         } configView: {
-            Text("Config")
+            Text(TabContextView.config.rawValue)
         }
     }
 }
