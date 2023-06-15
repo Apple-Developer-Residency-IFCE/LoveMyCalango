@@ -13,20 +13,18 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
     @ViewBuilder let editView: Edit
     @EnvironmentObject private var viewModel: EditPetViewModel
     
-    @Binding private var selectedTab: TabContextView
     @State private var showingPopover = false
     
-    init(selected: Binding<TabContextView> ,homeView: () -> Home, editView: () -> Edit) {
+    init(homeView: () -> Home, editView: () -> Edit) {
         self.homeView = homeView()
         self.editView = editView()
-        self._selectedTab = selected
     }
     
     var body: some View {
         homeView
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if selectedTab == .pets {
+                    if viewModel.selectedTab == .pets {
                         Button {
                             viewModel.createNewPet()
                             showingPopover = true

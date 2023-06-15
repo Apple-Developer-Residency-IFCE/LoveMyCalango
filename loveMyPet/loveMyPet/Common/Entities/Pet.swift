@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct Pet: Identifiable {
+class Pet: Identifiable, Equatable {
 
     static let mock = Pet()
     
@@ -19,4 +19,8 @@ struct Pet: Identifiable {
     var birthDate: Date = Date()
     var weight: Double = 0
     var isNeutered: Bool = false
+    
+    static func == (lhs: Pet, rhs: Pet) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

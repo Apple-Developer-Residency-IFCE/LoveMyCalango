@@ -9,6 +9,8 @@ import SwiftUI
 
 final class EditPetViewModel: ObservableObject {
     
+    @Published var selectedTab: TabContextView = .pets
+    
     @Published private(set) var pets: [Pet] = []
     
     @Published var newPet: Pet = .init() {
@@ -66,10 +68,19 @@ final class EditPetViewModel: ObservableObject {
         newPet = Pet()
     }
     
+    func removePet() {
+        pets.enumerated().forEach { (index, pet) in
+            if pet == selectedPet {
+                pets.remove(at: index)
+            }
+        }
+        
+    }
+    
     func getWeith() -> (kg: Double, g: Double) {
         
-        var newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
-        var newg = isAddPetFlow ? (newPet.weight - newKG) : (selectedPet.weight - newKG)
+        let newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
+        let newg = isAddPetFlow ? (newPet.weight - newKG) : (selectedPet.weight - newKG)
         
         return (newKG, newg)
     }

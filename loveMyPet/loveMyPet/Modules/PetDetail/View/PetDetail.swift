@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PetDetailView: View {
-    @StateObject var petDetailViewModel: PetDetailViewModel
+    
+    @StateObject private var petDetailViewModel: PetDetailViewModel = .init()
+    
     var pet: Pet
     
     var body: some View {
@@ -50,6 +52,6 @@ struct PetDetailView: View {
 
 struct PetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDetailView(petDetailViewModel: PetDetailViewModel(), pet: Pet())
+        PetDetailView(pet: Pet())
     }
 }

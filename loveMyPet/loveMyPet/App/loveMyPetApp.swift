@@ -11,14 +11,12 @@ import SwiftUI
 struct loveMyPetApp: App {
     
     @StateObject private var initialModel: EditPetViewModel = .init()
-    
-    @State private var selectedTab: TabContextView = .pets
-    
+        
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeTabView(selected: $selectedTab) {
-                    CustomHomeNavigation(selected: $selectedTab) {
+                HomeTabView(selected: $initialModel.selectedTab) {
+                    CustomHomeNavigation() {
                         HomeView()
                     } editView: {
                         EditPetView()
@@ -29,8 +27,8 @@ struct loveMyPetApp: App {
                     Text("")
                 }
                 .environmentObject(initialModel)
-                .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : TabContextView.config.rawValue)
-                .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
+                .navigationTitle(initialModel.selectedTab == .pets ? TabContextView.pets.rawValue : TabContextView.config.rawValue)
+                .navigationBarTitleDisplayMode(initialModel.selectedTab == .pets ? .inline : .large)
             }
         }
     }

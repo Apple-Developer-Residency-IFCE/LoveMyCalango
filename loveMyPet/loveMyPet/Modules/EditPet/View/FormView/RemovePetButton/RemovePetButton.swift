@@ -10,23 +10,25 @@ import SwiftUI
 struct RemovePetButton: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
+    @State private var showAlert: Bool = false
     
     var body: some View {
         
         if !viewModel.isAddPetFlow {
             Button(action: {
-                     // Ação a ser executada ao pressionar o botão
-                 }) {
-                     ZStack {
-                         Color("Red-D12929")
-                         Text(Constants.Home.deletePet)
-                             .foregroundColor(.white)
-                             .font(.custom(Font.SemiBold, size: 16))
-                     }
-                     .frame(height: 50)
-                     .cornerRadius(10)
-                     .padding(.horizontal, 24)
-                 }
+                showAlert.toggle()
+            }) {
+                ZStack {
+                    Color("Red-D12929")
+                    Text(Constants.Home.deletePet)
+                        .foregroundColor(.white)
+                        .font(.custom(Font.SemiBold, size: 16))
+                }
+                .frame(height: 50)
+                .cornerRadius(10)
+                .padding(.horizontal, 24)
+            }
+            .modifier(AlertMessageBuilder(isShowing: $showAlert))
         } else {
             Button("", action: {})
         }
