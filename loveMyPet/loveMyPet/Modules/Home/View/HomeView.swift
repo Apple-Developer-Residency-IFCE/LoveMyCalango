@@ -32,7 +32,7 @@ struct HomeView: View {
             }
         }
     }
-}
+}  
 
 struct EmptyHome: View {
     
