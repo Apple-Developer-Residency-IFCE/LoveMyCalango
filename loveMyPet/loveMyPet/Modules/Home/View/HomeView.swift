@@ -20,7 +20,7 @@ struct HomeView: View {
                     ForEach(viewModel.pets) { pet in
                         VStack {
                             GridRow {
-                                NavigationLink(destination: EmptyView()) {
+                                NavigationLink(destination: PetDetailView(pet: pet)) {
                                     CardPet(item: pet)
                                 }
                             }
