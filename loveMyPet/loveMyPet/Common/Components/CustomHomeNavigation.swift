@@ -11,6 +11,7 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
     
     @ViewBuilder let homeView: Home
     @ViewBuilder let editView: Edit
+    @EnvironmentObject private var viewModel: EditPetViewModel
     
     @Binding private var selectedTab: TabContextView
     @State private var showingPopover = false
@@ -27,6 +28,7 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if selectedTab == .pets {
                         Button {
+                            viewModel.createNewPet()
                             showingPopover = true
                         } label: {
                             Text(Constants.Home.add)
@@ -51,12 +53,14 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                             })
                             ToolbarItem(placement: .navigationBarTrailing, content: {
                                 Button {
-                                    print(Constants.Home.addPetTitle)
+                                    viewModel.addPet()
+                                    showingPopover = false
                                 } label: {
                                     Text(Constants.Home.add)
-                                        .foregroundColor(Color("MainColor"))
                                         .font(.custom(Font.SemiBold, size: 16))
                                 }
+                                .disabled(!viewModel.addBtnIsEnable)
+                                .tint(!viewModel.addBtnIsEnable ? Color.gray : Color("MainColor"))
                             })
                         }
                 }

@@ -22,9 +22,7 @@
 		641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB2A2A1ED8A700F2CE34 /* Extensions.swift */; };
 		641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB2C2A1ED8C500F2CE34 /* Entities.swift */; };
 		641AEB2F2A1ED8D300F2CE34 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB2E2A1ED8D300F2CE34 /* Enums.swift */; };
-		641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */; };
 		641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB322A1ED8FC00F2CE34 /* HomeView.swift */; };
-		641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */; };
 		645458C72A29708D008C4B53 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C62A29708D008C4B53 /* Fonts.swift */; };
 		A393B5C82A300097006FA0F1 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393B5C72A300097006FA0F1 /* HomeTabView.swift */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
@@ -80,9 +78,7 @@
 		641AEB2A2A1ED8A700F2CE34 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		641AEB2C2A1ED8C500F2CE34 /* Entities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entities.swift; sourceTree = "<group>"; };
 		641AEB2E2A1ED8D300F2CE34 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		641AEB322A1ED8FC00F2CE34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		645458C62A29708D008C4B53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A393B5C72A300097006FA0F1 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
@@ -248,8 +244,8 @@
 		641AEB232A1ED01C00F2CE34 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				641AEB242A1ED02600F2CE34 /* Model */,
 				641AEB262A1ED03500F2CE34 /* View */,
+				641AEB242A1ED02600F2CE34 /* Model */,
 				641AEB252A1ED02D00F2CE34 /* ViewModel */,
 			);
 			path = Home;
@@ -258,7 +254,6 @@
 		641AEB242A1ED02600F2CE34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				641AEB302A1ED8EA00F2CE34 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,7 +261,6 @@
 		641AEB252A1ED02D00F2CE34 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				641AEB342A1ED90900F2CE34 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -481,7 +475,6 @@
 				DF36E1D62A23A74800CEE0A9 /* TypeFormRow.swift in Sources */,
 				DF36E1D82A23A7DE00CEE0A9 /* WeightPicker.swift in Sources */,
 				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
-				641AEB352A1ED90900F2CE34 /* HomeViewModel.swift in Sources */,
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
@@ -489,7 +482,6 @@
 				DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */,
 				641AEB292A1ED89900F2CE34 /* Components.swift in Sources */,
 				DF36E1CC2A239C6700CEE0A9 /* FormRowCell.swift in Sources */,
-				641AEB312A1ED8EA00F2CE34 /* HomeModel.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
 				41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */,

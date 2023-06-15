@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct CastradPicker: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
     
     var body: some View {
-        Picker("", selection: $viewModel.selectedPet.isNeutered) {
+        Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.isNeutered : $viewModel.selectedPet.isNeutered) {
             ForEach(0..<2, id: \.self) {
                 Text(($0 == 0) ? Constants.yes : Constants.no)
                     .tag($0 == 0)
@@ -23,5 +24,3 @@ struct CastradPicker: View {
         .pickerStyle(.menu)
     }
 }
-
-

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel = HomeViewModel()
+    @EnvironmentObject private var viewModel: EditPetViewModel
     
     var body: some View {
         ScrollView(.vertical) {
@@ -18,11 +18,14 @@ struct HomeView: View {
             } else {
                 Grid {
                     ForEach(viewModel.pets) { pet in
-                        GridRow {
-                            NavigationLink(destination: EmptyView()) {
-                                CardPet(item: pet)
+                        VStack {
+                            GridRow {
+                                NavigationLink(destination: EmptyView()) {
+                                    CardPet(item: pet)
+                                }
                             }
                         }
+                       
                     }
                 }
                 .padding(.top, 48)

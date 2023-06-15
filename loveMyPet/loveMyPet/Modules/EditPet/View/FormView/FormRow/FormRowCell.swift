@@ -28,7 +28,7 @@ struct FormRowCell: View {
             case .breed:
                 BreedPicker()
             case .birth:
-                DatePicker("", selection: $date, in: ...date, displayedComponents: .date)
+                DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
                     .font(.custom(Font.Regular, size: 16))
                     .datePickerStyle(.compact)
             case .weight:

@@ -48,8 +48,8 @@ struct WeightRowFlow: View {
 struct WeightPicker: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
-    @Binding var weightKg: Int
-    @Binding var weightG: Int
+    @Binding var weightKg: Double
+    @Binding var weightG: Double
  
     var body: some View {
         HStack(alignment: .center) {

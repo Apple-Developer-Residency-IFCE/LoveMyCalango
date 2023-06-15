@@ -12,7 +12,7 @@ struct GenderPicker: View {
     @EnvironmentObject private var viewModel: EditPetViewModel
 
     var body: some View {
-        Picker("", selection: $viewModel.selectedPet.gender) {
+        Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.gender : $viewModel.selectedPet.gender) {
             ForEach(Gender.allCases, id: \.id) { gender in
                 Text(gender.rawValue)
             }

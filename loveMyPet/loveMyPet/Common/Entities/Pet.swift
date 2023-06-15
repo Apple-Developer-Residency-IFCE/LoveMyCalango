@@ -13,7 +13,7 @@ struct Pet: Identifiable {
     var id: UUID = UUID()
     var name: String = ""
     var specie: Specie = .none
-    var breed: String = ""
+    var breed: String = "Não Escolhido"
     var image: String = "AvatarCat2"
     var gender: Gender = .none
     var birthDate: Date = Date()

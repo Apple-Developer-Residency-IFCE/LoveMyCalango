@@ -9,17 +9,38 @@ import SwiftUI
 
 final class EditPetViewModel: ObservableObject {
     
-    @Published var selectedPet: Pet 
+    @Published private(set) var pets: [Pet] = []
+    
+    @Published var newPet: Pet = .init() {
+        didSet {
+            addBtnIsEnable = !newPet.name.isEmpty
+        }
+    }
+    
+    @Published var selectedPet: Pet = .init() {
+        didSet {
+            addBtnIsEnable = !selectedPet.name.isEmpty
+        }
+    }
+  
     @Published var weight: String = ""
-    @Published var weightKG: Int = 0
-    @Published var weightG: Int = 0
+    @Published var weightKG: Double = 0
+    @Published var weightG: Double = 0
+    @Published var isAddPetFlow: Bool = true
     
-    @Published var isAddPetFlow: Bool
+    @Published var addBtnIsEnable: Bool = false
     
-    init(selectedPet: Pet, isAdding: Bool) {
+    init(selectedPet: Pet) {
         self.selectedPet = selectedPet
-        self.isAddPetFlow = isAdding
+        self.isAddPetFlow = false
         updateFormattedWeight()
+        (weightKG, weightG) = getWeith()
+    }
+    
+    init() {
+        isAddPetFlow = true
+        updateFormattedWeight()
+        (weightKG, weightG) = getWeith()
     }
     
     var formattedWeight: String {
@@ -30,5 +51,26 @@ final class EditPetViewModel: ObservableObject {
         let kg = (weightKG != 0) ? "\(weightKG)" : ""
         let g = (weightG != 0) ? ",\(weightG) kg" : "kg"
         weight = kg + g
+        if isAddPetFlow {
+            newPet.weight = weightKG + weightG
+        } else {
+            selectedPet.weight = weightKG + weightG
+        }
+    }
+    
+    func addPet() {
+        pets.append(newPet)
+    }
+    
+    func createNewPet() {
+        newPet = Pet()
+    }
+    
+    func getWeith() -> (kg: Double, g: Double) {
+        
+        var newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
+        var newg = isAddPetFlow ? (newPet.weight - newKG) : (selectedPet.weight - newKG)
+        
+        return (newKG, newg)
     }
 }

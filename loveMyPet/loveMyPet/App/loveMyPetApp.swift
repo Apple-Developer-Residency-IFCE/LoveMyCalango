@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct loveMyPetApp: App {
     
-    @StateObject private var initialModel: EditPetViewModel = .init(selectedPet: .init(), isAdding: true)
+    @StateObject private var initialModel: EditPetViewModel = .init()
     
     @State private var selectedTab: TabContextView = .pets
     
@@ -22,13 +22,13 @@ struct loveMyPetApp: App {
                         HomeView()
                     } editView: {
                         EditPetView()
-                            .environmentObject(initialModel)
                             .navigationTitle(Constants.Home.addPetTitle)
                             .navigationBarTitleDisplayMode(.inline)
                     }
                 } configView: {
                     Text("")
                 }
+                .environmentObject(initialModel)
                 .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : TabContextView.config.rawValue)
                 .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
             }

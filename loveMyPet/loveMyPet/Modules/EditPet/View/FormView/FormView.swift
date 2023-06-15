@@ -17,11 +17,10 @@ struct FormView: View {
         VStack {
             Form {
                 Section {
-                    TextField(Constants.Home.Placeholder.petName, text: $viewModel.selectedPet.name)
+                    TextField(Constants.Home.Placeholder.petName, text: viewModel.isAddPetFlow ? $viewModel.newPet.name : $viewModel.selectedPet.name)
                         .foregroundColor(Color("Gray-8C8C8B"))
                         .font(.custom(Font.Regular, size: 16))
                         .listRowBackground(Color("White-F4F3FA"))
-                    
                     ForEach(TypeFormRow.allCases.prefix(4)) { caseValue in
                         FormRowCell(type: caseValue)
                     }

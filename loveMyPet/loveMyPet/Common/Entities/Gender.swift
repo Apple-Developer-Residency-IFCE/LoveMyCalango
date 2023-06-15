@@ -10,7 +10,7 @@ import Foundation
 enum Gender: String, CaseIterable, Identifiable, Hashable {
     var id: Self { self }
     
+    case none = "Nenhum"
     case male = "Macho"
     case female = "Fêmea"
-    case none = "Nenhum"
 }
