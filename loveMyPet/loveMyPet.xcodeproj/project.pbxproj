@@ -13,7 +13,12 @@
 		41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894872A314C2600C9AE02 /* ImagePicker.swift */; };
 		41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894892A3153FA00C9AE02 /* Gender.swift */; };
 		41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8948B2A37C43000C9AE02 /* Specie.swift */; };
+		4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DB72A3A679B00B5586B /* Helper.swift */; };
+		4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */; };
 		4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A54C83E2A3134120049CEC0 /* ColorScheme.swift */; };
+		4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CF9A82A39358300902300 /* ConfigButton.swift */; };
+		4A5F4A1D2A37E31600A8829C /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1C2A37E31600A8829C /* ConfigView.swift */; };
+		4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */; };
 		640189C02A29543000813E20 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* Pet.swift */; };
 		640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189C12A296B0B00813E20 /* AlertMessage.swift */; };
 		640920D02A2008FE0090A364 /* CardPetComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPetComponent.swift */; };
@@ -74,7 +79,12 @@
 		41F894872A314C2600C9AE02 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		41F894892A3153FA00C9AE02 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		41F8948B2A37C43000C9AE02 /* Specie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
+		4A4E8DB72A3A679B00B5586B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		4A54C83E2A3134120049CEC0 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		4A5CF9A82A39358300902300 /* ConfigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
+		4A5F4A1C2A37E31600A8829C /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
+		4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigOptions.swift; sourceTree = "<group>"; };
 		640189BF2A29543000813E20 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		640189C12A296B0B00813E20 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPetComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPetComponent.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPetComponent.swift"; sourceTree = SOURCE_ROOT; };
@@ -152,6 +162,58 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+			
+		4A4E8DB62A3A678400B5586B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4A4E8DB72A3A679B00B5586B /* Helper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		4A4E8DB92A3A698200B5586B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A5CF9A72A39356500902300 /* ConfigButton */ = {
+			isa = PBXGroup;
+			children = (
+				4A5CF9A82A39358300902300 /* ConfigButton.swift */,
+			);
+			path = ConfigButton;
+			sourceTree = "<group>";
+		};
+		4A5F4A1A2A37E2D700A8829C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				4A4E8DB92A3A698200B5586B /* ViewModel */,
+				4A5F4A1B2A37E2E500A8829C /* View */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		4A5F4A1B2A37E2E500A8829C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A5CF9A72A39356500902300 /* ConfigButton */,
+				4A5F4A1E2A37EA3300A8829C /* ConfigOptions */,
+				4A5F4A1C2A37E31600A8829C /* ConfigView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A5F4A1E2A37EA3300A8829C /* ConfigOptions */ = {
+			isa = PBXGroup;
+			children = (
+				4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */,
+			);
+			path = ConfigOptions;
+			sourceTree = "<group>";
+		};
 		641AEB002A1EC48C00F2CE34 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +264,7 @@
 		641AEB1B2A1EC94900F2CE34 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4A4E8DB62A3A678400B5586B /* Helper */,
 				641AEB222A1ECF1D00F2CE34 /* Components */,
 				641AEB212A1ECE9B00F2CE34 /* Extensions */,
 				641AEB202A1ECDF800F2CE34 /* Entities */,
@@ -214,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				DF5C023E2A22DBCF00E9898E /* EditPet */,
+				4A5F4A1A2A37E2D700A8829C /* Config */,
 				645458C02A2942F3008C4B53 /* PetDetail */,
 				641AEB232A1ED01C00F2CE34 /* Home */,
 			);
@@ -532,6 +596,11 @@
 				640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */,
 				B14689FC2A3922760070382B /* Color.swift in Sources */,
 				641AEB292A1ED89900F2CE34 /* Components.swift in Sources */,
+				4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */,
+				B14689FC2A3922760070382B /* Color.swift in Sources */,
+				4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */,
+				4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */,
+				4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* loveMyPetApp.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
 				41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */,
@@ -552,6 +621,7 @@
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
 				DF36E1CE2A239F1B00CEE0A9 /* CastradPicker.swift in Sources */,
 				A393B5C82A300097006FA0F1 /* HomeTabView.swift in Sources */,
+				4A5F4A1D2A37E31600A8829C /* ConfigView.swift in Sources */,
 				641AEB2B2A1ED8A700F2CE34 /* Extensions.swift in Sources */,
 				DF36E1D42A23A72A00CEE0A9 /* Castred.swift in Sources */,
 			);

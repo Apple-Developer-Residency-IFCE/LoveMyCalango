@@ -33,7 +33,9 @@ struct HomeTabView<Home: View, Config: View>: View {
                 .tag(TabContextView.pets)
             configView
                 .tabItem {
-                    Label(TabContextView.config.rawValue, image: selectedTab == .config ? Assets.Icon.configFilled : Assets.Icon.config)
+                    Label(TabContextView.config.rawValue,
+                          image: selectedTab == .config ?
+                          Assets.Icon.configFilled : Assets.Icon.config)
                 }
                 .toolbarBackground(.visible, for: .tabBar)
                 .onTapGesture {

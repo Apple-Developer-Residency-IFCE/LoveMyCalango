@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct loveMyPetApp: App {
     
+    @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @StateObject private var initialModel: EditPetViewModel = .init()
-        
+    
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -24,11 +25,12 @@ struct loveMyPetApp: App {
                             .navigationBarTitleDisplayMode(.inline)
                     }
                 } configView: {
-                    Text("")
+                   ConfigView()
                 }
                 .environmentObject(initialModel)
-                .navigationTitle(initialModel.selectedTab == .pets ? TabContextView.pets.rawValue : TabContextView.config.rawValue)
+                .navigationTitle(initialModel.selectedTab == .pets ? TabContextView.pets.rawValue : "")
                 .navigationBarTitleDisplayMode(initialModel.selectedTab == .pets ? .inline : .large)
+                .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
         }
     }
