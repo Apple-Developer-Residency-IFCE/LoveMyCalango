@@ -9,8 +9,11 @@ import SwiftUI
 
 struct CardPet: View{
 
-    @State var item: Pet
+//    @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
+    @Environment(\.colorScheme) var colorScheme
     
+    let item: Pet
+
     var body: some View {
         HStack() {
             Image(item.image)
@@ -20,26 +23,31 @@ struct CardPet: View{
 
             VStack(alignment: .leading) {
                 Text(item.name)
-                    .font(.system(size: 17, weight: .bold))
-                    .padding(.bottom,1)
-
+                    .font(.custom(Font.SemiBold, size: 17))
+                    .padding(.bottom, 1)
+                    .foregroundColor(Color(CustomColor.FontColor))
+                
                 Text(item.breed)
-                    .font(.system(size: 15))
+                    .font(.custom(Font.Light, size: 15))
+                    .foregroundColor(Color(CustomColor.FontColor))
             }
             .padding(.leading, 16)
+            
             Spacer()
             Image(systemName: Assets.Icon.arrow)
                 .foregroundColor(.black.opacity(0.61))
                 .padding(.trailing, 16)
 
         }
-        .foregroundColor(.black)
         .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(Color("Gray-DBDBDA"), lineWidth: 2)
+                .stroke(Color(CustomColor.BorderCardPet), lineWidth: 2)
         )
+        .background(
+        RoundedRectangle(cornerRadius: 12)
+            .fill(Color(CustomColor.PetBackground)))
         .padding(.horizontal, 24)
     }
 }
