@@ -17,17 +17,18 @@ struct PetDetailView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 194)
+                .clipped()
             
             VStack(alignment: .leading, spacing: 16.0) {
                 HStack{
                     Text("Informações")
                         .font(.custom(Font.SemiBold, size: 20))
                     Spacer()
-                    Image(pet.gender == "Fêmea" ? "IconFemale" : "IconMale")
+                    Image(pet.gender.rawValue == "Fêmea" ? "IconFemale" : "IconMale")
                 }
                 
                 PetData(title: "Nome", value: pet.name)
-                PetData(title: "Espécie", value: pet.specie)
+                PetData(title: "Espécie", value: pet.specie.rawValue)
                 PetData(title: "Nascimento", value: petDetailViewModel.formattedBirthDate(date: pet.birthDate))
                 PetData(title: "Raça", value: pet.breed)
                 PetData(title: "Raça", value: "\(String(format: "%.1f", pet.weight)) kg")
@@ -49,6 +50,6 @@ struct PetDetailView: View {
 
 struct PetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDetailView(petDetailViewModel: PetDetailViewModel(), pet: Pet(image:"Cat", name: "Lua", gender: "Fêmea", specie: "Gato", birthDate: Date(), breed: "SRD",  weight: 8.5, isNeutered: true))
+        PetDetailView(petDetailViewModel: PetDetailViewModel(), pet: Pet())
     }
 }
