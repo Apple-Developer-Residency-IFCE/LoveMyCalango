@@ -48,14 +48,13 @@ struct WeightRowFlow: View {
 struct WeightPicker: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
-    @Binding var weightKg: Double
-    @Binding var weightG: Double
  
     var body: some View {
         HStack(alignment: .center) {
-            Picker(selection: $weightKg, label: Text("")) {
+            Picker(selection: $viewModel.weightKG, label: Text("")) {
                 ForEach(0..<4000) { kg in
-                    Text("\(kg)").tag(kg)
+                    Text("\(kg)")
+                        .tag(kg)
                 }
             }
             .pickerStyle(WheelPickerStyle())
@@ -66,9 +65,10 @@ struct WeightPicker: View {
                 .font(.custom(Font.Regular, size: 20))
                 .background()
             
-            Picker(selection: $weightG, label: Text("")) {
+            Picker(selection: $viewModel.weightG, label: Text("")) {
                 ForEach(0..<200) { g in
-                    Text("\(g % 10)").tag(g % 10)
+                    Text("\(g)")
+                        .tag(g)
                 }
             }
             .pickerStyle(WheelPickerStyle())
@@ -79,10 +79,10 @@ struct WeightPicker: View {
                 .font(.custom(Font.Regular, size: 20))
         }
         .padding(.leading, 0)
-        .onChange(of: weightKg) { _ in
+        .onChange(of: viewModel.weightKG) { _ in
             viewModel.updateFormattedWeight()
         }
-        .onChange(of: weightG) { _ in
+        .onChange(of: viewModel.weightG) { _ in
             viewModel.updateFormattedWeight()
         }
     }

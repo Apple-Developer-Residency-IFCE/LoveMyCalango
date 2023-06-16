@@ -29,7 +29,7 @@ enum TypeFormRow: CaseIterable, Identifiable {
         case .birth:
             return "Nascimento"
         case .weight:
-            return "Peso"
+            return ""
         case .castrated:
             return "Castrado(a)?"
         case .none:

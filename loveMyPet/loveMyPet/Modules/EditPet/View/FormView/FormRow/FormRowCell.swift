@@ -17,7 +17,7 @@ struct FormRowCell: View {
     
     var body: some View {
         HStack {
-            Text(type == .weight ? "" : type.title)
+            Text(type.title)
                 .foregroundColor(Color("Black-15181D"))
                 .font(.custom(Font.Regular, size: 16))
             switch type {
@@ -32,7 +32,7 @@ struct FormRowCell: View {
                     .font(.custom(Font.Regular, size: 16))
                     .datePickerStyle(.compact)
             case .weight:
-                WeightPicker(weightKg: $viewModel.weightKG, weightG: $viewModel.weightG)
+                WeightPicker()
                 .frame(height: 100)
             case .castrated:
                 CastradPicker()

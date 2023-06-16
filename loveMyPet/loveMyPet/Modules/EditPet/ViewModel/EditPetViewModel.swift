@@ -26,8 +26,9 @@ final class EditPetViewModel: ObservableObject {
     }
   
     @Published var weight: String = ""
-    @Published var weightKG: Double = 0
-    @Published var weightG: Double = 0
+    @Published var weightKG: Int = 0
+    @Published var weightG: Int = 0
+    
     @Published var isAddPetFlow: Bool = true
     
     @Published var addBtnIsEnable: Bool = false
@@ -36,13 +37,13 @@ final class EditPetViewModel: ObservableObject {
         self.selectedPet = selectedPet
         self.isAddPetFlow = false
         updateFormattedWeight()
-        (weightKG, weightG) = getWeith()
+        (weightKG, weightG) = getWeigth()
     }
     
     init() {
         isAddPetFlow = true
         updateFormattedWeight()
-        (weightKG, weightG) = getWeith()
+        (weightKG, weightG) = getWeigth()
     }
     
     var formattedWeight: String {
@@ -54,10 +55,18 @@ final class EditPetViewModel: ObservableObject {
         let g = (weightG != 0) ? ",\(weightG) kg" : "kg"
         weight = kg + g
         if isAddPetFlow {
-            newPet.weight = weightKG + weightG
+            newPet.weight = Double(weightKG) + Double(weightG % 10)
         } else {
-            selectedPet.weight = weightKG + weightG
+            selectedPet.weight = Double(weightKG) + Double(weightG % 10)
         }
+    }
+    
+    func getWeigth() -> (kg: Int, g: Int) {
+        
+        let newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
+        let newg = isAddPetFlow ? (newPet.weight - newKG) : (selectedPet.weight - newKG)
+        
+        return (Int(newKG), Int(newg))
     }
     
     func addPet() {
@@ -74,14 +83,5 @@ final class EditPetViewModel: ObservableObject {
                 pets.remove(at: index)
             }
         }
-        
-    }
-    
-    func getWeith() -> (kg: Double, g: Double) {
-        
-        let newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
-        let newg = isAddPetFlow ? (newPet.weight - newKG) : (selectedPet.weight - newKG)
-        
-        return (newKG, newg)
     }
 }
