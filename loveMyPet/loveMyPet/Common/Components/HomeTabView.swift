@@ -14,10 +14,10 @@ struct HomeTabView<Home: View, Config: View>: View {
     
     @Binding var selectedTab: TabContextView
     
-    init(selected: Binding<TabContextView>, homeView: () -> Home, configView: () -> Config) {
+    init(selectedTab: Binding<TabContextView>, homeView: () -> Home, configView: () -> Config) {
         self.homeView = homeView()
         self.configView = configView()
-        self._selectedTab = selected
+        self._selectedTab = selectedTab
     }
     
     var body: some View {
@@ -43,12 +43,16 @@ struct HomeTabView<Home: View, Config: View>: View {
                 }
                 .tag(TabContextView.config)
         }
+        .onChange(of: selectedTab) { newValue in
+            print(newValue)
+        }
     }
 }
 
 struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTabView(selected: .constant(.pets)) {
+        
+        HomeTabView(selectedTab: .constant(.pets)) {
             HomeView()
         } configView: {
             Text(TabContextView.config.rawValue)

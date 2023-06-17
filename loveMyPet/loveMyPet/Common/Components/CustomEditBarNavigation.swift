@@ -1,39 +1,37 @@
 //
-//  HomeModifier.swift
+//  CustomEditBarNavigation.swift
 //  loveMyPet
 //
-//  Created by userext on 26/05/23.
+//  Created by Ravi on 16/06/23.
 //
 
 import SwiftUI
 
-struct CustomHomeNavigation<Home: View, Edit: View>: View {
+struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
-    @ViewBuilder let homeView: Home
+    @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
-    @Binding private var selectedTab: TabContextView
     @State private var showingPopover = false
+    private var selectedPet: Pet
     
-    init(selectedTab: Binding<TabContextView>?, homeView: () -> Home, editView: () -> Edit) {
-        self.homeView = homeView()
+    
+    init(selectedPet: Pet, detailView: () -> Detail, editView: () -> Edit) {
+        self.detailPet = detailView()
         self.editView = editView()
-        self._selectedTab = selectedTab ?? .constant(.pets)
+        self.selectedPet = selectedPet
     }
     
     var body: some View {
-        homeView
+        detailPet
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    if selectedTab == .pets {
-                        Button {
-//                            viewModel.createNewPet()
-                            showingPopover = true
-                        } label: {
-                            Text(Constants.Home.add)
-                                .foregroundColor(Color("MainColor"))
-                                .font(.custom(Font.SemiBold, size: 16))
-                        }
+                    Button {
+                        showingPopover = true
+                    } label: {
+                        Text(Constants.Home.edit)
+                            .foregroundColor(Color("MainColor"))
+                            .font(.custom(Font.SemiBold, size: 16))
                     }
                 }
             }
@@ -52,14 +50,14 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                             })
                             ToolbarItem(placement: .navigationBarTrailing, content: {
                                 Button {
-                                    viewModel.addPet()
+                                    viewModel.updatePet(pet: selectedPet)
                                     showingPopover = false
                                 } label: {
-                                    Text(Constants.Home.add)
+                                    Text(Constants.Home.save)
                                         .font(.custom(Font.SemiBold, size: 16))
                                 }
-                                .disabled(!viewModel.addBtnIsEnable)
-                                .tint(!viewModel.addBtnIsEnable ? Color.gray : Color("MainColor"))
+                                .disabled(true)
+                                .tint(Color("MainColor"))
                             })
                         }
                 }

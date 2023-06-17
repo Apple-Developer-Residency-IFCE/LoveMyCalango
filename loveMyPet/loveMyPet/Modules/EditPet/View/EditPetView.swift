@@ -12,6 +12,13 @@ struct EditPetView: View {
     @EnvironmentObject private var viewModel: EditPetViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
+    var pet: Pet?
+    
+    init(pet: Pet) {
+        self.pet = pet
+    }
+    
+    init(){}
     
     var body: some View {
         VStack {
@@ -38,6 +45,10 @@ struct EditPetView: View {
             .padding(.top, 16)
             FormView()
         }
+        .onAppear(perform: {
+            guard let pet else { return }
+            viewModel.selectedPetToEdit(pet: pet)
+        })
         .sheet(isPresented: $isShowingImagePicker) {
             ImagePicker(selectedImage: $selectedImage)
         }

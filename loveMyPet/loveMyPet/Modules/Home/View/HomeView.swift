@@ -20,7 +20,14 @@ struct HomeView: View {
                     ForEach(viewModel.pets) { pet in
                         VStack {
                             GridRow {
-                                NavigationLink(destination: PetDetailView(pet: pet)) {
+                                NavigationLink(
+                                    destination:
+                                        CustomEditBarNavigation(selectedPet: pet) {
+                                            PetDetailView(pet: pet)
+                                        } editView: {
+                                            EditPetView(pet: pet)
+                                        }
+                                ) {
                                     CardPet(item: pet)
                                 }
                             }

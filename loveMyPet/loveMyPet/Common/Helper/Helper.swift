@@ -9,6 +9,8 @@ import SwiftUI
 final class Helper {
     static let shared = Helper()
     
+    private(set) var selectedTab: TabContextView = .pets
+    
     func convertToColorScheme(customColorScheme: AppColorScheme) -> ColorScheme? {
             switch customColorScheme {
             case .light:
@@ -19,5 +21,8 @@ final class Helper {
                 return nil
             }
         }
-
+    
+    func setSelectedTab(_ context: TabContextView) {
+        selectedTab = context
+    }
 }

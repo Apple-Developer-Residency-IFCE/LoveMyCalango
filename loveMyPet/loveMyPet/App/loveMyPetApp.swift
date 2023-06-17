@@ -12,12 +12,13 @@ struct loveMyPetApp: App {
     
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @StateObject private var initialModel: EditPetViewModel = .init()
+    @State var selectedTab: TabContextView = .pets
     
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomeTabView(selected: $initialModel.selectedTab) {
-                    CustomHomeNavigation() {
+                HomeTabView(selectedTab: $selectedTab) {
+                    CustomHomeNavigation(selectedTab: $selectedTab) {
                         HomeView()
                     } editView: {
                         EditPetView()
@@ -28,8 +29,8 @@ struct loveMyPetApp: App {
                    ConfigView()
                 }
                 .environmentObject(initialModel)
-                .navigationTitle(initialModel.selectedTab == .pets ? TabContextView.pets.rawValue : "")
-                .navigationBarTitleDisplayMode(initialModel.selectedTab == .pets ? .inline : .large)
+                .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+                .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
                 .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
         }

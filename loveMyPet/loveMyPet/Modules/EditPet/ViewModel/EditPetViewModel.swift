@@ -77,6 +77,14 @@ final class EditPetViewModel: ObservableObject {
         newPet = Pet()
     }
     
+    func selectedPetToEdit(pet: Pet) {
+        selectedPet = pet
+    }
+    
+    func updatePet(pet: Pet) {
+        print("Pet saved:\n \(dump(pet))")
+    }
+    
     func removePet() {
         pets.enumerated().forEach { (index, pet) in
             if pet == selectedPet {

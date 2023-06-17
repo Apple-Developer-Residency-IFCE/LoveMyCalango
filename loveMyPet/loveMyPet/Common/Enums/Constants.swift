@@ -19,6 +19,8 @@ enum Constants {
         static let add = "Adicionar"
         static let changePictore = "Trocar foto"
         static let deletePet = "Excluir Cadastro"
+        static let save = "Salvar"
+        static let edit = "Editar"
         
         enum Placeholder {
             static let petName = "Nome do pet"
