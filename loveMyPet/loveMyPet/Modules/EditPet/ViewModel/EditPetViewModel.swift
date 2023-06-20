@@ -26,8 +26,17 @@ final class EditPetViewModel: ObservableObject {
     }
   
     @Published var weight: String = ""
-    @Published var weightKG: Int = 0
-    @Published var weightG: Int = 0
+    @Published var weightKG: Int = 0 {
+        didSet {
+            updateFormattedWeight()
+        }
+    }
+    
+    @Published var weightG: Int = 0 {
+        didSet {
+            updateFormattedWeight()
+        }
+    }
     
     @Published var isAddPetFlow: Bool = true
     
@@ -52,7 +61,7 @@ final class EditPetViewModel: ObservableObject {
     
     func updateFormattedWeight() {
         let kg = (weightKG != 0) ? "\(weightKG)" : ""
-        let g = (weightG != 0) ? ",\(weightG) kg" : "kg"
+        let g = (weightG != 0) ? "\(weightKG != 0 ? "," : "0,")\(weightG) kg" : "kg"
         weight = kg + g
         if isAddPetFlow {
             newPet.weight = Double(weightKG) + Double(weightG % 10)

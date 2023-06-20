@@ -14,30 +14,35 @@ struct WeightRowFlow: View {
     
     var body: some View {
         Section {
-            VStack {
-                HStack {
-                    Text("Peso")
-                        .foregroundColor(Color("Black-15181D"))
-                        .font(.custom(Font.Regular, size: 16))
-                    Spacer()
-                    Text(viewModel.formattedWeight)
-                        .font(.custom(Font.Regular, size: 13))
-                        .padding(3)
-                        .padding(.horizontal, 4)
-                        .background(RoundedRectangle(cornerRadius: 4)
-                            .fill(Color("Gray-DBDBDA")))
-                }
-                .onTapGesture(perform: {
-                    if showWeightPicker {
-                        showWeightPicker.toggle()
-                    } else {
-                        withAnimation(.ripple()) {
-                            showWeightPicker.toggle()
-                        }
-                    }
-                })
+            ZStack {
                 if showWeightPicker {
                     FormRowCell(type: .weight)
+                        .padding(.top, 12)
+                        .offset(y: 20)
+                }
+                VStack {
+                    HStack {
+                        Text("Peso")
+                            .foregroundColor(Color("Black-15181D"))
+                            .font(.custom(Font.Regular, size: 16))
+                        Spacer()
+                        Text(viewModel.formattedWeight)
+                            .font(.custom(Font.Regular, size: 13))
+                            .padding(3)
+                            .padding(.horizontal, 4)
+                            .background(RoundedRectangle(cornerRadius: 4)
+                                .fill(Color("Gray-DBDBDA")))
+                    }
+                    .onTapGesture(perform: {
+                        if showWeightPicker {
+                            showWeightPicker.toggle()
+                        } else {
+                            withAnimation(.ripple()) {
+                                showWeightPicker.toggle()
+                            }
+                        }
+                    })
+                    Spacer()
                 }
             }
             .listRowBackground(Color("White-F4F3FA"))
@@ -50,40 +55,37 @@ struct WeightPicker: View {
     @EnvironmentObject private var viewModel: EditPetViewModel
  
     var body: some View {
-        HStack(alignment: .center) {
-            Picker(selection: $viewModel.weightKG, label: Text("")) {
-                ForEach(0..<4000) { kg in
-                    Text("\(kg)")
-                        .tag(kg)
+        GeometryReader { geometry in
+            HStack(spacing: 0) {
+                Group {
+                    Picker(selection: $viewModel.weightKG, label: Text("")) {
+                        ForEach(0..<4001) {
+                            Text("\($0)")
+                        }
+                    }
+                    Picker(selection: $viewModel.weightG, label: Text("")) {
+                        ForEach(0..<200) {
+                            Text("\($0 % 10)")
+                                .tag($0 % 10)
+                        }
+                    }
+                    .overlay {
+                        Text("kg")
+                            .foregroundColor(Color("Black-15181D"))
+                            .font(.custom(Font.Regular, size: 20))
+                            .offset(x: 50)
+                    }
                 }
+                .frame(width: geometry.size.width / 2 + 30)
+                .labelsHidden()
+                .fixedSize(horizontal: true, vertical: true)
+                .frame(width: geometry.size.width / 2 , height: 120)
+                .clipped()
+                .pickerStyle(.wheel)
             }
-            .pickerStyle(WheelPickerStyle())
-            .frame(width: 80)
-            
-            Text(",")
-                .foregroundColor(Color("Black-15181D"))
-                .font(.custom(Font.Regular, size: 20))
-                .background()
-            
-            Picker(selection: $viewModel.weightG, label: Text("")) {
-                ForEach(0..<200) { g in
-                    Text("\(g)")
-                        .tag(g)
-                }
-            }
-            .pickerStyle(WheelPickerStyle())
-            .frame(width: 80)
-            
-            Text("kg")
-                .foregroundColor(Color("Black-15181D"))
-                .font(.custom(Font.Regular, size: 20))
+            .overlay(Text(","))
         }
-        .padding(.leading, 0)
-        .onChange(of: viewModel.weightKG) { _ in
-            viewModel.updateFormattedWeight()
-        }
-        .onChange(of: viewModel.weightG) { _ in
-            viewModel.updateFormattedWeight()
-        }
+        .frame(height: 140)
+        .mask(Rectangle())
     }
 }

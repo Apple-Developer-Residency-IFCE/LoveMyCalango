@@ -20,7 +20,7 @@ struct loveMyPetApp: App {
                 HomeTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation(selectedTab: $selectedTab) {
                         HomeView()
-                    } editView: {
+                    } addView: {
                         EditPetView()
                             .navigationTitle(Constants.Home.addPetTitle)
                             .navigationBarTitleDisplayMode(.inline)
