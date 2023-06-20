@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct CustomHomeNavigation<Home: View, Edit: View>: View {
+struct CustomHomeNavigation<Home: View, Add: View>: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
     @ViewBuilder let homeView: Home
-    @ViewBuilder let editView: Edit
+    @ViewBuilder let addView: Add
     @Binding private var selectedTab: TabContextView
     @State private var showingPopover = false
     
-    init(selectedTab: Binding<TabContextView>?, homeView: () -> Home, editView: () -> Edit) {
+    init(selectedTab: Binding<TabContextView>?, homeView: () -> Home, addView: () -> Add) {
         self.homeView = homeView()
-        self.editView = editView()
+        self.addView = addView()
         self._selectedTab = selectedTab ?? .constant(.pets)
     }
     
@@ -27,7 +27,6 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     if selectedTab == .pets {
                         Button {
-//                            viewModel.createNewPet()
                             showingPopover = true
                         } label: {
                             Text(Constants.Home.add)
@@ -39,7 +38,7 @@ struct CustomHomeNavigation<Home: View, Edit: View>: View {
             }
             .popover(isPresented: $showingPopover) {
                 NavigationView {
-                    editView
+                    addView
                         .toolbar{
                             ToolbarItem(placement: .navigationBarLeading, content: {
                                 Button {

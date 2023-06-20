@@ -69,6 +69,27 @@ final class EditPetViewModel: ObservableObject {
         return (Int(newKG), Int(newg))
     }
     
+    func changeNamePet(newName: String) {
+        addBtnIsEnable = true
+        if isAddPetFlow {
+            newPet.name = newName
+        } else {
+            selectedPet.name = newName
+        }
+    }
+    
+    func changePetImage(data: Data) {
+        if isAddPetFlow {
+            newPet.image = data
+        } else {
+            selectedPet.image = data
+        }
+    }
+    
+    func disableAddBtn() {
+        addBtnIsEnable = false
+    }
+    
     func addPet() {
         pets.append(newPet)
     }

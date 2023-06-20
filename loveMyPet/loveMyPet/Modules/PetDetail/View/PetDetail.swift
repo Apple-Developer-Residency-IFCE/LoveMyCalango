@@ -15,7 +15,7 @@ struct PetDetailView: View {
     
     var body: some View {
         VStack{
-            Image(pet.image)
+            Image(uiImage: UIImage(data: pet.image) ?? UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 194)

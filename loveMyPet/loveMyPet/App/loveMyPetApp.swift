@@ -11,7 +11,7 @@ import SwiftUI
 struct loveMyPetApp: App {
     
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
-    @StateObject private var initialModel: EditPetViewModel = .init()
+    @StateObject var initialModel: EditPetViewModel = .init()
     @State var selectedTab: TabContextView = .pets
     
     var body: some Scene {

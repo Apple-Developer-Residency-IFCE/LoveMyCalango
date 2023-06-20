@@ -9,14 +9,13 @@ import SwiftUI
 
 struct CardPet: View{
 
-//    @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @Environment(\.colorScheme) var colorScheme
     
     let item: Pet
 
     var body: some View {
         HStack() {
-            Image(item.image)
+            Image(uiImage: UIImage(data: item.image) ?? UIImage())
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())

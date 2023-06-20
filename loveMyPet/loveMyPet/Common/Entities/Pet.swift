@@ -14,7 +14,7 @@ class Pet: Identifiable, Equatable {
     var name: String = ""
     var specie: Specie = .none
     var breed: String = "Não Escolhido"
-    var image: String = "AvatarCat2"
+    var image: Data = Data()
     var gender: Gender = .none
     var birthDate: Date = Date()
     var weight: Double = 0

@@ -15,7 +15,6 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     @State private var showingPopover = false
     private var selectedPet: Pet
     
-    
     init(selectedPet: Pet, detailView: () -> Detail, editView: () -> Edit) {
         self.detailPet = detailView()
         self.editView = editView()

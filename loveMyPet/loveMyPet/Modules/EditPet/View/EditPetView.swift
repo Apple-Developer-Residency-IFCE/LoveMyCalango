@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditPetView: View {
     
     @EnvironmentObject private var viewModel: EditPetViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
+    
+    @StateObject private var imagePicker = ImagePicker()
     var pet: Pet?
     
     init(pet: Pet) {
@@ -22,10 +25,10 @@ struct EditPetView: View {
     
     var body: some View {
         VStack {
-            VStack {
+            PhotosPicker(selection: $imagePicker.imageSelection) {
                 VStack {
-                    if let image = selectedImage {
-                        Image(uiImage: image)
+                    if let image = imagePicker.image {
+                        Image(uiImage: (UIImage(data: image) ?? UIImage()))
                             .resizable()
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
@@ -35,13 +38,15 @@ struct EditPetView: View {
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
                     }
+                    
+                    Text(Constants.Home.changePictore)
+                        .font(.custom(Font.Regular, size: 13))
+                        .foregroundColor(.black)
                 }
-                .onTapGesture {
-                    isShowingImagePicker = true
-                }
-                Text(Constants.Home.changePictore)
-                    .font(.custom(Font.Regular, size: 13))
             }
+            .onChange(of: imagePicker.image ?? Data(), perform: { newValue in
+                viewModel.changePetImage(data: newValue)
+            })
             .padding(.top, 16)
             FormView()
         }
@@ -49,8 +54,6 @@ struct EditPetView: View {
             guard let pet else { return }
             viewModel.selectedPetToEdit(pet: pet)
         })
-        .sheet(isPresented: $isShowingImagePicker) {
-            ImagePicker(selectedImage: $selectedImage)
-        }
     }
 }
+

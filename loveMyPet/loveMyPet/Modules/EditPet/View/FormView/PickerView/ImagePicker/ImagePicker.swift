@@ -6,22 +6,32 @@
 //
 
 import SwiftUI
+import PhotosUI
 
-struct ImagePicker: UIViewControllerRepresentable {
+@MainActor
+final class ImagePicker: ObservableObject {
     
-    @Binding var selectedImage: UIImage?
-
-    func makeUIViewController(context: Context) -> UIImagePickerController {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = context.coordinator
-        return imagePicker
+    @Published var image: Data?
+    
+    @Published var imageSelection: PhotosPickerItem? {
+        didSet {
+            if let imageSelection {
+                Task {
+                    try await loadTransferable(from: imageSelection)
+                }
+            }
+        }
     }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
-
-    func makeCoordinator() -> ImagePickerCoordinator {
-        ImagePickerCoordinator(self)
+    
+    func loadTransferable(from imageSelection: PhotosPickerItem?) async throws {
+        
+        do {
+            if let data = try await imageSelection?.loadTransferable(type: Data.self) {
+                self.image = data
+            }
+        } catch {
+            print(error.localizedDescription)
+            image = nil
+        }
     }
 }
-
