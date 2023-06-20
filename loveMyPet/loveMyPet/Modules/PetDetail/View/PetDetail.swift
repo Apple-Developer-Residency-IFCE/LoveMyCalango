@@ -11,7 +11,7 @@ struct PetDetailView: View {
     
     @StateObject private var petDetailViewModel: PetDetailViewModel = .init()
     
-    var pet: Pet
+    @Binding var pet: Pet
     
     var body: some View {
         VStack{
@@ -52,6 +52,6 @@ struct PetDetailView: View {
 
 struct PetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDetailView(pet: Pet())
+        PetDetailView(pet: .constant(Pet()))
     }
 }

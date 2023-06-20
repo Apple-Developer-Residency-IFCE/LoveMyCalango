@@ -53,7 +53,7 @@ struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
         
         HomeTabView(selectedTab: .constant(.pets)) {
-            HomeView()
+            HomeView(pets: [])
         } configView: {
             Text(TabContextView.config.rawValue)
         }

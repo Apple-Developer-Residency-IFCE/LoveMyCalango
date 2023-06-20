@@ -67,6 +67,7 @@
 		DF5C023D2A22C86900E9898E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C023C2A22C86900E9898E /* Constants.swift */; };
 		DF5C02402A22DBFD00E9898E /* EditPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C023F2A22DBFD00E9898E /* EditPetView.swift */; };
 		DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5C02412A22DC0E00E9898E /* EditPetViewModel.swift */; };
+		DF64A5282A4236EF00A3138D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A5272A4236EF00A3138D /* HomeViewModel.swift */; };
 		DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF912F6E2A22DFF000F15799 /* FormView.swift */; };
 		DFAC1C402A2AE72400966782 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C3F2A2AE72400966782 /* Animation.swift */; };
 		DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C422A2AF26200966782 /* RemovePetButton.swift */; };
@@ -138,6 +139,7 @@
 		DF5C023C2A22C86900E9898E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DF5C023F2A22DBFD00E9898E /* EditPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetView.swift; sourceTree = "<group>"; };
 		DF5C02412A22DC0E00E9898E /* EditPetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetViewModel.swift; sourceTree = "<group>"; };
+		DF64A5272A4236EF00A3138D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF912F6E2A22DFF000F15799 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		DFAC1C3F2A2AE72400966782 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		DFAC1C422A2AF26200966782 /* RemovePetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePetButton.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		641AEB232A1ED01C00F2CE34 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DF64A5262A4236DF00A3138D /* ViewModel */,
 				641AEB262A1ED03500F2CE34 /* View */,
 			);
 			path = Home;
@@ -415,12 +418,12 @@
 		DF36E1C32A239BCB00CEE0A9 /* PickerView */ = {
 			isa = PBXGroup;
 			children = (
+				414D59ED2A3D2E130058D0E7 /* ImagePicker */,
 				DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */,
 				DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */,
 				DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */,
 				DF36E1CD2A239F1B00CEE0A9 /* CastradPicker.swift */,
 				DF36E1D72A23A7DE00CEE0A9 /* WeightPicker.swift */,
-				414D59ED2A3D2E130058D0E7 /* ImagePicker */,
 			);
 			path = PickerView;
 			sourceTree = "<group>";
@@ -491,6 +494,14 @@
 				DF36E1C22A239BB300CEE0A9 /* FormView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DF64A5262A4236DF00A3138D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DF64A5272A4236EF00A3138D /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		DFAC1C412A2AF24900966782 /* RemovePetButton */ = {
@@ -595,6 +606,7 @@
 				641AEB2D2A1ED8C500F2CE34 /* Entities.swift in Sources */,
 				DF36E1D62A23A74800CEE0A9 /* TypeFormRow.swift in Sources */,
 				DF36E1D82A23A7DE00CEE0A9 /* WeightPicker.swift in Sources */,
+				DF64A5282A4236EF00A3138D /* HomeViewModel.swift in Sources */,
 				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,

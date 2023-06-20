@@ -14,7 +14,13 @@ struct FormView: View {
     @State private var petName: String = ""
     
     @State private var showWeightPicker = false
-        
+    
+    private var isAddPetFlow: Bool
+    
+    init(isAddPetFlow: Bool) {
+        self.isAddPetFlow = isAddPetFlow
+    }
+    
     var body: some View {
         VStack {
             Form {
@@ -36,8 +42,8 @@ struct FormView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            if !viewModel.isAddPetFlow {
-                RemovePetButton()
+            if !isAddPetFlow {
+                RemovePetButton(isAddPetFlow: isAddPetFlow)
                     .padding(.bottom, 8)
             }
         }

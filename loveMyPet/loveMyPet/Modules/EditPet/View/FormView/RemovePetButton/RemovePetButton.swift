@@ -12,9 +12,15 @@ struct RemovePetButton: View {
     @EnvironmentObject private var viewModel: EditPetViewModel
     @State private var showAlert: Bool = false
     
+    private var isAddPetFlow: Bool = true
+    
+    init(isAddPetFlow: Bool) {
+        self.isAddPetFlow = isAddPetFlow
+    }
+    
     var body: some View {
         
-        if !viewModel.isAddPetFlow {
+        if !isAddPetFlow {
             Button(action: {
                 showAlert.toggle()
             }) {

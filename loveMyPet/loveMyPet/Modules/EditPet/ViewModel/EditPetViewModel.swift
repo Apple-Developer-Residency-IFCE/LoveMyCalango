@@ -11,7 +11,7 @@ final class EditPetViewModel: ObservableObject {
     
     @Published var selectedTab: TabContextView = .pets
     
-    @Published private(set) var pets: [Pet] = []
+    @Published var pets: [Pet] = []
     
     @Published var newPet: Pet = .init() {
         didSet {

@@ -11,7 +11,7 @@ struct CardPet: View{
 
     @Environment(\.colorScheme) var colorScheme
     
-    let item: Pet
+    @Binding var item: Pet
 
     var body: some View {
         HStack() {
@@ -53,6 +53,6 @@ struct CardPet: View{
 
 struct CardPet_Previews: PreviewProvider {
     static var previews: some View {
-        CardPet(item: .init())
+        CardPet(item: .constant(Pet()))
     }
 }

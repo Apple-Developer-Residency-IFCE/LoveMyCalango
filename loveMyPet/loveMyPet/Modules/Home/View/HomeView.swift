@@ -9,7 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @StateObject private var viewModel: HomeViewModel
+    
+    @Binding var pets: [Pet]
+    
+    init(pets: Binding<[Pet]>) {
+        self._pets = pets
+        viewModel = .init()
+        viewModel.populatePets(pets)
+    }
     
     var body: some View {
         ScrollView(.vertical) {
@@ -17,7 +25,7 @@ struct HomeView: View {
                 EmptyHome()
             } else {
                 Grid {
-                    ForEach(viewModel.pets) { pet in
+                    ForEach($viewModel.pets) { pet in
                         VStack {
                             GridRow {
                                 NavigationLink(
@@ -32,7 +40,6 @@ struct HomeView: View {
                                 }
                             }
                         }
-                        
                     }
                 }
                 .padding(.top, 48)
@@ -58,10 +65,3 @@ struct EmptyHome: View {
         .padding(.top, 32)
     }
 }
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-    }
-}
-

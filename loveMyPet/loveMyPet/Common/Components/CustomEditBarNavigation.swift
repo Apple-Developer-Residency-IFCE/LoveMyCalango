@@ -13,12 +13,12 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
-    private var selectedPet: Pet
+    @Binding var selectedPet: Pet
     
-    init(selectedPet: Pet, detailView: () -> Detail, editView: () -> Edit) {
+    init(selectedPet: Binding<Pet>, detailView: () -> Detail, editView: () -> Edit) {
         self.detailPet = detailView()
         self.editView = editView()
-        self.selectedPet = selectedPet
+        self._selectedPet = selectedPet
     }
     
     var body: some View {

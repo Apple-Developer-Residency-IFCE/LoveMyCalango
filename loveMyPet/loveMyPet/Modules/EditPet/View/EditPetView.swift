@@ -15,13 +15,17 @@ struct EditPetView: View {
     @State private var selectedImage: UIImage?
     
     @StateObject private var imagePicker = ImagePicker()
-    var pet: Pet?
+    @Binding var pet: Pet
+    private var isAddPetFlow: Bool = true
     
-    init(pet: Pet) {
-        self.pet = pet
+    init(pet: Binding<Pet>) {
+        self._pet = pet
+        self.isAddPetFlow = false
     }
     
-    init(){}
+    init(){
+        self._pet = .constant(Pet())
+    }
     
     var body: some View {
         VStack {
@@ -48,10 +52,9 @@ struct EditPetView: View {
                 viewModel.changePetImage(data: newValue)
             })
             .padding(.top, 16)
-            FormView()
+            FormView(isAddPetFlow: isAddPetFlow)
         }
         .onAppear(perform: {
-            guard let pet else { return }
             viewModel.selectedPetToEdit(pet: pet)
         })
     }
