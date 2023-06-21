@@ -19,7 +19,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
         self.detailPet = detailView()
         self.editView = editView()
         self.customFunc = customFunc
-        self._selectedPet = selectedPet
+        self.selectedPet = selectedPet
     }
     
     var body: some View {

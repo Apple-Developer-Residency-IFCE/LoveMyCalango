@@ -18,6 +18,7 @@ struct HomeView: View {
                 EmptyHome()
             } else {
                 Grid {
+                    #error("Problema por causa dos bindings")
                     ForEach(viewModel.pets) { pet in
                         VStack {
                             GridRow {
