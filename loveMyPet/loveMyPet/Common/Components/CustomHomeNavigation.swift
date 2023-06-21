@@ -16,7 +16,6 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
     @State private var showingPopover = false
     
     var body: some View {
-        NavigationView {
             homeView
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -56,6 +55,5 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                             }
                     }
                 }
-        }
     }
 }

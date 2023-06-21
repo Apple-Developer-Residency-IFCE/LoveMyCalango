@@ -15,6 +15,7 @@ struct loveMyPetApp: App {
     
     var body: some Scene {
         WindowGroup {
+            NavigationView{
                 CustomTabView(homeView: {
                     CustomHomeNavigation {
                         HomeView()
@@ -30,10 +31,11 @@ struct loveMyPetApp: App {
 //                    }
                 }, configView: {
                     ConfigView()
-                        .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-                        .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
-                        .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
-                }, selectedTab: $selectedTab)
+                }, selectedTab: $selectedTab)                        .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+                    .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
+                    .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
+            }
+                
         }
     }
 }
