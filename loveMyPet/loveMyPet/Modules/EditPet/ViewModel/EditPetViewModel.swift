@@ -100,12 +100,11 @@ final class EditPetViewModel: ObservableObject {
     }
     
     func addPet() {
+//        var pet: Pet = newPet
+        newPet.id = UUID()
         pets.append(newPet)
     }
     
-    func createNewPet() {
-        newPet = Pet()
-    }
     
     func selectedPetToEdit(pet: Pet) {
         selectedPet = pet

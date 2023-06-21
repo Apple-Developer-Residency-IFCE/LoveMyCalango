@@ -41,7 +41,7 @@ struct EditPetView: View {
                     
                     Text(Constants.Home.changePictore)
                         .font(.custom(Font.Regular, size: 13))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(CustomColor.FontColor))
                 }
             }
             .onChange(of: imagePicker.image ?? Data(), perform: { newValue in
@@ -50,6 +50,7 @@ struct EditPetView: View {
             .padding(.top, 16)
             FormView()
         }
+        .background(Color(CustomColor.BackGroundColor))
         .onAppear(perform: {
             guard let pet else { return }
             viewModel.selectedPetToEdit(pet: pet)

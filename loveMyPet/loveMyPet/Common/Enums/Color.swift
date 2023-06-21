@@ -19,4 +19,7 @@ enum CustomColor {
     static let HelperError = "HelperError"
     static let HelperSuccess = "HelperSuccess"
     static let HelperWarning = "HelperWarning"
+    static let PickerRowBackground = "PickerRowBackground"
+    static let WeightValueBackgroun = "WeightValueBackgroun"
+    static let TabViewBackground = "TabViewBackground"
 }

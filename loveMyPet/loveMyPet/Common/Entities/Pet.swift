@@ -6,9 +6,7 @@
 //
 
 import SwiftUI
-class Pet: Identifiable, Equatable {
-
-    static let mock = Pet()
+struct Pet: Identifiable, Equatable {
     
     var id: UUID = UUID()
     var name: String = ""

@@ -32,12 +32,12 @@ struct HomeView: View {
                                 }
                             }
                         }
-                        
                     }
                 }
                 .padding(.top, 48)
             }
         }
+        .background(Color(CustomColor.BackGroundColor))
     }
 }
 
@@ -61,7 +61,7 @@ struct EmptyHome: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(EditPetViewModel())
     }
 }
 

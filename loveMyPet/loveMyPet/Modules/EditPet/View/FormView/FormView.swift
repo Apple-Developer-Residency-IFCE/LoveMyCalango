@@ -20,9 +20,9 @@ struct FormView: View {
             Form {
                 Section {
                     TextField(Constants.Home.Placeholder.petName, text: $petName)
-                        .foregroundColor(Color("Gray-8C8C8B"))
+                        .foregroundColor(Color(CustomColor.FontColor))
                         .font(.custom(Font.Regular, size: 16))
-                        .listRowBackground(Color("White-F4F3FA"))
+                        .listRowBackground(Color(CustomColor.PickerRowBackground))
                         .onChange(of: petName) { newValue in
                             viewModel.changeNamePet(newName: newValue)
                         }

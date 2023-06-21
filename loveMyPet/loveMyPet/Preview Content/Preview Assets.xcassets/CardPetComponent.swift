@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-struct CardPet: View{
-
-    @Environment(\.colorScheme) var colorScheme
-    
+struct CardPet: View{    
     let item: Pet
 
     var body: some View {
@@ -33,7 +30,7 @@ struct CardPet: View{
             .padding(.leading, 16)
             
             Spacer()
-            Image(systemName: Assets.Icon.arrow)
+            Image(Assets.Icon.arrow)
                 .foregroundColor(.black.opacity(0.61))
                 .padding(.trailing, 16)
 
