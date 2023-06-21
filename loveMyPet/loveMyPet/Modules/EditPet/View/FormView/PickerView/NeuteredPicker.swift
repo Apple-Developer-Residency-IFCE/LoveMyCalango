@@ -8,9 +8,9 @@
 import SwiftUI
 import CoreData
 
-struct CastradPicker: View {
+struct NeuteredPicker: View {
     
-    @State var viewModel: EditPetViewModel
+    @StateObject var viewModel: EditPetViewModel
     
     var body: some View {
         Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.isNeutered : $viewModel.selectedPet.isNeutered) {

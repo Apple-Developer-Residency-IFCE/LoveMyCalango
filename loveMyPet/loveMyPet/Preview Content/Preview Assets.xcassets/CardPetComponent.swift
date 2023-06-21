@@ -9,17 +9,17 @@ import SwiftUI
 
 struct CardPet: View{
     
-    @Binding var item: Pet
+    @State var item: Pet
 
     var body: some View {
         HStack() {
-            Image(uiImage: UIImage(data: item.image ?? Data()) ?? UIImage())
+            Image(uiImage: UIImage(data: item.image ?? Data()) ?? UIImage(systemName: "photo")!)
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())
 
             VStack(alignment: .leading) {
-                Text(item.name ?? "")
+                Text(item.name)
                     .font(.custom(Font.SemiBold, size: 17))
                     .padding(.bottom, 1)
                     .foregroundColor(Color(CustomColor.FontColor))
@@ -49,8 +49,8 @@ struct CardPet: View{
     }
 }
 
-struct CardPet_Previews: PreviewProvider {
-    static var previews: some View {
-        CardPet(item: .constant(Pet()))
-    }
-}
+//struct CardPet_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardPet(item: .constant(Pet()))
+//    }
+//}

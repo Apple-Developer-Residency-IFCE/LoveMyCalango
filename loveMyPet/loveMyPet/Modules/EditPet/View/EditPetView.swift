@@ -9,23 +9,19 @@ import SwiftUI
 import PhotosUI
 
 struct EditPetView: View {
-    
-    @State var viewModel: EditPetViewModel
-    @State private var isShowingImagePicker = false
-    @State private var selectedImage: UIImage?
-    
+
     @StateObject private var imagePicker = ImagePicker()
-    private var isAddPetFlow: Bool = true
-    @State var newPet: Pet = .init()
+    @State private var isShowingImagePicker = false
+    @State var isAddPetFlow: Bool = true
+    @ObservedObject var viewModel: EditPetViewModel
+    
+    init() {
+        self.viewModel = EditPetViewModel()
+    }
     
     init(viewModel: EditPetViewModel) {
         self.isAddPetFlow = false
         self.viewModel = viewModel
-    }
-    
-    init() {
-        self.newPet = Pet()
-        viewModel = .init()
     }
     
     var body: some View {
@@ -38,10 +34,17 @@ struct EditPetView: View {
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
                     } else {
-                        Image(Assets.Image.avatarCat2)
-                            .resizable()
-                            .frame(width: 64, height: 64)
-                            .clipShape(Circle())
+                        if(isAddPetFlow) {
+                            Image(Assets.Image.avatarCat2)
+                                .resizable()
+                                .frame(width: 64, height: 64)
+                                .clipShape(Circle())
+                        } else {
+                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image ?? Data()) ?? UIImage(systemName: "photo")!))
+                                .resizable()
+                                .frame(width: 64, height: 64)
+                                .clipShape(Circle())
+                        }
                     }
                     
                     Text(Constants.Home.changePictore)
@@ -53,13 +56,8 @@ struct EditPetView: View {
                 viewModel.changePetImage(data: newValue)
             })
             .padding(.top, 16)
-            FormView(isAddPetFlow: isAddPetFlow, viewModel: viewModel)
+            FormView(viewModel: viewModel, isAddPetFlow: isAddPetFlow)
         }
-        .onAppear(perform: {
-            if isAddPetFlow {
-                viewModel.createNewPet()
-            }
-        })
     }
 }
 

@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-final class HomeViewModel: ObservableObject {
+class HomeViewModel: ObservableObject {
     
-    @Published var pets: [Pet] = []
+    @Published var pets = [Pet]()
     
-    init() {
-        self.pets = CoreDataManager.shared.fetchAll()
+//    init() {
+//        self.pets = CoreDataManager.shared.fetchAll()
+//    }
+    
+    func fetchAllPets() {
+        pets = CoreDataManager.shared.fetchAll()
     }
 }

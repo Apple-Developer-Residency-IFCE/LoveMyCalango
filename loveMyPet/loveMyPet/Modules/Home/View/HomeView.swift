@@ -8,38 +8,39 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @StateObject private var viewModel: HomeViewModel = .init()
-    @StateObject private var editViewModel: EditPetViewModel = .init()
+    @StateObject var homeViewModel: HomeViewModel = HomeViewModel()
         
     var body: some View {
         ScrollView(.vertical) {
-            if viewModel.pets.isEmpty {
+            if homeViewModel.pets.isEmpty {
                 EmptyHome()
             } else {
                 Grid {
-                    #error("Problema por causa dos bindings")
-                    ForEach(viewModel.pets) { pet in
+                    ForEach(homeViewModel.pets) { pet in
                         VStack {
                             GridRow {
-                                NavigationLink(
-                                    destination:
-                                        CustomEditBarNavigation(selectedPet: pet, customFunc: {
-                                            editViewModel.updatePet()
-                                        }) {
-                                            PetDetailView(petDetailViewModel: PetDetailViewModel(pet: pet))
-                                        } editView: {
+                                    NavigationLink {
+                                        CustomEditBarNavigation(detailPet: {
+                                            PetDetailView(pet: pet)
+                                        }, editView: {
                                             EditPetView(viewModel: EditPetViewModel(selectedPet: pet))
-                                        }
-                                ) {
-                                    CardPet(item: pet)
-                                }
+                                                .navigationTitle(Constants.Home.editPetTitle)
+                                                .navigationBarTitleDisplayMode(.inline)
+                                        })
+//                                        {
+//                                            #AQUI VEM A FUNÇÃO DE EDITAR
+//                                        }
+                                    } label: {
+                                        CardPet(item: pet)
+                                    }
                             }
                         }
                     }
                 }
                 .padding(.top, 48)
             }
+        }.onAppear{
+            homeViewModel.fetchAllPets()
         }
     }
 }

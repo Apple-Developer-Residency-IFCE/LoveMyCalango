@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WeightRowFlow: View {
     
-    @State var viewModel: EditPetViewModel
+    @StateObject var viewModel: EditPetViewModel
     @State private var showWeightPicker = false
     
     var body: some View {
@@ -26,7 +26,7 @@ struct WeightRowFlow: View {
                             .foregroundColor(Color("Black-15181D"))
                             .font(.custom(Font.Regular, size: 16))
                         Spacer()
-                        Text(viewModel.formattedWeight ?? "")
+                        Text(viewModel.formattedWeight)
                             .font(.custom(Font.Regular, size: 13))
                             .padding(3)
                             .padding(.horizontal, 4)
@@ -52,7 +52,7 @@ struct WeightRowFlow: View {
 
 struct WeightPicker: View {
     
-    @State var viewModel: EditPetViewModel
+    @StateObject var viewModel: EditPetViewModel
  
     var body: some View {
         GeometryReader { geometry in

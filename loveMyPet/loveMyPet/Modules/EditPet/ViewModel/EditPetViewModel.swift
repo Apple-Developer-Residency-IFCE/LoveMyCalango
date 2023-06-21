@@ -6,24 +6,16 @@
 //
 
 import SwiftUI
+import CoreData
 
 final class EditPetViewModel: ObservableObject {
-    
-    @Published var selectedTab: TabContextView = .pets
         
-    @Published var newPet: NewPet = .init() {
-        didSet {
-            Helper.shared.isAddBtnEnable = !(newPet.name.isEmpty)
-        }
-    }
+    @Published var newPet: NewPet = .init()
     
-    @Published var selectedPet: Pet {
-        didSet {
-            Helper.shared.isAddBtnEnable = !(selectedPet.name?.isEmpty ?? true)
-        }
-    }
-  
+    @Published var selectedPet: Pet
+    
     @Published var weight: String = ""
+    
     @Published var weightKG: Int = 0 {
         didSet {
             updateFormattedWeight()
@@ -40,19 +32,44 @@ final class EditPetViewModel: ObservableObject {
     
     @Published var addBtnIsEnable: Bool = false
     
-    init(selectedPet: Pet) {
-        self.selectedPet = selectedPet
-        self.isAddPetFlow = false
+    init() {
+        selectedPet = Pet()
         updateFormattedWeight()
         (weightKG, weightG) = getWeigth()
     }
     
-    init() {
-        selectedPet = Pet()
-        isAddPetFlow = true
+    init(selectedPet: Pet) {
+        isAddPetFlow = false
+        self.selectedPet = selectedPet
         updateFormattedWeight()
-        createNewPet()
         (weightKG, weightG) = getWeigth()
+    }
+        
+    func disableAddBtn() {
+        addBtnIsEnable = false
+    }
+    
+//    func createNewPet() {
+//        newPet = NewPet()
+//    }
+    
+    //FORM CHANGE
+    
+    func changeNamePet(newName: String) {
+        if isAddPetFlow {
+            newPet.name = newName
+        } else {
+            selectedPet.name = newName
+        }
+        Helper.shared.isAddBtnEnable = true
+    }
+    
+    func changePetImage(data: Data) {
+        if isAddPetFlow {
+            newPet.image = data
+        } else {
+            selectedPet.image = data
+        }
     }
     
     var formattedWeight: String {
@@ -77,34 +94,12 @@ final class EditPetViewModel: ObservableObject {
         
         return (Int(newKG ), Int(newg))
     }
-    
-    func changeNamePet(newName: String) {
-        Helper.shared.isAddBtnEnable = true
-        if isAddPetFlow {
-            newPet.name = newName
-        } else {
-            selectedPet.name = newName
-        }
-    }
-    
-    func changePetImage(data: Data) {
-        if isAddPetFlow {
-            newPet.image = data
-        } else {
-            selectedPet.image = data
-        }
-    }
-    
-    func disableAddBtn() {
-        addBtnIsEnable = false
-    }
+        
+    //CRUD
     
     func addPet() {
         CoreDataManager.shared.create(pet: newPet)
-    }
-    
-    func createNewPet() {
-        newPet = NewPet()
+        _ = CoreDataManager.shared.fetchAll()
     }
     
     func updatePet() {

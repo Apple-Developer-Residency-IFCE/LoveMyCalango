@@ -9,12 +9,10 @@ import Foundation
 
 class PetDetailViewModel: ObservableObject {
     
-    @Published var pet: Pet
-    
-    init(pet: Pet) {
-        self.pet = pet
+    func formattedWeight (weight: Double) -> String {
+        String(format: "%.1f kg", weight)
     }
-        
+            
     func formattedBirthDate (date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short

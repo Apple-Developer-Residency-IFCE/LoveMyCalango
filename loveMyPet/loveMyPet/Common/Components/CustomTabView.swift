@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct HomeTabView<Home: View, Config: View>: View {
+struct CustomTabView<Home: View, Config: View>: View {
     
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
     
     @Binding var selectedTab: TabContextView
-    
-    init(selectedTab: Binding<TabContextView>, homeView: () -> Home, configView: () -> Config) {
-        self.homeView = homeView()
-        self.configView = configView()
-        self._selectedTab = selectedTab
-    }
     
     var body: some View {
         TabView(selection: $selectedTab){
@@ -31,6 +25,7 @@ struct HomeTabView<Home: View, Config: View>: View {
                     selectedTab = .pets
                 }
                 .tag(TabContextView.pets)
+            
             configView
                 .tabItem {
                     Label(TabContextView.config.rawValue,
@@ -43,19 +38,16 @@ struct HomeTabView<Home: View, Config: View>: View {
                 }
                 .tag(TabContextView.config)
         }
-        .onChange(of: selectedTab) { newValue in
-            print(newValue)
-        }
     }
 }
 
-struct HomeTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        HomeTabView(selectedTab: .constant(.pets)) {
-            HomeView()
-        } configView: {
-            Text(TabContextView.config.rawValue)
-        }
-    }
-}
+//struct HomeTabView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        HomeTabView(selectedTab: .constant(.pets)) {
+//            HomeView()
+//        } configView: {
+//            Text(TabContextView.config.rawValue)
+//        }
+//    }
+//}

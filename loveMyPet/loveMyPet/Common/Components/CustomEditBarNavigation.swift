@@ -12,18 +12,11 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
-    @State var selectedPet: Pet
-    var customFunc: () -> Void
-    
-    init(selectedPet:Pet, customFunc: @escaping () -> Void, detailView: () -> Detail, editView: () -> Edit) {
-        self.detailPet = detailView()
-        self.editView = editView()
-        self.customFunc = customFunc
-        self.selectedPet = selectedPet
-    }
+//    var customFunc: () -> Void
     
     var body: some View {
         detailPet
+            .navigationTitle(Constants.Home.detail)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -50,18 +43,17 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                             })
                             ToolbarItem(placement: .navigationBarTrailing, content: {
                                 Button {
-                                    customFunc()
+//                                    customFunc()
                                     showingPopover = false
                                 } label: {
                                     Text(Constants.Home.save)
                                         .font(.custom(Font.SemiBold, size: 16))
                                 }
-                                .disabled(true)
-                                .tint(Color("MainColor"))
+                                .disabled(!Helper.shared.isAddBtnEnable)
+                                .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color("MainColor"))
                             })
                         }
                 }
-                
             }
     }
 }

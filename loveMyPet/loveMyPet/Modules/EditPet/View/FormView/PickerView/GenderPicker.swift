@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GenderPicker: View {
     
-    @State var viewModel: EditPetViewModel
+    @StateObject var viewModel: EditPetViewModel
 
     var body: some View {
         Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.gender : $viewModel.selectedPet.gender) {

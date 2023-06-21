@@ -10,10 +10,7 @@ import SwiftUI
 struct FormRowCell: View {
     
     var type: TypeFormRow
-    
-    @State var viewModel: EditPetViewModel
-
-    @State private var date: Date = .init()
+    var viewModel: EditPetViewModel
     
     var body: some View {
         HStack {
@@ -28,14 +25,12 @@ struct FormRowCell: View {
             case .breed:
                 BreedPicker(viewModel: viewModel)
             case .birth:
-                DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
-                    .font(.custom(Font.Regular, size: 16))
-                    .datePickerStyle(.compact)
+                BirthDatePicker(viewModel: viewModel)
             case .weight:
                 WeightPicker(viewModel: viewModel)
                 .frame(height: 100)
             case .castrated:
-                CastradPicker(viewModel: viewModel)
+                NeuteredPicker(viewModel: viewModel)
             case .none:
                 Text("")
             }
