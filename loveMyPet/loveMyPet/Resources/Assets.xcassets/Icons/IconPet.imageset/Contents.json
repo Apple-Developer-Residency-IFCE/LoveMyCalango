@@ -3,6 +3,16 @@
     {
       "filename" : "IconPet.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Union.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
