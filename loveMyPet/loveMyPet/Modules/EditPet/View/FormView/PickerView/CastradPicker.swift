@@ -10,7 +10,7 @@ import CoreData
 
 struct CastradPicker: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
     
     var body: some View {
         Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.isNeutered : $viewModel.selectedPet.isNeutered) {

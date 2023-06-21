@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct CardPet: View{
-
-    @Environment(\.colorScheme) var colorScheme
     
     @Binding var item: Pet
 
     var body: some View {
         HStack() {
-            Image(uiImage: UIImage(data: item.image) ?? UIImage())
+            Image(uiImage: UIImage(data: item.image ?? Data()) ?? UIImage())
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())
 
             VStack(alignment: .leading) {
-                Text(item.name)
+                Text(item.name ?? "")
                     .font(.custom(Font.SemiBold, size: 17))
                     .padding(.bottom, 1)
                     .foregroundColor(Color(CustomColor.FontColor))

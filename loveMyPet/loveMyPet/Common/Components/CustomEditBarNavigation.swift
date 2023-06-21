@@ -9,15 +9,16 @@ import SwiftUI
 
 struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
-    @Binding var selectedPet: Pet
+    @State var selectedPet: Pet
+    var customFunc: () -> Void
     
-    init(selectedPet: Binding<Pet>, detailView: () -> Detail, editView: () -> Edit) {
+    init(selectedPet:Pet, customFunc: @escaping () -> Void, detailView: () -> Detail, editView: () -> Edit) {
         self.detailPet = detailView()
         self.editView = editView()
+        self.customFunc = customFunc
         self._selectedPet = selectedPet
     }
     
@@ -49,7 +50,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                             })
                             ToolbarItem(placement: .navigationBarTrailing, content: {
                                 Button {
-                                    viewModel.updatePet(pet: selectedPet)
+                                    customFunc()
                                     showingPopover = false
                                 } label: {
                                     Text(Constants.Home.save)

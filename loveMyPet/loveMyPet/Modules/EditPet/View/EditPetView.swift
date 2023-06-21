@@ -10,21 +10,22 @@ import PhotosUI
 
 struct EditPetView: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
     
     @StateObject private var imagePicker = ImagePicker()
-    @Binding var pet: Pet
     private var isAddPetFlow: Bool = true
+    @State var newPet: Pet = .init()
     
-    init(pet: Binding<Pet>) {
-        self._pet = pet
+    init(viewModel: EditPetViewModel) {
         self.isAddPetFlow = false
+        self.viewModel = viewModel
     }
     
-    init(){
-        self._pet = .constant(Pet())
+    init() {
+        self.newPet = Pet()
+        viewModel = .init()
     }
     
     var body: some View {
@@ -52,10 +53,12 @@ struct EditPetView: View {
                 viewModel.changePetImage(data: newValue)
             })
             .padding(.top, 16)
-            FormView(isAddPetFlow: isAddPetFlow)
+            FormView(isAddPetFlow: isAddPetFlow, viewModel: viewModel)
         }
         .onAppear(perform: {
-            viewModel.selectedPetToEdit(pet: pet)
+            if isAddPetFlow {
+                viewModel.createNewPet()
+            }
         })
     }
 }

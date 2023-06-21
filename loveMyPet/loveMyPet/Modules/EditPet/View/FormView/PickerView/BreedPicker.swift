@@ -9,11 +9,11 @@ import SwiftUI
 
 struct BreedPicker: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
         
     var body: some View {
-        Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.breed : $viewModel.selectedPet.breed) {
-            ForEach(viewModel.isAddPetFlow ? viewModel.newPet.specie.breed : viewModel.selectedPet.specie.breed , id: \.self) { breed in
+        Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.breed : $viewModel.selectedPet?.breed ?? []) {
+            ForEach((viewModel.isAddPetFlow ? viewModel.newPet.specie.breed : viewModel.selectedPet?.specie.breed) ?? [] , id: \.self) { breed in
                 Text(breed)
                     .tag(breed)
             }

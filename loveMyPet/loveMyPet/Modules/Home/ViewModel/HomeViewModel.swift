@@ -11,7 +11,7 @@ final class HomeViewModel: ObservableObject {
     
     @Published var pets: [Pet] = []
     
-    func populatePets(_ pets: [Pet]) {
-        self.pets = pets
+    init() {
+        self.pets = CoreDataManager.shared.fetchAll()
     }
 }

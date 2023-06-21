@@ -10,18 +10,16 @@ import SwiftUI
 final class EditPetViewModel: ObservableObject {
     
     @Published var selectedTab: TabContextView = .pets
-    
-    @Published var pets: [Pet] = []
-    
-    @Published var newPet: Pet = .init() {
+        
+    @Published var newPet: NewPet = .init() {
         didSet {
-            addBtnIsEnable = !newPet.name.isEmpty
+            Helper.shared.isAddBtnEnable = !(newPet.name.isEmpty)
         }
     }
     
-    @Published var selectedPet: Pet = .init() {
+    @Published var selectedPet: Pet {
         didSet {
-            addBtnIsEnable = !selectedPet.name.isEmpty
+            Helper.shared.isAddBtnEnable = !(selectedPet.name?.isEmpty ?? true)
         }
     }
   
@@ -50,8 +48,10 @@ final class EditPetViewModel: ObservableObject {
     }
     
     init() {
+        selectedPet = Pet()
         isAddPetFlow = true
         updateFormattedWeight()
+        createNewPet()
         (weightKG, weightG) = getWeigth()
     }
     
@@ -73,13 +73,13 @@ final class EditPetViewModel: ObservableObject {
     func getWeigth() -> (kg: Int, g: Int) {
         
         let newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
-        let newg = isAddPetFlow ? (newPet.weight - newKG) : (selectedPet.weight - newKG)
+        let newg = isAddPetFlow ? (newPet.weight - newKG ) : (selectedPet.weight - newKG)
         
-        return (Int(newKG), Int(newg))
+        return (Int(newKG ), Int(newg))
     }
     
     func changeNamePet(newName: String) {
-        addBtnIsEnable = true
+        Helper.shared.isAddBtnEnable = true
         if isAddPetFlow {
             newPet.name = newName
         } else {
@@ -100,26 +100,22 @@ final class EditPetViewModel: ObservableObject {
     }
     
     func addPet() {
-        pets.append(newPet)
+        CoreDataManager.shared.create(pet: newPet)
     }
     
     func createNewPet() {
-        newPet = Pet()
+        newPet = NewPet()
     }
     
-    func selectedPetToEdit(pet: Pet) {
-        selectedPet = pet
-    }
-    
-    func updatePet(pet: Pet) {
-        print("Pet saved:\n \(dump(pet))")
-    }
-    
-    func removePet() {
-        pets.enumerated().forEach { (index, pet) in
-            if pet == selectedPet {
-                pets.remove(at: index)
-            }
+    func updatePet() {
+        if isAddPetFlow {
+            addPet()
+        } else {
+            CoreDataManager.shared.saveData()
         }
+    }
+    
+    func removePet(pet: Pet) {
+        CoreDataManager.shared.delete(pet: pet)
     }
 }

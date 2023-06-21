@@ -9,14 +9,14 @@ import SwiftUI
 
 struct WeightRowFlow: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
     @State private var showWeightPicker = false
     
     var body: some View {
         Section {
             ZStack {
                 if showWeightPicker {
-                    FormRowCell(type: .weight)
+                    FormRowCell(type: .weight, viewModel: viewModel)
                         .padding(.top, 12)
                         .offset(y: 20)
                 }
@@ -52,7 +52,7 @@ struct WeightRowFlow: View {
 
 struct WeightPicker: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
  
     var body: some View {
         GeometryReader { geometry in

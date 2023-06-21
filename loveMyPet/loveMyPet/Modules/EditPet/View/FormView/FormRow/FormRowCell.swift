@@ -11,7 +11,7 @@ struct FormRowCell: View {
     
     var type: TypeFormRow
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
 
     @State private var date: Date = .init()
     
@@ -22,20 +22,20 @@ struct FormRowCell: View {
                 .font(.custom(Font.Regular, size: 16))
             switch type {
             case .gender:
-                GenderPicker()
+                GenderPicker(viewModel: viewModel)
             case .specie:
-                SpeciePicker()
+                SpeciePicker(viewModel: viewModel)
             case .breed:
-                BreedPicker()
+                BreedPicker(viewModel: viewModel)
             case .birth:
                 DatePicker("", selection: $date, in: ...Date(), displayedComponents: .date)
                     .font(.custom(Font.Regular, size: 16))
                     .datePickerStyle(.compact)
             case .weight:
-                WeightPicker()
+                WeightPicker(viewModel: viewModel)
                 .frame(height: 100)
             case .castrated:
-                CastradPicker()
+                CastradPicker(viewModel: viewModel)
             case .none:
                 Text("")
             }

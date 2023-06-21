@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FormView: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
     
     @State private var petName: String = ""
     
@@ -17,8 +17,9 @@ struct FormView: View {
     
     private var isAddPetFlow: Bool
     
-    init(isAddPetFlow: Bool) {
+    init(isAddPetFlow: Bool, viewModel: EditPetViewModel) {
         self.isAddPetFlow = isAddPetFlow
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -33,12 +34,12 @@ struct FormView: View {
                             viewModel.changeNamePet(newName: newValue)
                         }
                     ForEach(TypeFormRow.allCases.prefix(4)) { caseValue in
-                        FormRowCell(type: caseValue)
+                        FormRowCell(type: caseValue, viewModel: viewModel)
                     }
                 }
                 Section {
-                    WeightRowFlow()
-                    FormRowCell(type: .castrated)
+                    WeightRowFlow(viewModel: viewModel)
+                    FormRowCell(type: .castrated, viewModel: viewModel)
                 }
             }
             .scrollContentBackground(.hidden)

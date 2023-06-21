@@ -9,31 +9,26 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject private var viewModel: HomeViewModel
-    
-    @Binding var pets: [Pet]
-    
-    init(pets: Binding<[Pet]>) {
-        self._pets = pets
-        viewModel = .init()
-        viewModel.populatePets(pets)
-    }
-    
+    @StateObject private var viewModel: HomeViewModel = .init()
+    @StateObject private var editViewModel: EditPetViewModel = .init()
+        
     var body: some View {
         ScrollView(.vertical) {
             if viewModel.pets.isEmpty {
                 EmptyHome()
             } else {
                 Grid {
-                    ForEach($viewModel.pets) { pet in
+                    ForEach(viewModel.pets) { pet in
                         VStack {
                             GridRow {
                                 NavigationLink(
                                     destination:
-                                        CustomEditBarNavigation(selectedPet: pet) {
-                                            PetDetailView(pet: pet)
+                                        CustomEditBarNavigation(selectedPet: pet, customFunc: {
+                                            editViewModel.updatePet()
+                                        }) {
+                                            PetDetailView(petDetailViewModel: PetDetailViewModel(pet: pet))
                                         } editView: {
-                                            EditPetView(pet: pet)
+                                            EditPetView(viewModel: EditPetViewModel(selectedPet: pet))
                                         }
                                 ) {
                                     CardPet(item: pet)

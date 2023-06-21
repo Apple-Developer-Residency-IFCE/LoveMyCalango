@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SpeciePicker: View {
-    @EnvironmentObject private var viewModel: EditPetViewModel
+    @State var viewModel: EditPetViewModel
 
     var body: some View {
-        Picker("", selection: $viewModel.selectedPet.specie) {
+        Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.specie : $viewModel.selectedPet.specie) {
             ForEach(Specie.allCases) { specie in
                 Text(specie.rawValue)
             }

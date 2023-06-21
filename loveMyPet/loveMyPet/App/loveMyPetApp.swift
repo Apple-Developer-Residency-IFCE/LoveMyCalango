@@ -11,7 +11,6 @@ import SwiftUI
 struct loveMyPetApp: App {
     
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
-    @StateObject var initialModel: EditPetViewModel = .init()
     @State var selectedTab: TabContextView = .pets
     
     var body: some Scene {
@@ -19,7 +18,7 @@ struct loveMyPetApp: App {
             NavigationView {
                 HomeTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation(selectedTab: $selectedTab) {
-                        HomeView(pets: $initialModel.pets)
+                        HomeView()
                     } addView: {
                         EditPetView()
                             .navigationTitle(Constants.Home.addPetTitle)
@@ -28,7 +27,6 @@ struct loveMyPetApp: App {
                 } configView: {
                    ConfigView()
                 }
-                .environmentObject(initialModel)
                 .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
                 .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
                 .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CustomHomeNavigation<Home: View, Add: View>: View {
     
-    @EnvironmentObject private var viewModel: EditPetViewModel
     @ViewBuilder let homeView: Home
     @ViewBuilder let addView: Add
     @Binding private var selectedTab: TabContextView
@@ -51,14 +50,13 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                             })
                             ToolbarItem(placement: .navigationBarTrailing, content: {
                                 Button {
-                                    viewModel.addPet()
                                     showingPopover = false
                                 } label: {
                                     Text(Constants.Home.add)
                                         .font(.custom(Font.SemiBold, size: 16))
                                 }
-                                .disabled(!viewModel.addBtnIsEnable)
-                                .tint(!viewModel.addBtnIsEnable ? Color.gray : Color("MainColor"))
+                                .disabled(!Helper.shared.isAddBtnEnable)
+                                .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color("MainColor"))
                             })
                         }
                 }
