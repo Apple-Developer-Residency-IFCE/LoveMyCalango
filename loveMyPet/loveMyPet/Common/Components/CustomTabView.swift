@@ -9,10 +9,9 @@ import SwiftUI
 
 struct CustomTabView<Home: View, Config: View>: View {
     
+    @Binding var selectedTab: TabContextView
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
-    
-    @Binding var selectedTab: TabContextView
     
     var body: some View {
         TabView(selection: $selectedTab){

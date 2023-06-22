@@ -16,7 +16,7 @@ struct loveMyPetApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView{
-                CustomTabView(homeView: {
+                CustomTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation {
                         HomeView()
                             .navigationTitle(Constants.Home.title)
@@ -26,16 +26,13 @@ struct loveMyPetApp: App {
                             .navigationTitle(Constants.Home.addPetTitle)
                             .navigationBarTitleDisplayMode(.inline)
                     }
-//                customFunc: {
-//                        #AQUI VEM A FUNÇÃO DE ADICIONAR
-//                    }
-                }, configView: {
+                    
+                } configView: {
                     ConfigView()
-                }, selectedTab: $selectedTab)                        .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+                }.navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
                     .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
                     .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
-                
         }
     }
 }
