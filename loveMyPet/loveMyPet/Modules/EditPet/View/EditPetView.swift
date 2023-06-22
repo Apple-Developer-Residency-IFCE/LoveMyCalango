@@ -15,11 +15,16 @@ struct EditPetView: View {
     @State var isAddPetFlow: Bool = true
     @ObservedObject var viewModel: EditPetViewModel
     
-    init() {
+    var updateHome: UpdateHome
+    typealias UpdateHome = () -> Void
+    
+    init(updateHome: @escaping UpdateHome) {
+        self.updateHome = updateHome
         self.viewModel = EditPetViewModel()
     }
     
-    init(viewModel: EditPetViewModel) {
+    init(viewModel: EditPetViewModel, updateHome: @escaping UpdateHome) {
+        self.updateHome = updateHome
         self.isAddPetFlow = false
         self.viewModel = viewModel
     }
@@ -57,6 +62,9 @@ struct EditPetView: View {
             })
             .padding(.top, 16)
             FormView(viewModel: viewModel, isAddPetFlow: isAddPetFlow)
+        }.onDisappear {
+            Helper.shared.isAddBtnEnable = false
+            updateHome()
         }
     }
 }

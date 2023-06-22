@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeViewModel: HomeViewModel = HomeViewModel()
+   @ObservedObject var homeViewModel: HomeViewModel
         
     var body: some View {
         ScrollView(.vertical) {
@@ -23,7 +23,7 @@ struct HomeView: View {
                                         CustomEditBarNavigation(detailPet: {
                                             PetDetailView(pet: pet)
                                         }, editView: {
-                                            EditPetView(viewModel: EditPetViewModel(selectedPet: pet))
+                                            EditPetView(viewModel: EditPetViewModel(selectedPet: pet), updateHome: { homeViewModel.fetchAllPets() } )
                                                 .navigationTitle(Constants.Home.editPetTitle)
                                                 .navigationBarTitleDisplayMode(.inline)
                                         })
@@ -39,8 +39,6 @@ struct HomeView: View {
                 }
                 .padding(.top, 48)
             }
-        }.onAppear{
-            homeViewModel.fetchAllPets()
         }
     }
 }
