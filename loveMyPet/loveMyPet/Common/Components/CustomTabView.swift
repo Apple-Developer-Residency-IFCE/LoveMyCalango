@@ -39,14 +39,3 @@ struct CustomTabView<Home: View, Config: View>: View {
         }
     }
 }
-
-//struct HomeTabView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//        HomeTabView(selectedTab: .constant(.pets)) {
-//            HomeView()
-//        } configView: {
-//            Text(TabContextView.config.rawValue)
-//        }
-//    }
-//}

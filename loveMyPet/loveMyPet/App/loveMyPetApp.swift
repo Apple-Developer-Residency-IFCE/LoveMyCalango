@@ -19,8 +19,6 @@ struct loveMyPetApp: App {
                 CustomTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation {
                         HomeView()
-                            .navigationTitle(Constants.Home.title)
-                            .navigationBarTitleDisplayMode(.inline)
                     } addView: {
                         EditPetView()
                             .navigationTitle(Constants.Home.addPetTitle)
@@ -29,9 +27,11 @@ struct loveMyPetApp: App {
                     
                 } configView: {
                     ConfigView()
-                }.navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-                    .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
-                    .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
+                }
+                .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
+                .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+                .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
+                .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
         }
     }
