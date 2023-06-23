@@ -39,13 +39,13 @@ struct EditPetView: View {
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
                     } else {
-                        if(isAddPetFlow) {
+                        if isAddPetFlow {
                             Image(Assets.Image.avatarCat2)
                                 .resizable()
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
                         } else {
-                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image ?? Data()) ?? UIImage(systemName: "photo")!))
+                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image ?? Data()) ?? (UIImage(systemName: "photo") ?? UIImage())))
                                 .resizable()
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())

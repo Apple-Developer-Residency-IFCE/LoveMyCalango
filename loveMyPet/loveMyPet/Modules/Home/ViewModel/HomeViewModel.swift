@@ -11,9 +11,9 @@ class HomeViewModel: ObservableObject {
     
     @Published var pets = [Pet]()
     
-//    init() {
-//        self.pets = CoreDataManager.shared.fetchAll()
-//    }
+    init() {
+        fetchAllPets()
+    }
     
     func fetchAllPets() {
         pets = CoreDataManager.shared.fetchAll()

@@ -38,20 +38,8 @@ struct FormView: View {
             }
             .scrollContentBackground(.hidden)
             if !isAddPetFlow {
-                Button {
-                    viewModel.updatePet()
-                } label: {
-                    Text("Editar")
-                }
-                
                 RemovePetButton(viewModel: viewModel)
                     .padding(.bottom, 8)
-            } else {
-                Button {
-                    viewModel.updatePet()
-                } label: {
-                    Text("Adicionar")
-                }
             }
         }
         .onTapGesture {

@@ -20,20 +20,20 @@ struct HomeView: View {
                     ForEach(homeViewModel.pets) { pet in
                         VStack {
                             GridRow {
-                                    NavigationLink {
-                                        CustomEditBarNavigation(customFunc: {
-                                            editHomeViewModel.changePetToEdit(pet: pet)
-                                            editHomeViewModel.updatePet()
-                                        } ,detailPet: {
-                                            PetDetailView(pet: pet)
-                                        }, editView: {
-                                            EditPetView(viewModel: editHomeViewModel, updateHome: { homeViewModel.fetchAllPets() } )
-                                                .navigationTitle(Constants.Home.editPetTitle)
-                                                .navigationBarTitleDisplayMode(.inline)
-                                        })
-                                    } label: {
-                                        CardPet(item: pet)
-                                    }
+                                NavigationLink {
+                                    CustomEditBarNavigation(customFunc: {
+                                        editHomeViewModel.changePetToEdit(pet: pet)
+                                        editHomeViewModel.updatePet()
+                                    } ,detailPet: {
+                                        PetDetailView(pet: pet)
+                                    }, editView: {
+                                        EditPetView(viewModel: editHomeViewModel, updateHome: { homeViewModel.fetchAllPets() } )
+                                            .navigationTitle(Constants.Home.editPetTitle)
+                                            .navigationBarTitleDisplayMode(.inline)
+                                    })
+                                } label: {
+                                    CardPet(item: pet)
+                                }
                             }
                         }
                     }
