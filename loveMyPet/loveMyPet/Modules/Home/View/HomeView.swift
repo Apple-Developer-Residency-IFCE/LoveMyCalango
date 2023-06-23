@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-   @ObservedObject var homeViewModel: HomeViewModel
-        
+    @ObservedObject var homeViewModel: HomeViewModel
+    @StateObject var editHomeViewModel: EditPetViewModel = .init()
+    
     var body: some View {
         ScrollView(.vertical) {
             if homeViewModel.pets.isEmpty {
@@ -20,16 +21,16 @@ struct HomeView: View {
                         VStack {
                             GridRow {
                                     NavigationLink {
-                                        CustomEditBarNavigation(detailPet: {
+                                        CustomEditBarNavigation(customFunc: {
+                                            editHomeViewModel.changePetToEdit(pet: pet)
+                                            editHomeViewModel.updatePet()
+                                        } ,detailPet: {
                                             PetDetailView(pet: pet)
                                         }, editView: {
-                                            EditPetView(viewModel: EditPetViewModel(selectedPet: pet), updateHome: { homeViewModel.fetchAllPets() } )
+                                            EditPetView(viewModel: editHomeViewModel, updateHome: { homeViewModel.fetchAllPets() } )
                                                 .navigationTitle(Constants.Home.editPetTitle)
                                                 .navigationBarTitleDisplayMode(.inline)
                                         })
-//                                        {
-//                                            #AQUI VEM A FUNÇÃO DE EDITAR
-//                                        }
                                     } label: {
                                         CardPet(item: pet)
                                     }

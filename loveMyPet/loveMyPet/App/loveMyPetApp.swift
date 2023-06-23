@@ -13,19 +13,19 @@ struct loveMyPetApp: App {
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var editViewModel = EditPetViewModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationView{
                 CustomTabView(selectedTab: $selectedTab) {
-                    CustomHomeNavigation {
+                    CustomHomeNavigation(customFunc: { editViewModel.updatePet() }) {
                         HomeView(homeViewModel: homeViewModel)
                     } addView: {
-                        EditPetView(updateHome: { homeViewModel.fetchAllPets() })
+                        EditPetView(viewModelAddPet: editViewModel ,updateHome: { homeViewModel.fetchAllPets() })
                             .navigationTitle(Constants.Home.addPetTitle)
                             .navigationBarTitleDisplayMode(.inline)
                     }
-                    
                 } configView: {
                     ConfigView()
                 }

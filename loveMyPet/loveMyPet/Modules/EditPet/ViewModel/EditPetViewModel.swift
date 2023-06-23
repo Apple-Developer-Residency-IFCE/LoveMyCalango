@@ -44,14 +44,14 @@ final class EditPetViewModel: ObservableObject {
         updateFormattedWeight()
         (weightKG, weightG) = getWeigth()
     }
+    
+    func changePetToEdit(pet: Pet) {
+        self.selectedPet = pet
+    }
         
     func disableAddBtn() {
         addBtnIsEnable = false
     }
-    
-//    func createNewPet() {
-//        newPet = NewPet()
-//    }
     
     //FORM CHANGE
     

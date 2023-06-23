@@ -18,9 +18,9 @@ struct EditPetView: View {
     var updateHome: UpdateHome
     typealias UpdateHome = () -> Void
     
-    init(updateHome: @escaping UpdateHome) {
+    init(viewModelAddPet: EditPetViewModel, updateHome: @escaping UpdateHome) {
         self.updateHome = updateHome
-        self.viewModel = EditPetViewModel()
+        self.viewModel = viewModelAddPet
     }
     
     init(viewModel: EditPetViewModel, updateHome: @escaping UpdateHome) {

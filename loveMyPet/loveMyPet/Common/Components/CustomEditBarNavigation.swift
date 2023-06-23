@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     
+    var customFunc: () -> Void
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
-//    var customFunc: () -> Void
     
     var body: some View {
         detailPet
@@ -43,7 +43,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                             })
                             ToolbarItem(placement: .navigationBarTrailing, content: {
                                 Button {
-//                                    customFunc()
+                                    customFunc()
                                     showingPopover = false
                                 } label: {
                                     Text(Constants.Home.save)

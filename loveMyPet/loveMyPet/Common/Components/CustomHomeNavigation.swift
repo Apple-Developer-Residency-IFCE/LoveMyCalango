@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CustomHomeNavigation<Home: View, Add: View>: View {
     
+    var customFunc: () -> Void
     @ViewBuilder let homeView: Home
     @ViewBuilder let addView: Add
-//    var customFunc: () -> Void
-    
+   
     @State private var showingPopover = false
     
     var body: some View {
@@ -43,7 +43,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                                 })
                                 ToolbarItem(placement: .navigationBarTrailing, content: {
                                     Button {
-//                                        customFunc()
+                                        customFunc()
                                         showingPopover = false
                                     } label: {
                                         Text(Constants.Home.add)
