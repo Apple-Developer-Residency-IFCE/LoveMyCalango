@@ -14,7 +14,7 @@ struct BirthDatePicker: View {
     
     var body: some View {
         DatePicker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.birthDate : Binding {
-            return viewModel.selectedPet.birthDate ?? date
+            return viewModel.selectedPet.birthDate 
         } set: { newValue  in
             viewModel.selectedPet.birthDate = newValue
         }, in: ...Date(), displayedComponents: .date)

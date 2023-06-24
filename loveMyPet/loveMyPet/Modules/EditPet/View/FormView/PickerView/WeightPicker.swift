@@ -23,7 +23,7 @@ struct WeightRowFlow: View {
                 VStack {
                     HStack {
                         Text("Peso")
-                            .foregroundColor(Color("Black-15181D"))
+                            .foregroundColor(Color(CustomColor.FontColor))
                             .font(.custom(Font.Regular, size: 16))
                         Spacer()
                         Text(viewModel.formattedWeight)
@@ -31,7 +31,7 @@ struct WeightRowFlow: View {
                             .padding(3)
                             .padding(.horizontal, 4)
                             .background(RoundedRectangle(cornerRadius: 4)
-                                .fill(Color("Gray-DBDBDA")))
+                                .fill(Color(CustomColor.PickerSection)))
                     }
                     .onTapGesture(perform: {
                         if showWeightPicker {
@@ -45,7 +45,7 @@ struct WeightRowFlow: View {
                     Spacer()
                 }
             }
-            .listRowBackground(Color("White-F4F3FA"))
+            .listRowBackground(Color(CustomColor.PickerSection))
         }
     }
 }
@@ -61,17 +61,19 @@ struct WeightPicker: View {
                     Picker(selection: $viewModel.weightKG, label: Text("")) {
                         ForEach(0..<4001) {
                             Text("\($0)")
+                                .foregroundColor(Color(CustomColor.FontColor))
                         }
                     }
                     Picker(selection: $viewModel.weightG, label: Text("")) {
                         ForEach(0..<200) {
                             Text("\($0 % 10)")
+                                .foregroundColor(Color(CustomColor.FontColor))
                                 .tag($0 % 10)
                         }
                     }
                     .overlay {
                         Text("kg")
-                            .foregroundColor(Color("Black-15181D"))
+                            .foregroundColor(Color(CustomColor.FontColor))
                             .font(.custom(Font.Regular, size: 20))
                             .offset(x: 50)
                     }

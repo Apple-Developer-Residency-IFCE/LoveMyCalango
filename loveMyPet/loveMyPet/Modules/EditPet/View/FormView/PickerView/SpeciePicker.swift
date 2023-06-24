@@ -17,7 +17,7 @@ struct SpeciePicker: View {
                 Text(specie.rawValue)
             }
         }
-        .accentColor(Color("Gray-8C8C8B"))
+        .accentColor(Color(CustomColor.FontPickers))
         .font(.custom(Font.Regular, size: 16))
         .pickerStyle(MenuPickerStyle())
     }

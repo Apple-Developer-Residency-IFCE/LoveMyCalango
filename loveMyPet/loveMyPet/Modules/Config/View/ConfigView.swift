@@ -13,12 +13,12 @@ struct ConfigView: View {
         VStack(alignment: .leading) {
             Text("Configurações")
                 .font(.custom(Font.SemiBold, size: 32))
-                .foregroundColor(Color("FontColor"))
+                .foregroundColor(Color(CustomColor.FontColor))
                 .padding(.bottom, 32)
             
             Text("APARÊNCIA")
                 .font(.custom(Font.SemiBold, size: 14))
-                .foregroundColor(Color("FontColor"))
+                .foregroundColor(Color(CustomColor.FontColor))
             
             ConfigOptions()
                 .padding(.top, 20)
@@ -28,6 +28,7 @@ struct ConfigView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 40)
         .padding(.leading, 24)
+        .background(Color(CustomColor.BackGroundColor))
     }
 }
 

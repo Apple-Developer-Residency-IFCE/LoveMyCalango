@@ -21,9 +21,9 @@ struct FormView: View {
             Form {
                 Section {
                     TextField(Constants.Home.Placeholder.petName, text: viewModel.isAddPetFlow ? $petName : $viewModel.selectedPet.name)
-                        .foregroundColor(Color("Gray-8C8C8B"))
+                        .foregroundColor(Color(CustomColor.FontColor))
                         .font(.custom(Font.Regular, size: 16))
-                        .listRowBackground(Color("White-F4F3FA"))
+                        .listRowBackground(Color(CustomColor.PickerSection))
                         .onChange(of: viewModel.isAddPetFlow ? petName : viewModel.selectedPet.name) { newValue in
                             viewModel.changeNamePet(newName: newValue)
                         }

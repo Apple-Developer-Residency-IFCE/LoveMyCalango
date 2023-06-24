@@ -15,7 +15,7 @@ struct FormRowCell: View {
     var body: some View {
         HStack {
             Text(type.title)
-                .foregroundColor(Color("Black-15181D"))
+                .foregroundColor(Color(CustomColor.FontColor))
                 .font(.custom(Font.Regular, size: 16))
             switch type {
             case .gender:
@@ -35,6 +35,6 @@ struct FormRowCell: View {
                 Text("")
             }
         }
-        .listRowBackground(Color("White-F4F3FA"))
+        .listRowBackground(Color(CustomColor.PickerSection))
     }
 }

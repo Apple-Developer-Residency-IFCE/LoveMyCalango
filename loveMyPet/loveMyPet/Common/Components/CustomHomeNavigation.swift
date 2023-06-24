@@ -23,7 +23,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                                 showingPopover = true
                             } label: {
                                 Text(Constants.Home.add)
-                                    .foregroundColor(Color("MainColor"))
+                                    .foregroundColor(Color(CustomColor.MainColor))
                                     .font(.custom(Font.SemiBold, size: 16))
                             }
                     }
@@ -37,7 +37,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                                         showingPopover = false
                                     } label: {
                                         Text(Constants.Home.cancel)
-                                            .foregroundColor(Color("MainColor"))
+                                            .foregroundColor(Color(CustomColor.MainColor))
                                             .font(.custom(Font.Regular, size: 16))
                                     }
                                 })

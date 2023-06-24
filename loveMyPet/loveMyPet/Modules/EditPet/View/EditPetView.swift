@@ -56,7 +56,7 @@ struct EditPetView: View {
                     
                     Text(Constants.Home.changePictore)
                         .font(.custom(Font.Regular, size: 13))
-                        .foregroundColor(.black)
+                        .foregroundColor(Color(CustomColor.FontColor))
                 }
             }
             .onChange(of: imagePicker.image ?? Data(), perform: { newValue in
@@ -89,10 +89,11 @@ struct EditPetView: View {
                                 .font(.custom(Font.SemiBold, size: 16))
                         }
                         .disabled(!Helper.shared.isAddBtnEnable)
-                        .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color("MainColor"))
+                        .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color(CustomColor.MainColor))
                     })
             }
         }
+        .background(Color(CustomColor.BackGroundColor))
     }
 }
 

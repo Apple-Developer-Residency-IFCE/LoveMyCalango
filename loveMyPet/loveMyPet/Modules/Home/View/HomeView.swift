@@ -39,6 +39,7 @@ struct HomeView: View {
         }.onAppear{
             homeViewModel.fetchAllPets()
         }
+        .background(Color(CustomColor.BackGroundColor))
     }
 }
 
@@ -51,7 +52,7 @@ struct EmptyHome: View {
                 .padding(.horizontal, 24)
                 .padding(.bottom, 18)
             Text(Constants.Home.emptyPets)
-                .foregroundColor(Color("Gray-B3B3B2"))
+                .foregroundColor(Color(CustomColor.EmptyMessageHome))
                 .multilineTextAlignment(.center)
                 .font(.custom(Font.Medium, size: 18))
             Spacer()

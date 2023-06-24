@@ -17,9 +17,13 @@ struct CustomTabView<Home: View, Config: View>: View {
         TabView(selection: $selectedTab){
             homeView
                 .tabItem {
-                    Label(TabContextView.pets.rawValue, image: selectedTab == .pets ? Assets.Icon.petFilled : Assets.Icon.pet)
-                }
-                .toolbarBackground(.visible, for: .tabBar)
+                    Label {
+                        Text(TabContextView.pets.rawValue)
+                            .foregroundColor(Color(CustomColor.MainColor, bundle: .main))
+                    } icon: {
+                        Image(selectedTab == .pets ? Assets.Icon.petFilled : Assets.Icon.pet)
+                    }
+                }                
                 .onTapGesture {
                     selectedTab = .pets
                 }
@@ -27,11 +31,15 @@ struct CustomTabView<Home: View, Config: View>: View {
             
             configView
                 .tabItem {
-                    Label(TabContextView.config.rawValue,
-                          image: selectedTab == .config ?
-                          Assets.Icon.configFilled : Assets.Icon.config)
+                    Label{
+                        Text(TabContextView.config.rawValue)
+                            .foregroundColor(.white)
+                    } icon: {
+                        Image(selectedTab == .config ?
+                              Assets.Icon.configFilled : Assets.Icon.config)
+                    }
                 }
-                .toolbarBackground(.visible, for: .tabBar)
+                
                 .onTapGesture {
                     selectedTab = .config
                 }

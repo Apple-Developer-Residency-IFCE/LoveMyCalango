@@ -19,7 +19,7 @@ struct NeuteredPicker: View {
                     .tag($0 == 0)
             }
         }
-        .accentColor(Color("Gray-8C8C8B"))
+        .accentColor(Color(CustomColor.FontColor))
         .font(.custom(Font.Regular, size: 16))
         .pickerStyle(.menu)
     }

@@ -19,4 +19,7 @@ enum CustomColor {
     static let HelperError = "HelperError"
     static let HelperSuccess = "HelperSuccess"
     static let HelperWarning = "HelperWarning"
+    static let FontPickers = "FontPickers"
+    static let EmptyMessageHome = "EmptyMessageHome"
+    static let PickerSection = "PickerSection"
 }

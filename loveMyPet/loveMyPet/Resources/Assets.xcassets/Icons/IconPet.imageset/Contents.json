@@ -3,6 +3,16 @@
     {
       "filename" : "IconPet.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "IconPet 1.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
