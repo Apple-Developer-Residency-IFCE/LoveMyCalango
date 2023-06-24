@@ -13,14 +13,14 @@ struct AlertMessageBuilder: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .alert("Deseja excluir o cadastro?",isPresented: $isShowing) {
-                Button("Excluir") {
+            .alert(Constants.Alert.deleteRegister,isPresented: $isShowing) {
+                Button(Constants.Alert.delete) {
                     handleDelete()
                     isShowing = false
                 }
-                Button("Cancelar", role: .cancel) { }
+                Button(Constants.Home.cancel, role: .cancel) { }
             } message: {
-                Text("Uma vez excluida, essa ação não pode ser desfeita.")
+                Text(Constants.Alert.description)
             }
     }
 }

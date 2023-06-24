@@ -12,9 +12,9 @@ struct ConfigOptions: View {
     @State private var selectedButtonIndex: Int?
     
     let configStyle = [
-        ("SystemMode", "Sistema"),
-        ("LightMode", "Claro"),
-        ("DarkMode", "Escuro")
+        ("SystemMode", Constants.Style.system),
+        ("LightMode", Constants.Style.light),
+        ("DarkMode", Constants.Style.dark)
     ]
     
     var body: some View {
@@ -28,7 +28,7 @@ struct ConfigOptions: View {
                         .padding(.horizontal)
                     
                     Text(configStyle[index].1)
-                        .foregroundColor(Color("FontColor"))
+                        .foregroundColor(Color(CustomColor.FontColor))
                         .font(.custom(Font.Regular, size: 13))
                         .padding(.bottom, 2)
                     

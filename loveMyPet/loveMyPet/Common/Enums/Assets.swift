@@ -20,5 +20,9 @@ enum Assets {
         static let petFilled = "IconPetFilled"
         static let arrow = "chevron.right"
         static let plus = "plus"
+        static let female = "IconFemale"
+        static let male = "IconMale"
+        static let configSelected = "IconSelected"
+        static let configSelect = "IconSelect"
     }
 }

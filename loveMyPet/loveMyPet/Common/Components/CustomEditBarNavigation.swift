@@ -22,7 +22,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                         showingPopover = true
                     } label: {
                         Text(Constants.Home.edit)
-                            .foregroundColor(Color("MainColor"))
+                            .foregroundColor(Color(CustomColor.MainColor))
                             .font(.custom(Font.SemiBold, size: 16))
                     }
                 }
@@ -36,7 +36,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                                     showingPopover = false
                                 } label: {
                                     Text(Constants.Home.cancel)
-                                        .foregroundColor(Color("MainColor"))
+                                        .foregroundColor(Color(CustomColor.MainColor))
                                         .font(.custom(Font.Regular, size: 16))
                                 }
                             })

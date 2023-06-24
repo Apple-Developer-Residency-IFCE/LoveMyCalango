@@ -50,7 +50,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                                             .font(.custom(Font.SemiBold, size: 16))
                                     }
                                     .disabled(!Helper.shared.isAddBtnEnable)
-                                    .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color("MainColor"))
+                                    .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color(CustomColor.MainColor))
                                 })
                             }
                     }

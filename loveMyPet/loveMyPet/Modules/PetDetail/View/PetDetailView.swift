@@ -21,25 +21,25 @@ struct PetDetailView: View {
             
             VStack(alignment: .leading, spacing: 16.0) {
                 HStack{
-                    Text("Informações")
+                    Text(Constants.Detail.info)
                         .font(.custom(Font.SemiBold, size: 20))
                     Spacer()
-                    Image(viewModel.pet.gender.rawValue == "Fêmea" ? "IconFemale" : "IconMale")
+                    Image(viewModel.pet.gender.rawValue == Constants.female ? Assets.Icon.female : Assets.Icon.male)
                 }
                 
-                PetData(title: "Nome", value: viewModel.pet.name)
-                PetData(title: "Espécie", value: viewModel.pet.specie.rawValue)
-                PetData(title: "Nascimento", value: viewModel.formattedBirthDate(date: viewModel.pet.birthDate ))
-                PetData(title: "Raça", value: viewModel.pet.breed)
-                PetData(title: "Peso", value: viewModel.formattedWeight(weight: viewModel.pet.weight))
+                PetData(title: Constants.Detail.name, value: viewModel.pet.name)
+                PetData(title: Constants.Detail.specie, value: viewModel.pet.specie.rawValue)
+                PetData(title: Constants.Detail.birth, value: viewModel.formattedBirthDate(date: viewModel.pet.birthDate ))
+                PetData(title: Constants.Detail.breed, value: viewModel.pet.breed)
+                PetData(title: Constants.Picker.weight, value: viewModel.formattedWeight(weight: viewModel.pet.weight))
                 
-                Divider().frame(height: 4).overlay(Color("Neutral300"))
+                Divider().frame(height: 4).overlay(Color(CustomColor.Gray.neutral300))
                 
                 VStack(alignment: .leading, spacing: 14){
-                    Text("Adicionais")
+                    Text(Constants.Detail.addeds)
                         .font(.custom(Font.SemiBold, size: 20))
                     
-                    PetData(title: "Castrado(a)?", value: viewModel.pet.isNeutered ? "Sim" : "Não")
+                    PetData(title: Constants.Detail.castred, value: viewModel.pet.isNeutered ? Constants.yes : Constants.no)
                 }
             }
             .padding(24.0)

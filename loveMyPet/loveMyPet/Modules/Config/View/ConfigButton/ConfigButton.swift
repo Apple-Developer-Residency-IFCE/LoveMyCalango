@@ -11,7 +11,7 @@ struct ConfigButton: View {
     @Binding var isSelected: Bool
     
     var body: some View {
-        Image(isSelected ? "IconSelected" : "IconSelect")
+        Image(isSelected ? Assets.Icon.configSelected : Assets.Icon.configSelect)
             .resizable()
             .frame(width: 20, height: 20)
     }

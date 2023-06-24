@@ -22,7 +22,7 @@ struct WeightRowFlow: View {
                 }
                 VStack {
                     HStack {
-                        Text("Peso")
+                        Text(Constants.Picker.weight)
                             .foregroundColor(Color(CustomColor.FontColor))
                             .font(.custom(Font.Regular, size: 16))
                         Spacer()

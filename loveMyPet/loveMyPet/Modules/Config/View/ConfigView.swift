@@ -11,12 +11,12 @@ struct ConfigView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Text("Configurações")
+            Text(Constants.Config.title)
                 .font(.custom(Font.SemiBold, size: 32))
                 .foregroundColor(Color(CustomColor.FontColor))
                 .padding(.bottom, 32)
             
-            Text("APARÊNCIA")
+            Text(Constants.Config.appereance)
                 .font(.custom(Font.SemiBold, size: 14))
                 .foregroundColor(Color(CustomColor.FontColor))
             
