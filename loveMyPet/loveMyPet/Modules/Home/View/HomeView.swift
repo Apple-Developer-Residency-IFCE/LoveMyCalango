@@ -16,12 +16,12 @@ struct HomeView: View {
                 EmptyHome()
             } else {
                 Grid {
-                    ForEach(homeViewModel.pets) { pet in
+                    ForEach(homeViewModel.pets, id: \.id) { pet in
                         VStack {
                             GridRow {
                                 NavigationLink {
                                     CustomEditBarNavigation(detailPet: {
-                                        PetDetailView(pet: pet)
+                                        PetDetailView(viewModel: PetDetailViewModel(pet: pet))
                                     }, editView: {
                                         EditPetView(viewModel: EditPetViewModel(selectedPet: pet), updateHome: { homeViewModel.fetchAllPets() } )
                                             .navigationTitle(Constants.Home.editPetTitle)

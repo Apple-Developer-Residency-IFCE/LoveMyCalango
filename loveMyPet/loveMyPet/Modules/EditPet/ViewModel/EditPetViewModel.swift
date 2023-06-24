@@ -10,9 +10,15 @@ import CoreData
 
 final class EditPetViewModel: ObservableObject {
         
+    let coreData = CoreDataManager.shared
+    
     @Published var newPet: NewPet = .init()
     
-    @Published var selectedPet: Pet
+    @Published var selectedPet: NewPet {
+        didSet {
+            Helper.shared.isAddBtnEnable = true
+        }
+    }
     
     @Published var weight: String = ""
     
@@ -33,27 +39,25 @@ final class EditPetViewModel: ObservableObject {
     @Published var addBtnIsEnable: Bool = false
     
     init() {
-        selectedPet = Pet()
+        selectedPet = NewPet()
         updateFormattedWeight()
         (weightKG, weightG) = getWeigth()
     }
     
-    init(selectedPet: Pet) {
+    init(selectedPet: NewPet) {
         isAddPetFlow = false
         self.selectedPet = selectedPet
         updateFormattedWeight()
         (weightKG, weightG) = getWeigth()
     }
     
-    func changePetToEdit(pet: Pet) {
+    func changePetToEdit(pet: NewPet) {
         self.selectedPet = pet
     }
         
     func disableAddBtn() {
         addBtnIsEnable = false
     }
-    
-    //FORM CHANGE
     
     func changeNamePet(newName: String) {
         if isAddPetFlow {
@@ -85,6 +89,7 @@ final class EditPetViewModel: ObservableObject {
         } else {
             selectedPet.weight = Double(weightKG) + Double(weightG % 10)
         }
+        Helper.shared.isAddBtnEnable = true
     }
     
     func getWeigth() -> (kg: Int, g: Int) {
@@ -94,23 +99,20 @@ final class EditPetViewModel: ObservableObject {
         
         return (Int(newKG ), Int(newg))
     }
-        
-    //CRUD
     
     func addPet() {
-        CoreDataManager.shared.create(pet: newPet)
-        _ = CoreDataManager.shared.fetchAll()
+        coreData.add(pet: newPet)
     }
     
     func updatePet() {
         if isAddPetFlow {
             addPet()
         } else {
-            CoreDataManager.shared.saveData()
+            coreData.update(selectedPet)
         }
     }
     
-    func removePet(pet: Pet) {
-        CoreDataManager.shared.delete(pet: pet)
+    func removePet(pet: NewPet) {
+        coreData.delete(pet: pet)
     }
 }

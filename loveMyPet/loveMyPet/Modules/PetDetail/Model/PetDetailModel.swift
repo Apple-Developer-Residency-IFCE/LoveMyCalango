@@ -21,9 +21,3 @@ struct PetData: View {
         }
     }
 }
-
-struct PetData_Previews: PreviewProvider {
-    static var previews: some View {
-        PetData(title: "Nome", value: "Lua")
-    }
-}

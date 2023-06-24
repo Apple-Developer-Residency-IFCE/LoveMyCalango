@@ -47,7 +47,7 @@ struct EditPetView: View {
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
                         } else {
-                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image ?? Data()) ?? (UIImage(systemName: "photo") ?? UIImage())))
+                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image ) ?? (UIImage(named: Assets.Image.avatarCat2) ?? UIImage())))
                                 .resizable()
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
@@ -64,6 +64,11 @@ struct EditPetView: View {
             })
             .padding(.top, 16)
             FormView(viewModel: viewModel, isAddPetFlow: isAddPetFlow)
+        }
+        .onAppear {
+            if viewModel.isAddPetFlow == false  {
+                imagePicker.image = viewModel.selectedPet.image
+            }
         }
         .onDisappear {
             Helper.shared.isAddBtnEnable = false

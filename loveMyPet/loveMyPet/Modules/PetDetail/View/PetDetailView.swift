@@ -9,12 +9,11 @@ import SwiftUI
 
 struct PetDetailView: View {
     
-    @StateObject var petDetailViewModel: PetDetailViewModel = PetDetailViewModel()
-    @State var pet: Pet
+    @StateObject var viewModel: PetDetailViewModel
     
     var body: some View {
         VStack{
-            Image(uiImage: UIImage(data: pet.image ?? Data()) ?? UIImage(systemName: "photo")!)
+            Image(uiImage: UIImage(data: viewModel.pet.image ) ?? UIImage(named: Assets.Image.avatarCat2) ?? UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 194)
@@ -25,14 +24,14 @@ struct PetDetailView: View {
                     Text("Informações")
                         .font(.custom(Font.SemiBold, size: 20))
                     Spacer()
-                    Image(pet.gender.rawValue == "Fêmea" ? "IconFemale" : "IconMale")
+                    Image(viewModel.pet.gender.rawValue == "Fêmea" ? "IconFemale" : "IconMale")
                 }
                 
-                PetData(title: "Nome", value: pet.name)
-                PetData(title: "Espécie", value: pet.specie.rawValue)
-                PetData(title: "Nascimento", value: petDetailViewModel.formattedBirthDate(date: pet.birthDate ?? .now))
-                PetData(title: "Raça", value: pet.breed)
-                PetData(title: "Peso", value: petDetailViewModel.formattedWeight(weight: pet.weight))
+                PetData(title: "Nome", value: viewModel.pet.name)
+                PetData(title: "Espécie", value: viewModel.pet.specie.rawValue)
+                PetData(title: "Nascimento", value: viewModel.formattedBirthDate(date: viewModel.pet.birthDate ))
+                PetData(title: "Raça", value: viewModel.pet.breed)
+                PetData(title: "Peso", value: viewModel.formattedWeight(weight: viewModel.pet.weight))
                 
                 Divider().frame(height: 4).overlay(Color("Neutral300"))
                 
@@ -40,7 +39,7 @@ struct PetDetailView: View {
                     Text("Adicionais")
                         .font(.custom(Font.SemiBold, size: 20))
                     
-                    PetData(title: "Castrado(a)?", value: pet.isNeutered ? "Sim" : "Não")
+                    PetData(title: "Castrado(a)?", value: viewModel.pet.isNeutered ? "Sim" : "Não")
                 }
             }
             .padding(24.0)
@@ -48,9 +47,3 @@ struct PetDetailView: View {
         }
     }
 }
-
-//struct PetDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PetDetailView(petDetailViewModel: .init(pet: Pet()))
-//    }
-//}

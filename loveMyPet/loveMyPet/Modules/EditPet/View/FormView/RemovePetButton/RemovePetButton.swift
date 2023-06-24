@@ -27,6 +27,6 @@ struct RemovePetButton: View {
             .padding(.horizontal, 24)
         }
         .modifier(
-            AlertMessageBuilder(isShowing: $showAlert, handleDelete: {viewModel.removePet(pet: viewModel.selectedPet)}))
+            AlertMessageBuilder(isShowing: $showAlert, handleDelete: { viewModel.removePet(pet: viewModel.selectedPet)}))
     }
 }
