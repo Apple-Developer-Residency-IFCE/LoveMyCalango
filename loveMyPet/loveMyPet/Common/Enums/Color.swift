@@ -22,6 +22,8 @@ enum CustomColor {
     static let FontPickers = "FontPickers"
     static let EmptyMessageHome = "EmptyMessageHome"
     static let PickerSection = "PickerSection"
+    static let DeleteAlert = "DeleteAlert"
+    static let AlertBackground = "AlertBackground"
     
     enum Gray {
         static let neutral300 = "Neutral300"

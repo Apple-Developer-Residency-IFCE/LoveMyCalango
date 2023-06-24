@@ -14,13 +14,21 @@ struct AlertMessageBuilder: ViewModifier {
     func body(content: Content) -> some View {
         content
             .alert(Constants.Alert.deleteRegister,isPresented: $isShowing) {
-                Button(Constants.Alert.delete) {
+                Button(role: .destructive) {
                     handleDelete()
                     isShowing = false
+                } label: {
+                    Text(Constants.Alert.delete)
+                        .foregroundColor(Color(CustomColor.DeleteAlert))
                 }
-                Button(Constants.Home.cancel, role: .cancel) { }
+                
+                Button(role: .cancel, action: {}) {
+                    Text(Constants.Home.cancel)
+                        .foregroundColor(Color(CustomColor.MainColor))
+                }
             } message: {
                 Text(Constants.Alert.description)
+                    .foregroundColor(Color(CustomColor.FontColor))
             }
     }
 }
