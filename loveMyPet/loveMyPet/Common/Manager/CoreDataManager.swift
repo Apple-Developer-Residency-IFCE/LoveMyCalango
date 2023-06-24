@@ -92,17 +92,17 @@ class CoreDataManager {
         
         do {
             let result = try context.fetch(fetchRequest)
-            let petEntity = result.first
+            let coreDataPet = result.first
             
-            if let petEntity = petEntity {
-                petEntity.name = pet.name
-                petEntity.gender = pet.gender
-                petEntity.specie = pet.specie
-                petEntity.breed = pet.breed
-                petEntity.birthDate = pet.birthDate
-                petEntity.weight = pet.weight
-                petEntity.isNeutered = pet.isNeutered
-                petEntity.image = pet.image
+            if let coreDataPet = coreDataPet {
+                coreDataPet.name = pet.name
+                coreDataPet.gender = pet.gender
+                coreDataPet.specie = pet.specie
+                coreDataPet.breed = pet.breed
+                coreDataPet.birthDate = pet.birthDate
+                coreDataPet.weight = pet.weight
+                coreDataPet.isNeutered = pet.isNeutered
+                coreDataPet.image = pet.image
                 
                 try context.save()
             }
