@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FormView: View {
     
+    
     @StateObject var viewModel: EditPetViewModel
     var isAddPetFlow: Bool
     
@@ -38,7 +39,7 @@ struct FormView: View {
             }
             .scrollContentBackground(.hidden)
             if !isAddPetFlow {
-                RemovePetButton(viewModel: viewModel)
+                RemovePetButton(viewModel: viewModel, dismiss: {})
                     .padding(.bottom, 8)
             }
         }

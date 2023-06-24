@@ -10,7 +10,7 @@ import PhotosUI
 
 struct EditPetView: View {
 
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     
     @StateObject private var imagePicker = ImagePicker()
     @State private var isShowingImagePicker = false
@@ -64,6 +64,10 @@ struct EditPetView: View {
             })
             .padding(.top, 16)
             FormView(viewModel: viewModel, isAddPetFlow: isAddPetFlow)
+            
+            if !viewModel.isAddPetFlow {
+                RemovePetButton(viewModel: viewModel, showAlert: false, dismiss: { self.dismiss() })
+            }
         }
         .onAppear {
             if viewModel.isAddPetFlow == false  {
@@ -79,7 +83,7 @@ struct EditPetView: View {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         Button {
                             viewModel.updatePet()
-                            self.presentationMode.wrappedValue.dismiss()
+                            self.dismiss()
                         } label: {
                             Text(Constants.Home.save)
                                 .font(.custom(Font.SemiBold, size: 16))
