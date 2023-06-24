@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     
-    var customFunc: () -> Void
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
@@ -40,17 +39,6 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                                         .foregroundColor(Color("MainColor"))
                                         .font(.custom(Font.Regular, size: 16))
                                 }
-                            })
-                            ToolbarItem(placement: .navigationBarTrailing, content: {
-                                Button {
-                                    customFunc()
-                                    showingPopover = false
-                                } label: {
-                                    Text(Constants.Home.save)
-                                        .font(.custom(Font.SemiBold, size: 16))
-                                }
-                                .disabled(!Helper.shared.isAddBtnEnable)
-                                .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color("MainColor"))
                             })
                         }
                 }

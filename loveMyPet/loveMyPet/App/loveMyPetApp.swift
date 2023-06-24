@@ -22,7 +22,8 @@ struct loveMyPetApp: App {
                     CustomHomeNavigation(customFunc: { editViewModel.updatePet() }) {
                         HomeView(homeViewModel: homeViewModel)
                     } addView: {
-                        EditPetView(viewModelAddPet: editViewModel ,updateHome: { homeViewModel.fetchAllPets() })
+                        EditPetView(viewModelAddPet: editViewModel, updateHome: { homeViewModel.fetchAllPets()
+                        })
                             .navigationTitle(Constants.Home.addPetTitle)
                             .navigationBarTitleDisplayMode(.inline)
                     }

@@ -23,7 +23,7 @@ struct FormView: View {
                         .foregroundColor(Color("Gray-8C8C8B"))
                         .font(.custom(Font.Regular, size: 16))
                         .listRowBackground(Color("White-F4F3FA"))
-                        .onChange(of: petName) { newValue in
+                        .onChange(of: viewModel.isAddPetFlow ? petName : viewModel.selectedPet.name) { newValue in
                             viewModel.changeNamePet(newName: newValue)
                         }
                     

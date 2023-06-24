@@ -10,6 +10,8 @@ import PhotosUI
 
 struct EditPetView: View {
 
+    @Environment(\.presentationMode) var presentationMode
+    
     @StateObject private var imagePicker = ImagePicker()
     @State private var isShowingImagePicker = false
     @State var isAddPetFlow: Bool = true
@@ -25,8 +27,8 @@ struct EditPetView: View {
     
     init(viewModel: EditPetViewModel, updateHome: @escaping UpdateHome) {
         self.updateHome = updateHome
-        self.isAddPetFlow = false
         self.viewModel = viewModel
+        self.isAddPetFlow = false
     }
     
     var body: some View {
@@ -62,9 +64,25 @@ struct EditPetView: View {
             })
             .padding(.top, 16)
             FormView(viewModel: viewModel, isAddPetFlow: isAddPetFlow)
-        }.onDisappear {
+        }
+        .onDisappear {
             Helper.shared.isAddBtnEnable = false
             updateHome()
+        }
+        .toolbar {
+            if viewModel.isAddPetFlow == false {
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button {
+                            viewModel.updatePet()
+                            self.presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text(Constants.Home.save)
+                                .font(.custom(Font.SemiBold, size: 16))
+                        }
+                        .disabled(!Helper.shared.isAddBtnEnable)
+                        .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color("MainColor"))
+                    })
+            }
         }
     }
 }
