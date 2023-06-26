@@ -31,7 +31,7 @@ struct WeightRowFlow: View {
                             .padding(3)
                             .padding(.horizontal, 4)
                             .background(RoundedRectangle(cornerRadius: 4)
-                                .fill(Color(CustomColor.PickerSection)))
+                                .fill(Color(CustomColor.WeightValueBackgroun)))
                     }
                     .onTapGesture(perform: {
                         if showWeightPicker {
@@ -45,7 +45,7 @@ struct WeightRowFlow: View {
                     Spacer()
                 }
             }
-            .listRowBackground(Color(CustomColor.PickerSection))
+            .listRowBackground(Color(CustomColor.PickerRowBackground))
         }
     }
 }

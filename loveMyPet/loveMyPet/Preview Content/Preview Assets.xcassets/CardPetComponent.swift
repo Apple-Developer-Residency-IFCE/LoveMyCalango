@@ -32,7 +32,7 @@ struct CardPet: View{
             .padding(.leading, 16)
             
             Spacer()
-            Image(systemName: Assets.Icon.arrow)
+            Image(Assets.Icon.arrow)
                 .foregroundColor(.black.opacity(0.61))
                 .padding(.trailing, 16)
 

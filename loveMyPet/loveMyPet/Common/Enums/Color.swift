@@ -28,4 +28,7 @@ enum CustomColor {
     enum Gray {
         static let neutral300 = "Neutral300"
     }
+    static let PickerRowBackground = "PickerRowBackground"
+    static let WeightValueBackgroun = "WeightValueBackgroun"
+    static let TabViewBackground = "TabViewBackground"
 }

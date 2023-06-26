@@ -35,6 +35,8 @@ struct loveMyPetApp: App {
                 .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
                 .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
+            .accentColor(Color(CustomColor.MainColor))
+            
         }
     }
 }

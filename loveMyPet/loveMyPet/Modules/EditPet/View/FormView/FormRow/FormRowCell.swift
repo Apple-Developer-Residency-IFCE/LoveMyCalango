@@ -35,6 +35,6 @@ struct FormRowCell: View {
                 Text("")
             }
         }
-        .listRowBackground(Color(CustomColor.PickerSection))
+        .listRowBackground(Color(CustomColor.PickerRowBackground))
     }
 }
