@@ -16,7 +16,6 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     var body: some View {
         detailPet
             .navigationTitle(Text(Constants.Home.infoPetTitle)
-                .foregroundColor(Color(CustomColor.FontColor))
             )
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

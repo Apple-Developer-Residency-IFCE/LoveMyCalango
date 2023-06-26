@@ -23,7 +23,9 @@ struct CustomTabView<Home: View, Config: View>: View {
                     } icon: {
                         Image(selectedTab == .pets ? Assets.Icon.petFilled : Assets.Icon.pet)
                     }
-                }                
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
                 .onTapGesture {
                     selectedTab = .pets
                 }
@@ -39,7 +41,8 @@ struct CustomTabView<Home: View, Config: View>: View {
                               Assets.Icon.configFilled : Assets.Icon.config)
                     }
                 }
-                
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
                 .onTapGesture {
                     selectedTab = .config
                 }
