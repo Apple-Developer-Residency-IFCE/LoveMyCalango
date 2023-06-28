@@ -1,5 +1,5 @@
 //
-//  CustomEditBarNavigation.swift
+//  CustomEditNavigation.swift
 //  loveMyPet
 //
 //  Created by Ravi on 16/06/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
+struct CustomEditNavigation<Detail: View, Edit: View>: View {
     
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
