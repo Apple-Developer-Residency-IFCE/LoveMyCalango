@@ -11,24 +11,16 @@ import PhotosUI
 struct EditPetView: View {
 
     @Environment(\.dismiss) var dismiss
-    
+    @ObservedObject var viewModel: EditPetViewModel
     @StateObject private var imagePicker = ImagePicker()
     @State private var isShowingImagePicker = false
-    @State var isAddPetFlow: Bool = true
-    @ObservedObject var viewModel: EditPetViewModel
     
-    var updateHome: UpdateHome
-    typealias UpdateHome = () -> Void
-    
-    init(viewModelAddPet: EditPetViewModel, updateHome: @escaping UpdateHome) {
-        self.updateHome = updateHome
-        self.viewModel = viewModelAddPet
+    init(addViewModel: EditPetViewModel) {
+        viewModel = addViewModel
     }
-    
-    init(viewModel: EditPetViewModel, updateHome: @escaping UpdateHome) {
-        self.updateHome = updateHome
-        self.viewModel = viewModel
-        self.isAddPetFlow = false
+
+    init(editViewModel: EditPetViewModel) {
+        viewModel = editViewModel
     }
     
     var body: some View {
@@ -41,20 +33,20 @@ struct EditPetView: View {
                             .frame(width: 64, height: 64)
                             .clipShape(Circle())
                     } else {
-                        if isAddPetFlow {
+                        if viewModel.isAddPetFlow {
                             Image(Assets.Image.avatarCat2)
                                 .resizable()
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
                         } else {
-                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image ) ?? (UIImage(named: Assets.Image.avatarCat2) ?? UIImage())))
+                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image) ?? UIImage(named: Assets.Image.logo)) ?? UIImage())
                                 .resizable()
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
                         }
                     }
                     
-                    Text(Constants.Home.changePictore)
+                    Text(Constants.Home.changePicture)
                         .font(.custom(Font.Regular, size: 13))
                         .foregroundColor(Color(CustomColor.FontColor))
                 }
@@ -63,33 +55,32 @@ struct EditPetView: View {
                 viewModel.changePetImage(data: newValue)
             })
             .padding(.top, 16)
-            FormView(viewModel: viewModel, isAddPetFlow: isAddPetFlow)
+            
+            FormView(viewModel: viewModel)
             
             if !viewModel.isAddPetFlow {
-                RemovePetButton(viewModel: viewModel, showAlert: false, dismiss: { self.dismiss() })
-            }
-        }
-        .onAppear {
-            if viewModel.isAddPetFlow == false  {
-                imagePicker.image = viewModel.selectedPet.image
+                RemovePetButton(viewModel: viewModel, showAlert: false, dismiss: {dismiss()})
             }
         }
         .onDisappear {
-            Helper.shared.isAddBtnEnable = false
-            updateHome()
+            //Zerando os valores do formulário
+            viewModel.selectedPet = NewPet()
+            viewModel.weight = ""
+            viewModel.weightKG = 0
+            viewModel.weightG = 0
         }
         .toolbar {
             if viewModel.isAddPetFlow == false {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         Button {
                             viewModel.updatePet()
-                            self.dismiss()
+                            Helper.shared.AddButtonDisable = true
+                            dismiss()
                         } label: {
                             Text(Constants.Home.save)
                                 .font(.custom(Font.SemiBold, size: 16))
                         }
-                        .disabled(!Helper.shared.isAddBtnEnable)
-                        .tint(!Helper.shared.isAddBtnEnable ? Color.gray : Color(CustomColor.MainColor))
+                        .tint(Color(CustomColor.MainColor))
                     })
             }
         }
