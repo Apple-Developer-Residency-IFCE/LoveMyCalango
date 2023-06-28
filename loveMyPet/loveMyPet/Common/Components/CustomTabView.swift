@@ -7,14 +7,31 @@
 
 import SwiftUI
 
-struct CustomTabView<Home: View, Config: View>: View {
+struct CustomTabView<Home: View, Config: View, Task: View>: View {
     
     @Binding var selectedTab: TabContextView
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
-    
+    @ViewBuilder let taskView: Task
     var body: some View {
         TabView(selection: $selectedTab){
+            taskView
+                .tabItem {
+                    Label{
+                        Text(TabContextView.task.rawValue)
+                            .foregroundColor(.white)
+                    } icon: {
+                        Image(selectedTab == .task ?
+                              Assets.Icon.taskFilled : Assets.Icon.task)
+                    }
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
+                .onTapGesture {
+                    selectedTab = .task
+                }
+                .tag(TabContextView.task)
+            
             homeView
                 .tabItem {
                     Label {
@@ -47,6 +64,7 @@ struct CustomTabView<Home: View, Config: View>: View {
                     selectedTab = .config
                 }
                 .tag(TabContextView.config)
+            
         }
     }
 }

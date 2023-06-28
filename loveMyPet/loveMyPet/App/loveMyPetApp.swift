@@ -35,6 +35,8 @@ struct loveMyPetApp: App {
                 }
             configView: {
                 ConfigView()
+            } taskView: {
+                TaskView()
             }
             .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
             .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
