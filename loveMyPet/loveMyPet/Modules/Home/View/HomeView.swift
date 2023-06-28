@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var homeViewModel: HomeViewModel
+    @StateObject var homeViewModel: HomeViewModel
     
     var body: some View {
         ScrollView(.vertical) {
@@ -20,13 +20,13 @@ struct HomeView: View {
                         VStack {
                             GridRow {
                                 NavigationLink {
-                                    CustomEditBarNavigation(detailPet: {
-                                        PetDetailView(viewModel: PetDetailViewModel(pet: pet))
+                                    CustomEditNavigation(detailPet: {
+                                        PetDetailView(pet: pet)
                                     }, editView: {
-                                        EditPetView(viewModel: EditPetViewModel(selectedPet: pet), updateHome: { homeViewModel.fetchAllPets() } )
+                                        EditPetView(editViewModel: EditPetViewModel(pet: pet))
                                             .navigationTitle(Constants.Home.editPetTitle)
                                             .navigationBarTitleDisplayMode(.inline)
-                                    })
+                                    }, update: { homeViewModel.fetchAllPets() })
                                 } label: {
                                     CardPet(item: pet)
                                 }

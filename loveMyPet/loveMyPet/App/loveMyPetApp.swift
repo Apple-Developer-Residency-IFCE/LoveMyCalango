@@ -13,27 +13,33 @@ struct loveMyPetApp: App {
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
-    @StateObject var editViewModel = EditPetViewModel()
+    @StateObject var addViewModel = EditPetViewModel()
     
     var body: some Scene {
         WindowGroup {
-            NavigationView{
+            NavigationView {
                 CustomTabView(selectedTab: $selectedTab) {
-                    CustomHomeNavigation(customFunc: { editViewModel.updatePet() }) {
+                    CustomHomeNavigation {
                         HomeView(homeViewModel: homeViewModel)
                     } addView: {
-                        EditPetView(viewModelAddPet: editViewModel, updateHome: { homeViewModel.fetchAllPets()
-                        })
+                        EditPetView(addViewModel: addViewModel)
                             .navigationTitle(Constants.Home.addPetTitle)
                             .navigationBarTitleDisplayMode(.inline)
+                    } action: {
+                        addViewModel.updatePet()
+                        Helper.shared.AddButtonDisable = true
+                    } update: {
+                        homeViewModel.fetchAllPets()
+                        addViewModel.newPet = NewPet()
                     }
-                } configView: {
-                    ConfigView()
                 }
-                .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
-                .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-                .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
-                .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
+            configView: {
+                ConfigView()
+            }
+            .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
+            .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+            .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
+            .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
             .accentColor(Color(CustomColor.MainColor))
             
