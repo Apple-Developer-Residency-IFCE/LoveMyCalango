@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct PetDetailView: View {
-    @StateObject var petDetailViewModel: PetDetailViewModel
+    
+    @StateObject private var petDetailViewModel: PetDetailViewModel = .init()
+    
     var pet: Pet
     
     var body: some View {
         VStack{
-            Image(pet.image)
+            Image(uiImage: UIImage(data: pet.image) ?? UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 194)
@@ -45,11 +47,12 @@ struct PetDetailView: View {
             .padding(24.0)
             Spacer()
         }
+        .background(Color(CustomColor.BackGroundColor))
     }
 }
 
 struct PetDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        PetDetailView(petDetailViewModel: PetDetailViewModel(), pet: Pet())
+        PetDetailView(pet: Pet())
     }
 }

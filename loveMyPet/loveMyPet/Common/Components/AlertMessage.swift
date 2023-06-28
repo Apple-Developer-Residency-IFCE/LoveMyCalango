@@ -9,14 +9,26 @@ import SwiftUI
 
 struct AlertMessageBuilder: ViewModifier {
     @Binding var isShowing: Bool
+    var handleDelete: () -> Void
 
     func body(content: Content) -> some View {
         content
-            .alert("Deseja excluir o cadastro?",isPresented: $isShowing) {
-                Button("Excluir", role: .destructive) { }
-                Button("Cancelar", role: .cancel) { }
+            .alert(Constants.Alert.deleteRegister,isPresented: $isShowing) {
+                Button(role: .destructive) {
+                    handleDelete()
+                    isShowing = false
+                } label: {
+                    Text(Constants.Alert.delete)
+                        .foregroundColor(Color(CustomColor.DeleteAlert))
+                }
+                
+                Button(role: .cancel, action: {}) {
+                    Text(Constants.Home.cancel)
+                        .foregroundColor(Color(CustomColor.MainColor))
+                }
             } message: {
-                Text("Uma vez excluida, essa ação não pode ser desfeita.")
+                Text(Constants.Alert.description)
+                    .foregroundColor(Color(CustomColor.FontColor))
             }
     }
 }

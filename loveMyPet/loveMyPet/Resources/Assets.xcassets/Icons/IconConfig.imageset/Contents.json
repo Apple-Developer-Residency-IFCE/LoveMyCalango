@@ -3,6 +3,16 @@
     {
       "filename" : "IconConfig.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Subtract.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {

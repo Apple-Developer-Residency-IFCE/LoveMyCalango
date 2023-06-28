@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
-struct Pet: Identifiable {
-
-    let id: UUID = UUID()
-    let name: String = "Hugo"
-    let specie: Specie = Specie.dog
-    let breed: String = "Pug"
-    let image: String = "AvatarDog1"
-    let gender: Gender = Gender.male
-    let birthDate: Date = Date()
-    let weight: Double = 10.0
-    let isNeutered: Bool = false
-
+struct Pet: Identifiable, Equatable {
+    
+    var id: UUID = UUID()
+    var name: String = ""
+    var specie: Specie = .none
+    var breed: String = "Não Escolhido"
+    var image: Data = Data()
+    var gender: Gender = .none
+    var birthDate: Date = Date()
+    var weight: Double = 0
+    var isNeutered: Bool = false
+    
+    static func == (lhs: Pet, rhs: Pet) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

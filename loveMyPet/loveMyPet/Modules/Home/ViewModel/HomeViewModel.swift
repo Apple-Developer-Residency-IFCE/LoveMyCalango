@@ -2,7 +2,17 @@
 //  HomeViewModel.swift
 //  loveMyPet
 //
-//  Created by userext on 24/05/23.
+//  Created by Ravi navarro on 20/06/23.
 //
 
-import Foundation
+import SwiftUI
+
+class HomeViewModel: ObservableObject {
+    
+    @Published var pets: [NewPet] = []
+    
+    func fetchAllPets() {
+        pets = []
+        pets = CoreDataManager.shared.getPetList()
+    }
+}

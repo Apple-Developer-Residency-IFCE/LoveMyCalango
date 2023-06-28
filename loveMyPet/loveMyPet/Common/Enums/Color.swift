@@ -19,4 +19,16 @@ enum CustomColor {
     static let HelperError = "HelperError"
     static let HelperSuccess = "HelperSuccess"
     static let HelperWarning = "HelperWarning"
+    static let FontPickers = "FontPickers"
+    static let EmptyMessageHome = "EmptyMessageHome"
+    static let PickerSection = "PickerSection"
+    static let DeleteAlert = "DeleteAlert"
+    static let AlertBackground = "AlertBackground"
+    
+    enum Gray {
+        static let neutral300 = "Neutral300"
+    }
+    static let PickerRowBackground = "PickerRowBackground"
+    static let WeightValueBackgroun = "WeightValueBackgroun"
+    static let TabViewBackground = "TabViewBackground"
 }
