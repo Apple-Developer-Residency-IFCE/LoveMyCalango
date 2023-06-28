@@ -9,17 +9,9 @@ import SwiftUI
 
 struct RemovePetButton: View {
     
-    @State var viewModel: EditPetViewModel
-    @State var showAlert: Bool
-    var dismiss: Dismiss
-    
-    typealias Dismiss = () -> Void
-    
-    init(viewModel: EditPetViewModel, showAlert: Bool? = false, dismiss: @escaping Dismiss) {
-        self.viewModel = viewModel
-        self._showAlert = State(initialValue: showAlert ?? false)
-        self.dismiss = dismiss
-    }
+    @StateObject var viewModel: EditPetViewModel
+    @State var showAlert: Bool = true
+    var dismiss: () -> Void
     
     var body: some View {
         Button(action: {
@@ -38,7 +30,7 @@ struct RemovePetButton: View {
         .modifier(
             AlertMessageBuilder(isShowing: $showAlert, handleDelete: {
                 viewModel.removePet(pet: viewModel.selectedPet)
-                self.dismiss()
+                dismiss()
             }))
     }
 }

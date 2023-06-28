@@ -12,6 +12,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
+    var update: () -> Void
     
     var body: some View {
         detailPet
@@ -28,7 +29,7 @@ struct CustomEditBarNavigation<Detail: View, Edit: View>: View {
                     }
                 }
             }
-            .popover(isPresented: $showingPopover) {
+            .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
                 NavigationView {
                     editView
                         .toolbar{
