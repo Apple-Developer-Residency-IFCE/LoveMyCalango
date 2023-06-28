@@ -17,6 +17,7 @@ struct FormRowCell: View {
             Text(type.title)
                 .foregroundColor(Color(CustomColor.FontColor))
                 .font(.custom(Font.Regular, size: 16))
+            
             switch type {
             case .gender:
                 GenderPicker(viewModel: viewModel)
@@ -28,8 +29,8 @@ struct FormRowCell: View {
                 BirthDatePicker(viewModel: viewModel)
             case .weight:
                 WeightPicker(viewModel: viewModel)
-                .frame(height: 100)
-            case .castrated:
+                    .frame(height: 100)
+            case .isNeutered:
                 NeuteredPicker(viewModel: viewModel)
             case .none:
                 Text("")

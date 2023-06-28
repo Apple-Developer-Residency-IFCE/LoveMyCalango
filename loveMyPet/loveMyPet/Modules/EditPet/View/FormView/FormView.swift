@@ -11,7 +11,6 @@ struct FormView: View {
     
     
     @StateObject var viewModel: EditPetViewModel
-    var isAddPetFlow: Bool
     
     @State private var petName: String = ""
     @State private var showWeightPicker = false
@@ -34,14 +33,10 @@ struct FormView: View {
                 }
                 Section {
                     WeightRowFlow(viewModel: viewModel)
-                    FormRowCell(type: .castrated, viewModel: viewModel)
+                    FormRowCell(type: .isNeutered, viewModel: viewModel)
                 }
             }
             .scrollContentBackground(.hidden)
-            if !isAddPetFlow {
-                RemovePetButton(viewModel: viewModel, dismiss: {})
-                    .padding(.bottom, 8)
-            }
         }
         .onTapGesture {
             hideKeyboard()
