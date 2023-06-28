@@ -26,7 +26,7 @@ struct WeightRowFlow: View {
                             .foregroundColor(Color(CustomColor.FontColor))
                             .font(.custom(Font.Regular, size: 16))
                         Spacer()
-                        Text(viewModel.formattedWeight)
+                        Text(viewModel.weight)
                             .font(.custom(Font.Regular, size: 13))
                             .padding(3)
                             .padding(.horizontal, 4)

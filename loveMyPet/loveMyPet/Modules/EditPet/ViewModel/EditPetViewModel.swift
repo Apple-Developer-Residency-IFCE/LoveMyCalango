@@ -12,13 +12,11 @@ final class EditPetViewModel: ObservableObject {
         
     let coreData = CoreDataManager.shared
     
-    @Published var newPet: NewPet = .init()
+    //ATRIBUTOS
     
-    @Published var selectedPet: NewPet {
-        didSet {
-            Helper.shared.isAddBtnEnable = true
-        }
-    }
+    @Published var newPet: NewPet = NewPet()
+    
+    @Published var selectedPet: NewPet
     
     @Published var weight: String = ""
     
@@ -36,36 +34,30 @@ final class EditPetViewModel: ObservableObject {
     
     @Published var isAddPetFlow: Bool = true
     
-    @Published var addBtnIsEnable: Bool = false
+    //INITS
     
     init() {
         selectedPet = NewPet()
         updateFormattedWeight()
-        (weightKG, weightG) = getWeigth()
     }
     
-    init(selectedPet: NewPet) {
+    init(pet: NewPet) {
         isAddPetFlow = false
-        self.selectedPet = selectedPet
+        selectedPet = pet
+        (weightKG, weightG) = getWeight()
         updateFormattedWeight()
-        (weightKG, weightG) = getWeigth()
     }
     
-    func changePetToEdit(pet: NewPet) {
-        self.selectedPet = pet
-    }
-        
-    func disableAddBtn() {
-        addBtnIsEnable = false
-    }
     
+    //FORM FUNCTIONS
+
     func changeNamePet(newName: String) {
         if isAddPetFlow {
             newPet.name = newName
         } else {
             selectedPet.name = newName
         }
-        Helper.shared.isAddBtnEnable = true
+        Helper.shared.AddButtonDisable = false
     }
     
     func changePetImage(data: Data) {
@@ -76,29 +68,28 @@ final class EditPetViewModel: ObservableObject {
         }
     }
     
-    var formattedWeight: String {
-        return weight
-    }
+    //PESO
     
     func updateFormattedWeight() {
-        let kg = (weightKG != 0) ? "\(weightKG)" : ""
-        let g = (weightG != 0) ? "\(weightKG != 0 ? "," : "0,")\(weightG) kg" : "kg"
+        let kg = weightKG != 0 ? "\(weightKG)" : ""
+        let g = weightG != 0 ? "\(weightKG != 0 ? "," : "0,") \(weightG) kg" : "kg"
+        
         weight = kg + g
+        
         if isAddPetFlow {
-            newPet.weight = Double(weightKG) + Double(weightG % 10)
+            newPet.weight = Double(weightKG) + Double(weightG % 10) / 10.0
         } else {
-            selectedPet.weight = Double(weightKG) + Double(weightG % 10)
+            selectedPet.weight = Double(weightKG) + Double(weightG % 10) / 10.0
         }
-        Helper.shared.isAddBtnEnable = true
     }
     
-    func getWeigth() -> (kg: Int, g: Int) {
-        
-        let newKG = isAddPetFlow ? newPet.weight.rounded(.down) : selectedPet.weight.rounded(.down)
-        let newg = isAddPetFlow ? (newPet.weight - newKG ) : (selectedPet.weight - newKG)
-        
-        return (Int(newKG ), Int(newg))
+    func getWeight() -> (kg: Int, g: Int) {
+        let kg = Int(selectedPet.weight)
+        let g = Int((selectedPet.weight - Double(kg)) * 10)
+        return (kg, g)
     }
+    
+    //PET CRUD
     
     func addPet() {
         coreData.add(pet: newPet)
