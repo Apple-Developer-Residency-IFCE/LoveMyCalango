@@ -15,7 +15,7 @@ enum TypeFormRow: CaseIterable, Identifiable {
     case specie
     case breed
     case weight
-    case castrated
+    case isNeutered
     case none
     
     var title: String {
@@ -30,7 +30,7 @@ enum TypeFormRow: CaseIterable, Identifiable {
             return "Nascimento"
         case .weight:
             return ""
-        case .castrated:
+        case .isNeutered:
             return "Castrado(a)?"
         case .none:
             return ""

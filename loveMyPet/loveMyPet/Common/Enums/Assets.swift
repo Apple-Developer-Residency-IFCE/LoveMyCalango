@@ -9,8 +9,9 @@ import Foundation
 
 enum Assets {
     enum Image {
+        static let logo = "LogoImage"
         static let avatarCat2 = "AvatarCat2"
-        static let emptyPet = "emptyPet"
+        static let emptyPet = "EmptyPet"
     }
     
     enum Icon {
@@ -20,6 +21,7 @@ enum Assets {
         static let petFilled = "IconPetFilled"
         static let arrow = "IconArrow"
         static let plus = "plus"
+        static let none = "IconNonGender"
         static let female = "IconFemale"
         static let male = "IconMale"
         static let configSelected = "IconSelected"

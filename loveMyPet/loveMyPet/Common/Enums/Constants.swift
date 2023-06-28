@@ -13,6 +13,7 @@ enum Constants {
     static let no = "Não"
     static let female = "Fêmea"
     static let male = "Macho"
+    static let none = "Nenhum"
     
     enum Style {
         static let system = "Sistema"
@@ -28,7 +29,7 @@ enum Constants {
         static let editPetTitle = "Editar Pet"
         static let cancel = "Cancelar"
         static let add = "Adicionar"
-        static let changePictore = "Trocar foto"
+        static let changePicture = "Trocar foto"
         static let deletePet = "Excluir Cadastro"
         static let save = "Salvar"
         static let edit = "Editar"
@@ -50,7 +51,7 @@ enum Constants {
         static let birth = "Nascimento"
         static let breed = "Raça"
         static let addeds = "Adicionais"
-        static let castred = "Castrado(a)?"
+        static let isNeutered = "Castrado(a)?"
     }
     
     enum Config {
