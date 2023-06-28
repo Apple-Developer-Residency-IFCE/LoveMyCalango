@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PetDetailView: View {
     
-    @StateObject var viewModel: PetDetailViewModel
+    var pet: NewPet
+    @StateObject var viewModel: PetDetailViewModel = PetDetailViewModel()
     
     var body: some View {
         VStack{
-            Image(uiImage: UIImage(data: viewModel.pet.image ) ?? UIImage(named: Assets.Image.avatarCat2) ?? UIImage())
+            Image(uiImage: UIImage(data: pet.image ) ?? UIImage(named: Assets.Image.logo) ?? UIImage())
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 194)
@@ -24,14 +25,14 @@ struct PetDetailView: View {
                     Text(Constants.Detail.info)
                         .font(.custom(Font.SemiBold, size: 20))
                     Spacer()
-                    Image(viewModel.pet.gender.rawValue == Constants.female ? Assets.Icon.female : Assets.Icon.male)
+                    Image(pet.gender.rawValue == Constants.female ? Assets.Icon.female : (pet.gender.rawValue == Constants.none ? Assets.Icon.none : Assets.Icon.male))
                 }
                 
-                PetData(title: Constants.Detail.name, value: viewModel.pet.name)
-                PetData(title: Constants.Detail.specie, value: viewModel.pet.specie.rawValue)
-                PetData(title: Constants.Detail.birth, value: viewModel.formattedBirthDate(date: viewModel.pet.birthDate ))
-                PetData(title: Constants.Detail.breed, value: viewModel.pet.breed)
-                PetData(title: Constants.Picker.weight, value: viewModel.formattedWeight(weight: viewModel.pet.weight))
+                PetData(title: Constants.Detail.name, value: pet.name)
+                PetData(title: Constants.Detail.specie, value: pet.specie.rawValue)
+                PetData(title: Constants.Detail.birth, value: viewModel.formattedBirthDate(date: pet.birthDate ))
+                PetData(title: Constants.Detail.breed, value: pet.breed)
+                PetData(title: Constants.Picker.weight, value: viewModel.formattedWeight(weight: pet.weight))
                 
                 Divider().frame(height: 4).overlay(Color(CustomColor.Gray.neutral300))
                 
@@ -39,7 +40,7 @@ struct PetDetailView: View {
                     Text(Constants.Detail.addeds)
                         .font(.custom(Font.SemiBold, size: 20))
                     
-                    PetData(title: Constants.Detail.castred, value: viewModel.pet.isNeutered ? Constants.yes : Constants.no)
+                    PetData(title: Constants.Detail.isNeutered, value: pet.isNeutered ? Constants.yes : Constants.no)
                 }
             }
             .padding(24.0)
