@@ -9,7 +9,28 @@ import SwiftUI
 
 struct TaskView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ZStack{
+                Color(CustomColor.BackGroundColor)
+                    .ignoresSafeArea()
+                VStack {
+                    Text("Tarefa")
+                }
+            }
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image(Assets.Image.namedLogo)
+                        .padding(.horizontal)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(Assets.Icon.add)
+                }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Image(Assets.Icon.calendar)
+                        .padding(.horizontal)
+                }
+            }
+        }
     }
 }
 

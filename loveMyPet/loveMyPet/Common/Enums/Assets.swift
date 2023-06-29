@@ -12,6 +12,7 @@ enum Assets {
         static let logo = "LogoImage"
         static let avatarCat2 = "AvatarCat2"
         static let emptyPet = "EmptyPet"
+        static let namedLogo = "NamedLogo"
     }
     
     enum Icon {
@@ -28,5 +29,7 @@ enum Assets {
         static let male = "IconMale"
         static let configSelected = "IconSelected"
         static let configSelect = "IconSelect"
+        static let add = "IconAdd"
+        static let calendar = "IconCalendar"
     }
 }
