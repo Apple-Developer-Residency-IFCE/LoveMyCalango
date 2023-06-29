@@ -532,6 +532,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 641AEB172A1EC48C00F2CE34 /* Build configuration list for PBXNativeTarget "loveMyPet" */;
 			buildPhases = (
+				1DA040EA2A4CE3DA00405B05 /* Run SwiftLint */,
 				641AEB052A1EC48C00F2CE34 /* Sources */,
 				641AEB062A1EC48C00F2CE34 /* Frameworks */,
 				641AEB072A1EC48C00F2CE34 /* Resources */,
@@ -608,6 +609,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1DA040EA2A4CE3DA00405B05 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		641AEB052A1EC48C00F2CE34 /* Sources */ = {
