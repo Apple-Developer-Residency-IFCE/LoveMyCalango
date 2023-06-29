@@ -64,4 +64,10 @@ enum Constants {
         static let delete = "Excluir"
         static let description = "Uma vez excluida, essa ação não pode ser desfeita."
     }
+    
+    enum ErrorResponses {
+        static let invalidUrl = "Url Inválida"
+        static let invalidResponse = "Resposta inválida"
+        static let invalidData = "Dado invalido"
+    }
 }
