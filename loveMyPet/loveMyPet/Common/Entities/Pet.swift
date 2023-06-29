@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct Pet: Identifiable, Equatable {
-    
+
     var id: UUID = UUID()
     var name: String = ""
     var specie: Specie = .none
@@ -17,7 +17,7 @@ struct Pet: Identifiable, Equatable {
     var birthDate: Date = Date()
     var weight: Double = 0
     var isNeutered: Bool = false
-    
+
     static func == (lhs: Pet, rhs: Pet) -> Bool {
         return lhs.id == rhs.id
     }

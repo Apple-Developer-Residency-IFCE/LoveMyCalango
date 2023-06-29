@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CustomEditNavigation<Detail: View, Edit: View>: View {
-    
+
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingPopover = false
     var update: () -> Void
-    
+
     var body: some View {
         detailPet
             .navigationTitle(Text(Constants.Home.infoPetTitle)
@@ -32,7 +32,7 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
             .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
                 NavigationView {
                     editView
-                        .toolbar{
+                        .toolbar {
                             ToolbarItem(placement: .navigationBarLeading, content: {
                                 Button {
                                     showingPopover = false

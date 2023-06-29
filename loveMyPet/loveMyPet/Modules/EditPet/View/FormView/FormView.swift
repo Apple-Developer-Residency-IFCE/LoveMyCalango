@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct FormView: View {
-    
-    
+
     @StateObject var viewModel: EditPetViewModel
-    
+
     @State private var petName: String = ""
     @State private var showWeightPicker = false
-    
+
     var body: some View {
         VStack {
             Form {
@@ -26,7 +25,7 @@ struct FormView: View {
                         .onChange(of: viewModel.isAddPetFlow ? petName : viewModel.selectedPet.name) { newValue in
                             viewModel.changeNamePet(newName: newValue)
                         }
-                    
+
                     ForEach(TypeFormRow.allCases.prefix(4)) { caseValue in
                         FormRowCell(type: caseValue, viewModel: viewModel)
                     }

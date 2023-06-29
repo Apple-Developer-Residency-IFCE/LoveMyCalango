@@ -10,13 +10,13 @@ import SwiftUI
 struct ConfigOptions: View {
     private var viewModel = ConfigViewModel()
     @State private var selectedButtonIndex: Int?
-    
+
     let configStyle = [
         ("SystemMode", Constants.Style.system),
         ("LightMode", Constants.Style.light),
         ("DarkMode", Constants.Style.dark)
     ]
-    
+
     var body: some View {
         HStack(spacing: 20) {
             ForEach(configStyle.indices, id: \.self) { index in
@@ -26,12 +26,12 @@ struct ConfigOptions: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 65, height: 160)
                         .padding(.horizontal)
-                    
+
                     Text(configStyle[index].1)
                         .foregroundColor(Color(CustomColor.FontColor))
                         .font(.custom(Font.Regular, size: 13))
                         .padding(.bottom, 2)
-                    
+
                     ConfigButton(isSelected: Binding(
                         get: { selectedButtonIndex == index },
                         set: { isSelected in
@@ -49,7 +49,7 @@ struct ConfigOptions: View {
             selectedButtonIndex = viewModel.preferredColor.rawValue
         }
     }
-    
+
     struct ConfigOptions_Previews: PreviewProvider {
         static var previews: some View {
             ConfigOptions()

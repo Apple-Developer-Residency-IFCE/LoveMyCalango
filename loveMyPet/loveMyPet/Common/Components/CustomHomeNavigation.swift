@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CustomHomeNavigation<Home: View, Add: View>: View {
-    
+
     @ViewBuilder let homeView: Home
     @ViewBuilder let addView: Add
     var action: () -> Void
     var update: () -> Void
-    
+
     @State private var showingPopover = false
-    
+
     var body: some View {
         homeView
             .toolbar {
@@ -32,7 +32,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
             .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
                 NavigationView {
                     addView
-                        .toolbar{
+                        .toolbar {
                             ToolbarItem(placement: .navigationBarLeading, content: {
                                 Button {
                                     showingPopover = false

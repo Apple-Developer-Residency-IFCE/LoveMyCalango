@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CustomTabView<Home: View, Config: View>: View {
-    
+
     @Binding var selectedTab: TabContextView
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
-    
+
     var body: some View {
-        TabView(selection: $selectedTab){
+        TabView(selection: $selectedTab) {
             homeView
                 .tabItem {
                     Label {
@@ -30,10 +30,10 @@ struct CustomTabView<Home: View, Config: View>: View {
                     selectedTab = .pets
                 }
                 .tag(TabContextView.pets)
-            
+
             configView
                 .tabItem {
-                    Label{
+                    Label {
                         Text(TabContextView.config.rawValue)
                             .foregroundColor(.white)
                     } icon: {

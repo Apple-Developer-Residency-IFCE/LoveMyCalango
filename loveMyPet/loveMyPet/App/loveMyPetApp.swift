@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct loveMyPetApp: App {
-    
+
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -42,9 +42,7 @@ struct loveMyPetApp: App {
             .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
             .accentColor(Color(CustomColor.MainColor))
-            
+
         }
     }
 }
-
-

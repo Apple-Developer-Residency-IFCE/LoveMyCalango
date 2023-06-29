@@ -9,7 +9,7 @@ import Foundation
 
 enum Specie: String, CaseIterable, Identifiable, Hashable {
     var id: Self { self }
-    
+
     case none = "Não escolhida"
     case cat = "Gato"
     case dog = "Cachorro"
@@ -19,7 +19,7 @@ enum Specie: String, CaseIterable, Identifiable, Hashable {
     case turtle = "Tartaruga"
     case horse = "Cavalo"
     case custom = "Outros"
-    
+
     var breed: [String] {
         switch self {
         case .none:

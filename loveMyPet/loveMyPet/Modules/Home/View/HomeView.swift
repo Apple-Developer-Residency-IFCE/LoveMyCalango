@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var homeViewModel: HomeViewModel
-    
+
     var body: some View {
         ScrollView(.vertical) {
             if homeViewModel.pets.isEmpty {
@@ -36,7 +36,7 @@ struct HomeView: View {
                 }
                 .padding(.top, 48)
             }
-        }.onAppear{
+        }.onAppear {
             homeViewModel.fetchAllPets()
         }
         .background(Color(CustomColor.BackGroundColor))
@@ -44,7 +44,7 @@ struct HomeView: View {
 }
 
 struct EmptyHome: View {
-    
+
     var body: some View {
         VStack {
             Image(Assets.Image.emptyPet)

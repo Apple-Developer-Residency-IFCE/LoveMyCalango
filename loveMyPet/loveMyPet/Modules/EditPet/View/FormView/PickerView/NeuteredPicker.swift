@@ -9,9 +9,9 @@ import SwiftUI
 import CoreData
 
 struct NeuteredPicker: View {
-    
+
     @StateObject var viewModel: EditPetViewModel
-    
+
     var body: some View {
         Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.isNeutered : $viewModel.selectedPet.isNeutered) {
             ForEach(0..<2, id: \.self) {

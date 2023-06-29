@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct RemovePetButton: View {
-    
+
     @StateObject var viewModel: EditPetViewModel
     @State var showAlert: Bool = true
     var dismiss: () -> Void
-    
+
     var body: some View {
         Button(action: {
             showAlert.toggle()

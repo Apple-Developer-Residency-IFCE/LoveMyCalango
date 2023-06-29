@@ -9,10 +9,10 @@ import Foundation
 
 enum isNeutered: CaseIterable, Identifiable {
     var id: Self { self }
-    
+
     case yes
     case no
-    
+
     var rawValue: String {
         switch self {
         case .yes:

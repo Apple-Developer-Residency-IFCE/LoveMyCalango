@@ -14,7 +14,7 @@ struct EditPetView: View {
     @ObservedObject var viewModel: EditPetViewModel
     @StateObject private var imagePicker = ImagePicker()
     @State private var isShowingImagePicker = false
-    
+
     init(addViewModel: EditPetViewModel) {
         viewModel = addViewModel
     }
@@ -22,7 +22,7 @@ struct EditPetView: View {
     init(editViewModel: EditPetViewModel) {
         viewModel = editViewModel
     }
-    
+
     var body: some View {
         VStack {
             PhotosPicker(selection: $imagePicker.imageSelection) {
@@ -45,7 +45,7 @@ struct EditPetView: View {
                                 .clipShape(Circle())
                         }
                     }
-                    
+
                     Text(Constants.Home.changePicture)
                         .font(.custom(Font.Regular, size: 13))
                         .foregroundColor(Color(CustomColor.FontColor))
@@ -55,15 +55,15 @@ struct EditPetView: View {
                 viewModel.changePetImage(data: newValue)
             })
             .padding(.top, 16)
-            
+
             FormView(viewModel: viewModel)
-            
+
             if !viewModel.isAddPetFlow {
                 RemovePetButton(viewModel: viewModel, showAlert: false, dismiss: {dismiss()})
             }
         }
         .onDisappear {
-            //Zerando os valores do formulário
+            // Zerando os valores do formulário
             viewModel.selectedPet = NewPet()
             viewModel.weight = ""
             viewModel.weightKG = 0
@@ -87,4 +87,3 @@ struct EditPetView: View {
         .background(Color(CustomColor.BackGroundColor))
     }
 }
-
