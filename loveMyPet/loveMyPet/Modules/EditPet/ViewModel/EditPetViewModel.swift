@@ -56,7 +56,7 @@ final class EditPetViewModel: ObservableObject {
         } else {
             selectedPet.name = newName
         }
-        Helper.shared.AddButtonDisable = false
+        Helper.shared.addButtonDisable = false
     }
 
     func changePetImage(data: Data) {
@@ -70,10 +70,10 @@ final class EditPetViewModel: ObservableObject {
     // PESO
 
     func updateFormattedWeight() {
-        let kg = weightKG != 0 ? "\(weightKG)" : "0 "
-        let g = weightG != 0 ? "\(weightKG != 0 ? "," : "0,") \(weightG) kg" : "kg"
+        let kilograms = weightKG != 0 ? "\(weightKG)" : "0 "
+        let grams = weightG != 0 ? "\(weightKG != 0 ? "," : "0,") \(weightG) kg" : "kg"
 
-        weight = kg + g
+        weight = kilograms + grams
 
         if isAddPetFlow {
             newPet.weight = Double(weightKG) + Double(weightG % 10) / 10.0
@@ -83,9 +83,9 @@ final class EditPetViewModel: ObservableObject {
     }
 
     func getWeight() -> (kg: Int, g: Int) {
-        let kg = Int(selectedPet.weight)
-        let g = Int((selectedPet.weight - Double(kg)) * 10)
-        return (kg, g)
+        let kilograms = Int(selectedPet.weight)
+        let grams = Int((selectedPet.weight - Double(kilograms)) * 10)
+        return (kilograms, grams)
     }
 
     // PET CRUD

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum isNeutered: CaseIterable, Identifiable {
+enum IsNeutered: CaseIterable, Identifiable {
     var id: Self { self }
 
     case yes

@@ -27,5 +27,5 @@ final class Helper {
         selectedTab = context
     }
 
-    var AddButtonDisable: Bool = true
+    var addButtonDisable: Bool = true
 }

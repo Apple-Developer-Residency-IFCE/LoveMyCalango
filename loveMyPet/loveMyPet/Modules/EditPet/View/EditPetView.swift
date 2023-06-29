@@ -74,7 +74,7 @@ struct EditPetView: View {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         Button {
                             viewModel.updatePet()
-                            Helper.shared.AddButtonDisable = true
+                            Helper.shared.addButtonDisable = true
                             dismiss()
                         } label: {
                             Text(Constants.Home.save)

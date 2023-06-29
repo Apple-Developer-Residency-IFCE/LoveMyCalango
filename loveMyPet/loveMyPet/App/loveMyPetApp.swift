@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct loveMyPetApp: App {
+struct LoveMyPetApp: App {
 
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
@@ -27,7 +27,7 @@ struct loveMyPetApp: App {
                             .navigationBarTitleDisplayMode(.inline)
                     } action: {
                         addViewModel.updatePet()
-                        Helper.shared.AddButtonDisable = true
+                        Helper.shared.addButtonDisable = true
                     } update: {
                         homeViewModel.fetchAllPets()
                         addViewModel.newPet = NewPet()
