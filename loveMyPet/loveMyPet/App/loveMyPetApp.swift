@@ -17,7 +17,7 @@ struct loveMyPetApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+//            NavigationStack {
                 CustomTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation {
                         HomeView(homeViewModel: homeViewModel)
@@ -42,8 +42,8 @@ struct loveMyPetApp: App {
             .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
             .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
             .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
-            }
-            .accentColor(Color(CustomColor.MainColor))
+//            }
+//            .accentColor(Color(CustomColor.MainColor))
             
         }
     }
