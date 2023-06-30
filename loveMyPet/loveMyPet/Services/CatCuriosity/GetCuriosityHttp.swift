@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetCuriosityHtpp {
+struct GetCuriosityHttp {
     func getCuriosityHttp() async throws -> Fact {
         let urlString = "https://catfact.ninja/fact"
         

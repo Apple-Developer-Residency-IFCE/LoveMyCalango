@@ -12,7 +12,7 @@ struct GetCuriosity {
         let curiosity: Fact
         
         do {
-            curiosity = try await GetCuriosityHtpp().getCuriosityHttp()
+            curiosity = try await GetCuriosityHttp().getCuriosityHttp()
             return curiosity.fact
         } catch let error as HttpError {
             switch error {
