@@ -22,12 +22,12 @@ struct TaskView: View {
                     Image(Assets.Image.namedLogo)
                         .padding(.horizontal)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(Assets.Icon.add)
-                }
                 ToolbarItem(placement: .navigationBarTrailing){
                     Image(Assets.Icon.calendar)
                         .padding(.horizontal)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Image(Assets.Icon.add)
                 }
             }
         }
