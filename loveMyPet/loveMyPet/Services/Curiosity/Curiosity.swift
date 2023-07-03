@@ -11,7 +11,7 @@ protocol CurisosityServiceProtocol {
     func getCuriosity() async throws -> Fact
 }
 
-struct GetCuriosityService {
+struct CuriosityService: CurisosityServiceProtocol {
      func getCuriosity() async throws -> Fact {
         let urlString = "https://catfact.ninja/fact"
         
@@ -37,7 +37,7 @@ struct GetCuriosityService {
     }
 }
 
-struct GetCuriosityMock: CurisosityServiceProtocol {
+struct CuriosityMock: CurisosityServiceProtocol {
     func getCuriosity() async throws -> Fact {
         .init()
     }
