@@ -39,6 +39,7 @@
 		B109C1C82A42270E008585BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C72A42270E008585BE /* CoreDataManager.swift */; };
 		B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */; };
 		B14689FC2A3922760070382B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14689FB2A3922760070382B /* Color.swift */; };
+		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
 		DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */; };
 		DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */; };
@@ -113,6 +114,7 @@
 		B109C1C72A42270E008585BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePicker.swift; sourceTree = "<group>"; };
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePicker.swift; sourceTree = "<group>"; };
 		DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicker.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		641AEB1C2A1ECAE800F2CE34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C02F50052A4CE82E009CB3DF /* Task */,
 				DF5C023E2A22DBCF00E9898E /* EditPet */,
 				4A5F4A1A2A37E2D700A8829C /* Config */,
 				645458C02A2942F3008C4B53 /* PetDetail */,
@@ -417,6 +420,22 @@
 				B109C1C72A42270E008585BE /* CoreDataManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		C02F50052A4CE82E009CB3DF /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C02F50082A4CE8D5009CB3DF /* View */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		C02F50082A4CE8D5009CB3DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C02F50062A4CE8B3009CB3DF /* TaskView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DF36E1C22A239BB300CEE0A9 /* FormView */ = {
@@ -650,6 +669,7 @@
 				640920D02A2008FE0090A364 /* CardPet.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
 				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
+				C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */,
 				412D00ED2A393CE000544B21 /* Assets.swift in Sources */,
 				DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */,
 				DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */,
