@@ -13,7 +13,7 @@ protocol CurisosityServiceProtocol {
 
 struct CuriosityService: CurisosityServiceProtocol {
      func getCuriosity() async throws -> Fact {
-        let urlString = "https://catfact.ninja/fact"
+        let urlString = "https://catfact.ninja/fact?max_length=150"
         
         guard let url = URL(string: urlString) else {
             return .init()
