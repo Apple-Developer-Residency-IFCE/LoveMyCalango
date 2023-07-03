@@ -11,7 +11,7 @@ struct TaskView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Color(CustomColor.BackGroundColor)
+                Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
                 VStack {
                     Text("Tarefa")
