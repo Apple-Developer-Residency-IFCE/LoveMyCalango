@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct TaskView: View {
+    @ObservedObject var viewModel = TaskViewModel()
+    
     var body: some View {
         NavigationView {
             ZStack{
                 Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
+                
                 VStack {
+                    CuriosityCard()
+                        .padding(.vertical)
                     Text("Tarefa")
+                Spacer()
                 }
             }
             .toolbar{
@@ -31,6 +37,7 @@ struct TaskView: View {
                 }
             }
         }
+        .environmentObject(viewModel)
     }
 }
 

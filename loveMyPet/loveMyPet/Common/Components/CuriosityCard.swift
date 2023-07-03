@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CuriosityCard: View {
-    @ObservedObject var viewModel = TaskViewModel()
+    @EnvironmentObject var viewModel: TaskViewModel
     
     var body: some View {
         HStack {
@@ -19,6 +19,7 @@ struct CuriosityCard: View {
                     .foregroundColor(Color(CustomColor.MainColor))
                     .font(.custom(Font.SemiBold, size: 16))
                 Text(viewModel.catCuriosity)
+                    .font(.custom(Font.Regular, size: 13))
                     .multilineTextAlignment(TextAlignment.leading)
             }
             .padding(.vertical, 10)
@@ -30,7 +31,7 @@ struct CuriosityCard: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color(CustomColor.BorderCardPet), lineWidth: 4)
         )
-        .background(Color(CustomColor.BackgroundColor))
+        .background(Color(CustomColor.PetBackground))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .padding(.horizontal, 24)
         .onAppear {
@@ -45,16 +46,3 @@ struct CuriosityCard: View {
     }
 }
 
-struct CuriosityCard_Previews: PreviewProvider {
-    static var previews: some View {
-        CuriosityCard()
-    }
-}
-
-final class TaskViewModel: ObservableObject {
-    @Published var catCuriosity: String = ""
-    
-    public func getCatCuriosity() async throws {
-        catCuriosity = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. S"
-    }
-}
