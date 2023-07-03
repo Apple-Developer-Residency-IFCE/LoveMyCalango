@@ -17,9 +17,12 @@
 		4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DB72A3A679B00B5586B /* Helper.swift */; };
 		4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */; };
 		4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A54C83E2A3134120049CEC0 /* ColorScheme.swift */; };
+		4A56853E2A4E2AFB002E5B4B /* Curiosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56853D2A4E2AFB002E5B4B /* Curiosity.swift */; };
+		4A5685412A4E3237002E5B4B /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5685402A4E3237002E5B4B /* Fact.swift */; };
 		4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CF9A82A39358300902300 /* ConfigButton.swift */; };
 		4A5F4A1D2A37E31600A8829C /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1C2A37E31600A8829C /* ConfigView.swift */; };
 		4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */; };
+		4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A47092A4CFE7100F479A0 /* HttpError.swift */; };
 		640189C02A29543000813E20 /* NewPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* NewPet.swift */; };
 		640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189C12A296B0B00813E20 /* AlertMessage.swift */; };
 		640920D02A2008FE0090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPet.swift */; };
@@ -87,9 +90,12 @@
 		4A4E8DB72A3A679B00B5586B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		4A54C83E2A3134120049CEC0 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		4A56853D2A4E2AFB002E5B4B /* Curiosity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curiosity.swift; sourceTree = "<group>"; };
+		4A5685402A4E3237002E5B4B /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		4A5CF9A82A39358300902300 /* ConfigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 		4A5F4A1C2A37E31600A8829C /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigOptions.swift; sourceTree = "<group>"; };
+		4A8A47092A4CFE7100F479A0 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		640189BF2A29543000813E20 /* NewPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPet.swift; sourceTree = "<group>"; };
 		640189C12A296B0B00813E20 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPet.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPet.swift"; sourceTree = SOURCE_ROOT; };
@@ -188,6 +194,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4A56853F2A4E2CA4002E5B4B /* Curiosity */ = {
+			isa = PBXGroup;
+			children = (
+				4A56853D2A4E2AFB002E5B4B /* Curiosity.swift */,
+			);
+			path = Curiosity;
+			sourceTree = "<group>";
+		};
 		4A5CF9A72A39356500902300 /* ConfigButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +237,14 @@
 			path = ConfigOptions;
 			sourceTree = "<group>";
 		};
+		4A8A47062A4CFBF100F479A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A56853F2A4E2CA4002E5B4B /* Curiosity */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		641AEB002A1EC48C00F2CE34 = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +269,7 @@
 				DF5C023B2A22C6AF00E9898E /* Info.plist */,
 				641AEB272A1ED05100F2CE34 /* App */,
 				641AEB1A2A1EC93000F2CE34 /* Resources */,
+				4A8A47062A4CFBF100F479A0 /* Services */,
 				641AEB1B2A1EC94900F2CE34 /* Common */,
 				641AEB1C2A1ECAE800F2CE34 /* Modules */,
 				641AEB122A1EC48C00F2CE34 /* Preview Content */,
@@ -306,6 +329,7 @@
 				412D00EC2A393CE000544B21 /* Assets.swift */,
 				B14689FB2A3922760070382B /* Color.swift */,
 				4A54C83E2A3134120049CEC0 /* ColorScheme.swift */,
+				4A8A47092A4CFE7100F479A0 /* HttpError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -317,6 +341,7 @@
 				DF36E1D32A23A72A00CEE0A9 /* Neutered.swift */,
 				41F8948B2A37C43000C9AE02 /* Specie.swift */,
 				640189BF2A29543000813E20 /* NewPet.swift */,
+				4A5685402A4E3237002E5B4B /* Fact.swift */,
 				B109C1C52A42269F008585BE /* Pet */,
 			);
 			path = Entities;
@@ -642,6 +667,7 @@
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
+				4A5685412A4E3237002E5B4B /* Fact.swift in Sources */,
 				DF5C02402A22DBFD00E9898E /* EditPetView.swift in Sources */,
 				DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */,
 				DF36E1CC2A239C6700CEE0A9 /* FormRowCell.swift in Sources */,
@@ -660,6 +686,7 @@
 				414D59F22A3D32B90058D0E7 /* CustomEditNavigation.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
 				41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */,
+				4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */,
 				DFAC1C402A2AE72400966782 /* Animation.swift in Sources */,
 				412D00E92A39216000544B21 /* CustomHomeNavigation.swift in Sources */,
 				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
@@ -672,6 +699,7 @@
 				DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */,
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
 				645458C32A294317008C4B53 /* PetDetailView.swift in Sources */,
+				4A56853E2A4E2AFB002E5B4B /* Curiosity.swift in Sources */,
 				B109C1C42A422680008585BE /* Pet+CoreDataProperties.swift in Sources */,
 				B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */,
 				B10598042A37C9F50029CFE3 /* PetData.swift in Sources */,
