@@ -19,7 +19,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
     var body: some View {
         NavigationView{
             homeView
-                .navigationBarTitle("Pets", displayMode: .inline)
+                .navigationBarTitle(Constants.Home.title, displayMode: .inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
@@ -31,33 +31,36 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                         }
                     }
                 }
-                .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
-                    NavigationView {
-                        addView
-                            .toolbar{
-                                ToolbarItem(placement: .navigationBarLeading, content: {
-                                    Button {
-                                        showingPopover = false
-                                    } label: {
-                                        Text(Constants.Home.cancel)
-                                            .foregroundColor(Color(CustomColor.MainColor))
-                                            .font(.custom(Font.Regular, size: 16))
-                                    }
-                                })
-                                ToolbarItem(placement: .navigationBarTrailing, content: {
-                                    Button {
-                                        action()
-                                        showingPopover = false
-                                    } label: {
-                                        Text(Constants.Home.add)
-                                            .font(.custom(Font.SemiBold, size: 16))
-                                    }
-                                    .disabled(Helper.shared.AddButtonDisable)
-                                    .tint(Helper.shared.AddButtonDisable ? Color.gray : Color(CustomColor.MainColor))
-                                })
+        }
+        
+        // Sheet is okay
+        .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
+            NavigationView{
+                addView
+                    .toolbar{
+                        ToolbarItem(placement: .navigationBarLeading, content: {
+                            Button {
+                                showingPopover = false
+                            } label: {
+                                Text(Constants.Home.cancel)
+                                    .foregroundColor(Color(CustomColor.MainColor))
+                                    .font(.custom(Font.Regular, size: 16))
                             }
+                        })
+                        ToolbarItem(placement: .navigationBarTrailing, content: {
+                            Button {
+                                action()
+                                showingPopover = false
+                            } label: {
+                                Text(Constants.Home.add)
+                                    .font(.custom(Font.SemiBold, size: 16))
+                            }
+                            .disabled(Helper.shared.AddButtonDisable)
+                            .tint(Helper.shared.AddButtonDisable ? Color.gray : Color(CustomColor.MainColor))
+                        })
                     }
-                }
+            }
         }
     }
 }
+
