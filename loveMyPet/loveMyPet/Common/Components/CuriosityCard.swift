@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct CuriosityCard: View {
-    @EnvironmentObject var viewModel: TaskViewModel
+    let title: String
+    let description: String
     
     var body: some View {
         HStack {
             Image(Assets.Image.CuriosityPetFace)
             
             VStack(alignment: .leading) {
-                Text(Constants.Task.cardTitle)
+                Text(title)
                     .foregroundColor(Color(CustomColor.MainColor))
                     .font(.custom(Font.SemiBold, size: 16))
-                Text(viewModel.catCuriosity)
+                Text(description)
                     .font(.custom(Font.Regular, size: 13))
                     .multilineTextAlignment(TextAlignment.leading)
             }
@@ -34,15 +35,6 @@ struct CuriosityCard: View {
         .background(Color(CustomColor.PetBackground))
         .clipShape(RoundedRectangle(cornerRadius: 12))
         .padding(.horizontal, 24)
-        .onAppear {
-            Task {
-                do {
-                    try await viewModel.getCatCuriosity()
-                } catch {
-                    print(error)
-                }
-            }
-        }
     }
 }
 

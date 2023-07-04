@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TaskView: View {
-    @ObservedObject var viewModel = TaskViewModel()
+    @EnvironmentObject var viewModel: TaskViewModel
     
     var body: some View {
         NavigationView {
@@ -17,7 +17,7 @@ struct TaskView: View {
                     .ignoresSafeArea()
                 
                 VStack {
-                    CuriosityCard()
+                    CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
                         .padding(.vertical)
                     Text("Tarefa")
                 Spacer()
@@ -37,7 +37,9 @@ struct TaskView: View {
                 }
             }
         }
-        .environmentObject(viewModel)
+        .task {
+            await viewModel.getCatCuriosity()
+        }
     }
 }
 
