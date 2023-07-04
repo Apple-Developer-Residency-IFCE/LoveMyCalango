@@ -37,7 +37,7 @@ struct HomeView: View {
                     }
                     .padding(.top, 48)
                 }
-            }.onAppear{
+            }.task{
                 homeViewModel.fetchAllPets()
             }
             .background(Color(CustomColor.BackGroundColor))

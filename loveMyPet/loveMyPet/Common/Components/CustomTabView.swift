@@ -29,9 +29,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     }
                     .toolbarBackground(.visible, for: .tabBar)
                     .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
-                    .onTapGesture {
-                        selectedTab = .task
-                    }
                     .tag(TabContextView.task)
                 
                     homeView
@@ -45,9 +42,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                         }
                         .toolbarBackground(.visible, for: .tabBar)
                         .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
-                        .onTapGesture {
-                            selectedTab = .pets
-                        }
                         .tag(TabContextView.pets)
                 
                 configView
@@ -62,9 +56,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     }
                     .toolbarBackground(.visible, for: .tabBar)
                     .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
-                    .onTapGesture {
-                        selectedTab = .config
-                    }
                     .tag(TabContextView.config)
                 
             }
