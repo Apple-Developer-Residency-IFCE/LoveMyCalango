@@ -48,9 +48,6 @@ struct loveMyPetApp: App {
         .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
         .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
         .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
-            //            }
-            //            .accentColor(Color(CustomColor.MainColor))
-            
         }
     }
 }

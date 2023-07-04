@@ -14,9 +14,7 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
     @ViewBuilder let configView: Config
     @ViewBuilder let taskView: Task
     var body: some View {
-//        NavigationView {
             TabView(selection: $selectedTab){
-                //NavigationView
                 taskView
                     .tabItem {
                         Label{
@@ -61,5 +59,4 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
             }
             .accentColor(Color(CustomColor.MainColor))
         }
-//    }
 }

@@ -11,7 +11,6 @@ struct HomeView: View {
     @StateObject var homeViewModel: HomeViewModel
     
     var body: some View {
-//        NavigationView {
             ScrollView(.vertical) {
                 if homeViewModel.pets.isEmpty {
                     EmptyHome()
@@ -41,7 +40,6 @@ struct HomeView: View {
                 homeViewModel.fetchAllPets()
             }
             .background(Color(CustomColor.BackGroundColor))
-//        }
     }
 }
 

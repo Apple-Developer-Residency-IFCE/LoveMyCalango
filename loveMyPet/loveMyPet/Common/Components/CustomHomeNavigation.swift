@@ -32,8 +32,6 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                     }
                 }
         }
-        
-        // Sheet is okay
         .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
             NavigationView{
                 addView

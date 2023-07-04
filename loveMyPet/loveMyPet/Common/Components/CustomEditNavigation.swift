@@ -15,7 +15,6 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
     var update: () -> Void
     
     var body: some View {
-        //        NavigationView{
         detailPet
             .navigationBarTitle(Text(Constants.Home.infoPetTitle), displayMode: .inline)
             .toolbar {
@@ -29,7 +28,6 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
                     }
                 }
             }
-        //        }
             .sheet(isPresented: $showingSheet, onDismiss: { update() }) {
                 NavigationView{
                     editView
