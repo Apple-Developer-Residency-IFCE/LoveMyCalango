@@ -37,9 +37,6 @@ struct TaskView: View {
                 }
             }
         }
-        .task {
-            await viewModel.getCatCuriosity()
-        }
     }
 }
 
