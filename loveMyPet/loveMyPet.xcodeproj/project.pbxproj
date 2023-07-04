@@ -39,6 +39,8 @@
 		B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */; };
 		B14689FC2A3922760070382B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14689FB2A3922760070382B /* Color.swift */; };
 		C05BDBE72A54C671005FD721 /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */; };
+		C05BDBE92A54C694005FD721 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE82A54C694005FD721 /* Date.swift */; };
+		C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBEA2A54C6C3005FD721 /* Errors.swift */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
 		DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */; };
 		DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */; };
@@ -113,6 +115,8 @@
 		B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePicker.swift; sourceTree = "<group>"; };
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
+		C05BDBE82A54C694005FD721 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		C05BDBEA2A54C6C3005FD721 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePicker.swift; sourceTree = "<group>"; };
 		DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicker.swift; sourceTree = "<group>"; };
@@ -306,6 +310,7 @@
 				B14689FB2A3922760070382B /* Color.swift */,
 				4A54C83E2A3134120049CEC0 /* ColorScheme.swift */,
 				C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */,
+				C05BDBEA2A54C6C3005FD721 /* Errors.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			children = (
 				DFAC1C3F2A2AE72400966782 /* Animation.swift */,
 				DFAC1C442A2AF2A400966782 /* View.swift */,
+				C05BDBE82A54C694005FD721 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -636,6 +642,7 @@
 				B14689FC2A3922760070382B /* Color.swift in Sources */,
 				4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */,
 				4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */,
+				C05BDBE92A54C694005FD721 /* Date.swift in Sources */,
 				4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */,
 				640189C22A296B0B00813E20 /* AlertMessage.swift in Sources */,
 				645458C72A29708D008C4B53 /* Fonts.swift in Sources */,
@@ -648,6 +655,7 @@
 				DFAC1C402A2AE72400966782 /* Animation.swift in Sources */,
 				412D00E92A39216000544B21 /* CustomHomeNavigation.swift in Sources */,
 				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
+				C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPet.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
 				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
