@@ -22,7 +22,9 @@ struct AlertMessageBuilder: ViewModifier {
                         .foregroundColor(Color(CustomColor.DeleteAlert))
                 }
 
-                Button(role: .cancel, action: {}) {
+                Button(role: .cancel) {
+                    // No action
+                } label: {
                     Text(Constants.Home.cancel)
                         .foregroundColor(Color(CustomColor.MainColor))
                 }

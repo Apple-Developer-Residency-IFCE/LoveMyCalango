@@ -29,7 +29,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
+            .sheet(isPresented: $showingPopover, onDismiss: update) {
                 NavigationView {
                     addView
                         .toolbar {

@@ -35,9 +35,9 @@ enum Constants {
         static let edit = "Editar"
         static let infoPetTitle = "Informações do pet"
 
-        enum Placeholder {
-            static let petName = "Nome do pet"
-        }
+    }
+    enum Placeholder {
+        static let petName = "Nome do pet"
     }
 
     enum Picker {

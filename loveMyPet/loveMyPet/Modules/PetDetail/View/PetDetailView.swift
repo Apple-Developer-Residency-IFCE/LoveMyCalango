@@ -25,7 +25,9 @@ struct PetDetailView: View {
                     Text(Constants.Detail.info)
                         .font(.custom(Font.SemiBold, size: 20))
                     Spacer()
-                    Image(pet.gender.rawValue == Constants.female ? Assets.Icon.female : (pet.gender.rawValue == Constants.none ? Assets.Icon.none : Assets.Icon.male))
+                    Image(pet.gender.rawValue == Constants.female
+                          ? Assets.Icon.female
+                          : (pet.gender.rawValue == Constants.none ? Assets.Icon.none : Assets.Icon.male))
                 }
 
                 PetData(title: Constants.Detail.name, value: pet.name)

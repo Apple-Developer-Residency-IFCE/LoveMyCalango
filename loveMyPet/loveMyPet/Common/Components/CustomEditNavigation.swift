@@ -29,7 +29,7 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
+            .sheet(isPresented: $showingPopover, onDismiss: update) {
                 NavigationView {
                     editView
                         .toolbar {

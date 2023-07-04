@@ -14,9 +14,9 @@ struct RemovePetButton: View {
     var dismiss: () -> Void
 
     var body: some View {
-        Button(action: {
+        Button {
             showAlert.toggle()
-        }) {
+        } label: {
             ZStack {
                 Color("Red-D12929")
                 Text(Constants.Home.deletePet)

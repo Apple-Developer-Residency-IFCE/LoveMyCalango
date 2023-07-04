@@ -18,7 +18,8 @@ struct FormView: View {
         VStack {
             Form {
                 Section {
-                    TextField(Constants.Home.Placeholder.petName, text: viewModel.isAddPetFlow ? $petName : $viewModel.selectedPet.name)
+                    TextField(Constants.Placeholder.petName, text: viewModel.isAddPetFlow
+                              ? $petName : $viewModel.selectedPet.name)
                         .foregroundColor(Color(CustomColor.FontColor))
                         .font(.custom(Font.Regular, size: 16))
                         .listRowBackground(Color(CustomColor.PickerRowBackground))

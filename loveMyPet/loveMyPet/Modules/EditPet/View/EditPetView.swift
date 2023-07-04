@@ -39,7 +39,8 @@ struct EditPetView: View {
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
                         } else {
-                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image) ?? UIImage(named: Assets.Image.logo)) ?? UIImage())
+                            Image(uiImage: (UIImage(data: viewModel.selectedPet.image)
+                                            ?? UIImage(named: Assets.Image.logo)) ?? UIImage())
                                 .resizable()
                                 .frame(width: 64, height: 64)
                                 .clipShape(Circle())
