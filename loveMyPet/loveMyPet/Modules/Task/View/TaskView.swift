@@ -17,19 +17,6 @@ struct TaskView: View {
                     Text("Tarefa")
                 }
             }
-            .toolbar{
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image(Assets.Image.namedLogo)
-                        .padding(.horizontal)
-                }
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Image(Assets.Icon.calendar)
-                        .padding(.horizontal)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(Assets.Icon.add)
-                }
-            }
         }
     }
 }
