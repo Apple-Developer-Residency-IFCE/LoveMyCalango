@@ -18,10 +18,30 @@ struct TaskView: View {
                     InlineCalendarPlaceholder()
                     Spacer()
 
-                    PendingTasks()
-//                    Spacer()
-                    CompletedTasks()
-                    Spacer()
+                    Section {
+                        PendingTasks()
+                    } header: {
+                        HStack {
+                            Text("Tarefas pendentes")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        }
+                    }
+
+                    Section {
+                        CompletedTasks()
+                    } header: {
+                        HStack {
+                            Image(systemName: "checkmark.circle.fill")
+                                .resizable()
+                                .frame(width: 28, height: 28) // TODO: Think about making this less hard-coded
+                                .foregroundColor(.green)  // TODO: Mind the dark mode!
+
+                            Text("Tarefas concluídas")
+                                .font(.title)
+                                .fontWeight(.bold)
+                        }
+                    }
                 }
             }
             .toolbar {
@@ -80,7 +100,6 @@ private struct TimePlaceholder: View {
 private struct PendingTasks: View {
     var body: some View {
         VStack {
-            Text("Placeholder: Tarefas pendentes")
             TaskCard()
             TaskCard()
         }
@@ -90,7 +109,6 @@ private struct PendingTasks: View {
 private struct CompletedTasks: View {
     var body: some View {
         VStack {
-            Text("Tarefas concluídas")
             TaskCard()
             TaskCard()
         }
