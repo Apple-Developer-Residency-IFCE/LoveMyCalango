@@ -15,7 +15,7 @@ struct InlineCalendar: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             ScrollViewReader { roller in
-                LazyHGrid(rows: rows ,alignment:.top, spacing: 1){
+                LazyHGrid(rows: rows,alignment: .top,spacing: 1){
                     ForEach(1...listOfLetterDay.count, id: \.self) { day in
                         DayInlineCard(letterDay: listOfLetterDay[day - 1], numberDay: day, isSelected: day == selectDay)
                             .onTapGesture {
@@ -23,13 +23,11 @@ struct InlineCalendar: View {
                             }
                     }
                 }
-                .onAppear{
+                .onAppear {
                     selectDay = today
                     roller.scrollTo(selectDay, anchor: .center)
                 }
             }
         }
-        
     }
 }
-

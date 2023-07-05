@@ -12,10 +12,10 @@ struct DayInlineCard: View {
     @State var numberDay: Int = 1
     var isSelected: Bool = false
     var fColor: Color {
-        isSelected ? Color("White-F4F3FA") : Color("FontColor")
+        isSelected ? Color(CustomColor.White.whiteF4) : Color(CustomColor.FontColor)
     }
     var bColor: Color {
-        isSelected ? Color("MainColor") : Color("")
+        isSelected ? Color(CustomColor.MainColor) : Color("")
     }
     
     var body: some View {
@@ -27,6 +27,7 @@ struct DayInlineCard: View {
         .frame(width: 39, height: 64)
         .padding(EdgeInsets(top: 8, leading: 4, bottom: 8, trailing: 4))
         .foregroundColor(fColor)
+        .font(.custom(Font.Inter.Bold, size: 20))
         .background(bColor)
         .cornerRadius(4)
         .id(numberDay)
