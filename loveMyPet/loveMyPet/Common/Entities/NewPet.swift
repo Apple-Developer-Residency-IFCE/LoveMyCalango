@@ -17,7 +17,7 @@ class NewPet: Identifiable {
     var birthDate: Date
     var weight: Double
     var isNeutered: Bool
-    
+
     init() {
         self.id =  UUID()
         self.name =  ""
@@ -29,7 +29,7 @@ class NewPet: Identifiable {
         self.weight =  0
         self.isNeutered =  false
     }
-    
+
     init(coreDataPet: Pet) {
         self.id = coreDataPet.id
         self.name = coreDataPet.name

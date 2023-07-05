@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CustomTabView<Home: View, Config: View, Task: View>: View {
-    
     @Binding var selectedTab: TabContextView
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config

@@ -10,9 +10,9 @@ import SwiftUI
 struct PetData: View {
     var title: String
     var value: String
-    
+
     var body: some View {
-        HStack{
+        HStack {
             Text(title)
                 .font(.custom(Font.SemiBold, size: 20))
             Spacer()

@@ -9,13 +9,12 @@
 import Foundation
 import CoreData
 
-
 extension Pet {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Pet> {
         return NSFetchRequest<Pet>(entityName: "Pet")
     }
-    
+
     @NSManaged public var name: String
     @NSManaged public var genderValue: String?
     @NSManaged public var specieValue: String?
@@ -25,7 +24,7 @@ extension Pet {
     @NSManaged public var isNeutered: Bool
     @NSManaged public var birthDate: Date?
     @NSManaged public var weight: Double
-    
+
     var breed: String {
         get {
             return breedValue ?? ""
@@ -34,7 +33,7 @@ extension Pet {
             breedValue = newValue
         }
     }
-    
+
     var gender: Gender {
         get {
             return Gender(rawValue: genderValue ?? "") ?? .none
@@ -43,7 +42,7 @@ extension Pet {
             genderValue = newValue.rawValue
         }
     }
-    
+
     var specie: Specie {
         get {
             return Specie(rawValue: specieValue ?? "") ?? .none
@@ -52,9 +51,9 @@ extension Pet {
             specieValue = newValue.rawValue
         }
     }
-    
+
 }
 
-extension Pet : Identifiable {
-    
+extension Pet: Identifiable {
+
 }

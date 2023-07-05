@@ -9,18 +9,20 @@ import SwiftUI
 import CoreData
 
 struct NeuteredPicker: View {
-    
     @StateObject var viewModel: EditPetViewModel
-    
+
     var body: some View {
-        Picker("", selection: viewModel.isAddPetFlow ? $viewModel.newPet.isNeutered : $viewModel.selectedPet.isNeutered) {
+        Picker("",
+               selection: viewModel.isAddPetFlow
+               ? $viewModel.newPet.isNeutered
+               : $viewModel.selectedPet.isNeutered) {
             ForEach(0..<2, id: \.self) {
                 Text(($0 == 0) ? Constants.yes : Constants.no)
                     .tag($0 == 0)
             }
         }
-        .accentColor(Color(CustomColor.FontColor))
-        .font(.custom(Font.Regular, size: 16))
-        .pickerStyle(.menu)
+               .accentColor(Color(CustomColor.FontColor))
+               .font(.custom(Font.Regular, size: 16))
+               .pickerStyle(.menu)
     }
 }

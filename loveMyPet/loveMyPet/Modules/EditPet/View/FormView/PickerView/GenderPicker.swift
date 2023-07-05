@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GenderPicker: View {
-    
+
     @StateObject var viewModel: EditPetViewModel
 
     var body: some View {

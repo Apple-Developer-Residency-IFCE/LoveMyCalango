@@ -10,7 +10,7 @@ import SwiftUI
 struct TaskView: View {
     var body: some View {
         NavigationView {
-            ZStack{
+            ZStack {
                 Color(CustomColor.BackGroundColor)
                     .ignoresSafeArea()
                 VStack {

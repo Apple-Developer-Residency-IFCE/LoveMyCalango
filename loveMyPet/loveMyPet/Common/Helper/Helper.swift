@@ -8,10 +8,10 @@
 import SwiftUI
 final class Helper {
     static let shared = Helper()
-    
+
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     private(set) var selectedTab: TabContextView = .pets
-    
+
     func convertToColorScheme(customColorScheme: AppColorScheme) -> ColorScheme? {
         switch customColorScheme {
         case .light:
@@ -22,10 +22,10 @@ final class Helper {
             return nil
         }
     }
-    
+
     func setSelectedTab(_ context: TabContextView) {
         selectedTab = context
     }
-    
-    var AddButtonDisable: Bool = true
+
+    var addButtonDisable: Bool = true
 }

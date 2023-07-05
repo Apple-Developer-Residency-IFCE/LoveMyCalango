@@ -36,15 +36,6 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
             NavigationView{
                 addView
                     .toolbar{
-                        ToolbarItem(placement: .navigationBarLeading, content: {
-                            Button {
-                                showingPopover = false
-                            } label: {
-                                Text(Constants.Home.cancel)
-                                    .foregroundColor(Color(CustomColor.MainColor))
-                                    .font(.custom(Font.Regular, size: 16))
-                            }
-                        })
                         ToolbarItem(placement: .navigationBarTrailing, content: {
                             Button {
                                 action()
@@ -53,8 +44,8 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                                 Text(Constants.Home.add)
                                     .font(.custom(Font.SemiBold, size: 16))
                             }
-                            .disabled(Helper.shared.AddButtonDisable)
-                            .tint(Helper.shared.AddButtonDisable ? Color.gray : Color(CustomColor.MainColor))
+                            .disabled(Helper.shared.addButtonDisable)
+                            .tint(Helper.shared.addButtonDisable ? Color.gray : Color(CustomColor.MainColor))
                         })
                     }
             }

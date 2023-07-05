@@ -8,19 +8,19 @@
 import Foundation
 
 enum Constants {
-    
+
     static let yes = "Sim"
     static let no = "Não"
     static let female = "Fêmea"
     static let male = "Macho"
     static let none = "Nenhum"
-    
+
     enum Style {
         static let system = "Sistema"
         static let light = "Claro"
         static let dark = "Escuro"
     }
-    
+
     enum Home {
         static let title = "Pets"
         static let detail = "Informações do Pet"
@@ -34,16 +34,16 @@ enum Constants {
         static let save = "Salvar"
         static let edit = "Editar"
         static let infoPetTitle = "Informações do pet"
-        
-        enum Placeholder {
-            static let petName = "Nome do pet"
-        }
+
     }
-    
+    enum Placeholder {
+        static let petName = "Nome do pet"
+    }
+
     enum Picker {
         static let weight = "Peso"
     }
-    
+
     enum Detail {
         static let info = "Informações"
         static let name = "Nome"
@@ -53,12 +53,12 @@ enum Constants {
         static let addeds = "Adicionais"
         static let isNeutered = "Castrado(a)?"
     }
-    
+
     enum Config {
         static let title = "Configurações"
         static let appereance = "APARÊNCIA"
     }
-    
+
     enum Alert {
         static let deleteRegister = "Deseja excluir o cadastro?"
         static let delete = "Excluir"

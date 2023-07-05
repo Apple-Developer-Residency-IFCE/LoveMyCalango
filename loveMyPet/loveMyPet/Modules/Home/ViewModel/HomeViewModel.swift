@@ -8,9 +8,9 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    
+
     @Published var pets: [NewPet] = []
-    
+
     func fetchAllPets() {
         pets = []
         pets = CoreDataManager.shared.getPetList()

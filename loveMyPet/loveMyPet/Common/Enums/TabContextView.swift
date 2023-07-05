@@ -8,7 +8,7 @@
 import Foundation
 
 enum TabContextView: String {
-    
+
     case pets = "Pets"
     case config = "Configurações"
     case task = "Tarefas"
