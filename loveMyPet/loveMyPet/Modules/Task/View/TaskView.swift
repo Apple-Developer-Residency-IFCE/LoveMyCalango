@@ -90,12 +90,6 @@ struct TaskCard: View {
     }
 }
 
-private struct TimePlaceholder: View {
-    var body: some View {
-        Text("Placeholder: Horário")
-    }
-}
-
 private struct PendingTasks: View {
     var body: some View {
         VStack {
@@ -144,6 +138,15 @@ private struct ProfilePicture: View {
             .resizable()
             .frame(width: 64, height: 64)
             .clipShape(Circle())
+    }
+}
+
+private struct TimePlaceholder: View {
+    var body: some View {
+        HStack {
+            Image(systemName: "deskclock")  // TODO: Use actual asset
+            Text("Placeholder: Horário")
+        }
     }
 }
 
