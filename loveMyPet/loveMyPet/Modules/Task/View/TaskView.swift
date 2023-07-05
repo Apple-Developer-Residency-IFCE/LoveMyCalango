@@ -19,7 +19,7 @@ struct TaskView: View {
                     Spacer()
 
                     PendingTasks()
-                    Spacer()
+//                    Spacer()
                     CompletedTasks()
                     Spacer()
                 }
@@ -67,21 +67,7 @@ struct TaskCard: View {
                 .fill(Color(CustomColor.PetBackground))
         )
         .padding(.horizontal, 24)
-    }
-}
-
-private struct PendingTasks: View {
-    var body: some View {
-        Text("Placeholder: Tarefas pendentes")
-    }
-}
-
-private struct CompletedTasks: View {
-    var body: some View {
-        VStack {
-            Text("Tarefas concluídas")
-            TaskCard()
-        }
+        .padding(.vertical, 4)
     }
 }
 
@@ -91,9 +77,29 @@ private struct TimePlaceholder: View {
     }
 }
 
+private struct PendingTasks: View {
+    var body: some View {
+        VStack {
+            Text("Placeholder: Tarefas pendentes")
+            TaskCard()
+            TaskCard()
+        }
+    }
+}
+
+private struct CompletedTasks: View {
+    var body: some View {
+        VStack {
+            Text("Tarefas concluídas")
+            TaskCard()
+            TaskCard()
+        }
+    }
+}
+
 private struct Information: View {
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Sair pra passear")
                 .font(.title2)
                 .bold()
@@ -108,6 +114,7 @@ private struct NameAndProfilePicture: View {
         VStack {
             ProfilePicture(item: NewPet())
             Text("Lua")
+                .fontWeight(.bold)
         }
     }
 }
