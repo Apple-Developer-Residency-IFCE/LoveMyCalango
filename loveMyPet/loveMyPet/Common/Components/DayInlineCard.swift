@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DayInlineCard: View {
-    let letterDay: String = "S"
-    let numberDay: Int = 1
-    var isSelected: Bool = true
+    @State var letterDay: String = "D"
+    @State var numberDay: Int = 1
+    @State var isSelected: Bool = false
     
     var body: some View {
         VStack {
@@ -29,6 +29,6 @@ struct DayInlineCard: View {
 
 struct DayInlineCard_Previews: PreviewProvider {
     static var previews: some View {
-        DayInlineCard()
+        DayInlineCard(letterDay: "S", numberDay: 1, isSelected: true)
     }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskView: View {
+    @State var listOfLetterDay : [String] = TaskViewModel().days
+    @State var today : Int = TaskViewModel().today
     var body: some View {
         NavigationView {
             ZStack{
@@ -15,6 +17,8 @@ struct TaskView: View {
                     .ignoresSafeArea()
                 VStack {
                     Text("Tarefa")
+                    InlineCalendar(listOfLetterDay: $listOfLetterDay)
+                        .frame(height: 84)
                 }
             }
         }
