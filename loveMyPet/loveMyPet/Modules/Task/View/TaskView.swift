@@ -17,7 +17,7 @@ struct TaskView: View {
                     .ignoresSafeArea()
                 VStack {
                     Text("Tarefa")
-                    InlineCalendar(listOfLetterDay: $listOfLetterDay)
+                    InlineCalendar(listOfLetterDay: $listOfLetterDay, selectDay: $today)
                         .frame(height: 84)
                 }
             }

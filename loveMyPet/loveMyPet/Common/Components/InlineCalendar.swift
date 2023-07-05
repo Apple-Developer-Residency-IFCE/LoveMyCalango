@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InlineCalendar: View {
     @Binding var listOfLetterDay: [String]
+    @Binding var selectDay: Int
     let today = Calendar.current.component(.day, from: Date())
     let rows = [GridItem(.fixed(40))]
     var body: some View {
@@ -16,11 +17,15 @@ struct InlineCalendar: View {
             ScrollViewReader { roller in
                 LazyHGrid(rows: rows ,alignment:.top, spacing: 1){
                     ForEach(1...listOfLetterDay.count, id: \.self) { day in
-                        DayInlineCard(letterDay: listOfLetterDay[day - 1], numberDay: day, isSelected: day == today)
+                        DayInlineCard(letterDay: listOfLetterDay[day - 1], numberDay: day, isSelected: day == selectDay)
+                            .onTapGesture {
+                                selectDay = day
+                            }
                     }
                 }
                 .onAppear{
-                    roller.scrollTo(today, anchor: .center)
+                    selectDay = today
+                    roller.scrollTo(selectDay, anchor: .center)
                 }
             }
         }
@@ -28,8 +33,3 @@ struct InlineCalendar: View {
     }
 }
 
-//struct InlineCalendar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        InlineCalendar()
-//    }
-//}
