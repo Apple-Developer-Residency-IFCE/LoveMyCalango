@@ -67,10 +67,42 @@ struct InlineCalendarPlaceholder: View {
     }
 }
 
-struct TaskCard: View {
+private struct PendingTasks: View {
+    private var formatter = {
+        var formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        return formatter
+    }()
+
+    var body: some View {
+        VStack {
+            TaskCard(task: Task(title: "Dar o remédio de verme", alarm: .now, category: .medicine, assignee: Pet()))
+            TaskCard(task: Task(title: "Vacinar o Bob", alarm: formatter.date(from: "05/07/2023 13:05")!, category: .vaccine, assignee: Pet()))
+        }
+    }
+}
+
+private struct CompletedTasks: View {
+    private var formatter = {
+        var formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        return formatter
+    }()
+
+    var body: some View {
+        VStack {
+            TaskCard(task: Task(title: "Sair pra passear", alarm: formatter.date(from: "05/07/2023 22:31")!, category: .other, assignee: Pet()))
+            TaskCard(task: Task(title: "Não sei kk", alarm: formatter.date(from: "05/07/2023 08:30")!, category: .hygiene, assignee: Pet()))
+        }
+    }
+}
+
+private struct TaskCard: View {
+    var task: Task
+
     var body: some View {
         HStack {
-            Information()
+            Information(title: task.title, category: task.category, alarm: task.alarm)
 
             Spacer()
 
@@ -90,32 +122,18 @@ struct TaskCard: View {
     }
 }
 
-private struct PendingTasks: View {
-    var body: some View {
-        VStack {
-            TaskCard()
-            TaskCard()
-        }
-    }
-}
-
-private struct CompletedTasks: View {
-    var body: some View {
-        VStack {
-            TaskCard()
-            TaskCard()
-        }
-    }
-}
-
 private struct Information: View {
+    var title: String
+    var category: TaskCategory
+    var alarm: Date
+
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Sair pra passear")
+            Text(title)
                 .font(.title2)
                 .bold()
-            Text("Outros")
-            TimePlaceholder()
+            Text(category.rawValue)
+            AlarmTime(alarm: alarm)
         }
     }
 }
@@ -124,7 +142,7 @@ private struct NameAndProfilePicture: View {
     var body: some View {
         VStack {
             ProfilePicture(item: NewPet())
-            Text("Lua")
+            Text("Lua")  // TODO: Extract this value
                 .fontWeight(.bold)
         }
     }
@@ -141,11 +159,13 @@ private struct ProfilePicture: View {
     }
 }
 
-private struct TimePlaceholder: View {
+private struct AlarmTime: View {
+    let alarm: Date  // We'll only need the time, though
+
     var body: some View {
         HStack {
             Image(systemName: "deskclock")  // TODO: Use actual asset
-            Text("Placeholder: Horário")
+            Text(alarm, style: .time)
         }
     }
 }
@@ -154,4 +174,22 @@ struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
         TaskView()
     }
+}
+
+// For debugging purposes
+// This struct should be part of integrating Tasks to Core Data PR
+private struct Task {
+    var title: String
+    var alarm: Date
+    var category: TaskCategory
+    var assignee: Pet  // I lack a better name
+}
+
+// This enum should be part of integrating Tasks to Core Data PR
+private enum TaskCategory: String {
+    case vaccine = "Vacina"
+    case medicine = "Remédio"
+    case leisure = "Lazer"
+    case hygiene = "Higiene"
+    case other = "Outros"
 }
