@@ -36,7 +36,7 @@ extension Date {
             }
             
             let weekday = calendar.component(.weekday, from: date)
-            let nameDay = diasDaSemana(rawValue: weekday)!
+            let nameDay = DiasDaSemana(rawValue: weekday)!
             let letterOfDay = String(describing: nameDay).first ?? "-"
             
             firstLetters.append(String(letterOfDay))

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum diasDaSemana: Int {
+enum DiasDaSemana: Int {
     case Domingo = 1
     case Segunda
     case Terça
