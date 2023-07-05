@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct WeightRowFlow: View {
-    
+
     @StateObject var viewModel: EditPetViewModel
     @State private var showWeightPicker = false
-    
+
     var body: some View {
         Section {
             ZStack {
@@ -51,9 +51,9 @@ struct WeightRowFlow: View {
 }
 
 struct WeightPicker: View {
-    
+
     @StateObject var viewModel: EditPetViewModel
- 
+
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
@@ -81,7 +81,7 @@ struct WeightPicker: View {
                 .frame(width: geometry.size.width / 2 + 30)
                 .labelsHidden()
                 .fixedSize(horizontal: true, vertical: true)
-                .frame(width: geometry.size.width / 2 , height: 120)
+                .frame(width: geometry.size.width / 2, height: 120)
                 .clipped()
                 .pickerStyle(.wheel)
             }

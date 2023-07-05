@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CustomEditNavigation<Detail: View, Edit: View>: View {
-    
+
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
     @State private var showingSheet = false
     var update: () -> Void
-    
+
     var body: some View {
         detailPet
             .navigationBarTitle(Text(Constants.Home.infoPetTitle), displayMode: .inline)
@@ -31,7 +31,7 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
             .sheet(isPresented: $showingSheet, onDismiss: { update() }) {
                 NavigationView{
                     editView
-                        .toolbar{
+                        .toolbar {
                             ToolbarItem(placement: .navigationBarLeading, content: {
                                 Button {
                                     showingSheet = false

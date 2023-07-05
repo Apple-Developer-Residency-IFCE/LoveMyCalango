@@ -12,7 +12,7 @@ struct TaskView: View {
     @State var today : Int = TaskViewModel().today
     var body: some View {
         NavigationView {
-            ZStack{
+            ZStack {
                 Color(CustomColor.BackGroundColor)
                     .ignoresSafeArea()
                 VStack {

@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct FormRowCell: View {
-    
+
     var type: TypeFormRow
     var viewModel: EditPetViewModel
-    
+
     var body: some View {
         HStack {
             Text(type.title)
                 .foregroundColor(Color(CustomColor.FontColor))
                 .font(.custom(Font.Regular, size: 16))
-            
+
             switch type {
             case .gender:
                 GenderPicker(viewModel: viewModel)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConfigButton: View {
     @Binding var isSelected: Bool
-    
+
     var body: some View {
         Image(isSelected ? Assets.Icon.configSelected : Assets.Icon.configSelect)
             .resizable()
@@ -19,7 +19,7 @@ struct ConfigButton: View {
 
 struct ConfigButton_Previews: PreviewProvider {
     @State static var isSelected = false
-    
+
     static var previews: some View {
         ConfigButton(isSelected: $isSelected)
     }
