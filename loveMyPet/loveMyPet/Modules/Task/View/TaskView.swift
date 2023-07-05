@@ -76,7 +76,6 @@ struct TaskCard: View {
 
             NameAndProfilePicture()
         }
-//        .frame(height: 60)
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 12)
