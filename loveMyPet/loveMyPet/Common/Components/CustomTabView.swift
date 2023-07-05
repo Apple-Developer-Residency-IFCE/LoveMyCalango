@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct CustomTabView<Home: View, Config: View, Task: View>: View {
-    
     @Binding var selectedTab: TabContextView
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
     @ViewBuilder let taskView: Task
     var body: some View {
-        TabView(selection: $selectedTab){
+        TabView(selection: $selectedTab) {
             taskView
                 .tabItem {
-                    Label{
+                    Label {
                         Text(TabContextView.task.rawValue)
                             .foregroundColor(.white)
                     } icon: {
@@ -31,7 +30,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     selectedTab = .task
                 }
                 .tag(TabContextView.task)
-            
             homeView
                 .tabItem {
                     Label {
@@ -47,10 +45,10 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     selectedTab = .pets
                 }
                 .tag(TabContextView.pets)
-            
+
             configView
                 .tabItem {
-                    Label{
+                    Label {
                         Text(TabContextView.config.rawValue)
                             .foregroundColor(.white)
                     } icon: {
@@ -64,7 +62,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     selectedTab = .config
                 }
                 .tag(TabContextView.config)
-            
         }
     }
 }

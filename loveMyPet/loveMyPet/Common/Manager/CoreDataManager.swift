@@ -11,37 +11,36 @@ import CoreData
 class CoreDataManager {
 
     static let shared = CoreDataManager()
-    
+
     let container: NSPersistentContainer
     var context: NSManagedObjectContext
-    
+
      private init() {
          container = NSPersistentContainer(name: "loveMyPet")
-         container.loadPersistentStores { (description, error) in
-             if let error = error{
+         container.loadPersistentStores { (_, error) in
+             if let error = error {
                 print("Falha na inicialização do core data \(error)")
              }
          }
          self.context = container.viewContext
     }
-    
+
     func getPetById(_ id: UUID) -> NewPet? {
         let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        
+
         do {
             let result = try context.fetch(fetchRequest)
-            guard let pet = result.first else{
+            guard let pet = result.first else {
                 return nil
             }
             return .init(coreDataPet: pet)
-        }
-        catch{
+        } catch {
             print(error.localizedDescription)
             return nil
         }
     }
-    
+
     func getPetList() -> [NewPet] {
         let fetch: NSFetchRequest<Pet> = Pet.fetchRequest()
         do {
@@ -54,7 +53,7 @@ class CoreDataManager {
         }
         return []
     }
-    
+
     func add(pet: NewPet) {
         let newPet = Pet(context: context)
         newPet.id = UUID()
@@ -68,16 +67,16 @@ class CoreDataManager {
         newPet.isNeutered = pet.isNeutered
         saveData()
     }
-    
+
     func delete(pet: NewPet) {
-        
+
         let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
-        
+
         do {
             let result = try context.fetch(fetchRequest)
             let coreDataPet = result.first
-            
+
             if let coreDataPet {
                 deleteData(pet: coreDataPet)
             }
@@ -89,11 +88,11 @@ class CoreDataManager {
     func update(_ pet: NewPet) {
         let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
-        
+
         do {
             let result = try context.fetch(fetchRequest)
             let coreDataPet = result.first
-            
+
             if let coreDataPet = coreDataPet {
                 coreDataPet.name = pet.name
                 coreDataPet.gender = pet.gender
@@ -103,19 +102,19 @@ class CoreDataManager {
                 coreDataPet.weight = pet.weight
                 coreDataPet.isNeutered = pet.isNeutered
                 coreDataPet.image = pet.image
-                
+
                 try context.save()
             }
         } catch {
             print("Erro ao atualizar pet do CoreData: \(error.localizedDescription)")
         }
     }
-    
+
     private func deleteData(pet: Pet) {
         context.delete(pet)
         saveData()
     }
-    
+
     private func saveData() {
         do {
             try context.save()

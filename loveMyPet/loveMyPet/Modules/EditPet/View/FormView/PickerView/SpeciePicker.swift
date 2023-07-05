@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SpeciePicker: View {
-    
+
     @StateObject var viewModel: EditPetViewModel
 
     var body: some View {
@@ -22,4 +22,3 @@ struct SpeciePicker: View {
         .pickerStyle(MenuPickerStyle())
     }
 }
-

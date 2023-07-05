@@ -13,7 +13,7 @@ struct AlertMessageBuilder: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .alert(Constants.Alert.deleteRegister,isPresented: $isShowing) {
+            .alert(Constants.Alert.deleteRegister, isPresented: $isShowing) {
                 Button(role: .destructive) {
                     handleDelete()
                     isShowing = false
@@ -21,8 +21,10 @@ struct AlertMessageBuilder: ViewModifier {
                     Text(Constants.Alert.delete)
                         .foregroundColor(Color(CustomColor.DeleteAlert))
                 }
-                
-                Button(role: .cancel, action: {}) {
+
+                Button(role: .cancel) {
+                    // No action
+                } label: {
                     Text(Constants.Home.cancel)
                         .foregroundColor(Color(CustomColor.MainColor))
                 }

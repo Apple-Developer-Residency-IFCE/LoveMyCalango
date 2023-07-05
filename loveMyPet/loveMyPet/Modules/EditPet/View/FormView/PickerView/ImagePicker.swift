@@ -10,9 +10,9 @@ import PhotosUI
 
 @MainActor
 final class ImagePicker: ObservableObject {
-    
+
     @Published var image: Data?
-    
+
     @Published var imageSelection: PhotosPickerItem? {
         didSet {
             if let imageSelection {
@@ -22,9 +22,9 @@ final class ImagePicker: ObservableObject {
             }
         }
     }
-    
+
     func loadTransferable(from imageSelection: PhotosPickerItem?) async throws {
-        
+
         do {
             if let data = try await imageSelection?.loadTransferable(type: Data.self) {
                 self.image = data

@@ -9,7 +9,7 @@ import Foundation
 
 enum TypeFormRow: CaseIterable, Identifiable {
     var id: Self { self }
-    
+
     case gender
     case birth
     case specie
@@ -17,7 +17,7 @@ enum TypeFormRow: CaseIterable, Identifiable {
     case weight
     case isNeutered
     case none
-    
+
     var title: String {
         switch self {
         case .gender:

@@ -10,19 +10,19 @@ import SwiftUI
 struct TaskView: View {
     var body: some View {
         NavigationView {
-            ZStack{
+            ZStack {
                 Color(CustomColor.BackGroundColor)
                     .ignoresSafeArea()
                 VStack {
                     Text("Tarefa")
                 }
             }
-            .toolbar{
+            .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image(Assets.Image.namedLogo)
                         .padding(.horizontal)
                 }
-                ToolbarItem(placement: .navigationBarTrailing){
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Image(Assets.Icon.calendar)
                         .padding(.horizontal)
                 }

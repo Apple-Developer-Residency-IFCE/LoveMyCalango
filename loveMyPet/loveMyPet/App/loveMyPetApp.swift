@@ -8,13 +8,13 @@
 import SwiftUI
 
 @main
-struct loveMyPetApp: App {
-    
+struct LoveMyPetApp: App {
+
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -27,7 +27,7 @@ struct loveMyPetApp: App {
                             .navigationBarTitleDisplayMode(.inline)
                     } action: {
                         addViewModel.updatePet()
-                        Helper.shared.AddButtonDisable = true
+                        Helper.shared.addButtonDisable = true
                     } update: {
                         homeViewModel.fetchAllPets()
                         addViewModel.newPet = NewPet()
@@ -44,9 +44,7 @@ struct loveMyPetApp: App {
             .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
             .accentColor(Color(CustomColor.MainColor))
-            
+
         }
     }
 }
-
-
