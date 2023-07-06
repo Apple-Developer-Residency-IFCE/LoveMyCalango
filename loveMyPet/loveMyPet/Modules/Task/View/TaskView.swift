@@ -13,21 +13,8 @@ struct TaskView: View {
             ZStack {
                 Color(CustomColor.BackGroundColor)
                     .ignoresSafeArea()
-                VStack {
+                VStack { 
                     Text("Tarefa")
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image(Assets.Image.namedLogo)
-                        .padding(.horizontal)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(Assets.Icon.calendar)
-                        .padding(.horizontal)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(Assets.Icon.add)
                 }
             }
         }
