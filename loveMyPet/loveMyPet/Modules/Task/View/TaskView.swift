@@ -21,30 +21,29 @@ struct TaskView: View {
                     Section {
                         PendingTasks()
                     } header: {
-                        HStack {
-                            Text("Tarefas pendentes")
-                                .font(.title)
-                                .fontWeight(.bold)
-                        }
+                        Text("Tarefas pendentes")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
 
                     Section {
                         CompletedTasks()
                     } header: {
-                        HStack {
-                            Label {
-                                Text("Tarefas concluídas")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                            } icon: {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .resizable()
-                                    .frame(width: 28, height: 28)
-                                    .foregroundColor(Color("HelperSuccess"))
-                            }
+                        Label {
+                            Text("Tarefas concluídas")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        } icon: {
+                            Image(systemName: "checkmark.circle.fill")
+                                .resizable()
+                                .frame(width: 28, height: 28)
+                                .foregroundColor(Color("HelperSuccess"))
                         }
                     }
                 }
+                .padding(.horizontal, 24)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -119,7 +118,6 @@ private struct TaskCard: View {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color(CustomColor.PetBackground))
         )
-        .padding(.horizontal, 24)
         .padding(.vertical, 4)
     }
 }
