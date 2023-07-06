@@ -32,14 +32,16 @@ struct TaskView: View {
                         CompletedTasks()
                     } header: {
                         HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .resizable()
-                                .frame(width: 28, height: 28) // TODO: Think about making this less hard-coded
-                                .foregroundColor(.green)  // TODO: Mind the dark mode!
-
-                            Text("Tarefas concluídas")
-                                .font(.title)
-                                .fontWeight(.bold)
+                            Label {
+                                Text("Tarefas concluídas")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                            } icon: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                    .foregroundColor(Color("HelperSuccess"))
+                            }
                         }
                     }
                 }
