@@ -13,7 +13,7 @@ struct TaskView: View {
             ZStack {
                 Color(CustomColor.BackGroundColor)
                     .ignoresSafeArea()
-                VStack {
+                VStack { 
                     Text("Tarefa")
                 }
             }

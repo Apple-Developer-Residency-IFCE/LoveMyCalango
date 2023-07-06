@@ -17,7 +17,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
     @State private var showingPopover = false
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             homeView
                 .navigationBarTitle(Constants.Home.title, displayMode: .inline)
                 .toolbar {
@@ -32,10 +32,10 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
                     }
                 }
         }
-        .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
-            NavigationView{
+        .sheet(isPresented: $showingPopover, onDismiss: update) {
+            NavigationView {
                 addView
-                    .toolbar{
+                    .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing, content: {
                             Button {
                                 action()
