@@ -164,7 +164,7 @@ private struct AlarmTime: View {
 
     var body: some View {
         HStack {
-            Image(systemName: "deskclock")  // TODO: Use actual asset
+            Image("IconClock")
             Text(alarm, style: .time)
         }
     }
