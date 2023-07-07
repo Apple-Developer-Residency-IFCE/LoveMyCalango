@@ -77,8 +77,24 @@ private struct PendingTasks: View {
 
     var body: some View {
         VStack {
-            TaskCard(task: Task(title: "Dar o remédio de verme", alarm: .now, category: .medicine, assignee: Pet()))
-            TaskCard(task: Task(title: "Vacinar o Bob", alarm: formatter.date(from: "05/07/2023 13:05")!, category: .vaccine, assignee: Pet()))
+            TaskCard(task: Task(title: "Dar o remédio de verme",
+                                alarm: .now,
+                                category: .medicine,
+                                assignee: {
+                                    let pet = NewPet()
+                                    pet.name = "Lua"
+                                    return pet
+                                }()
+                               ))
+            TaskCard(task: Task(title: "Vacinar o Bob",
+                                alarm: formatter.date(from: "05/07/2023 13:05")!,
+                                category: .vaccine,
+                                assignee: {
+                                    let pet = NewPet()
+                                    pet.name = "Bob"
+                                    return pet
+                                }()
+                               ))
         }
     }
 }
@@ -92,8 +108,24 @@ private struct CompletedTasks: View {
 
     var body: some View {
         VStack {
-            TaskCard(task: Task(title: "Sair pra passear", alarm: formatter.date(from: "05/07/2023 22:31")!, category: .other, assignee: Pet()))
-            TaskCard(task: Task(title: "Não sei kk", alarm: formatter.date(from: "05/07/2023 08:30")!, category: .hygiene, assignee: Pet()))
+            TaskCard(task: Task(title: "Sair pra passear",
+                                alarm: formatter.date(from: "05/07/2023 22:31")!,
+                                category: .other,
+                                assignee: {
+                                    let pet = NewPet()
+                                    pet.name = "Hugo"
+                                    return pet
+                                }()
+                               ))
+            TaskCard(task: Task(title: "Não sei kk",
+                                alarm: formatter.date(from: "05/07/2023 08:30")!,
+                                category: .hygiene,
+                                assignee: {
+                                    let pet = NewPet()
+                                    pet.name = "Bud"
+                                    return pet
+                                }()
+                               ))
         }
     }
 }
@@ -107,7 +139,7 @@ private struct TaskCard: View {
 
             Spacer()
 
-            NameAndProfilePicture()
+            NameAndProfilePicture(pet: task.assignee)
         }
         .padding()
         .overlay(
@@ -139,20 +171,22 @@ private struct Information: View {
 }
 
 private struct NameAndProfilePicture: View {
+    var pet: NewPet
+
     var body: some View {
         VStack {
-            ProfilePicture(item: NewPet())
-            Text("Lua")  // TODO: Extract this value
+            ProfilePicture(pet: pet)
+            Text(pet.name)
                 .fontWeight(.bold)
         }
     }
 }
 
 private struct ProfilePicture: View {
-    var item: NewPet
+    var pet: NewPet
 
     var body: some View {
-        Image(uiImage: UIImage(data: item.image) ?? UIImage(named: Assets.Image.logo) ?? UIImage())
+        Image(uiImage: UIImage(data: pet.image) ?? UIImage(named: Assets.Image.logo) ?? UIImage())
             .resizable()
             .frame(width: 64, height: 64)
             .clipShape(Circle())
@@ -182,7 +216,7 @@ private struct Task {
     var title: String
     var alarm: Date
     var category: TaskCategory
-    var assignee: Pet  // I lack a better name
+    var assignee: NewPet  // I lack a better name
 }
 
 // This enum should be part of integrating Tasks to Core Data PR
