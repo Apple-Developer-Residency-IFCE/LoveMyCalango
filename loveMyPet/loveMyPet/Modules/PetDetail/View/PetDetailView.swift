@@ -19,7 +19,12 @@ struct PetDetailView: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 194)
                 .clipped()
-
+            
+//            Image(uiImage: (LocalFileManager.instance.loadImageFromDiskWith(fileName: pet.name)) ?? UIImage(named: Assets.Image.logo) ?? UIImage())
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .frame(height: 194)
+//                .clipped()
             VStack(alignment: .leading, spacing: 16.0) {
                 HStack {
                     Text(Constants.Detail.info)

@@ -9,18 +9,52 @@ import SwiftUI
 
 class LocalFileManager {
     static let instance = LocalFileManager()
-    private init() { }
-    func saveImage(image: UIImage) {
-        let data = image
+
+    func saveImage(imageName: String, image: Data) {
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            fatalError("Não foi possível acessar o diretório de documentos.")
+        }
+
+        let fileName = imageName
+        let fileUrl = documentsDirectory.appendingPathComponent(fileName)
+        let imageToSave = UIImage(data: image)
+
+        print(imageToSave?.jpegData(compressionQuality: 1))
+
+        let jpegData = imageToSave?.jpegData(compressionQuality: 0.1)
+
+        print(jpegData?.count)
+
+        if FileManager.default.fileExists(atPath: fileUrl.path) {
+            do {
+                try FileManager.default.removeItem(atPath: fileUrl.path)
+                print("Remove old Image")
+            } catch let removeError {
+                print("Counldn't remove file at path", removeError)
+            }
+        }
+        
+        do {
+            try jpegData?.write(to: fileUrl)
+            print("Image ID: \(imageName) saved. Data: \(jpegData)")
+        } catch let error {
+            print("error saving file with error", error)
+        }
+        
+    }
+    
+    func loadImageFromDiskWith(fileName: String) -> UIImage? {
+        let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        
+        let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+        let paths = NSSearchPathForDirectoriesInDomains(documentDirectory, userDomainMask, true)
+        print("Load Aqui porras")
+        
+        if let dirPath = paths.first {
+            let imageUrl = URL(filePath: dirPath).appendingPathComponent(fileName)
+            let image = UIImage(contentsOfFile: imageUrl.path)
+            return image
+        }
+        return nil
     }
 }
-
-// https://img.ly/blog/working-with-large-video-and-image-files-on-ios-with-swift/
-
-//https://cocoacasts.com/fm-2-how-to-store-an-image-in-the-documents-directory-in-swift
-
-//https://stackoverflow.com/questions/64546319/how-do-i-load-this-image-data-from-disk-and-present-it-in-my-swiftui-list
-
-//https://www.vadimbulavin.com/how-to-save-images-and-videos-to-core-data-efficiently/
-
-

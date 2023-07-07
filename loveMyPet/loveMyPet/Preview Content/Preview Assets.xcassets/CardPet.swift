@@ -10,10 +10,13 @@ import SwiftUI
 struct CardPet: View {
 
     var item: NewPet
+    let teste = LocalFileManager.instance
 
     var body: some View {
         HStack {
-            Image(uiImage: UIImage(data: item.image ) ?? UIImage(named: Assets.Image.logo) ?? UIImage())
+            Image(uiImage: teste.loadImageFromDiskWith(fileName: item.name)
+                  ?? UIImage(named: Assets.Image.logo)
+                  ?? UIImage())
                 .resizable()
                 .frame(width: 64, height: 64)
                 .clipShape(Circle())
