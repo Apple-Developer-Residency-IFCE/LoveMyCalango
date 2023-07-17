@@ -35,6 +35,9 @@
 		641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB322A1ED8FC00F2CE34 /* HomeView.swift */; };
 		645458C32A294317008C4B53 /* PetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C22A294317008C4B53 /* PetDetailView.swift */; };
 		A393B5C82A300097006FA0F1 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A393B5C72A300097006FA0F1 /* CustomTabView.swift */; };
+		B1054CC02A65CC1E006D7A36 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */; };
+		B1054CC32A65CC6E006D7A36 /* DateTimeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */; };
+		B1054CC52A65CDCD006D7A36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CC42A65CDCD006D7A36 /* AddTaskViewModel.swift */; };
 		B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */; };
 		B10598042A37C9F50029CFE3 /* PetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10598032A37C9F50029CFE3 /* PetData.swift */; };
 		B109C1C02A4225B1008585BE /* loveMyPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B109C1BE2A4225B1008585BE /* loveMyPet.xcdatamodeld */; };
@@ -113,6 +116,9 @@
 		645458C62A29708D008C4B53 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		6468342F2A26C9F4004A782D /* Specie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
 		A393B5C72A300097006FA0F1 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeInput.swift; sourceTree = "<group>"; };
+		B1054CC42A65CDCD006D7A36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 		B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewModel.swift; sourceTree = "<group>"; };
 		B10598032A37C9F50029CFE3 /* PetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetData.swift; sourceTree = "<group>"; };
 		B109C1BF2A4225B1008585BE /* loveMyPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = loveMyPet.xcdatamodel; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 		641AEB1C2A1ECAE800F2CE34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B1054CBC2A65CBEB006D7A36 /* AddTask */,
 				C02F50052A4CE82E009CB3DF /* Task */,
 				DF5C023E2A22DBCF00E9898E /* EditPet */,
 				4A5F4A1A2A37E2D700A8829C /* Config */,
@@ -415,6 +422,40 @@
 				645458C22A294317008C4B53 /* PetDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B1054CBC2A65CBEB006D7A36 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CBE2A65CBFD006D7A36 /* View */,
+				B1054CBD2A65CBF4006D7A36 /* ViewModel */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		B1054CBD2A65CBF4006D7A36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CC42A65CDCD006D7A36 /* AddTaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1054CBE2A65CBFD006D7A36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */,
+				B1054CC12A65CC59006D7A36 /* DateTimeInput */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1054CC12A65CC59006D7A36 /* DateTimeInput */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */,
+			);
+			path = DateTimeInput;
 			sourceTree = "<group>";
 		};
 		B10597FD2A37C97B0029CFE3 /* ViewModel */ = {
@@ -708,6 +749,7 @@
 				4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */,
 				4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */,
 				B109C1C02A4225B1008585BE /* loveMyPet.xcdatamodeld in Sources */,
+				B1054CC52A65CDCD006D7A36 /* AddTaskViewModel.swift in Sources */,
 				641AEB0D2A1EC48C00F2CE34 /* LoveMyPetApp.swift in Sources */,
 				414D59F22A3D32B90058D0E7 /* CustomEditNavigation.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
@@ -718,6 +760,7 @@
 				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPet.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
+				B1054CC02A65CC1E006D7A36 /* AddTaskView.swift in Sources */,
 				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
 				C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */,
 				412D00ED2A393CE000544B21 /* Assets.swift in Sources */,
@@ -730,6 +773,7 @@
 				B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */,
 				B10598042A37C9F50029CFE3 /* PetData.swift in Sources */,
 				C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */,
+				B1054CC32A65CC6E006D7A36 /* DateTimeInput.swift in Sources */,
 				DF5C023D2A22C86900E9898E /* Constants.swift in Sources */,
 				DF36E1CE2A239F1B00CEE0A9 /* NeuteredPicker.swift in Sources */,
 				A393B5C82A300097006FA0F1 /* CustomTabView.swift in Sources */,

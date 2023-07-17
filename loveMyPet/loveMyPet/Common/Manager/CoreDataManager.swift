@@ -122,4 +122,16 @@ class CoreDataManager {
             print("\(error): Não foi possível salvar os dados")
         }
     }
+    
+    func fetchAllPets() -> [Pet] {
+        let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
+        var pets = [Pet]()
+        do {
+            let fetchedPets = try context.fetch(petRequest)
+            pets = fetchedPets
+        } catch let error as NSError {
+            print("\(error): Ocorreu um erro na busca de Pets")
+        }
+        return pets
+    }
 }
