@@ -24,17 +24,29 @@ class CoreDataManager {
          }
          self.context = container.viewContext
     }
+    
+    let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
+    let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
+    
+    private func saveData() {
+        do {
+            try context.save()
+        } catch let error as NSError {
+            print("\(error): Não foi possível salvar os dados")
+        }
+    }
+    
+    //PETS
 
     func getPetById(_ id: UUID) -> NewPet? {
-        let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        petRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
         do {
-            let result = try context.fetch(fetchRequest)
+            let result = try context.fetch(petRequest)
             guard let pet = result.first else {
                 return nil
             }
-            return .init(coreDataPet: pet)
+            return NewPet(coreDataPet: pet)
         } catch {
             print(error.localizedDescription)
             return nil
@@ -42,9 +54,8 @@ class CoreDataManager {
     }
 
     func getPetList() -> [NewPet] {
-        let fetch: NSFetchRequest<Pet> = Pet.fetchRequest()
         do {
-            let fetchedPets = try context.fetch(fetch)
+            let fetchedPets = try context.fetch(petRequest)
             return fetchedPets.map { pet in
                 NewPet(coreDataPet: pet)
             }
@@ -54,7 +65,7 @@ class CoreDataManager {
         return []
     }
 
-    func add(pet: NewPet) {
+    func addPet(pet: NewPet) {
         let newPet = Pet(context: context)
         newPet.id = UUID()
         newPet.name = pet.name
@@ -68,29 +79,26 @@ class CoreDataManager {
         saveData()
     }
 
-    func delete(pet: NewPet) {
-
-        let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
-
+    func deletePet(pet: NewPet) {
+        petRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
         do {
-            let result = try context.fetch(fetchRequest)
-            let coreDataPet = result.first
+            let result = try context.fetch(petRequest)
+            let pet = result.first
 
-            if let coreDataPet {
-                deleteData(pet: coreDataPet)
+            if let pet {
+                context.delete(pet)
+                saveData()
             }
         } catch {
             print(error.localizedDescription)
         }
     }
 
-    func update(_ pet: NewPet) {
-        let fetchRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
-        fetchRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
+    func updatePet(_ pet: NewPet) {
+        petRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
 
         do {
-            let result = try context.fetch(fetchRequest)
+            let result = try context.fetch(petRequest)
             let coreDataPet = result.first
 
             if let coreDataPet = coreDataPet {
@@ -109,17 +117,103 @@ class CoreDataManager {
             print("Erro ao atualizar pet do CoreData: \(error.localizedDescription)")
         }
     }
+    
+    //TASKS
+    
+    private func fetchPet(id: UUID) -> Pet? {
+        petRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+        
+        do {
+            let result = try context.fetch(petRequest)
+            guard let pet = result.first else {
+                return nil
+            }
+            return pet
+        } catch let error as NSError {
+            print(error)
+            return nil
+        }
+    }
+    
+    func getTaskById(_ id: UUID) -> NewTask? {
+        taskRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
-    private func deleteData(pet: Pet) {
-        context.delete(pet)
+        do {
+            let result = try context.fetch(taskRequest)
+            guard let task = result.first else {
+                return nil
+            }
+            return NewTask(coreDataTask: task)
+        } catch {
+            print(error.localizedDescription)
+            return nil
+        }
+    }
+
+    func getTaskList() -> [NewTask] {
+        do {
+            let fetchedTasks = try context.fetch(taskRequest)
+            return fetchedTasks.map { task in
+                NewTask(coreDataTask: task)
+            }
+        } catch let error as NSError {
+            print("\(error): Ocorreu um erro na busca de Tarefas")
+        }
+        return []
+    }
+
+    func addTask(task: NewTask) {
+        let newTask = PetTask(context: context)
+        newTask.id = UUID()
+        newTask.title = task.title
+        newTask.summary = task.summary
+        newTask.pet = fetchPet(id: task.pet.id)
+        newTask.date = task.date
+        newTask.time = task.time
+        newTask.replay = task.replay
+        newTask.reminder = task.reminder
+        newTask.type = task.type
+        newTask.isDone = task.isDone
         saveData()
     }
 
-    private func saveData() {
+    func deleteTask(task: NewTask) {
+        taskRequest.predicate = NSPredicate(format: "id == %@", task.id as CVarArg)
         do {
-            try context.save()
-        } catch let error as NSError {
-            print("\(error): Não foi possível salvar os dados")
+            let result = try context.fetch(taskRequest)
+            let task = result.first
+
+            if let task {
+                context.delete(task)
+                saveData()
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    func updateTask(_ task: NewTask) {
+        taskRequest.predicate = NSPredicate(format: "id == %@", task.id as CVarArg)
+
+        do {
+            let result = try context.fetch(taskRequest)
+            let coreDataTask = result.first
+
+            if let coreDataTask = coreDataTask {
+                coreDataTask.title = task.title
+                coreDataTask.summary = task.summary
+                coreDataTask.pet = fetchPet(id: task.pet.id)
+                coreDataTask.date = task.date
+                coreDataTask.time = task.time
+                coreDataTask.replay = task.replay
+                coreDataTask.reminder = task.reminder
+                coreDataTask.type = task.type
+                coreDataTask.isDone = task.isDone
+
+                try context.save()
+            }
+        } catch {
+            print("Erro ao atualizar task do CoreData: \(error.localizedDescription)")
         }
     }
 }
