@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TaskView: View {
-    @State var listOfLetterDay : [String] = TaskViewModel().days
-    @State var today : Int = TaskViewModel().today
+    @State var listOfLetterDay: [String] = TaskViewModel().days
+    @State var today: Int = TaskViewModel().today
     @EnvironmentObject var viewModel: TaskViewModel
 
     var body: some View {

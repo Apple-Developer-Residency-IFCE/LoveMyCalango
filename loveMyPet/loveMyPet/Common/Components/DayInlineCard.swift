@@ -17,11 +17,11 @@ struct DayInlineCard: View {
     var bColor: Color {
         isSelected ? Color(CustomColor.MainColor) : Color("")
     }
-    
+
     var body: some View {
         VStack {
             Text(letterDay)
-                .padding(.bottom,8)
+                .padding(.bottom, 8)
             Text("\(numberDay)")
         }
         .frame(width: 39, height: 64)

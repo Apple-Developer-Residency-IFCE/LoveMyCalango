@@ -11,7 +11,7 @@ final class TaskViewModel: ObservableObject {
 
     @Published var catCuriosity: String = ""
     @Published var days: [String] = []
-    @Published var today : Int = 1
+    @Published var today: Int = 1
 
     init() {
         Task {

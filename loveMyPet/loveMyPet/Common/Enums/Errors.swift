@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CustomError : Error {
+enum CustomError: Error {
     case FailToCreateInitialDate
     case FailToGetDayIntervalOnMonth
     case FailToCreateDate
