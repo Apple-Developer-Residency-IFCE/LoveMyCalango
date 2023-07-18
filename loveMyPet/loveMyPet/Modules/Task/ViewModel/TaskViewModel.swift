@@ -2,7 +2,7 @@
 //  TaskViewModel.swift
 //  loveMyPet
 //
-//  Created by Vitor Costa on 03/07/23.
+//  Created by Vitor Costa and José Winny on 03/07/23.
 //
 
 import Foundation
@@ -10,11 +10,19 @@ import Foundation
 final class TaskViewModel: ObservableObject {
 
     @Published var catCuriosity: String = ""
+    @Published var days: [String] = []
+    @Published var today: Int = 1
 
     init() {
         Task {
             await getCatCuriosity()
         }
+        do {
+            days = try Date().firstLetterOfWeekdayForMonth()
+        } catch {
+            print("Erro ao criar o array: \(error)")
+        }
+        today = Date().dayOfMonth()
     }
 
     @MainActor
