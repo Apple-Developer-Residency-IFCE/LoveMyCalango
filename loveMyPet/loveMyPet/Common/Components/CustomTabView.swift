@@ -13,10 +13,10 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
     @ViewBuilder let configView: Config
     @ViewBuilder let taskView: Task
     var body: some View {
-            TabView(selection: $selectedTab){
+            TabView(selection: $selectedTab) {
                 taskView
                     .tabItem {
-                        Label{
+                        Label {
                             Text(TabContextView.task.rawValue)
                                 .foregroundColor(.white)
                         } icon: {
@@ -27,7 +27,7 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     .toolbarBackground(.visible, for: .tabBar)
                     .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
                     .tag(TabContextView.task)
-                
+
                     homeView
                         .tabItem {
                             Label {
@@ -40,10 +40,10 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                         .toolbarBackground(.visible, for: .tabBar)
                         .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
                         .tag(TabContextView.pets)
-                
+
                 configView
                     .tabItem {
-                        Label{
+                        Label {
                             Text(TabContextView.config.rawValue)
                                 .foregroundColor(.white)
                         } icon: {
@@ -54,7 +54,7 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                     .toolbarBackground(.visible, for: .tabBar)
                     .toolbarBackground(Color(CustomColor.TabViewBackground), for: .tabBar)
                     .tag(TabContextView.config)
-                
+
             }
             .accentColor(Color(CustomColor.MainColor))
         }
