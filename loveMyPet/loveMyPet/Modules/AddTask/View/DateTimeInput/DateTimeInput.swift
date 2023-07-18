@@ -29,7 +29,7 @@ struct DateTimeInput: View {
         List {
             Section {
                 HStack {
-                    Text("Data")
+                    Text("Data").font(.custom(Font.Regular, size: 16))
                     
                     Spacer()
                     
@@ -38,8 +38,9 @@ struct DateTimeInput: View {
                             isDatePickerShown.toggle()
                             isTimePickerShown = false
                         }
+                        .font(.custom(Font.Regular, size: 13))
                         .padding(8)
-                        .background(Color.gray.opacity(0.3))
+                        .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
                     
                     Text(Helper.shared.timeFormatter(time: selectedTime ?? .now ))
@@ -47,8 +48,9 @@ struct DateTimeInput: View {
                             isDatePickerShown = false
                             isTimePickerShown.toggle()
                         }
+                        .font(.custom(Font.Regular, size: 13))
                         .padding(8)
-                        .background(Color.gray.opacity(0.3))
+                        .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
                 }
                 
@@ -64,6 +66,8 @@ struct DateTimeInput: View {
                         .datePickerStyle(.graphical)
                         .labelsHidden()
                         .environment(\.locale, Locale(identifier: "pt_BR"))
+                        .tint(Color(CustomColor.MainColor))
+                        
                     }
                 }
                 
