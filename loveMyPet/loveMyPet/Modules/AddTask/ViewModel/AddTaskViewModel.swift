@@ -9,7 +9,7 @@ import Foundation
 
 class AddTaskViewModel: ObservableObject {
     
-    @Published var pets = [Pet]()
+    @Published var pets = [NewPet]()
     
     @Published var summary: String = ""
     @Published var title: String = ""
@@ -18,13 +18,13 @@ class AddTaskViewModel: ObservableObject {
     @Published var reminder: Reminder = .none
     @Published var selectedDate: Date? = Date()
     @Published var selectedTime: Date? = Date()
-    @Published var selectedPet: Pet?
+    @Published var selectedPet: NewPet?
     
     init() {
         fetchAllPets()
     }
     
     func fetchAllPets() {
-        pets = CoreDataManager.shared.fetchAllPets()
+        pets = CoreDataManager.shared.getPetList()
     }
 }
