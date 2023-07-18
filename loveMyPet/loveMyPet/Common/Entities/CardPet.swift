@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Pet: Identifiable{
-    
+struct Pet: Identifiable {
+
     static let mockEmptyPet = Pet(id: UUID(),
                                   name: "",
                                   breed: "",
@@ -17,7 +17,7 @@ struct Pet: Identifiable{
                                   gender: .none,
                                   castred: .no,
                                   date: Date())
-    
+
     static let mock = Pet(id: UUID(),
                           name: "Hanna",
                           breed: "SRD",
@@ -26,7 +26,7 @@ struct Pet: Identifiable{
                           gender: .female,
                           castred: .yes,
                           date: Date())
-    
+
     var id: UUID
     var name: String
     var breed: String

@@ -10,8 +10,8 @@ import SwiftUI
 final class ConfigViewModel {
     private(set) var selectedScheme: Int?
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
-    
-    func changeScheme(index:Int?) {
+
+    func changeScheme(index: Int?) {
         switch index {
         case 0:
             preferredColor = .system

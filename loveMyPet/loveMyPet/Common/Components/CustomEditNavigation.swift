@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct CustomEditNavigation<Detail: View, Edit: View>: View {
-    
+
     @ViewBuilder let detailPet: Detail
     @ViewBuilder let editView: Edit
-    @State private var showingPopover = false
+    @State private var showingSheet = false
     var update: () -> Void
-    
+
     var body: some View {
         detailPet
-            .navigationTitle(Text(Constants.Home.infoPetTitle)
-            )
+            .navigationBarTitle(Text(Constants.Home.infoPetTitle), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        showingPopover = true
+                        showingSheet = true
                     } label: {
                         Text(Constants.Home.edit)
                             .foregroundColor(Color(CustomColor.MainColor))
@@ -29,13 +28,13 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingPopover, onDismiss: { update() }) {
+            .sheet(isPresented: $showingSheet, onDismiss: update) {
                 NavigationView {
                     editView
-                        .toolbar{
+                        .toolbar {
                             ToolbarItem(placement: .navigationBarLeading, content: {
                                 Button {
-                                    showingPopover = false
+                                    showingSheet = false
                                 } label: {
                                     Text(Constants.Home.cancel)
                                         .foregroundColor(Color(CustomColor.MainColor))

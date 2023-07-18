@@ -15,7 +15,7 @@ enum Assets {
         static let CuriosityPetFace = "CuriosityPetFace"
         static let namedLogo = "NamedLogo"
     }
-    
+
     enum Icon {
         static let configFilled = "IconConfigFilled"
         static let config = "IconConfig"

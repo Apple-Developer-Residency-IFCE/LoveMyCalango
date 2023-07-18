@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct HomeTabView<Home: View, Config: View>: View {
-    
+
     @ViewBuilder let homeView: Home
     @ViewBuilder let configView: Config
-    
+
     @Binding var selectedTab: TabContextView
-    
+
     init(selectedTab: Binding<TabContextView>, homeView: () -> Home, configView: () -> Config) {
         self.homeView = homeView()
         self.configView = configView()
         self._selectedTab = selectedTab
     }
-    
+
     var body: some View {
-        TabView(selection: $selectedTab){
+        TabView(selection: $selectedTab) {
             homeView
                 .tabItem {
                     Label(
@@ -59,7 +59,7 @@ struct HomeTabView<Home: View, Config: View>: View {
 
 struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
-        
+
         HomeTabView(selectedTab: .constant(.pets)) {
             HomeView()
         } configView: {
