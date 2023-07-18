@@ -28,8 +28,8 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
                     }
                 }
             }
-            .sheet(isPresented: $showingSheet, onDismiss: { update() }) {
-                NavigationView{
+            .sheet(isPresented: $showingSheet, onDismiss: update) {
+                NavigationView {
                     editView
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading, content: {
@@ -46,4 +46,3 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
             }
     }
 }
-
