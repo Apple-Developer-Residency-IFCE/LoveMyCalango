@@ -47,11 +47,11 @@
 		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */; };
 		C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */; };
-		C0B0F7412A65CF140001E43E /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B0F7402A65CF140001E43E /* CustomDatePicker.swift */; };
 		C02F50142A538368009CB3DF /* DayInlineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50132A538368009CB3DF /* DayInlineCard.swift */; };
 		C05BDBE72A54C671005FD721 /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */; };
 		C05BDBE92A54C694005FD721 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE82A54C694005FD721 /* Date.swift */; };
 		C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBEA2A54C6C3005FD721 /* Errors.swift */; };
+		C098AFEC2A675DB500F3F2E7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098AFEB2A675DB500F3F2E7 /* CalendarView.swift */; };
 		C0A142022A67394E00A2FA19 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141F92A67394D00A2FA19 /* Inter-ExtraLight.ttf */; };
 		C0A142032A67394E00A2FA19 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141FA2A67394D00A2FA19 /* Inter-ExtraBold.ttf */; };
 		C0A142042A67394E00A2FA19 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141FB2A67394D00A2FA19 /* Inter-Black.ttf */; };
@@ -61,6 +61,7 @@
 		C0A142082A67394E00A2FA19 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141FF2A67394E00A2FA19 /* Inter-Regular.ttf */; };
 		C0A142092A67394E00A2FA19 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A142002A67394E00A2FA19 /* Inter-SemiBold.ttf */; };
 		C0A1420A2A67394E00A2FA19 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A142012A67394E00A2FA19 /* Inter-Thin.ttf */; };
+		C0B0F7412A65CF140001E43E /* CustomDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B0F7402A65CF140001E43E /* CustomDatePicker.swift */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
 		DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */; };
 		DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */; };
@@ -142,11 +143,11 @@
 		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineCalendar.swift; sourceTree = "<group>"; };
 		C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskNavigation.swift; sourceTree = "<group>"; };
-		C0B0F7402A65CF140001E43E /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		C02F50132A538368009CB3DF /* DayInlineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInlineCard.swift; sourceTree = "<group>"; };
 		C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
 		C05BDBE82A54C694005FD721 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C05BDBEA2A54C6C3005FD721 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		C098AFEB2A675DB500F3F2E7 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		C0A141F92A67394D00A2FA19 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		C0A141FA2A67394D00A2FA19 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C0A141FB2A67394D00A2FA19 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		C0A141FF2A67394E00A2FA19 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		C0A142002A67394E00A2FA19 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		C0A142012A67394E00A2FA19 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		C0B0F7402A65CF140001E43E /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePicker.swift; sourceTree = "<group>"; };
 		DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicker.swift; sourceTree = "<group>"; };
@@ -514,14 +516,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C0B0F73D2A65CE9E0001E43E /* CustomDatePicker */ = {
-			isa = PBXGroup;
-			children = (
-				C0B0F7402A65CF140001E43E /* CustomDatePicker.swift */,
-			);
-			path = CustomDatePicker;
-			sourceTree = "<group>";
-		};
 		C0A1420C2A6739E700A2FA19 /* Inter */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +530,15 @@
 				C0A142002A67394E00A2FA19 /* Inter-SemiBold.ttf */,
 			);
 			path = Inter;
+			sourceTree = "<group>";
+		};
+		C0B0F73D2A65CE9E0001E43E /* CustomDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C0B0F7402A65CF140001E43E /* CustomDatePicker.swift */,
+				C098AFEB2A675DB500F3F2E7 /* CalendarView.swift */,
+			);
+			path = CustomDatePicker;
 			sourceTree = "<group>";
 		};
 		DF36E1C22A239BB300CEE0A9 /* FormView */ = {
@@ -781,6 +784,7 @@
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
+				C098AFEC2A675DB500F3F2E7 /* CalendarView.swift in Sources */,
 				4A5685412A4E3237002E5B4B /* Fact.swift in Sources */,
 				DF5C02402A22DBFD00E9898E /* EditPetView.swift in Sources */,
 				DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */,

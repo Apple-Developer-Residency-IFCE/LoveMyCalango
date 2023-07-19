@@ -32,5 +32,6 @@ enum Assets {
         static let configSelect = "IconSelect"
         static let add = "IconAdd"
         static let calendar = "IconCalendar"
+        static let selectedCalendar = "IconSelectedCalendar"
     }
 }

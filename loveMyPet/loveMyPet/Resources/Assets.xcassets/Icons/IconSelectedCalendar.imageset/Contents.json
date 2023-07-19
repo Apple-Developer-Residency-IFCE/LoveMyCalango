@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Calendar aux.pdf",
+      "filename" : "Calendar.pdf",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Icons.pdf",
+      "filename" : "Calendar-2.pdf",
       "idiom" : "universal"
     }
   ],
