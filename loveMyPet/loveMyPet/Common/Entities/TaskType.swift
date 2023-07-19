@@ -9,7 +9,7 @@ import Foundation
 
 enum TaskType: String, CaseIterable, Identifiable, Hashable {
     var id: Self { self }
-    
+
     case none = "Nenhum"
     case vaccine = "Vacina"
     case medicine = "Remédio"

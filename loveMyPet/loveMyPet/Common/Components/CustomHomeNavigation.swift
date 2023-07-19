@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CustomHomeNavigation<Home: View, Add: View>: View {
-    
+
     @ViewBuilder let homeView: Home
     @ViewBuilder let addView: Add
     var action: () -> Void
     var update: () -> Void
-    
+
     @State private var showingPopover = false
-    
+
     var body: some View {
         NavigationView {
             homeView
@@ -52,4 +52,3 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
         }
     }
 }
-

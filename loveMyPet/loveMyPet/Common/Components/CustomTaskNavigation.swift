@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomTaskNavigation <TaskView: View, AddTask: View> : View {
+struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
     @ViewBuilder let taskListView: TaskView
     @ViewBuilder let addTaskView: AddTask
     @State private var showingPopover = false

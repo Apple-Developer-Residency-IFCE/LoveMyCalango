@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension PetTask {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<PetTask> {
@@ -26,7 +25,7 @@ extension PetTask {
     @NSManaged public var title: String
     @NSManaged public var isDone: Bool
     @NSManaged public var pet: Pet?
-    
+
     var summary: String {
         get {
             return summaryValue ?? ""
@@ -35,7 +34,7 @@ extension PetTask {
             summaryValue = newValue
         }
     }
-        
+
     var type: TaskType {
         get {
             return TaskType(rawValue: typeValue ?? "") ?? .none
@@ -44,7 +43,7 @@ extension PetTask {
             typeValue = newValue.rawValue
         }
     }
-    
+
     var replay: Replay {
         get {
             return Replay(rawValue: replayValue ?? "") ?? .never
@@ -53,7 +52,7 @@ extension PetTask {
             replayValue = newValue.rawValue
         }
     }
-    
+
     var reminder: Reminder {
         get {
             return Reminder(rawValue: reminderValue ?? "") ?? .none
@@ -65,6 +64,6 @@ extension PetTask {
 
 }
 
-extension PetTask : Identifiable {
+extension PetTask: Identifiable {
 
 }

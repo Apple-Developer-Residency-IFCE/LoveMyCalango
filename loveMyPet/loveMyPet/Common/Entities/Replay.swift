@@ -9,7 +9,7 @@ import Foundation
 
 enum Replay: String, CaseIterable, Identifiable, Hashable {
     var id: Self { self }
-    
+
     case never = "Nunca"
     case everyDay = "Todo dia"
     case everyWeek = "Toda semana"

@@ -24,10 +24,10 @@ class CoreDataManager {
          }
          self.context = container.viewContext
     }
-    
+
     let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
     let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
-    
+
     private func saveData() {
         do {
             try context.save()
@@ -35,8 +35,8 @@ class CoreDataManager {
             print("\(error): Não foi possível salvar os dados")
         }
     }
-    
-    //PETS
+
+    // PETS
 
     func getPetById(_ id: UUID) -> NewPet? {
         petRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
@@ -117,12 +117,12 @@ class CoreDataManager {
             print("Erro ao atualizar pet do CoreData: \(error.localizedDescription)")
         }
     }
-    
-    //TASKS
-    
+
+    // TASKS
+
     private func fetchPet(id: UUID) -> Pet? {
         petRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-        
+
         do {
             let result = try context.fetch(petRequest)
             guard let pet = result.first else {
@@ -134,7 +134,7 @@ class CoreDataManager {
             return nil
         }
     }
-    
+
     func getTaskById(_ id: UUID) -> NewTask? {
         taskRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 

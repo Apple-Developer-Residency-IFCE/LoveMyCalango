@@ -9,7 +9,7 @@ import Foundation
 
 enum Reminder: String, CaseIterable, Identifiable, Hashable {
     var id: Self { self }
-    
+
     case none = "Nenhum"
     case onTime = "Na hora da tarefa"
     case five = "5 minutos antes"

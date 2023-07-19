@@ -38,9 +38,9 @@ struct LoveMyPetApp: App {
             CustomTaskNavigation {
                 TaskView()
             } addTaskView: {
-                
+
             } update: {
-                
+
             }
         }
         .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
