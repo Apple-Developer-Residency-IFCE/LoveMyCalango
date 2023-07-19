@@ -47,6 +47,7 @@ struct OnBoardView: View {
                         .frame(width: 162.15)
                     Button {
                         if currentTab != 2 {
+                            rightText = "Avançar"
                             currentTab += 1
                         }
 
