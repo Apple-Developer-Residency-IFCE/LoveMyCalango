@@ -15,6 +15,7 @@ struct CustomHomeNavigation<Home: View, Add: View>: View {
     var update: () -> Void
 
     @State private var showingPopover = false
+
     var body: some View {
         NavigationView {
             homeView

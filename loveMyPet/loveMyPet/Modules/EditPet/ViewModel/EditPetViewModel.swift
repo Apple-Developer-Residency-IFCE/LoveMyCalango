@@ -91,18 +91,18 @@ final class EditPetViewModel: ObservableObject {
     // PET CRUD
 
     func addPet() {
-        coreData.add(pet: newPet)
+        coreData.addPet(pet: newPet)
     }
 
     func updatePet() {
         if isAddPetFlow {
             addPet()
         } else {
-            coreData.update(selectedPet)
+            coreData.updatePet(selectedPet)
         }
     }
 
     func removePet(pet: NewPet) {
-        coreData.delete(pet: pet)
+        coreData.deletePet(pet: pet)
     }
 }

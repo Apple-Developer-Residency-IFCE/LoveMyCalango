@@ -17,7 +17,6 @@ struct TaskView: View {
             ZStack {
                 Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
-
                 VStack {
                     CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
                         .padding(.vertical)
