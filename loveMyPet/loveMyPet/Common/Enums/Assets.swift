@@ -13,6 +13,8 @@ enum Assets {
         static let avatarCat2 = "AvatarCat2"
         static let emptyPet = "EmptyPet"
         static let namedLogo = "NamedLogo"
+        static let launchScreenFirst = "LauchScreenNamedLogo"
+        static let launchScreenSecond = "LaunchScreenLogo"
     }
 
     enum Icon {

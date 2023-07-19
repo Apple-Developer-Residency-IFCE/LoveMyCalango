@@ -25,6 +25,8 @@ enum CustomColor {
     static let DeleteAlert = "DeleteAlert"
     static let AlertBackground = "AlertBackground"
 
+    static let LaunchScreenBackground = "LauchScreenBG"
+
     enum Gray {
         static let neutral300 = "Neutral300"
     }
