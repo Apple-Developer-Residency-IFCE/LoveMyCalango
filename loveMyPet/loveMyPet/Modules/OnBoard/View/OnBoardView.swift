@@ -22,12 +22,10 @@ struct OnBoardView: View {
         GeometryReader { geometry in
             VStack {
                 TabView(selection: $currentTab) {
-                    OnBoardPageOne()
-                        .tag(0)
-                    OnBoardPageTwo()
-                        .tag(1)
-                    OnBoardPageThree()
-                        .tag(2)
+                    ForEach(OnBoardModel.list) {
+                        OnBoardPageComponent(onBoardInfos: $0)
+                            .tag($0.id)
+                    }
                 }
                 .tabViewStyle(PageTabViewStyle())
                 .indexViewStyle(.page)
