@@ -39,7 +39,8 @@ struct DateTimeInput: View {
                             isTimePickerShown = false
                         }
                         .font(.custom(Font.Regular, size: 13))
-                        .padding(8)
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
                         .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
                     
@@ -49,7 +50,8 @@ struct DateTimeInput: View {
                             isTimePickerShown.toggle()
                         }
                         .font(.custom(Font.Regular, size: 13))
-                        .padding(8)
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
                         .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
                 }
@@ -83,6 +85,7 @@ struct DateTimeInput: View {
                             .datePickerStyle(WheelDatePickerStyle())
                             .labelsHidden()
                             .clipped()
+                            .tint(Color(CustomColor.MainColor))
                             Spacer()
                         }
                     }

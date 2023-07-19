@@ -15,22 +15,25 @@ struct AddTaskView: View {
             Form {
                 Section {
                     TextField("Título", text: $addViewModel.title)
-                        .font(.custom(Font.Regular, size: 16))
                     
                     Picker("Tipo de tarefa", selection: $addViewModel.type) {
                         ForEach(TaskType.allCases, id: \.self) { task in
                             Text(task.rawValue)
                         }
-                    }.font(.custom(Font.Regular, size: 16))
-                    
+                    }
+
                     Picker("Pet", selection: $addViewModel.selectedPet) {
                         Text("Nao escolhido")
 
                         ForEach(addViewModel.pets, id: \.id) { pet in
-                            Text(pet.name)
+                            Text(pet.name).tag(pet as NewPet?)
                         }
-                    }.font(.custom(Font.Regular, size: 16))
+                    }
+
                 }
+                .listRowBackground(Color(CustomColor.PickerSection))
+                .font(.custom(Font.Regular, size: 16))
+                
                 Section {
                     DateTimeInput(selectedDate: $addViewModel.selectedDate, selectedTime: $addViewModel.selectedTime)
                     
@@ -47,12 +50,20 @@ struct AddTaskView: View {
                     }.font(.custom(Font.Regular, size: 16))
                     
                 }
+                .listRowBackground(Color(CustomColor.PickerSection))
+                .font(.custom(Font.Regular, size: 16))
+                
                 Section {
                     TextField("Descrição", text: $addViewModel.summary)
                         .frame(width: 327, height: 200, alignment: .topLeading)
                         .font(.custom(Font.Regular, size: 16))
                 }
+                .listRowBackground(Color(CustomColor.PickerSection))
+                .font(.custom(Font.Regular, size: 16))
             }
+            .scrollContentBackground(.hidden)
+            .foregroundColor(Color(CustomColor.FontForm))
+            .background(Color(CustomColor.BackGroundColor))
         }
         .onAppear{
             addViewModel.fetchAllPets()

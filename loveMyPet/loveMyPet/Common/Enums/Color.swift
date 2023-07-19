@@ -32,4 +32,5 @@ enum CustomColor {
     static let WeightValueBackgroun = "WeightValueBackgroun"
     static let TabViewBackground = "TabViewBackground"
     static let DateTimeInput = "DateTimeInput"
+    static let FontForm = "FontForm"
 }
