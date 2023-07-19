@@ -34,6 +34,8 @@ enum Constants {
         static let save = "Salvar"
         static let edit = "Editar"
         static let infoPetTitle = "Informações do pet"
+        static let emptyPetSemibold = "Você não possui nenhum pet cadastrado :("
+        static let emptyPetRegular = "Os pets que você criar, aparecerão aqui."
 
     }
     enum Placeholder {
@@ -67,5 +69,8 @@ enum Constants {
 
     enum Task {
         static let cardTitle = "Curiosidade do dia!"
+        static let emptyTaskSemibold = "Você não possui nenhuma tarefa pendente! :)"
+        static let emptyTaskRegular = "As tarefas que você criar, aparecerão aqui."
+        static let addTaskTitle = "Adicionar tarefa"
     }
 }

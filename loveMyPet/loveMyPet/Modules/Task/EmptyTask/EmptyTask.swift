@@ -7,23 +7,24 @@
 
 import SwiftUI
 
-struct EmptyTask: View {
+struct EmptyListView: View {
+    var type: EmptyType
+
     var body: some View {
         VStack(alignment: .center, spacing: 22) {
             Image(Assets.Image.lazyCat)
             VStack {
-                Text("Você não possui nenhuma tarefa pendente! :)")
+                Text(type == .pets ? Constants.Home.emptyPetSemibold : Constants.Task.emptyTaskSemibold)
                     .font(.custom(Font.SemiBold, size: 16))
-                Text("As tarefas que você criar, aparecerão aqui.")
+                Text(type == .pets ? Constants.Home.emptyPetRegular : Constants.Task.emptyTaskRegular)
                     .font(.custom(Font.Regular, size: 14))
             }
             .foregroundColor(Color(CustomColor.FontColor))
             .multilineTextAlignment(.center)
             .frame(width: 310, alignment: .top)
-            
             HStack {
                 Image(systemName: "plus")
-                Text("Adicionar Tarefa")
+                Text(type == .pets ? Constants.Home.addPetTitle : Constants.Task.addTaskTitle)
             }
             .font(.custom(Font.SemiBold, size: 16))
             .padding(.vertical, 16)
@@ -35,8 +36,8 @@ struct EmptyTask: View {
     }
 }
 
-struct EmptyTask_Previews: PreviewProvider {
+struct EmptyListView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyTask()
+        EmptyListView(type: .pets)
     }
 }
