@@ -27,11 +27,6 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
 //                        Image(Assets.Icon.calendar)
                         CustomDatePicker()
-                            .overlay {
-                                GeometryReader { geo in
-
-                                }
-                            }
 //                            .padding(.horizontal)
                     }
                 }

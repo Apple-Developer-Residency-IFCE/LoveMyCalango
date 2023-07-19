@@ -15,7 +15,7 @@ struct CustomDatePicker: View {
         VStack {
             Button(action: {
                 isDatePickerVisible.toggle()
-            }){
+            }) {
                 Image(isDatePickerVisible ? Assets.Icon.selectedCalendar : Assets.Icon.calendar)
                     .resizable()
                     .frame(width: isDatePickerVisible ? 45 : 30)

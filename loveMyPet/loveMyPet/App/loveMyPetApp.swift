@@ -33,6 +33,7 @@ struct LoveMyPetApp: App {
                     addViewModel.newPet = NewPet()
                 }
             }
+
         configView: {
             ConfigView()
         } taskView: {
@@ -40,14 +41,10 @@ struct LoveMyPetApp: App {
                 TaskView()
                     .environmentObject(taskViewModel)
             } addTaskView: {
-
             } update: {
 
             }
         }
-        .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
-        .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-        .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
         .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
         }
     }
