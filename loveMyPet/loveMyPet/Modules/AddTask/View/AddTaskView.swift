@@ -25,9 +25,9 @@ struct AddTaskView: View {
                     
                     Picker("Pet", selection: $addViewModel.selectedPet) {
                         Text("Nao escolhido")
-                        
+
                         ForEach(addViewModel.pets, id: \.id) { pet in
-                            Text(pet.name).tag(pet as Pet?)
+                            Text(pet.name)
                         }
                     }.font(.custom(Font.Regular, size: 16))
                 }
