@@ -5,11 +5,13 @@
 //  Created by Vitor Costa on 19/07/23.
 //
 
-import Foundation
+import SwiftUI
 
 final class OnBoardViewModel: ObservableObject {
+    @AppStorage("showOnBoarding") var showOnBoarding: Bool = true
     @Published var currentTab: Int = 0
     @Published var rightText: String = Constants.OnBoard.onBoardRightButton
+    @Published var isHidden: Bool = false
 
     func changeTabIndex() {
         if currentTab < 2 {
@@ -22,6 +24,18 @@ final class OnBoardViewModel: ObservableObject {
             rightText = Constants.OnBoard.onBoardStartButton
         } else {
             rightText = Constants.OnBoard.onBoardRightButton
+        }
+    }
+
+    func onBoardingToggle() {
+        showOnBoarding.toggle()
+    }
+    
+    func hideLeftButton() {
+        if currentTab == 2 {
+            isHidden = true
+        } else {
+            isHidden = false
         }
     }
 }

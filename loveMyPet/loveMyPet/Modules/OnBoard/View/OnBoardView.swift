@@ -27,6 +27,7 @@ struct OnBoardView: View {
                 }
                 .onChange(of: viewModel.currentTab, perform: { _ in
                     viewModel.changeRightText()
+                    viewModel.hideLeftButton()
                 })
                 .tabViewStyle(PageTabViewStyle())
                 .indexViewStyle(.page)

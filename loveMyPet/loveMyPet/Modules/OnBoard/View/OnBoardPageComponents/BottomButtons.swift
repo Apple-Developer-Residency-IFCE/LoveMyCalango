@@ -13,18 +13,20 @@ struct BottomButtons: View {
     var body: some View {
         HStack {
             Button {
-                print("Apertei")
+                viewModel.onBoardingToggle()
             } label: {
                 Text(Constants.OnBoard.onBoardLeftButton)
                     .foregroundColor(Color(CustomColor.MainColor))
                     .font(.custom(Font.SemiBold, size: 13.22))
             }
+            .opacity(viewModel.isHidden ? 0 : 1)
 
             Spacer()
                 .frame(width: 162.15)
             Button {
                 viewModel.changeTabIndex()
                 viewModel.changeRightText()
+                viewModel.hideLeftButton()
             } label: {
                 Text(viewModel.rightText)
                     .font(.custom(Font.SemiBold, size: 16))
