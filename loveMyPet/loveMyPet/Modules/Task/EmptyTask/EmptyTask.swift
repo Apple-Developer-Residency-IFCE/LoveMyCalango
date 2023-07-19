@@ -20,19 +20,17 @@ struct EmptyTask: View {
             .foregroundColor(Color(CustomColor.FontColor))
             .multilineTextAlignment(.center)
             .frame(width: 310, alignment: .top)
-            NavigationLink(destination: EmptyView()) {
-                HStack {
-                    Image(systemName: "plus")
-                    Text("Adicionar Tarefa")
-                }
-                .font(.custom(Font.SemiBold, size: 16))
-                .padding(.vertical, 16)
-                .padding(.horizontal, 40)
-                .background(Color(CustomColor.MainColor))
-                .foregroundColor(Color(CustomColor.FontColor))
-                .cornerRadius(8)
-
+            
+            HStack {
+                Image(systemName: "plus")
+                Text("Adicionar Tarefa")
             }
+            .font(.custom(Font.SemiBold, size: 16))
+            .padding(.vertical, 16)
+            .padding(.horizontal, 40)
+            .background(Color(CustomColor.MainColor))
+            .foregroundColor(Color(CustomColor.FontColor))
+            .cornerRadius(8)
         }
     }
 }
