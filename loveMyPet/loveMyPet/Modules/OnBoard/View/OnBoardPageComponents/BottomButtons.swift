@@ -35,8 +35,8 @@ struct BottomButtons: View {
                 Text(viewModel.rightText)
                     .font(.custom(Font.SemiBold, size: 16))
                     .foregroundColor(.white)
+                    .frame(width: 120, height: 41)
             }
-            .frame(width: 120, height: 41)
             .background(Color(CustomColor.MainColor))
             .clipShape(RoundedRectangle(cornerRadius: 7))
         }
