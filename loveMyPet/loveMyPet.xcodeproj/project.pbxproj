@@ -44,6 +44,7 @@
 		B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */; };
 		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */; };
+		C098AFF42A68ADA700F3F2E7 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
 		DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */; };
 		DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */; };
@@ -123,6 +124,7 @@
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskNavigation.swift; sourceTree = "<group>"; };
+		C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePicker.swift; sourceTree = "<group>"; };
 		DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicker.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		641AEB1A2A1EC93000F2CE34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C098AFF22A68AD8600F3F2E7 /* LaunchScreen */,
 				DF5C02132A22C66000E9898E /* Font */,
 				641AEB102A1EC48C00F2CE34 /* Assets.xcassets */,
 			);
@@ -464,6 +467,14 @@
 				C02F50062A4CE8B3009CB3DF /* TaskView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C098AFF22A68AD8600F3F2E7 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		DF36E1C22A239BB300CEE0A9 /* FormView */ = {
@@ -705,6 +716,7 @@
 				DF36E1CC2A239C6700CEE0A9 /* FormRowCell.swift in Sources */,
 				4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */,
 				4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */,
+				C098AFF42A68ADA700F3F2E7 /* SplashScreenView.swift in Sources */,
 				4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */,
 				4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */,
 				B109C1C02A4225B1008585BE /* loveMyPet.xcdatamodeld in Sources */,
