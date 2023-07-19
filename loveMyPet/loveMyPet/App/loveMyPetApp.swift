@@ -45,9 +45,9 @@ struct LoveMyPetApp: App {
                     TaskView()
                         .environmentObject(taskViewModel)
                 } addTaskView: {
-             
+
                 } update: {
-                    
+
                 }
             }
             .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
@@ -58,4 +58,3 @@ struct LoveMyPetApp: App {
         }
     }
 }
-
