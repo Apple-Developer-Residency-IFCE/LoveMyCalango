@@ -85,6 +85,6 @@ struct EditPetView: View {
                     })
             }
         }
-        .background(Color(CustomColor.BackGroundColor))
+        .background(Color(CustomColor.BackgroundColor))
     }
 }
