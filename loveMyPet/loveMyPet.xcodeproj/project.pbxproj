@@ -215,8 +215,8 @@
 		4A4BD3572A673E9D00765607 /* OnBoard */ = {
 			isa = PBXGroup;
 			children = (
-				4A5AEC632A6871BD00A3BE02 /* ViewModel */,
 				4AD568242A6765D1009DC810 /* Model */,
+				4A5AEC632A6871BD00A3BE02 /* ViewModel */,
 				4AD5681F2A6758BC009DC810 /* View */,
 			);
 			path = OnBoard;

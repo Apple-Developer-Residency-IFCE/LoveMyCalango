@@ -13,10 +13,9 @@ struct BottomButtons: View {
     var body: some View {
         HStack {
             Button {
-
                 print("Apertei")
             } label: {
-                Text("Pular")
+                Text(Constants.OnBoard.onBoardLeftButton)
                     .foregroundColor(Color(CustomColor.MainColor))
                     .font(.custom(Font.SemiBold, size: 13.22))
             }
@@ -24,14 +23,8 @@ struct BottomButtons: View {
             Spacer()
                 .frame(width: 162.15)
             Button {
-                if viewModel.currentTab != 2 {
-                    viewModel.rightText = "Avançar"
-                    viewModel.currentTab += 1
-                }
-
-                if viewModel.currentTab == 2 {
-                    viewModel.rightText = "Começar"
-                }
+                viewModel.changeTabIndex()
+                viewModel.changeRightText()
             } label: {
                 Text(viewModel.rightText)
                     .font(.custom(Font.SemiBold, size: 16))

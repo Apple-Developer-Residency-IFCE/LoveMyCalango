@@ -25,6 +25,9 @@ struct OnBoardView: View {
                             .tag($0.id)
                     }
                 }
+                .onChange(of: viewModel.currentTab, perform: { _ in
+                    viewModel.changeRightText()
+                })
                 .tabViewStyle(PageTabViewStyle())
                 .indexViewStyle(.page)
                 .padding(.top, geometry.size.height * 0.11)

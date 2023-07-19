@@ -85,5 +85,4 @@ enum Constants {
         Crie tarefas e as visualize em um calendário.
         """
     }
-    
 }
