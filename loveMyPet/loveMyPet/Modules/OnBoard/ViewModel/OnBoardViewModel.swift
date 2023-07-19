@@ -14,7 +14,7 @@ final class OnBoardViewModel: ObservableObject {
     @Published var isHidden: Bool = false
 
     func changeTabIndex() {
-        if currentTab < 2 {
+        if currentTab < 3 {
             currentTab += 1
         }
     }
@@ -30,7 +30,7 @@ final class OnBoardViewModel: ObservableObject {
     func onBoardingToggle() {
         showOnBoarding.toggle()
     }
-    
+
     func hideLeftButton() {
         if currentTab == 2 {
             isHidden = true

@@ -17,9 +17,10 @@ struct BottomButtons: View {
             } label: {
                 Text(Constants.OnBoard.onBoardLeftButton)
                     .foregroundColor(Color(CustomColor.MainColor))
-                    .font(.custom(Font.SemiBold, size: 13.22))
+                    .font(.custom(Font.SemiBold, size: 14.87))
             }
             .opacity(viewModel.isHidden ? 0 : 1)
+            .animation(.easeOut, value: viewModel.currentTab)
 
             Spacer()
                 .frame(width: 162.15)
@@ -27,6 +28,9 @@ struct BottomButtons: View {
                 viewModel.changeTabIndex()
                 viewModel.changeRightText()
                 viewModel.hideLeftButton()
+                if viewModel.currentTab >= 3 {
+                    viewModel.onBoardingToggle()
+                }
             } label: {
                 Text(viewModel.rightText)
                     .font(.custom(Font.SemiBold, size: 16))

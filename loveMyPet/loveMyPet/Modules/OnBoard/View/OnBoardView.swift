@@ -32,6 +32,8 @@ struct OnBoardView: View {
                 .tabViewStyle(PageTabViewStyle())
                 .indexViewStyle(.page)
                 .padding(.top, geometry.size.height * 0.11)
+                .animation(.easeOut(duration: 0.5))
+                .transition(.slide)
 
                 BottomButtons(viewModel: viewModel)
                 .padding(.bottom, geometry.size.height * 0.08)
