@@ -19,6 +19,8 @@
 		41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894892A3153FA00C9AE02 /* Gender.swift */; };
 		41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8948B2A37C43000C9AE02 /* Specie.swift */; };
 		4A49EB1F2A53744500820481 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49EB1E2A53744500820481 /* TaskViewModel.swift */; };
+		4A4BD3592A673EAC00765607 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BD3582A673EAC00765607 /* OnBoardView.swift */; };
+		4A4BD35E2A67436000765607 /* OnBoardPageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BD35D2A67436000765607 /* OnBoardPageOne.swift */; };
 		4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DB72A3A679B00B5586B /* Helper.swift */; };
 		4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */; };
 		4A525AFA2A4F848A0004972C /* CuriosityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A525AF92A4F848A0004972C /* CuriosityCard.swift */; };
@@ -29,6 +31,8 @@
 		4A5F4A1D2A37E31600A8829C /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1C2A37E31600A8829C /* ConfigView.swift */; };
 		4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */; };
 		4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A47092A4CFE7100F479A0 /* HttpError.swift */; };
+		4AD568212A675DBA009DC810 /* OnBoardPageTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD568202A675DBA009DC810 /* OnBoardPageTwo.swift */; };
+		4AD568232A675FDC009DC810 /* OnBoardPageThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD568222A675FDC009DC810 /* OnBoardPageThree.swift */; };
 		640189C02A29543000813E20 /* NewPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* NewPet.swift */; };
 		640920D02A2008FE0090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPet.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* LoveMyPetApp.swift */; };
@@ -51,7 +55,6 @@
 		C05BDBE72A54C671005FD721 /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */; };
 		C05BDBE92A54C694005FD721 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE82A54C694005FD721 /* Date.swift */; };
 		C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBEA2A54C6C3005FD721 /* Errors.swift */; };
-		C0BDA91A2A561E000096A878 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = C0BDA9192A561E000096A878 /* OFL.txt */; };
 		DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */; };
 		DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */; };
 		DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */; };
@@ -98,6 +101,8 @@
 		41F894892A3153FA00C9AE02 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		41F8948B2A37C43000C9AE02 /* Specie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
 		4A49EB1E2A53744500820481 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		4A4BD3582A673EAC00765607 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		4A4BD35D2A67436000765607 /* OnBoardPageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPageOne.swift; sourceTree = "<group>"; };
 		4A4E8DB72A3A679B00B5586B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		4A525AF92A4F848A0004972C /* CuriosityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityCard.swift; sourceTree = "<group>"; };
@@ -108,6 +113,8 @@
 		4A5F4A1C2A37E31600A8829C /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigOptions.swift; sourceTree = "<group>"; };
 		4A8A47092A4CFE7100F479A0 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		4AD568202A675DBA009DC810 /* OnBoardPageTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPageTwo.swift; sourceTree = "<group>"; };
+		4AD568222A675FDC009DC810 /* OnBoardPageThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPageThree.swift; sourceTree = "<group>"; };
 		640189BF2A29543000813E20 /* NewPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPet.swift; sourceTree = "<group>"; };
 		640189C12A296B0B00813E20 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPet.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPet.swift"; sourceTree = SOURCE_ROOT; };
@@ -137,17 +144,6 @@
 		C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
 		C05BDBE82A54C694005FD721 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C05BDBEA2A54C6C3005FD721 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		C0BDA9102A561DDF0096A878 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Thin.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-Thin.ttf"; sourceTree = "<group>"; };
-		C0BDA9112A561DDF0096A878 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
-		C0BDA9122A561DDF0096A878 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-Medium.ttf"; sourceTree = "<group>"; };
-		C0BDA9132A561DDF0096A878 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-Bold.ttf"; sourceTree = "<group>"; };
-		C0BDA9142A561DDF0096A878 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Black.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-Black.ttf"; sourceTree = "<group>"; };
-		C0BDA9152A561DDF0096A878 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraLight.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
-		C0BDA9162A561DDF0096A878 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraBold.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
-		C0BDA9172A561DDF0096A878 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Light.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-Light.ttf"; sourceTree = "<group>"; };
-		C0BDA9182A561DDF0096A878 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../../../../../../../Downloads/Inter/static/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
-		C0BDA9192A561E000096A878 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = OFL.txt; path = ../../../../../../../../Downloads/Inter/OFL.txt; sourceTree = "<group>"; };
-		C0D3AA862A54D4A900174E89 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		DF36E1C42A239BE900CEE0A9 /* GenderPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPicker.swift; sourceTree = "<group>"; };
 		DF36E1C62A239BF900CEE0A9 /* SpeciePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciePicker.swift; sourceTree = "<group>"; };
 		DF36E1C82A239C3600CEE0A9 /* BreedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPicker.swift; sourceTree = "<group>"; };
@@ -212,6 +208,24 @@
 				4A49EB1E2A53744500820481 /* TaskViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4A4BD3572A673E9D00765607 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4AD5681F2A6758BC009DC810 /* View */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		4A4BD35C2A67434300765607 /* OnBoardPages */ = {
+			isa = PBXGroup;
+			children = (
+				4A4BD35D2A67436000765607 /* OnBoardPageOne.swift */,
+				4AD568202A675DBA009DC810 /* OnBoardPageTwo.swift */,
+				4AD568222A675FDC009DC810 /* OnBoardPageThree.swift */,
+			);
+			path = OnBoardPages;
 			sourceTree = "<group>";
 		};
 		4A4E8DB62A3A678400B5586B /* Helper */ = {
@@ -281,6 +295,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		4AD5681F2A6758BC009DC810 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A4BD3582A673EAC00765607 /* OnBoardView.swift */,
+				4A4BD35C2A67434300765607 /* OnBoardPages */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		641AEB002A1EC48C00F2CE34 = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +370,7 @@
 		641AEB1C2A1ECAE800F2CE34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4A4BD3572A673E9D00765607 /* OnBoard */,
 				C02F50052A4CE82E009CB3DF /* Task */,
 				DF5C023E2A22DBCF00E9898E /* EditPet */,
 				4A5F4A1A2A37E2D700A8829C /* Config */,
@@ -505,31 +529,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C0BDA90F2A561DC40096A878 /* Inter */ = {
-			isa = PBXGroup;
-			children = (
-				C0BDA9192A561E000096A878 /* OFL.txt */,
-				C0BDA9142A561DDF0096A878 /* Inter-Black.ttf */,
-				C0BDA9132A561DDF0096A878 /* Inter-Bold.ttf */,
-				C0BDA9162A561DDF0096A878 /* Inter-ExtraBold.ttf */,
-				C0BDA9152A561DDF0096A878 /* Inter-ExtraLight.ttf */,
-				C0BDA9172A561DDF0096A878 /* Inter-Light.ttf */,
-				C0BDA9122A561DDF0096A878 /* Inter-Medium.ttf */,
-				C0BDA9112A561DDF0096A878 /* Inter-Regular.ttf */,
-				C0BDA9182A561DDF0096A878 /* Inter-SemiBold.ttf */,
-				C0BDA9102A561DDF0096A878 /* Inter-Thin.ttf */,
-			);
-			path = Inter;
-			sourceTree = "<group>";
-		};
-		C0D3AA852A54D48B00174E89 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				C0D3AA862A54D4A900174E89 /* TaskViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		DF36E1C22A239BB300CEE0A9 /* FormView */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,7 +564,6 @@
 		DF5C02132A22C66000E9898E /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				C0BDA90F2A561DC40096A878 /* Inter */,
 				DF5C02142A22C67900E9898E /* Poppins */,
 			);
 			path = Font;
@@ -710,7 +708,6 @@
 				DF5C02312A22C67900E9898E /* Poppins-BlackItalic.ttf in Resources */,
 				1D72AE2F2A54E8E200DD5E78 /* .swiftlint.yml in Resources */,
 				DF5C022F2A22C67900E9898E /* Poppins-ExtraBoldItalic.ttf in Resources */,
-				C0BDA91A2A561E000096A878 /* OFL.txt in Resources */,
 				DF5C022B2A22C67900E9898E /* Poppins-BoldItalic.ttf in Resources */,
 				DF5C022E2A22C67900E9898E /* Poppins-SemiBoldItalic.ttf in Resources */,
 				DF5C02332A22C67900E9898E /* Poppins-Regular.ttf in Resources */,
@@ -763,6 +760,7 @@
 				C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */,
 				DF64A5282A4236EF00A3138D /* HomeViewModel.swift in Sources */,
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
+				4AD568212A675DBA009DC810 /* OnBoardPageTwo.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
 				4A5685412A4E3237002E5B4B /* Fact.swift in Sources */,
@@ -778,6 +776,7 @@
 				641AEB0D2A1EC48C00F2CE34 /* LoveMyPetApp.swift in Sources */,
 				414D59F22A3D32B90058D0E7 /* CustomEditNavigation.swift in Sources */,
 				C02F50142A538368009CB3DF /* DayInlineCard.swift in Sources */,
+				4A4BD3592A673EAC00765607 /* OnBoardView.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
 				41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */,
 				4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */,
@@ -795,6 +794,7 @@
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
 				645458C32A294317008C4B53 /* PetDetailView.swift in Sources */,
 				4A56853E2A4E2AFB002E5B4B /* Curiosity.swift in Sources */,
+				4A4BD35E2A67436000765607 /* OnBoardPageOne.swift in Sources */,
 				B109C1C42A422680008585BE /* Pet+CoreDataProperties.swift in Sources */,
 				4A525AFA2A4F848A0004972C /* CuriosityCard.swift in Sources */,
 				B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */,
@@ -809,6 +809,7 @@
 				DF36E1D42A23A72A00CEE0A9 /* Neutered.swift in Sources */,
 				B109C1C82A42270E008585BE /* CoreDataManager.swift in Sources */,
 				B109C1C32A422680008585BE /* Pet+CoreDataClass.swift in Sources */,
+				4AD568232A675FDC009DC810 /* OnBoardPageThree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
