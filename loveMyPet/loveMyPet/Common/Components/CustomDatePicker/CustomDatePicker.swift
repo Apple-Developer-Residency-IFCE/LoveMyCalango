@@ -21,7 +21,6 @@ struct CustomDatePicker: View {
                     .frame(width: isDatePickerVisible ? 45 : 30)
                     .frame(height: isDatePickerVisible ? 45 : 30)
             }.buttonStyle(.plain)
-//            .padding()
             if isDatePickerVisible {
                 DatePicker("", selection: .constant(Date()), displayedComponents: .date)
                     .datePickerStyle(.graphical)
@@ -29,12 +28,8 @@ struct CustomDatePicker: View {
                     .monospaced()
                     .background(Color(CustomColor.White.whiteF4))
                     .cornerRadius(12)
-//                    .offset(x: -170)
             }
         }
-//        ScrollView {
-//            CalendarView(interval: DateInterval(start: .distantPast, end: .distantFuture))
-//        }
     }
 }
 

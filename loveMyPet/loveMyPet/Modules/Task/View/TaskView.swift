@@ -13,7 +13,6 @@ struct TaskView: View {
     @EnvironmentObject var viewModel: TaskViewModel
 
     var body: some View {
-        NavigationView {
             ZStack {
                 Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
@@ -25,7 +24,6 @@ struct TaskView: View {
                 Spacer()
                 }
             }
-        }
     }
 }
 

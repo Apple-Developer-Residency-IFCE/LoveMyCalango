@@ -25,9 +25,8 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                         Image(Assets.Icon.add)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-//                        Image(Assets.Icon.calendar)
-                        CustomDatePicker()
-//                            .padding(.horizontal)
+                        Image(Assets.Icon.calendar)
+                            .padding(.horizontal)
                     }
                 }
         }

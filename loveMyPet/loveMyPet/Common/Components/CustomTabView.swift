@@ -18,7 +18,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                 .tabItem {
                     Label {
                         Text(TabContextView.task.rawValue)
-//                            .foregroundColor(.white)
                     } icon: {
                         Image(selectedTab == .task ?
                               Assets.Icon.taskFilled : Assets.Icon.task)
@@ -32,8 +31,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                 .tabItem {
                     Label {
                         Text(TabContextView.pets.rawValue)
-//                            .foregroundColor(Color(CustomColor.MainColor, bundle: .main))
-//                            .foregroundColor(.white)
                     } icon: {
                         Image(selectedTab == .pets ? Assets.Icon.petFilled : Assets.Icon.pet)
                     }
@@ -46,7 +43,6 @@ struct CustomTabView<Home: View, Config: View, Task: View>: View {
                 .tabItem {
                     Label {
                         Text(TabContextView.config.rawValue)
-//                            .foregroundColor(.white)
                     } icon: {
                         Image(selectedTab == .config ?
                               Assets.Icon.configFilled : Assets.Icon.config)
