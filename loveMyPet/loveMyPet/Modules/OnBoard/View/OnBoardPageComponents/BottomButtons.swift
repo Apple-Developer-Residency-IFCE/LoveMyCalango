@@ -1,0 +1,51 @@
+//
+//  BottomButtons.swift
+//  loveMyPet
+//
+//  Created by Vitor Costa on 19/07/23.
+//
+
+import SwiftUI
+
+struct BottomButtons: View {
+    @ObservedObject var viewModel: OnBoardViewModel
+
+    var body: some View {
+        HStack {
+            Button {
+
+                print("Apertei")
+            } label: {
+                Text("Pular")
+                    .foregroundColor(Color(CustomColor.MainColor))
+                    .font(.custom(Font.SemiBold, size: 13.22))
+            }
+
+            Spacer()
+                .frame(width: 162.15)
+            Button {
+                if viewModel.currentTab != 2 {
+                    viewModel.rightText = "Avançar"
+                    viewModel.currentTab += 1
+                }
+
+                if viewModel.currentTab == 2 {
+                    viewModel.rightText = "Começar"
+                }
+            } label: {
+                Text(viewModel.rightText)
+                    .font(.custom(Font.SemiBold, size: 16))
+                    .foregroundColor(.white)
+            }
+            .frame(width: 120, height: 41)
+            .background(Color(CustomColor.MainColor))
+            .clipShape(RoundedRectangle(cornerRadius: 7))
+        }
+    }
+}
+
+struct BottomButtons_Previews: PreviewProvider {
+    static var previews: some View {
+        BottomButtons(viewModel: OnBoardViewModel())
+    }
+}
