@@ -216,4 +216,5 @@ class CoreDataManager {
             print("Erro ao atualizar task do CoreData: \(error.localizedDescription)")
         }
     }
+
 }
