@@ -9,11 +9,13 @@ import SwiftUI
 
 struct AlertMessageBuilder: ViewModifier {
     @Binding var isShowing: Bool
+    var type: RemoveButtonType
     var handleDelete: () -> Void
 
     func body(content: Content) -> some View {
         content
-            .alert(Constants.Alert.deleteRegister, isPresented: $isShowing) {
+            .alert(type == .pet ? Constants.Alert.deleteRegister : Constants.Task.deleteTaskAlert,
+                   isPresented: $isShowing) {
                 Button(role: .destructive) {
                     handleDelete()
                     isShowing = false
