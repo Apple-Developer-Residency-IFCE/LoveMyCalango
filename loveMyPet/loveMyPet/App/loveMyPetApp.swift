@@ -40,9 +40,11 @@ struct LoveMyPetApp: App {
                 TaskView()
                     .environmentObject(taskViewModel)
             } addTaskView: {
-
+                AddTaskView()
+                    .navigationTitle(Constants.Task.addTaskTitle)
+                    .navigationBarTitleDisplayMode(.inline)
             } update: {
-
+                taskViewModel.fetchAllTasks()
             }
         }
         .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)

@@ -67,5 +67,6 @@ enum Constants {
 
     enum Task {
         static let cardTitle = "Curiosidade do dia!"
+        static let addTaskTitle = "Adicionar tarefa"
     }
 }
