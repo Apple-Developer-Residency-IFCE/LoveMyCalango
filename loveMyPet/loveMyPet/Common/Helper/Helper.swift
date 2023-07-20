@@ -27,5 +27,11 @@ final class Helper {
         selectedTab = context
     }
 
+    func buildCuriosityCard() -> Bool {
+        return CoreDataManager.shared.getPetList().contains(where: { newPet in
+            newPet.specie == Specie.cat
+        })
+    }
+
     var addButtonDisable: Bool = true
 }
