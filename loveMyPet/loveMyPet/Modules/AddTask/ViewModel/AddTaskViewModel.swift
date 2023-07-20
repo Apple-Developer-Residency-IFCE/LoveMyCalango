@@ -20,11 +20,29 @@ class AddTaskViewModel: ObservableObject {
     @Published var selectedTime: Date? = Date()
     @Published var selectedPet: NewPet?
 
+    var isFormValid: Bool {
+        return selectedPet != nil  && !title.isEmpty
+    }
+
     init() {
         fetchAllPets()
     }
 
     func fetchAllPets() {
         pets = CoreDataManager.shared.getPetList()
+    }
+
+    func createTask() {
+        let task = NewTask()
+        task.title = title
+        task.type = type
+        task.replay = replay
+        task.reminder = reminder
+        task.date = selectedDate ?? .now
+        task.time = selectedTime ?? .now
+        task.summary = summary
+        task.pet = selectedPet ?? NewPet()
+
+        CoreDataManager.shared.addTask(task: task)
     }
 }
