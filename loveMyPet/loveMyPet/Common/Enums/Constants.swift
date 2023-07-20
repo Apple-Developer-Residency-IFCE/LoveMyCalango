@@ -67,5 +67,8 @@ enum Constants {
 
     enum Task {
         static let cardTitle = "Curiosidade do dia!"
+        static let editTaskTitle = "Editar tarefa"
+        static let deleteTaskTitle = "Excluir tarefa"
+        static let deleteTaskAlert = "Deseja excluir a tarefa?"
     }
 }
