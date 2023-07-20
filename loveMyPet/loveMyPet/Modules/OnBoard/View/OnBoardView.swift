@@ -10,6 +10,7 @@ import UIKit
 
 struct OnBoardView: View {
     @ObservedObject var viewModel = OnBoardViewModel()
+    @State private var animate: Bool = true
 
     init () {
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(Color(CustomColor.MainColor))
@@ -23,6 +24,12 @@ struct OnBoardView: View {
                     ForEach(OnBoardModel.list) {
                         OnBoardPageComponent(onBoardInfos: $0)
                             .tag($0.id)
+                            .offset(y: animate ? 20 : 0)
+                            .onAppear {
+                                withAnimation(.easeOut(duration: 0.5)) {
+                                    animate = false
+                                }
+                            }
                     }
                 }
                 .onChange(of: viewModel.currentTab, perform: { _ in
@@ -32,7 +39,6 @@ struct OnBoardView: View {
                 .tabViewStyle(PageTabViewStyle())
                 .indexViewStyle(.page)
                 .padding(.top, geometry.size.height * 0.11)
-                .animation(.easeOut(duration: 0.5))
                 .transition(.slide)
 
                 BottomButtons(viewModel: viewModel)
