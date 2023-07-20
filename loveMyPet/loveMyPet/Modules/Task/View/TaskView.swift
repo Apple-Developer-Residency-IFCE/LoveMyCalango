@@ -16,7 +16,7 @@ struct TaskView: View {
                 Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
                 VStack {
-                    if viewModel.showCuriosityCard {
+                    if view2Model.showCuriosityCard {
                         CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
                             .padding(.vertical)
                     }
@@ -26,6 +26,9 @@ struct TaskView: View {
                 Spacer()
                 }
             }
+        }
+        .onAppear {
+            viewModel.curiosityCardBuildView()
         }
     }
 }
