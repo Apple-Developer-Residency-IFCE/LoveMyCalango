@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
             ScrollView(.vertical) {
                 if homeViewModel.pets.isEmpty {
-                    EmptyHome()
+                    EmptyListView(type: .pets)
                 } else {
                     Grid {
                         ForEach(homeViewModel.pets, id: \.id) { pet in
@@ -40,23 +40,5 @@ struct HomeView: View {
                 homeViewModel.fetchAllPets()
             }
             .background(Color(CustomColor.BackgroundColor))
-    }
-}
-
-struct EmptyHome: View {
-
-    var body: some View {
-        VStack {
-            Image(Assets.Image.emptyPet)
-                .resizable()
-                .padding(.horizontal, 24)
-                .padding(.bottom, 18)
-            Text(Constants.Home.emptyPets)
-                .foregroundColor(Color(CustomColor.EmptyMessageHome))
-                .multilineTextAlignment(.center)
-                .font(.custom(Font.Medium, size: 18))
-            Spacer()
-        }
-        .padding(.top, 32)
     }
 }
