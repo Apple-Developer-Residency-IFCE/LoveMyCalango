@@ -24,8 +24,9 @@ final class TaskViewModel: ObservableObject {
             print("Erro ao criar o array: \(error)")
         }
         today = Date().dayOfMonth()
-        
-        print(CoreDataManager.shared.getPetList())
+        showCuriosityCard = CoreDataManager.shared.getPetList().contains(where: { newPet in
+            newPet.specie == Specie.cat
+        })
     }
 
     @MainActor
