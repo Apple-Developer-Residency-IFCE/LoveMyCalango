@@ -54,7 +54,7 @@ struct AddTaskView: View {
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    TextField("Descrição", text: $addViewModel.summary)
+                    TextField("Descrição", text: $addViewModel.summary, axis: .vertical)
                         .frame(width: 327, height: 200, alignment: .topLeading)
                         .font(.custom(Font.Regular, size: 16))
                 }
