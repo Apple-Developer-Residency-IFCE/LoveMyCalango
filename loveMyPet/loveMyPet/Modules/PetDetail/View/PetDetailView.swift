@@ -48,6 +48,6 @@ struct PetDetailView: View {
             .padding(24.0)
             Spacer()
         }
-        .background(Color(CustomColor.BackGroundColor))
+        .background(Color(CustomColor.BackgroundColor))
     }
 }
