@@ -12,7 +12,7 @@ struct LoveMyPetApp: App {
 
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
-    @StateObject var homeViewModel = HomeViewModel()
+    @ObservedObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
 
     var body: some Scene {

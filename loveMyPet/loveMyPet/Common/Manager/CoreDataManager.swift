@@ -56,7 +56,6 @@ class CoreDataManager {
 
     func add(pet: NewPet) {
         let newPet = Pet(context: context)
-        let saveFilePet = LocalFileManager.instance
         newPet.id = UUID()
         newPet.name = pet.name
         newPet.image = pet.image
@@ -66,7 +65,6 @@ class CoreDataManager {
         newPet.birthDate = pet.birthDate
         newPet.weight = pet.weight
         newPet.isNeutered = pet.isNeutered
-        saveFilePet.saveImage(imageName: pet.name, image: pet.image)
         saveData()
     }
 

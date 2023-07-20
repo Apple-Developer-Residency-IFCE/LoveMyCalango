@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var homeViewModel: HomeViewModel
-
+    @ObservedObject var homeViewModel: HomeViewModel
+    @State private var firstLoad: Bool = true
     var body: some View {
         ScrollView(.vertical) {
             if homeViewModel.pets.isEmpty {
@@ -26,7 +26,9 @@ struct HomeView: View {
                                         EditPetView(editViewModel: EditPetViewModel(pet: pet))
                                             .navigationTitle(Constants.Home.editPetTitle)
                                             .navigationBarTitleDisplayMode(.inline)
-                                    }, update: { homeViewModel.fetchAllPets() })
+                                    }, update: {
+                                        homeViewModel.fetchAllPets()
+                                    })
                                 } label: {
                                     CardPet(item: pet)
                                 }
@@ -36,8 +38,12 @@ struct HomeView: View {
                 }
                 .padding(.top, 48)
             }
-        }.onAppear {
-            homeViewModel.fetchAllPets()
+        }
+        .onAppear {
+            if firstLoad {
+                homeViewModel.fetchAllPets()
+                firstLoad = false
+            }
         }
         .background(Color(CustomColor.BackGroundColor))
     }
