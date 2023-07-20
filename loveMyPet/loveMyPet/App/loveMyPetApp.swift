@@ -14,39 +14,50 @@ struct LoveMyPetApp: App {
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
+    @State private var splashScreenIsActive: Bool = true
 
     var body: some Scene {
         WindowGroup {
-            CustomTabView(selectedTab: $selectedTab) {
-                CustomHomeNavigation {
-                    HomeView(homeViewModel: homeViewModel)
-                } addView: {
-                    EditPetView(addViewModel: addViewModel)
-                        .navigationTitle(Constants.Home.addPetTitle)
-                        .navigationBarTitleDisplayMode(.inline)
-                } action: {
-                    addViewModel.updatePet()
-                    Helper.shared.addButtonDisable = true
+            if splashScreenIsActive {
+                SplashScreenView()
+                    .onAppear{
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                            self.splashScreenIsActive = false
+                        }
+                    }
+            }
+            else {
+                CustomTabView(selectedTab: $selectedTab) {
+                    CustomHomeNavigation {
+                        HomeView(homeViewModel: homeViewModel)
+                    } addView: {
+                        EditPetView(addViewModel: addViewModel)
+                            .navigationTitle(Constants.Home.addPetTitle)
+                            .navigationBarTitleDisplayMode(.inline)
+                    } action: {
+                        addViewModel.updatePet()
+                        Helper.shared.addButtonDisable = true
+                    } update: {
+                        homeViewModel.fetchAllPets()
+                        addViewModel.newPet = NewPet()
+                    }
+                }
+            configView: {
+                ConfigView()
+            } taskView: {
+                CustomTaskNavigation {
+                    TaskView()
+                } addTaskView: {
+
                 } update: {
-                    homeViewModel.fetchAllPets()
-                    addViewModel.newPet = NewPet()
+
                 }
             }
-        configView: {
-            ConfigView()
-        } taskView: {
-            CustomTaskNavigation {
-                TaskView()
-            } addTaskView: {
-                
-            } update: {
-                
+            .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
+            .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+            .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
+            .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
-        }
-        .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
-        .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-        .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
-        .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
         }
     }
 }
