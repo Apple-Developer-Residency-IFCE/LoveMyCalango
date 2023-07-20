@@ -60,7 +60,11 @@ struct EditPetView: View {
             FormView(viewModel: viewModel)
 
             if !viewModel.isAddPetFlow {
-                RemovePetButton(viewModel: viewModel, showAlert: false, dismiss: {dismiss()})
+                RemoveButton(type: .pet) {
+                    viewModel.removePet(pet: viewModel.selectedPet)
+                } dismiss: {
+                    dismiss()
+                }
             }
         }
         .onDisappear {

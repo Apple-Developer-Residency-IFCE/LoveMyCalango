@@ -53,6 +53,9 @@
 		B109C1C42A422680008585BE /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C22A422680008585BE /* Pet+CoreDataProperties.swift */; };
 		B109C1C82A42270E008585BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C72A42270E008585BE /* CoreDataManager.swift */; };
 		B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */; };
+		B1EA89362A6940870071C0C4 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA89352A6940870071C0C4 /* EditTaskView.swift */; };
+		B1EA89382A6941B90071C0C4 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA89372A6941B90071C0C4 /* EditTaskViewModel.swift */; };
+		B1EA893C2A6956EE0071C0C4 /* RemoveButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA893B2A6956EE0071C0C4 /* RemoveButtonType.swift */; };
 		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */; };
 		C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */; };
@@ -101,7 +104,7 @@
 		DF64A5282A4236EF00A3138D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64A5272A4236EF00A3138D /* HomeViewModel.swift */; };
 		DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF912F6E2A22DFF000F15799 /* FormView.swift */; };
 		DFAC1C402A2AE72400966782 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C3F2A2AE72400966782 /* Animation.swift */; };
-		DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C422A2AF26200966782 /* RemovePetButton.swift */; };
+		DFAC1C432A2AF26200966782 /* RemoveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C422A2AF26200966782 /* RemoveButton.swift */; };
 		DFAC1C452A2AF2A400966782 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAC1C442A2AF2A400966782 /* View.swift */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +159,9 @@
 		B109C1C72A42270E008585BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePicker.swift; sourceTree = "<group>"; };
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B1EA89352A6940870071C0C4 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		B1EA89372A6941B90071C0C4 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
+		B1EA893B2A6956EE0071C0C4 /* RemoveButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButtonType.swift; sourceTree = "<group>"; };
 		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineCalendar.swift; sourceTree = "<group>"; };
 		C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskNavigation.swift; sourceTree = "<group>"; };
@@ -205,7 +211,7 @@
 		DF64A5272A4236EF00A3138D /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		DF912F6E2A22DFF000F15799 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		DFAC1C3F2A2AE72400966782 /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		DFAC1C422A2AF26200966782 /* RemovePetButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemovePetButton.swift; sourceTree = "<group>"; };
+		DFAC1C422A2AF26200966782 /* RemoveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButton.swift; sourceTree = "<group>"; };
 		DFAC1C442A2AF2A400966782 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -371,6 +377,7 @@
 		641AEB1C2A1ECAE800F2CE34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B1EA89322A6940630071C0C4 /* EditTask */,
 				B1054CBC2A65CBEB006D7A36 /* AddTask */,
 				C02F50052A4CE82E009CB3DF /* Task */,
 				DF5C023E2A22DBCF00E9898E /* EditPet */,
@@ -392,6 +399,7 @@
 				B14689FB2A3922760070382B /* Color.swift */,
 				4A54C83E2A3134120049CEC0 /* ColorScheme.swift */,
 				C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */,
+				B1EA893B2A6956EE0071C0C4 /* RemoveButtonType.swift */,
 				C05BDBEA2A54C6C3005FD721 /* Errors.swift */,
 				4A8A47092A4CFE7100F479A0 /* HttpError.swift */,
 			);
@@ -438,6 +446,7 @@
 				C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */,
 				C02F50132A538368009CB3DF /* DayInlineCard.swift */,
 				4A525AF92A4F848A0004972C /* CuriosityCard.swift */,
+				DFAC1C422A2AF26200966782 /* RemoveButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -561,6 +570,31 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		B1EA89322A6940630071C0C4 /* EditTask */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA89342A6940790071C0C4 /* View */,
+				B1EA89332A6940700071C0C4 /* ViewModel */,
+			);
+			path = EditTask;
+			sourceTree = "<group>";
+		};
+		B1EA89332A6940700071C0C4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA89372A6941B90071C0C4 /* EditTaskViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B1EA89342A6940790071C0C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA89352A6940870071C0C4 /* EditTaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C02F50052A4CE82E009CB3DF /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,7 +715,6 @@
 			isa = PBXGroup;
 			children = (
 				DF5C023F2A22DBFD00E9898E /* EditPetView.swift */,
-				DFAC1C412A2AF24900966782 /* RemovePetButton */,
 				DF36E1C22A239BB300CEE0A9 /* FormView */,
 			);
 			path = View;
@@ -693,14 +726,6 @@
 				DF64A5272A4236EF00A3138D /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		DFAC1C412A2AF24900966782 /* RemovePetButton */ = {
-			isa = PBXGroup;
-			children = (
-				DFAC1C422A2AF26200966782 /* RemovePetButton.swift */,
-			);
-			path = RemovePetButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -825,6 +850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D922D6F2A4E4AF300B938BF /* Fonts.swift in Sources */,
+				B1EA893C2A6956EE0071C0C4 /* RemoveButtonType.swift in Sources */,
 				1D922D6E2A4E4AA900B938BF /* AlertMessage.swift in Sources */,
 				1D922D6D2A4E4A4800B938BF /* Color.swift in Sources */,
 				4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */,
@@ -834,6 +860,7 @@
 				DF36E1D82A23A7DE00CEE0A9 /* WeightPicker.swift in Sources */,
 				C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */,
 				DF64A5282A4236EF00A3138D /* HomeViewModel.swift in Sources */,
+				B1EA89362A6940870071C0C4 /* EditTaskView.swift in Sources */,
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
@@ -860,7 +887,7 @@
 				4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */,
 				DFAC1C402A2AE72400966782 /* Animation.swift in Sources */,
 				412D00E92A39216000544B21 /* CustomHomeNavigation.swift in Sources */,
-				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
+				DFAC1C432A2AF26200966782 /* RemoveButton.swift in Sources */,
 				C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPet.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
@@ -870,6 +897,7 @@
 				412D00ED2A393CE000544B21 /* Assets.swift in Sources */,
 				B1054CBB2A65B39C006D7A36 /* NewTask.swift in Sources */,
 				DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */,
+				B1EA89382A6941B90071C0C4 /* EditTaskViewModel.swift in Sources */,
 				DF36E1C92A239C3600CEE0A9 /* BreedPicker.swift in Sources */,
 				641AEB332A1ED8FC00F2CE34 /* HomeView.swift in Sources */,
 				645458C32A294317008C4B53 /* PetDetailView.swift in Sources */,
