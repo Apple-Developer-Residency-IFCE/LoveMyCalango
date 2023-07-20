@@ -46,6 +46,7 @@
 		B1054CC02A65CC1E006D7A36 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */; };
 		B1054CC32A65CC6E006D7A36 /* DateTimeInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */; };
 		B1054CC52A65CDCD006D7A36 /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CC42A65CDCD006D7A36 /* AddTaskViewModel.swift */; };
+		B1054CCC2A65D788006D7A36 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */; };
 		B10597FF2A37C98E0029CFE3 /* PetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */; };
 		B10598042A37C9F50029CFE3 /* PetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10598032A37C9F50029CFE3 /* PetData.swift */; };
 		B109C1C02A4225B1008585BE /* loveMyPet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B109C1BE2A4225B1008585BE /* loveMyPet.xcdatamodeld */; };
@@ -148,6 +149,7 @@
 		B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeInput.swift; sourceTree = "<group>"; };
 		B1054CC42A65CDCD006D7A36 /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
+		B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		B10597FE2A37C98E0029CFE3 /* PetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewModel.swift; sourceTree = "<group>"; };
 		B10598032A37C9F50029CFE3 /* PetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetData.swift; sourceTree = "<group>"; };
 		B109C1BF2A4225B1008585BE /* loveMyPet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = loveMyPet.xcdatamodel; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				B1054CBC2A65CBEB006D7A36 /* AddTask */,
+				B1054CC92A65D776006D7A36 /* TaskDetail */,
 				C02F50052A4CE82E009CB3DF /* Task */,
 				DF5C023E2A22DBCF00E9898E /* EditPet */,
 				4A5F4A1A2A37E2D700A8829C /* Config */,
@@ -479,8 +482,24 @@
 		645458C12A294307008C4B53 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B10598002A37C9B90029CFE3 /* PetData */,
 				645458C22A294317008C4B53 /* PetDetailView.swift */,
+				B10598002A37C9B90029CFE3 /* PetData */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1054CC92A65D776006D7A36 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CCA2A65D77D006D7A36 /* View */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		B1054CCA2A65D77D006D7A36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -867,6 +886,7 @@
 				B1054CC02A65CC1E006D7A36 /* AddTaskView.swift in Sources */,
 				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
 				C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */,
+				B1054CCC2A65D788006D7A36 /* TaskDetailView.swift in Sources */,
 				412D00ED2A393CE000544B21 /* Assets.swift in Sources */,
 				B1054CBB2A65B39C006D7A36 /* NewTask.swift in Sources */,
 				DF36E1C52A239BE900CEE0A9 /* GenderPicker.swift in Sources */,
