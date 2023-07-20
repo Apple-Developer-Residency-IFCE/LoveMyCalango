@@ -20,13 +20,12 @@ struct LoveMyPetApp: App {
         WindowGroup {
             if splashScreenIsActive {
                 SplashScreenView()
-                    .onAppear{
+                    .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                             self.splashScreenIsActive = false
                         }
                     }
-            }
-            else {
+            } else {
                 CustomTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation {
                         HomeView(homeViewModel: homeViewModel)
