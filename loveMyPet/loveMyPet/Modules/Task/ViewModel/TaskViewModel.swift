@@ -24,7 +24,6 @@ final class TaskViewModel: ObservableObject {
             print("Erro ao criar o array: \(error)")
         }
         today = Date().dayOfMonth()
-        showCuriosityCard = Helper.shared.buildCuriosityCard()
     }
 
     @MainActor
@@ -52,5 +51,9 @@ final class TaskViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+
+    func curiosityCardBuildView() {
+        showCuriosityCard = Helper.shared.buildCuriosityCard()
     }
 }

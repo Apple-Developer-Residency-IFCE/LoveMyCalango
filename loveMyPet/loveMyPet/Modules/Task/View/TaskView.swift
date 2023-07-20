@@ -27,6 +27,9 @@ struct TaskView: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.curiosityCardBuildView()
+        }
     }
 }
 
