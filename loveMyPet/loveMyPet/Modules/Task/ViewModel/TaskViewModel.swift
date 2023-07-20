@@ -12,6 +12,7 @@ final class TaskViewModel: ObservableObject {
     @Published var catCuriosity: String = ""
     @Published var days: [String] = []
     @Published var today: Int = 1
+    @Published var showCuriosityCard: Bool = true
 
     init() {
         Task {
@@ -23,6 +24,8 @@ final class TaskViewModel: ObservableObject {
             print("Erro ao criar o array: \(error)")
         }
         today = Date().dayOfMonth()
+        
+        print(CoreDataManager.shared.getPetList())
     }
 
     @MainActor

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct TaskView: View {
-    @State var listOfLetterDay: [String] = TaskViewModel().days
-    @State var today: Int = TaskViewModel().today
     @EnvironmentObject var viewModel: TaskViewModel
 
     var body: some View {
@@ -18,10 +16,12 @@ struct TaskView: View {
                 Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
                 VStack {
-                    CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
-                        .padding(.vertical)
+                    if viewModel.showCuriosityCard {
+                        CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
+                            .padding(.vertical)
+                    }
                     Text("Tarefa")
-                    InlineCalendar(listOfLetterDay: $listOfLetterDay, selectDay: $today)
+                    InlineCalendar(listOfLetterDay: $viewModel.days, selectDay: $viewModel.today)
                         .frame(height: 84)
                 Spacer()
                 }
