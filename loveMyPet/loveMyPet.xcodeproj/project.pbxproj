@@ -434,6 +434,7 @@
 				412D00E82A39216000544B21 /* CustomHomeNavigation.swift */,
 				414D59F12A3D32B90058D0E7 /* CustomEditNavigation.swift */,
 				C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */,
+				B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */,
 				640189C12A296B0B00813E20 /* AlertMessage.swift */,
 				C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */,
 				C02F50132A538368009CB3DF /* DayInlineCard.swift */,
@@ -515,17 +516,8 @@
 			isa = PBXGroup;
 			children = (
 				B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */,
-				B1054CC12A65CC59006D7A36 /* DateTimeInput */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B1054CC12A65CC59006D7A36 /* DateTimeInput */ = {
-			isa = PBXGroup;
-			children = (
-				B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */,
-			);
-			path = DateTimeInput;
 			sourceTree = "<group>";
 		};
 		B10597FD2A37C97B0029CFE3 /* ViewModel */ = {

@@ -10,18 +10,18 @@ import SwiftUI
 struct DateTimeInput: View {
     @State private var isDatePickerShown = false
     @State private var isTimePickerShown = false
-    @Binding var selectedDate: Date?
-    @Binding var selectedTime: Date?
+    @Binding var selectedDate: Date
+    @Binding var selectedTime: Date
 
     var timeRange: ClosedRange<Date> {
         let now = Date()
         let minTime: Date
-        if let selectedDate = selectedDate, Calendar.current.isDate(selectedDate, inSameDayAs: now) {
+        if Calendar.current.isDate(selectedDate, inSameDayAs: now) {
             minTime = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: now),
                                             minute: Calendar.current.component(.minute, from: now),
                                             second: 0, of: selectedDate) ?? now
         } else {
-            minTime = Calendar.current.startOfDay(for: selectedDate ?? now)
+            minTime = Calendar.current.startOfDay(for: selectedDate)
         }
         let maxTime = Calendar.current.date(byAdding: .day, value: 1, to: minTime)!
         return minTime...maxTime
@@ -35,7 +35,7 @@ struct DateTimeInput: View {
 
                     Spacer()
 
-                    Text(Helper.shared.dateFormatter(date: selectedDate ?? .now))
+                    Text(Helper.shared.dateFormatter(date: selectedDate))
                         .onTapGesture {
                             isDatePickerShown.toggle()
                             isTimePickerShown = false
@@ -46,7 +46,7 @@ struct DateTimeInput: View {
                         .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
 
-                    Text(Helper.shared.timeFormatter(time: selectedTime ?? .now ))
+                    Text(Helper.shared.timeFormatter(time: selectedTime))
                         .onTapGesture {
                             isDatePickerShown = false
                             isTimePickerShown.toggle()
@@ -62,7 +62,7 @@ struct DateTimeInput: View {
                     let minDate = Calendar.current.startOfDay(for: Date())
                     Section {
                         DatePicker("", selection: Binding {
-                            return selectedDate ?? .now
+                            return selectedDate
                         } set: { newValue  in
                             selectedDate = newValue
                         }, in: minDate..., displayedComponents: .date)
@@ -79,7 +79,7 @@ struct DateTimeInput: View {
                         HStack {
                             Spacer()
                             DatePicker("", selection: Binding {
-                                return selectedTime ?? .now
+                                return selectedTime
                             } set: { newValue  in
                                 selectedTime = newValue
                             }, in: timeRange, displayedComponents: .hourAndMinute)
@@ -98,8 +98,8 @@ struct DateTimeInput: View {
 }
 
 struct ContentInputView: View {
-    @State var date: Date? = .now
-    @State var time: Date? = .now
+    @State var date: Date = .now
+    @State var time: Date = .now
 
     var body: some View {
         DateTimeInput(selectedDate: $date, selectedTime: $time)
