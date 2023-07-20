@@ -8,9 +8,9 @@
 import Foundation
 
 class AddTaskViewModel: ObservableObject {
-    
+
     @Published var pets = [NewPet]()
-    
+
     @Published var summary: String = ""
     @Published var title: String = ""
     @Published var type: TaskType = .none
@@ -19,11 +19,11 @@ class AddTaskViewModel: ObservableObject {
     @Published var selectedDate: Date? = Date()
     @Published var selectedTime: Date? = Date()
     @Published var selectedPet: NewPet?
-    
+
     init() {
         fetchAllPets()
     }
-    
+
     func fetchAllPets() {
         pets = CoreDataManager.shared.getPetList()
     }

@@ -12,27 +12,29 @@ struct DateTimeInput: View {
     @State private var isTimePickerShown = false
     @Binding var selectedDate: Date?
     @Binding var selectedTime: Date?
-    
+
     var timeRange: ClosedRange<Date> {
         let now = Date()
         let minTime: Date
         if let selectedDate = selectedDate, Calendar.current.isDate(selectedDate, inSameDayAs: now) {
-            minTime = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: now), minute: Calendar.current.component(.minute, from: now), second: 0, of: selectedDate) ?? now
+            minTime = Calendar.current.date(bySettingHour: Calendar.current.component(.hour, from: now),
+                                            minute: Calendar.current.component(.minute, from: now),
+                                            second: 0, of: selectedDate) ?? now
         } else {
             minTime = Calendar.current.startOfDay(for: selectedDate ?? now)
         }
         let maxTime = Calendar.current.date(byAdding: .day, value: 1, to: minTime)!
         return minTime...maxTime
     }
-    
+
     var body: some View {
         List {
             Section {
                 HStack {
                     Text("Data").font(.custom(Font.Regular, size: 16))
-                    
+
                     Spacer()
-                    
+
                     Text(Helper.shared.dateFormatter(date: selectedDate ?? .now))
                         .onTapGesture {
                             isDatePickerShown.toggle()
@@ -43,7 +45,7 @@ struct DateTimeInput: View {
                         .padding(.horizontal, 8)
                         .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
-                    
+
                     Text(Helper.shared.timeFormatter(time: selectedTime ?? .now ))
                         .onTapGesture {
                             isDatePickerShown = false
@@ -55,8 +57,7 @@ struct DateTimeInput: View {
                         .background(Color(CustomColor.DateTimeInput))
                         .cornerRadius(4)
                 }
-                
-                
+
                 if isDatePickerShown {
                     let minDate = Calendar.current.startOfDay(for: Date())
                     Section {
@@ -69,10 +70,10 @@ struct DateTimeInput: View {
                         .labelsHidden()
                         .environment(\.locale, Locale(identifier: "pt_BR"))
                         .tint(Color(CustomColor.MainColor))
-                        
+
                     }
                 }
-                
+
                 if isTimePickerShown {
                     Section {
                         HStack {
@@ -81,7 +82,7 @@ struct DateTimeInput: View {
                                 return selectedTime ?? .now
                             } set: { newValue  in
                                 selectedTime = newValue
-                            },in: timeRange, displayedComponents: .hourAndMinute)
+                            }, in: timeRange, displayedComponents: .hourAndMinute)
                             .datePickerStyle(WheelDatePickerStyle())
                             .labelsHidden()
                             .clipped()

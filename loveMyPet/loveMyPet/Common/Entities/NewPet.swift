@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewPet: Identifiable, Hashable {
-    
+
     var id: UUID
     var name: String
     var specie: Specie
@@ -55,7 +55,7 @@ extension NewPet: Equatable {
         lhs.weight == rhs.weight &&
         lhs.isNeutered == rhs.isNeutered
     }
-    
+
     static func != (lhs: NewPet, rhs: NewPet) -> Bool {
         return !(lhs == rhs)
     }
