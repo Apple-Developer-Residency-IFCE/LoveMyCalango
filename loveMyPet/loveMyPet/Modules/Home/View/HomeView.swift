@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var homeViewModel: HomeViewModel
-
+    @State private var firstLoad: Bool = true
     var body: some View {
             ScrollView(.vertical) {
                 if homeViewModel.pets.isEmpty {
-                    EmptyHome()
+                    EmptyListView(type: .pets)
                 } else {
                     Grid {
                         ForEach(homeViewModel.pets, id: \.id) { pet in
@@ -36,27 +36,12 @@ struct HomeView: View {
                     }
                     .padding(.top, 48)
                 }
-            }.task {
-                homeViewModel.fetchAllPets()
+            }.onAppear {
+                if firstLoad {
+                    homeViewModel.fetchAllPets()
+                    firstLoad = false
+                }
             }
-            .background(Color(CustomColor.BackGroundColor))
-    }
-}
-
-struct EmptyHome: View {
-
-    var body: some View {
-        VStack {
-            Image(Assets.Image.emptyPet)
-                .resizable()
-                .padding(.horizontal, 24)
-                .padding(.bottom, 18)
-            Text(Constants.Home.emptyPets)
-                .foregroundColor(Color(CustomColor.EmptyMessageHome))
-                .multilineTextAlignment(.center)
-                .font(.custom(Font.Medium, size: 18))
-            Spacer()
-        }
-        .padding(.top, 32)
+            .background(Color(CustomColor.BackgroundColor))
     }
 }

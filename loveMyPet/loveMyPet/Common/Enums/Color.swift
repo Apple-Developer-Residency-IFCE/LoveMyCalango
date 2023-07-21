@@ -8,7 +8,7 @@
 import Foundation
 
 enum CustomColor {
-    static let BackGroundColor = "BackGroundColor"
+    static let BackgroundColor = "BackGroundColor"
     static let BorderCardPet = "BorderCardPet"
     static let FontColor = "FontColor"
     static let PetBackground = "CardPetBackground"
@@ -30,7 +30,12 @@ enum CustomColor {
     enum Gray {
         static let neutral300 = "Neutral300"
     }
+    enum White {
+        static let whiteF4 = "White-F4F3FA"
+    }
     static let PickerRowBackground = "PickerRowBackground"
     static let WeightValueBackgroun = "WeightValueBackgroun"
     static let TabViewBackground = "TabViewBackground"
+    static let DateTimeInput = "DateTimeInput"
+    static let FontForm = "FontForm"
 }

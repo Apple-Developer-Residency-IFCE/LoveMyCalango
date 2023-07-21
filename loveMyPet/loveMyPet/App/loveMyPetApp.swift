@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct LoveMyPetApp: App {
-
+    @AppStorage("showOnBoarding") var showOnBoarding: Bool = true
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
     @State private var splashScreenIsActive: Bool = true
+    @ObservedObject var taskViewModel = TaskViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -25,6 +26,10 @@ struct LoveMyPetApp: App {
                             self.splashScreenIsActive = false
                         }
                     }
+            } else if showOnBoarding {
+                NavigationView {
+                    OnBoardView()
+                }
             } else {
                 CustomTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation {
@@ -46,6 +51,7 @@ struct LoveMyPetApp: App {
             } taskView: {
                 CustomTaskNavigation {
                     TaskView()
+                        .environmentObject(taskViewModel)
                 } addTaskView: {
 
                 } update: {

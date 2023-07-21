@@ -32,7 +32,7 @@ struct PetDetailView: View {
 
                 PetData(title: Constants.Detail.name, value: pet.name)
                 PetData(title: Constants.Detail.specie, value: pet.specie.rawValue)
-                PetData(title: Constants.Detail.birth, value: viewModel.formattedBirthDate(date: pet.birthDate ))
+                PetData(title: Constants.Detail.birth, value: Helper.shared.formattedBirthDate(date: pet.birthDate ))
                 PetData(title: Constants.Detail.breed, value: pet.breed)
                 PetData(title: Constants.Picker.weight, value: viewModel.formattedWeight(weight: pet.weight))
 
@@ -48,6 +48,6 @@ struct PetDetailView: View {
             .padding(24.0)
             Spacer()
         }
-        .background(Color(CustomColor.BackGroundColor))
+        .background(Color(CustomColor.BackgroundColor))
     }
 }
