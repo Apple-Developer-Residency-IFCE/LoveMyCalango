@@ -32,7 +32,7 @@ struct ConfigView: View {
                     .font(.custom(Font.Regular, size: 16))
                         .padding(.trailing, 24)
                         .padding(.leading, 16)
-                        .tint(Color(red: 0.01, green: 0.79, blue: 0.53))
+                        .tint(Color(CustomColor.toggleActiveColor))
             }
             .frame(width: 327, height: 40, alignment: .center)
             .background(Color(CustomColor.White.whiteF4))

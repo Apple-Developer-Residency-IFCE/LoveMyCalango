@@ -24,6 +24,7 @@ enum CustomColor {
     static let PickerSection = "PickerSection"
     static let DeleteAlert = "DeleteAlert"
     static let AlertBackground = "AlertBackground"
+    static let toggleActiveColor = "ToggleActiveColor"
 
     enum Gray {
         static let neutral300 = "Neutral300"
