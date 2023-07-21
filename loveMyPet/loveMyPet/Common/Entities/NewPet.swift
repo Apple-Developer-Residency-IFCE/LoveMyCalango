@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-class NewPet: Identifiable {
+
+struct NewPet: Identifiable, Hashable {
 
     var id: UUID
     var name: String
@@ -40,5 +41,22 @@ class NewPet: Identifiable {
         self.weight = coreDataPet.weight
         self.isNeutered = coreDataPet.isNeutered
         self.image = coreDataPet.image ?? Data()
+    }
+}
+
+extension NewPet: Equatable {
+    static func == (lhs: NewPet, rhs: NewPet) -> Bool {
+        return lhs.image == rhs.image &&
+        lhs.name == rhs.name &&
+        lhs.gender == rhs.gender &&
+        lhs.specie == rhs.specie &&
+        lhs.breed == rhs.breed &&
+        lhs.birthDate == rhs.birthDate &&
+        lhs.weight == rhs.weight &&
+        lhs.isNeutered == rhs.isNeutered
+    }
+
+    static func != (lhs: NewPet, rhs: NewPet) -> Bool {
+        return !(lhs == rhs)
     }
 }
