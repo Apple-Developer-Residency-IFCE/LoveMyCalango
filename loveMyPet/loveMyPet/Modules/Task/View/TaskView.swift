@@ -25,8 +25,6 @@ struct TaskView: View {
                         .frame(height: 84)
                 Spacer()
                 }
-            }.onAppear {
-                viewModel.fetchAllTasks()
             }
         }
     }
