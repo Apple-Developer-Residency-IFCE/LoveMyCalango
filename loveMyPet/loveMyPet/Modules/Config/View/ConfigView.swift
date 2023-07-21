@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ConfigView: View {
+    @State private var isON = false
     var body: some View {
 
         VStack(alignment: .leading) {
@@ -21,8 +22,22 @@ struct ConfigView: View {
                 .foregroundColor(Color(CustomColor.FontColor))
 
             ConfigOptions()
-                .padding(.top, 20)
-                .padding(.leading, 8)
+                .padding(EdgeInsets(top: 20, leading: 8, bottom: 32, trailing: 0))
+
+            Text(Constants.Config.sounds)
+                .font(.custom(Font.SemiBold, size: 11))
+
+            ZStack {
+                Toggle(Constants.Config.notifications, isOn: $isON)
+                    .font(.custom(Font.Regular, size: 16))
+                        .padding(.trailing, 24)
+                        .padding(.leading, 16)
+                        .tint(Color(red: 0.01, green: 0.79, blue: 0.53))
+            }
+            .frame(width: 327, height: 40, alignment: .center)
+            .background(Color(CustomColor.White.whiteF4))
+            .cornerRadius(12)
+
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)

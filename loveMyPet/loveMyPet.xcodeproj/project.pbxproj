@@ -549,22 +549,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B1054CC92A65D776006D7A36 /* TaskDetail */ = {
-			isa = PBXGroup;
-			children = (
-				B1054CCA2A65D77D006D7A36 /* View */,
-			);
-			path = TaskDetail;
-			sourceTree = "<group>";
-		};
-		B1054CCA2A65D77D006D7A36 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		B1054CB32A65AB54006D7A36 /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,6 +590,22 @@
 				B1054CC22A65CC6E006D7A36 /* DateTimeInput.swift */,
 			);
 			path = DateTimeInput;
+			sourceTree = "<group>";
+		};
+		B1054CC92A65D776006D7A36 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CCA2A65D77D006D7A36 /* View */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		B1054CCA2A65D77D006D7A36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B10597FD2A37C97B0029CFE3 /* ViewModel */ = {

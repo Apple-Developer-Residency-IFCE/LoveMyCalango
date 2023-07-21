@@ -59,6 +59,8 @@ enum Constants {
     enum Config {
         static let title = "Configurações"
         static let appereance = "APARÊNCIA"
+        static let sounds = "SONS"
+        static let notifications = "Notificações"
     }
 
     enum Alert {
