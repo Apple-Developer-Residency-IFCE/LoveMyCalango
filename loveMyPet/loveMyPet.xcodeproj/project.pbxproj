@@ -59,6 +59,8 @@
 		B109C1C42A422680008585BE /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C22A422680008585BE /* Pet+CoreDataProperties.swift */; };
 		B109C1C82A42270E008585BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C72A42270E008585BE /* CoreDataManager.swift */; };
 		B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */; };
+		B178D2DA2A688DEE002CDBA0 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */; };
+		B178D2DC2A68AA04002CDBA0 /* EmptyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */; };
 		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */; };
 		C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */; };
@@ -168,6 +170,8 @@
 		B109C1C72A42270E008585BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePicker.swift; sourceTree = "<group>"; };
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyType.swift; sourceTree = "<group>"; };
 		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineCalendar.swift; sourceTree = "<group>"; };
 		C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskNavigation.swift; sourceTree = "<group>"; };
@@ -447,6 +451,7 @@
 				DF36E1D52A23A74800CEE0A9 /* TypeFormRow.swift */,
 				412D00EA2A392BF000544B21 /* TabContextView.swift */,
 				412D00EC2A393CE000544B21 /* Assets.swift */,
+				B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */,
 				B14689FB2A3922760070382B /* Color.swift */,
 				4A54C83E2A3134120049CEC0 /* ColorScheme.swift */,
 				C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */,
@@ -496,6 +501,7 @@
 				C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */,
 				C02F50132A538368009CB3DF /* DayInlineCard.swift */,
 				4A525AF92A4F848A0004972C /* CuriosityCard.swift */,
+				B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -917,6 +923,7 @@
 				DF5C02402A22DBFD00E9898E /* EditPetView.swift in Sources */,
 				B1054CB52A65AB6E006D7A36 /* Replay.swift in Sources */,
 				DF36E1C72A239BF900CEE0A9 /* SpeciePicker.swift in Sources */,
+				B178D2DA2A688DEE002CDBA0 /* EmptyListView.swift in Sources */,
 				DF36E1CC2A239C6700CEE0A9 /* FormRowCell.swift in Sources */,
 				4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */,
 				4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */,
@@ -941,6 +948,7 @@
 				C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPet.swift in Sources */,
 				DF5C02422A22DC0E00E9898E /* EditPetViewModel.swift in Sources */,
+				B178D2DC2A68AA04002CDBA0 /* EmptyType.swift in Sources */,
 				B1054CC02A65CC1E006D7A36 /* AddTaskView.swift in Sources */,
 				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
 				C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */,
