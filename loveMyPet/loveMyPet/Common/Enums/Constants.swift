@@ -68,4 +68,21 @@ enum Constants {
     enum Task {
         static let cardTitle = "Curiosidade do dia!"
     }
+
+    enum OnBoard {
+        static let onBoardRightButton = "Avançar"
+        static let onBoardLeftButton = "Pular"
+        static let onBoardStartButton = "Começar"
+        static let onBoardPageOneTitle = "Cadastrar seu pet"
+        static let onBoardPageOneDescription = """
+        Tenha as informações do seu pet e todo histórico para consultas futuras.
+        """
+        static let onBoardPageTwoTitle = "Lembrete de vacinas"
+        static let onBoardPageTwoDescription = "Agende consultas, vacinas e medicamentos para nunca mais esquecer."
+        static let onBoardPageThreeTitle = "Organize rotinas"
+        static let onBoardPageThreeDescription = """
+        Organize as rotinas dos seus pets.
+        Crie tarefas e as visualize em um calendário.
+        """
+    }
 }

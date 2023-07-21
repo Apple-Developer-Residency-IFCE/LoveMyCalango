@@ -14,6 +14,9 @@ enum Assets {
         static let emptyPet = "EmptyPet"
         static let CuriosityPetFace = "CuriosityPetFace"
         static let namedLogo = "NamedLogo"
+        static let onBoardImageOne = "OnBoardImageOne"
+        static let onBoardImageTwo = "OnBoardImageTwo"
+        static let onBoardImageThree = "OnBoardImageThree"
     }
 
     enum Icon {

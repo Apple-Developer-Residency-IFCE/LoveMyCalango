@@ -19,16 +19,21 @@
 		41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F894892A3153FA00C9AE02 /* Gender.swift */; };
 		41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F8948B2A37C43000C9AE02 /* Specie.swift */; };
 		4A49EB1F2A53744500820481 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A49EB1E2A53744500820481 /* TaskViewModel.swift */; };
+		4A4BD3592A673EAC00765607 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4BD3582A673EAC00765607 /* OnBoardView.swift */; };
 		4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DB72A3A679B00B5586B /* Helper.swift */; };
 		4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */; };
 		4A525AFA2A4F848A0004972C /* CuriosityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A525AF92A4F848A0004972C /* CuriosityCard.swift */; };
 		4A54C83F2A3134120049CEC0 /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A54C83E2A3134120049CEC0 /* ColorScheme.swift */; };
 		4A56853E2A4E2AFB002E5B4B /* Curiosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A56853D2A4E2AFB002E5B4B /* Curiosity.swift */; };
 		4A5685412A4E3237002E5B4B /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5685402A4E3237002E5B4B /* Fact.swift */; };
+		4A5AEC602A686C5100A3BE02 /* OnBoardPageComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AEC5F2A686C5100A3BE02 /* OnBoardPageComponent.swift */; };
+		4A5AEC622A68714400A3BE02 /* BottomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AEC612A68714400A3BE02 /* BottomButtons.swift */; };
+		4A5AEC652A6871D200A3BE02 /* OnBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5AEC642A6871D200A3BE02 /* OnBoardViewModel.swift */; };
 		4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5CF9A82A39358300902300 /* ConfigButton.swift */; };
 		4A5F4A1D2A37E31600A8829C /* ConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1C2A37E31600A8829C /* ConfigView.swift */; };
 		4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */; };
 		4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8A47092A4CFE7100F479A0 /* HttpError.swift */; };
+		4AD568262A67661B009DC810 /* OnBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD568252A67661B009DC810 /* OnBoardModel.swift */; };
 		640189C02A29543000813E20 /* NewPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189BF2A29543000813E20 /* NewPet.swift */; };
 		640920D02A2008FE0090A364 /* CardPet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640920CF2A2008FE0090A364 /* CardPet.swift */; };
 		641AEB0D2A1EC48C00F2CE34 /* LoveMyPetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641AEB0C2A1EC48C00F2CE34 /* LoveMyPetApp.swift */; };
@@ -116,16 +121,21 @@
 		41F894892A3153FA00C9AE02 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		41F8948B2A37C43000C9AE02 /* Specie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Specie.swift; sourceTree = "<group>"; };
 		4A49EB1E2A53744500820481 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		4A4BD3582A673EAC00765607 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
 		4A4E8DB72A3A679B00B5586B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4A4E8DBA2A3A69B900B5586B /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		4A525AF92A4F848A0004972C /* CuriosityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuriosityCard.swift; sourceTree = "<group>"; };
 		4A54C83E2A3134120049CEC0 /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 		4A56853D2A4E2AFB002E5B4B /* Curiosity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curiosity.swift; sourceTree = "<group>"; };
 		4A5685402A4E3237002E5B4B /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		4A5AEC5F2A686C5100A3BE02 /* OnBoardPageComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardPageComponent.swift; sourceTree = "<group>"; };
+		4A5AEC612A68714400A3BE02 /* BottomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtons.swift; sourceTree = "<group>"; };
+		4A5AEC642A6871D200A3BE02 /* OnBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardViewModel.swift; sourceTree = "<group>"; };
 		4A5CF9A82A39358300902300 /* ConfigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigButton.swift; sourceTree = "<group>"; };
 		4A5F4A1C2A37E31600A8829C /* ConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigView.swift; sourceTree = "<group>"; };
 		4A5F4A1F2A37EA5500A8829C /* ConfigOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigOptions.swift; sourceTree = "<group>"; };
 		4A8A47092A4CFE7100F479A0 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		4AD568252A67661B009DC810 /* OnBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardModel.swift; sourceTree = "<group>"; };
 		640189BF2A29543000813E20 /* NewPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPet.swift; sourceTree = "<group>"; };
 		640189C12A296B0B00813E20 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
 		640920CF2A2008FE0090A364 /* CardPet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardPet.swift; path = "loveMyPet/Preview Content/Preview Assets.xcassets/CardPet.swift"; sourceTree = SOURCE_ROOT; };
@@ -240,6 +250,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4A4BD3572A673E9D00765607 /* OnBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4AD568242A6765D1009DC810 /* Model */,
+				4A5AEC632A6871BD00A3BE02 /* ViewModel */,
+				4AD5681F2A6758BC009DC810 /* View */,
+			);
+			path = OnBoard;
+			sourceTree = "<group>";
+		};
+		4A4BD35C2A67434300765607 /* OnBoardPageComponents */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AEC5F2A686C5100A3BE02 /* OnBoardPageComponent.swift */,
+				4A5AEC612A68714400A3BE02 /* BottomButtons.swift */,
+			);
+			path = OnBoardPageComponents;
+			sourceTree = "<group>";
+		};
 		4A4E8DB62A3A678400B5586B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +291,14 @@
 				4A56853D2A4E2AFB002E5B4B /* Curiosity.swift */,
 			);
 			path = Curiosity;
+			sourceTree = "<group>";
+		};
+		4A5AEC632A6871BD00A3BE02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4A5AEC642A6871D200A3BE02 /* OnBoardViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4A5CF9A72A39356500902300 /* ConfigButton */ = {
@@ -305,6 +342,23 @@
 				4A56853F2A4E2CA4002E5B4B /* Curiosity */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		4AD5681F2A6758BC009DC810 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A4BD3582A673EAC00765607 /* OnBoardView.swift */,
+				4A4BD35C2A67434300765607 /* OnBoardPageComponents */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4AD568242A6765D1009DC810 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AD568252A67661B009DC810 /* OnBoardModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		641AEB002A1EC48C00F2CE34 = {
@@ -373,6 +427,7 @@
 		641AEB1C2A1ECAE800F2CE34 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4A4BD3572A673E9D00765607 /* OnBoard */,
 				B1054CBC2A65CBEB006D7A36 /* AddTask */,
 				B1054CC92A65D776006D7A36 /* TaskDetail */,
 				C02F50052A4CE82E009CB3DF /* Task */,
@@ -855,6 +910,7 @@
 				DF64A5282A4236EF00A3138D /* HomeViewModel.swift in Sources */,
 				412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */,
 				41F8948A2A3153FA00C9AE02 /* Gender.swift in Sources */,
+				4AD568262A67661B009DC810 /* OnBoardModel.swift in Sources */,
 				DF912F6F2A22DFF000F15799 /* FormView.swift in Sources */,
 				4A5685412A4E3237002E5B4B /* Fact.swift in Sources */,
 				B1054CB22A65AB03006D7A36 /* PetTask+CoreDataProperties.swift in Sources */,
@@ -874,11 +930,13 @@
 				B1054CB92A65AB97006D7A36 /* Reminder.swift in Sources */,
 				414D59F22A3D32B90058D0E7 /* CustomEditNavigation.swift in Sources */,
 				C02F50142A538368009CB3DF /* DayInlineCard.swift in Sources */,
+				4A4BD3592A673EAC00765607 /* OnBoardView.swift in Sources */,
 				DFAC1C452A2AF2A400966782 /* View.swift in Sources */,
 				41F8948C2A37C43000C9AE02 /* Specie.swift in Sources */,
 				4A8A470A2A4CFE7100F479A0 /* HttpError.swift in Sources */,
 				DFAC1C402A2AE72400966782 /* Animation.swift in Sources */,
 				412D00E92A39216000544B21 /* CustomHomeNavigation.swift in Sources */,
+				4A5AEC622A68714400A3BE02 /* BottomButtons.swift in Sources */,
 				DFAC1C432A2AF26200966782 /* RemovePetButton.swift in Sources */,
 				C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */,
 				640920D02A2008FE0090A364 /* CardPet.swift in Sources */,
@@ -907,9 +965,11 @@
 				4A5F4A1D2A37E31600A8829C /* ConfigView.swift in Sources */,
 				B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */,
 				DF36E1D42A23A72A00CEE0A9 /* Neutered.swift in Sources */,
+				4A5AEC652A6871D200A3BE02 /* OnBoardViewModel.swift in Sources */,
 				B109C1C82A42270E008585BE /* CoreDataManager.swift in Sources */,
 				B1054CB72A65AB80006D7A36 /* TaskType.swift in Sources */,
 				B109C1C32A422680008585BE /* Pet+CoreDataClass.swift in Sources */,
+				4A5AEC602A686C5100A3BE02 /* OnBoardPageComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
