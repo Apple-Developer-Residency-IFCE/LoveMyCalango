@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CustomHomeNavigation<Home: View, Add: View>: View {
+
     @ViewBuilder let homeView: Home
     @ViewBuilder let addView: Add
 

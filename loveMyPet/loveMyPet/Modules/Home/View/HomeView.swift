@@ -36,8 +36,7 @@ struct HomeView: View {
                     }
                     .padding(.top, 48)
                 }
-            }
-            .onAppear {
+            }.onAppear {
                 if firstLoad {
                     homeViewModel.fetchAllPets()
                     firstLoad = false

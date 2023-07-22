@@ -14,11 +14,19 @@ struct LoveMyPetApp: App {
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
+    @State private var splashScreenIsActive: Bool = true
     @ObservedObject var taskViewModel = TaskViewModel()
 
     var body: some Scene {
         WindowGroup {
-            if showOnBoarding {
+            if splashScreenIsActive {
+                SplashScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                            self.splashScreenIsActive = false
+                        }
+                    }
+            } else if showOnBoarding {
                 NavigationView {
                     OnBoardView()
                 }

@@ -64,6 +64,7 @@
 		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */; };
 		C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */; };
+		C098AFF42A68ADA700F3F2E7 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */; };
 		C02F50142A538368009CB3DF /* DayInlineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50132A538368009CB3DF /* DayInlineCard.swift */; };
 		C05BDBE72A54C671005FD721 /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */; };
 		C05BDBE92A54C694005FD721 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE82A54C694005FD721 /* Date.swift */; };
@@ -175,6 +176,7 @@
 		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineCalendar.swift; sourceTree = "<group>"; };
 		C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskNavigation.swift; sourceTree = "<group>"; };
+		C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		C02F50132A538368009CB3DF /* DayInlineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInlineCard.swift; sourceTree = "<group>"; };
 		C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
 		C05BDBE82A54C694005FD721 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 		641AEB1A2A1EC93000F2CE34 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C098AFF22A68AD8600F3F2E7 /* LaunchScreen */,
 				DF5C02132A22C66000E9898E /* Font */,
 				641AEB102A1EC48C00F2CE34 /* Assets.xcassets */,
 			);
@@ -656,6 +659,14 @@
 				C02F50062A4CE8B3009CB3DF /* TaskView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C098AFF22A68AD8600F3F2E7 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		C0A1420C2A6739E700A2FA19 /* Inter */ = {
@@ -927,6 +938,7 @@
 				DF36E1CC2A239C6700CEE0A9 /* FormRowCell.swift in Sources */,
 				4A5CF9A92A39358300902300 /* ConfigButton.swift in Sources */,
 				4A4E8DBB2A3A69B900B5586B /* ConfigViewModel.swift in Sources */,
+				C098AFF42A68ADA700F3F2E7 /* SplashScreenView.swift in Sources */,
 				4A4E8DB82A3A679B00B5586B /* Helper.swift in Sources */,
 				C05BDBE92A54C694005FD721 /* Date.swift in Sources */,
 				4A5F4A202A37EA5500A8829C /* ConfigOptions.swift in Sources */,
