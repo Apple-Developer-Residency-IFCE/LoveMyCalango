@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct ConfigView: View {
     @State private var isON = false
@@ -30,9 +31,19 @@ struct ConfigView: View {
             ZStack {
                 Toggle(Constants.Config.notifications, isOn: $isON)
                     .font(.custom(Font.Regular, size: 16))
-                        .padding(.trailing, 24)
-                        .padding(.leading, 16)
-                        .tint(Color(CustomColor.toggleActiveColor))
+                    .padding(.trailing, 24)
+                    .padding(.leading, 16)
+                    .tint(Color(CustomColor.toggleActiveColor))
+                    .onChange(of: isON) { _ in
+                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
+                            .sound]) { success, error in
+                            if success {
+                                print("All set!")
+                            } else if let error = error {
+                                print(error.localizedDescription)
+                            }
+                        }
+                    }
             }
             .frame(width: 327, height: 40, alignment: .center)
             .background(Color(CustomColor.White.whiteF4))
