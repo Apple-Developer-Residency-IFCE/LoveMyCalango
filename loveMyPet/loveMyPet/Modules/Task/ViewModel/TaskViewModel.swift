@@ -13,7 +13,10 @@ final class TaskViewModel: ObservableObject {
     @Published var days: [String] = []
     @Published var today: Int = 1
 
+    @Published var tasks: [NewTask] = []
+
     init() {
+        fetchAllTasks()
         Task {
             await getCatCuriosity()
         }
@@ -50,5 +53,9 @@ final class TaskViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+
+    func fetchAllTasks() {
+        tasks = CoreDataManager.shared.getTaskList()
     }
 }

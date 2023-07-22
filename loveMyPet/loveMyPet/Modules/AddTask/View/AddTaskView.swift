@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddTaskView: View {
     @StateObject var addViewModel =  AddTaskViewModel()
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
@@ -67,6 +68,19 @@ struct AddTaskView: View {
         }
         .onAppear {
             addViewModel.fetchAllPets()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing, content: {
+                Button {
+                    addViewModel.createTask()
+                    dismiss()
+                } label: {
+                    Text(Constants.Home.add)
+                        .font(.custom(Font.Regular, size: 16))
+                }
+                .disabled(!addViewModel.isFormValid)
+                .tint(addViewModel.isFormValid ? Color(CustomColor.MainColor) : Color.gray )
+            })
         }
     }
 }
