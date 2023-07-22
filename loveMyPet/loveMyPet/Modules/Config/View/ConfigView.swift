@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UserNotifications
 
 struct ConfigView: View {
     @ObservedObject var viewModel = ConfigViewModel()
@@ -34,14 +33,9 @@ struct ConfigView: View {
                     .padding(.trailing, 24)
                     .padding(.leading, 16)
                     .tint(Color(CustomColor.toggleActiveColor))
-                    .onChange(of: viewModel.isON) { _ in
-                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
-                            .sound]) { success, error in
-                            if success {
-                                print("All set!")
-                            } else if let error = error {
-                                print(error.localizedDescription)
-                            }
+                    .onChange(of: viewModel.isON) { newValue in
+                        if newValue {
+                            viewModel.allowNotification()
                         }
                     }
             }

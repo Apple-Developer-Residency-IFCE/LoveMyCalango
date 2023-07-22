@@ -24,4 +24,19 @@ final class ConfigViewModel: ObservableObject {
             break
         }
     }
+
+    func allowNotification() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
+            .sound]) { success, error in
+            if success {
+                Alert(
+                    title: Text("Notificação"),
+                    message: Text("Esta é uma notificação de exemplo."),
+                    dismissButton: .default(Text("Ok"))
+                )
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
