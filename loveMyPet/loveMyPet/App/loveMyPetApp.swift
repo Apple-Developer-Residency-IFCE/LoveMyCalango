@@ -9,48 +9,62 @@ import SwiftUI
 
 @main
 struct LoveMyPetApp: App {
-
+    @AppStorage("showOnBoarding") var showOnBoarding: Bool = true
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
+    @State private var splashScreenIsActive: Bool = true
     @ObservedObject var taskViewModel = TaskViewModel()
 
     var body: some Scene {
         WindowGroup {
-            CustomTabView(selectedTab: $selectedTab) {
-                CustomHomeNavigation {
-                    HomeView(homeViewModel: homeViewModel)
-                } addView: {
-                    EditPetView(addViewModel: addViewModel)
-                        .navigationTitle(Constants.Home.addPetTitle)
-                        .navigationBarTitleDisplayMode(.inline)
-                } action: {
-                    addViewModel.updatePet()
-                    Helper.shared.addButtonDisable = true
-                } update: {
-                    homeViewModel.fetchAllPets()
-                    addViewModel.newPet = NewPet()
+            if splashScreenIsActive {
+                SplashScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                            self.splashScreenIsActive = false
+                        }
+                    }
+            } else if showOnBoarding {
+                NavigationView {
+                    OnBoardView()
                 }
-            }
-        configView: {
-            ConfigView()
-        } taskView: {
-            CustomTaskNavigation {
-                TaskView()
-                    .environmentObject(taskViewModel)
-            } addTaskView: {
+            } else {
+                CustomTabView(selectedTab: $selectedTab) {
+                    CustomHomeNavigation {
+                        HomeView(homeViewModel: homeViewModel)
+                    } addView: {
+                        EditPetView(addViewModel: addViewModel)
+                            .navigationTitle(Constants.Home.addPetTitle)
+                            .navigationBarTitleDisplayMode(.inline)
+                    } action: {
+                        addViewModel.updatePet()
+                        Helper.shared.addButtonDisable = true
+                    } update: {
+                        homeViewModel.fetchAllPets()
+                        addViewModel.newPet = NewPet()
+                    }
+                }
+            configView: {
+                ConfigView()
+            } taskView: {
+                CustomTaskNavigation {
+                    TaskView()
+                        .environmentObject(taskViewModel)
+                } addTaskView: {
                 AddTaskView()
                     .navigationTitle(Constants.Task.addTaskTitle)
                     .navigationBarTitleDisplayMode(.inline)
-            } update: {
+                } update: {
                 taskViewModel.fetchAllTasks()
+                }
             }
-        }
-        .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
-        .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-        .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
-        .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
+            .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
+            .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
+            .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
+            .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
+            }
         }
     }
 }
