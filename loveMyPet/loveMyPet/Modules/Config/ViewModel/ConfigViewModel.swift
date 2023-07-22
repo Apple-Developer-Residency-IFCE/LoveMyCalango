@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-final class ConfigViewModel {
+final class ConfigViewModel: ObservableObject {
+    @Published var isON = false
     private(set) var selectedScheme: Int?
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
 
