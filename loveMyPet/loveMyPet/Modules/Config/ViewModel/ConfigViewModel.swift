@@ -11,10 +11,11 @@ final class ConfigViewModel: ObservableObject {
     @Published var isON = false
     private(set) var selectedScheme: Int?
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
-    @State private var isNotificationEnabled = false
+    @AppStorage("notification") var notifications: Bool = false
+    @State private var notificationEnable: Bool = false
 
     init() {
-        checkNotificationPermission()
+        isON = notifications
     }
 
     func changeScheme(index: Int?) {
@@ -30,8 +31,9 @@ final class ConfigViewModel: ObservableObject {
         }
     }
 
-    func allowNotification() {
-        if isNotificationEnabled {
+    func allowNotification(noticationValue: Bool) {
+        if noticationValue {
+            notifications = true
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
                 .sound]) { success, error in
                 if success {
@@ -40,18 +42,21 @@ final class ConfigViewModel: ObservableObject {
                     print(error.localizedDescription)
                 }
             }
+            checkNotificationPermission(showAlert: true)
         } else {
-            self.showSettingsAlert()
+            notifications = false
         }
     }
 
-    private func checkNotificationPermission() {
+     func checkNotificationPermission(showAlert: Bool) {
             UNUserNotificationCenter.current().getNotificationSettings { settings in
                 DispatchQueue.main.async {
-                    if settings.authorizationStatus == .authorized {
-                        self.isNotificationEnabled = true
-                    } else {
-                        self.isNotificationEnabled = false
+                    if !(settings.authorizationStatus == .authorized) {
+                        if showAlert {
+                            self.showSettingsAlert()
+                        } else {
+                            self.isON = false
+                        }
                     }
                 }
             }
@@ -73,4 +78,3 @@ final class ConfigViewModel: ObservableObject {
         UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
-

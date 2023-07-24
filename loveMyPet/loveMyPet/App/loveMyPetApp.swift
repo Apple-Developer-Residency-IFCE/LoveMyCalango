@@ -15,6 +15,7 @@ struct LoveMyPetApp: App {
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
     @ObservedObject var taskViewModel = TaskViewModel()
+    @ObservedObject var configViewModel = ConfigViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -40,6 +41,7 @@ struct LoveMyPetApp: App {
                 }
             configView: {
                 ConfigView()
+                    .environmentObject(configViewModel)
             } taskView: {
                 CustomTaskNavigation {
                     TaskView()

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ConfigView: View {
-    @ObservedObject var viewModel = ConfigViewModel()
+    @EnvironmentObject var viewModel: ConfigViewModel
+    @Environment(\.scenePhase) var scenePhase
     var body: some View {
 
         VStack(alignment: .leading) {
@@ -33,10 +34,8 @@ struct ConfigView: View {
                     .padding(.trailing, 24)
                     .padding(.leading, 16)
                     .tint(Color(CustomColor.toggleActiveColor))
-                    .onChange(of: viewModel.isON) { newValue in
-                        if newValue {
-                            viewModel.allowNotification()
-                        }
+                    .onChange(of: viewModel.isON) { value in
+                            viewModel.allowNotification(noticationValue: value)
                     }
             }
             .frame(width: 327, height: 40, alignment: .center)
@@ -49,6 +48,11 @@ struct ConfigView: View {
         .padding(.top, 40)
         .padding(.leading, 24)
         .background(Color(CustomColor.BackgroundColor))
+        .onChange(of: scenePhase, perform: {
+            if $0 == .active {
+                viewModel.checkNotificationPermission(showAlert: false)
+            }
+        })
     }
 }
 
