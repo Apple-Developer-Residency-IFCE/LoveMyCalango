@@ -11,6 +11,7 @@ struct TaskView: View {
     @State var listOfLetterDay: [String] = TaskViewModel().days
     @State var today: Int = TaskViewModel().today
     @EnvironmentObject var viewModel: TaskViewModel
+    @Binding var addSheet: Bool
 
     var body: some View {
             ZStack {
@@ -23,6 +24,10 @@ struct TaskView: View {
                     InlineCalendar(listOfLetterDay: $listOfLetterDay, selectDay: $today)
                         .frame(height: 84)
                 Spacer()
+
+                    if viewModel.tasks.isEmpty {
+                        EmptyListView(type: .tasks, addSheet: $addSheet)
+                    }
                 }
             }
     }
@@ -30,7 +35,7 @@ struct TaskView: View {
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskView()
+        TaskView(addSheet: .constant(false))
             .environmentObject(TaskViewModel())
     }
 }

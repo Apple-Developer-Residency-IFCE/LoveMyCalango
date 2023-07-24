@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
-    @ViewBuilder let taskListView: TaskView
+    @ViewBuilder let taskListView: (Binding<Bool>) -> TaskView
     @ViewBuilder let addTaskView: AddTask
     @State private var showingPopover = false
     var update: () -> Void
 
     var body: some View {
         NavigationView {
-            taskListView
+            taskListView($showingPopover)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Image(Assets.Image.namedLogo)
@@ -49,6 +49,8 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                             }
                         })
                     }
+                    .toolbarBackground(Color(CustomColor.NavigationBackground), for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
             }
         }
     }
