@@ -59,19 +59,19 @@
 		B109C1C42A422680008585BE /* Pet+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C22A422680008585BE /* Pet+CoreDataProperties.swift */; };
 		B109C1C82A42270E008585BE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109C1C72A42270E008585BE /* CoreDataManager.swift */; };
 		B1220F932A42DDEB00CFA3C5 /* BirthDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */; };
+		B178D2DA2A688DEE002CDBA0 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */; };
+		B178D2DC2A68AA04002CDBA0 /* EmptyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */; };
 		B1EA89362A6940870071C0C4 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA89352A6940870071C0C4 /* EditTaskView.swift */; };
 		B1EA89382A6941B90071C0C4 /* EditTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA89372A6941B90071C0C4 /* EditTaskViewModel.swift */; };
 		B1EA893C2A6956EE0071C0C4 /* RemoveButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA893B2A6956EE0071C0C4 /* RemoveButtonType.swift */; };
-		B178D2DA2A688DEE002CDBA0 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */; };
-		B178D2DC2A68AA04002CDBA0 /* EmptyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */; };
 		C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50062A4CE8B3009CB3DF /* TaskView.swift */; };
 		C02F500E2A4E561F009CB3DF /* InlineCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */; };
 		C02F50102A536453009CB3DF /* CustomTaskNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */; };
-		C098AFF42A68ADA700F3F2E7 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */; };
 		C02F50142A538368009CB3DF /* DayInlineCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F50132A538368009CB3DF /* DayInlineCard.swift */; };
 		C05BDBE72A54C671005FD721 /* DaysOfWeek.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */; };
 		C05BDBE92A54C694005FD721 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBE82A54C694005FD721 /* Date.swift */; };
 		C05BDBEB2A54C6C3005FD721 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05BDBEA2A54C6C3005FD721 /* Errors.swift */; };
+		C098AFF42A68ADA700F3F2E7 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */; };
 		C0A142022A67394E00A2FA19 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141F92A67394D00A2FA19 /* Inter-ExtraLight.ttf */; };
 		C0A142032A67394E00A2FA19 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141FA2A67394D00A2FA19 /* Inter-ExtraBold.ttf */; };
 		C0A142042A67394E00A2FA19 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0A141FB2A67394D00A2FA19 /* Inter-Black.ttf */; };
@@ -174,19 +174,19 @@
 		B109C1C72A42270E008585BE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B1220F922A42DDEB00CFA3C5 /* BirthDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDatePicker.swift; sourceTree = "<group>"; };
 		B14689FB2A3922760070382B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyType.swift; sourceTree = "<group>"; };
 		B1EA89352A6940870071C0C4 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
 		B1EA89372A6941B90071C0C4 /* EditTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewModel.swift; sourceTree = "<group>"; };
 		B1EA893B2A6956EE0071C0C4 /* RemoveButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveButtonType.swift; sourceTree = "<group>"; };
-		B178D2D92A688DEE002CDBA0 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
-		B178D2DB2A68AA04002CDBA0 /* EmptyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyType.swift; sourceTree = "<group>"; };
 		C02F50062A4CE8B3009CB3DF /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		C02F500D2A4E561F009CB3DF /* InlineCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineCalendar.swift; sourceTree = "<group>"; };
 		C02F500F2A536453009CB3DF /* CustomTaskNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskNavigation.swift; sourceTree = "<group>"; };
-		C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		C02F50132A538368009CB3DF /* DayInlineCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInlineCard.swift; sourceTree = "<group>"; };
 		C05BDBE62A54C671005FD721 /* DaysOfWeek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOfWeek.swift; sourceTree = "<group>"; };
 		C05BDBE82A54C694005FD721 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		C05BDBEA2A54C6C3005FD721 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		C098AFF32A68ADA700F3F2E7 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		C0A141F92A67394D00A2FA19 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
 		C0A141FA2A67394D00A2FA19 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C0A141FB2A67394D00A2FA19 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
@@ -562,22 +562,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B1054CC92A65D776006D7A36 /* TaskDetail */ = {
-			isa = PBXGroup;
-			children = (
-				B1054CCA2A65D77D006D7A36 /* View */,
-			);
-			path = TaskDetail;
-			sourceTree = "<group>";
-		};
-		B1054CCA2A65D77D006D7A36 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		B1054CB32A65AB54006D7A36 /* Task */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +592,22 @@
 			isa = PBXGroup;
 			children = (
 				B1054CBF2A65CC1E006D7A36 /* AddTaskView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1054CC92A65D776006D7A36 /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CCA2A65D77D006D7A36 /* View */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		B1054CCA2A65D77D006D7A36 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1054CCB2A65D788006D7A36 /* TaskDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
