@@ -76,7 +76,7 @@ struct AddTaskView: View {
                     dismiss()
                 } label: {
                     Text(Constants.Home.add)
-                        .font(.custom(Font.Regular, size: 16))
+                        .font(.custom(Font.SemiBold, size: 16))
                 }
                 .disabled(!addViewModel.isFormValid)
                 .tint(addViewModel.isFormValid ? Color(CustomColor.MainColor) : Color.gray )
