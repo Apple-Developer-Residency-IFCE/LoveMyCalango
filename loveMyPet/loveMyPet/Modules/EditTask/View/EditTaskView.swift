@@ -9,26 +9,23 @@ import SwiftUI
 
 struct EditTaskView: View {
     @Environment(\.dismiss) var dismiss
-    @StateObject var editViewModel = EditTaskViewModel()
-    @Binding var task: NewTask
+    @ObservedObject var editViewModel: EditTaskViewModel
 
     var body: some View {
         VStack {
             Form {
                 Section {
-                    TextField("Título", text: $task.title)
+                    TextField("Título", text: $editViewModel.task.title)
 
-                    Picker("Tipo de tarefa", selection: $task.type) {
+                    Picker("Tipo de tarefa", selection: $editViewModel.task.type) {
                         ForEach(TaskType.allCases, id: \.self) { task in
                             Text(task.rawValue)
                         }
                     }
 
-                    Picker("Pet", selection: $task.pet) {
-                        Text("Nao escolhido")
-
+                    Picker("Pet", selection: $editViewModel.task.pet) {
                         ForEach(editViewModel.pets, id: \.id) { pet in
-                            Text(pet.name).tag(pet as NewPet?)
+                            Text(pet.name).tag(pet as NewPet)
                         }
                     }
                 }
@@ -36,15 +33,15 @@ struct EditTaskView: View {
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    DateTimeInput(selectedDate: $task.date, selectedTime: $task.time)
+                    DateTimeInput(selectedDate: $editViewModel.task.date, selectedTime: $editViewModel.task.time)
 
-                    Picker("Repetir", selection: $task.replay) {
+                    Picker("Repetir", selection: $editViewModel.task.replay) {
                         ForEach(Replay.allCases, id: \.self) { replay in
                             Text(replay.rawValue)
                         }
                     }.font(.custom(Font.Regular, size: 16))
 
-                    Picker("Lembrete", selection: $task.reminder) {
+                    Picker("Lembrete", selection: $editViewModel.task.reminder) {
                         ForEach(Reminder.allCases, id: \.self) { reminder in
                             Text(reminder.rawValue)
                         }
@@ -55,7 +52,7 @@ struct EditTaskView: View {
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    TextField("Descrição", text: $task.summary, axis: .vertical)
+                    TextField("Descrição", text: $editViewModel.task.summary, axis: .vertical)
                         .frame(width: 327, height: 200, alignment: .topLeading)
                         .font(.custom(Font.Regular, size: 16))
                 }
@@ -64,20 +61,19 @@ struct EditTaskView: View {
             }
             .scrollContentBackground(.hidden)
             .foregroundColor(Color(CustomColor.FontForm))
-            .background(Color(CustomColor.BackgroundColor))
 
             RemoveButton(type: .task) {
-                editViewModel.deleteTask(task: task)
+                editViewModel.deleteTask()
             } dismiss: {
                 dismiss()
             }
 
             Spacer()
-
-        }.toolbar(content: {
+        }
+        .toolbar(content: {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    editViewModel.updateTask(task: task)
+                    editViewModel.updateTask()
                     dismiss()
                 } label: {
                     Text(Constants.Home.save).font(.custom(Font.SemiBold, size: 16))
@@ -88,12 +84,13 @@ struct EditTaskView: View {
         .onAppear {
             editViewModel.fetchAllPets()
         }
+        .background(Color(CustomColor.BackgroundColor))
     }
 }
 
 struct EditTaskView_Previews: PreviewProvider {
     static var previews: some View {
         @State var task = NewTask()
-        EditTaskView(task: $task)
+        EditTaskView(editViewModel: EditTaskViewModel(task: task))
     }
 }

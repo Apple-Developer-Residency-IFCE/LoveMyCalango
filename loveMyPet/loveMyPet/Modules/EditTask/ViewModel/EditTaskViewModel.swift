@@ -10,8 +10,10 @@ import Foundation
 class EditTaskViewModel: ObservableObject {
 
     @Published var pets = [NewPet]()
+    @Published var task: NewTask
 
-    init() {
+    init(task: NewTask) {
+        self.task = task
         fetchAllPets()
     }
 
@@ -19,11 +21,11 @@ class EditTaskViewModel: ObservableObject {
         pets = CoreDataManager.shared.getPetList()
     }
 
-    func updateTask(task: NewTask) {
+    func updateTask() {
         CoreDataManager.shared.updateTask(task)
     }
 
-    func deleteTask(task: NewTask) {
+    func deleteTask() {
         CoreDataManager.shared.deleteTask(task: task)
     }
 }
