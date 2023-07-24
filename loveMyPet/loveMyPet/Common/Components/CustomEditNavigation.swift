@@ -9,14 +9,16 @@ import SwiftUI
 
 struct CustomEditNavigation<Detail: View, Edit: View>: View {
 
-    @ViewBuilder let detailPet: Detail
+    @ViewBuilder let detailView: Detail
     @ViewBuilder let editView: Edit
     @State private var showingSheet = false
     var update: () -> Void
+    var task: NewTask?
 
     var body: some View {
-        detailPet
-            .navigationBarTitle(Text(Constants.Home.infoPetTitle), displayMode: .inline)
+        detailView
+            .navigationBarTitle(task != nil ? Text(task?.type.rawValue ?? "") :
+                                    Text(Constants.Home.infoPetTitle), displayMode: .inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -42,6 +44,8 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
                                 }
                             })
                         }
+                        .toolbarBackground(Color(CustomColor.NavigationBackground), for: .navigationBar)
+                        .toolbarBackground(.visible, for: .navigationBar)
                 }
             }
     }
