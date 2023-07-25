@@ -48,28 +48,30 @@ final class ConfigViewModel: ObservableObject {
         }
     }
 
-     func checkNotificationPermission(showAlert: Bool) {
-            UNUserNotificationCenter.current().getNotificationSettings { settings in
-                DispatchQueue.main.async {
-                    if !(settings.authorizationStatus == .authorized) {
-                        if showAlert {
-                            self.showSettingsAlert()
-                        } else {
-                            self.isON = false
-                        }
+    func checkNotificationPermission(showAlert: Bool) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            DispatchQueue.main.async {
+                if !(settings.authorizationStatus == .authorized) {
+                    if showAlert {
+                        self.showSettingsAlert()
+                    } else {
                     }
                 }
             }
         }
+    }
 
     private func showSettingsAlert() {
-        let alert = UIAlertController(title: "Notificacões estão desativadas",
-        message: "Para ativar as notificações, vá para Settings > Notifications e permita notificações para esse app.",
-        preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+        let alert = UIAlertController(title: "loveMyPet Deseja Enviar Notificações ",
+                                      message: """
+                                      As notificações podem incluir alertas, sons e avisos nos ícones,
+                                      os quais podem ser configurados nos Ajustes
+                                      """
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Não Permitir", style: .default) { _ in
             self.isON = false
         })
-        alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: "Permitir", style: .default) { _ in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 UIApplication.shared.open(settingsUrl)
