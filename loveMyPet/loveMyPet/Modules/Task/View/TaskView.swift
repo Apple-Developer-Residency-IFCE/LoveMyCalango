@@ -63,6 +63,24 @@ struct TaskView: View {
     }
 }
 
+struct Card<Content: View>: View {
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        content
+            .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color(CustomColor.BorderCardPet), lineWidth: 2)
+            )
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color(CustomColor.PetBackground))
+            )
+            .padding(.vertical, 4)
+    }
+}
+
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
         TaskView(addSheet: .constant(false))
