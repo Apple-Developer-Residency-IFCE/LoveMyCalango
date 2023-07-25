@@ -99,7 +99,7 @@ enum Constants {
         As notificações podem incluir alertas, sons e avisos nos ícones,
         os quais podem ser configurados nos Ajustes
         """
-        static let dontAllow = "Não Permitir"
-        static let allow = "Permitir"
+        static let dontAllow = "Manter desativado"
+        static let allow = "Ativar nas configurações"
     }
 }
