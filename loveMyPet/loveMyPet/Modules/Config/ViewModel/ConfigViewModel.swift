@@ -66,6 +66,10 @@ final class ConfigViewModel: ObservableObject {
                 UIApplication.shared.open(settingsUrl)
             }
         })
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+        if let window = UIApplication.shared.windows.first {
+            if let rootViewController = window.rootViewController {
+                rootViewController.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 }

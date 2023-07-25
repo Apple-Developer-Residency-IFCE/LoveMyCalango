@@ -13,7 +13,7 @@ final class OnBoardViewModel: ObservableObject {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
             .sound]) { success, error in
             if success {
-                print("All set")
+                print(success)
             } else if let error = error {
                 print(error.localizedDescription)
             }
