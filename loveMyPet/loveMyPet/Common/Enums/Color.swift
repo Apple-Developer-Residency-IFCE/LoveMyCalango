@@ -26,6 +26,8 @@ enum CustomColor {
     static let AlertBackground = "AlertBackground"
     static let toggleActiveColor = "ToggleActiveColor"
 
+    static let LaunchScreenBackground = "LaunchScreenBG"
+
     enum Gray {
         static let neutral300 = "Neutral300"
     }
@@ -37,4 +39,5 @@ enum CustomColor {
     static let TabViewBackground = "TabViewBackground"
     static let DateTimeInput = "DateTimeInput"
     static let FontForm = "FontForm"
+    static let NavigationBackground = "NavigationBackground"
 }

@@ -71,9 +71,22 @@ enum Constants {
 
     enum Task {
         static let cardTitle = "Curiosidade do dia!"
+        static let editTaskTitle = "Editar tarefa"
+        static let deleteTaskTitle = "Excluir tarefa"
+        static let deleteTaskAlert = "Deseja excluir a tarefa?"
         static let emptyTaskSemibold = "Você não possui nenhuma tarefa pendente! :)"
         static let emptyTaskRegular = "As tarefas que você criar, aparecerão aqui."
         static let addTaskTitle = "Adicionar tarefa"
+        static let title = "Tarefas"
+    }
+
+    enum TaskForm {
+        static let title = "Título"
+        static let type = "Tipo de tarefa"
+        static let pet = "Pet"
+        static let replay = "Repetir"
+        static let remember = "Lembrete"
+        static let summary = "Descrição"
     }
 
     enum OnBoard {

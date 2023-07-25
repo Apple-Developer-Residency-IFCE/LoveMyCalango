@@ -1,50 +1,47 @@
 //
-//  AddTaskView.swift
+//  EditTaskView.swift
 //  loveMyPet
 //
-//  Created by Rodrigo Mendes on 17/07/23.
+//  Created by Rodrigo Mendes on 20/07/23.
 //
 
 import SwiftUI
 
-struct AddTaskView: View {
-    @StateObject var addViewModel =  AddTaskViewModel()
+struct EditTaskView: View {
     @Environment(\.dismiss) var dismiss
+    @ObservedObject var editViewModel: EditTaskViewModel
 
     var body: some View {
         VStack {
             Form {
                 Section {
-                    TextField(Constants.TaskForm.title, text: $addViewModel.title)
+                    TextField(Constants.TaskForm.title, text: $editViewModel.task.title)
 
-                    Picker(Constants.TaskForm.type, selection: $addViewModel.type) {
+                    Picker(Constants.TaskForm.type, selection: $editViewModel.task.type) {
                         ForEach(TaskType.allCases, id: \.self) { task in
                             Text(task.rawValue)
                         }
                     }
 
-                    Picker(Constants.TaskForm.pet, selection: $addViewModel.selectedPet) {
-                        Text("Nao escolhido")
-
-                        ForEach(addViewModel.pets, id: \.id) { pet in
-                            Text(pet.name).tag(pet as NewPet?)
+                    Picker(Constants.TaskForm.pet, selection: $editViewModel.task.pet) {
+                        ForEach(editViewModel.pets, id: \.id) { pet in
+                            Text(pet.name).tag(pet as NewPet)
                         }
                     }
-
                 }
                 .listRowBackground(Color(CustomColor.PickerSection))
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    DateTimeInput(selectedDate: $addViewModel.selectedDate, selectedTime: $addViewModel.selectedTime)
+                    DateTimeInput(selectedDate: $editViewModel.task.date, selectedTime: $editViewModel.task.time)
 
-                    Picker(Constants.TaskForm.replay, selection: $addViewModel.replay) {
+                    Picker(Constants.TaskForm.replay, selection: $editViewModel.task.replay) {
                         ForEach(Replay.allCases, id: \.self) { replay in
                             Text(replay.rawValue)
                         }
                     }.font(.custom(Font.Regular, size: 16))
 
-                    Picker(Constants.TaskForm.remember, selection: $addViewModel.reminder) {
+                    Picker(Constants.TaskForm.remember, selection: $editViewModel.task.reminder) {
                         ForEach(Reminder.allCases, id: \.self) { reminder in
                             Text(reminder.rawValue)
                         }
@@ -55,7 +52,7 @@ struct AddTaskView: View {
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    TextField(Constants.TaskForm.summary, text: $addViewModel.summary, axis: .vertical)
+                    TextField(Constants.TaskForm.summary, text: $editViewModel.task.summary, axis: .vertical)
                         .frame(width: 327, height: 200, alignment: .topLeading)
                         .font(.custom(Font.Regular, size: 16))
                 }
@@ -64,29 +61,36 @@ struct AddTaskView: View {
             }
             .scrollContentBackground(.hidden)
             .foregroundColor(Color(CustomColor.FontForm))
-            .background(Color(CustomColor.BackgroundColor))
+
+            RemoveButton(type: .task) {
+                editViewModel.deleteTask()
+            } dismiss: {
+                dismiss()
+            }
+
+            Spacer()
         }
-        .onAppear {
-            addViewModel.fetchAllPets()
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing, content: {
+        .toolbar(content: {
+            ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    addViewModel.createTask()
+                    editViewModel.updateTask()
                     dismiss()
                 } label: {
-                    Text(Constants.Home.add)
-                        .font(.custom(Font.SemiBold, size: 16))
+                    Text(Constants.Home.save).font(.custom(Font.SemiBold, size: 16))
                 }
-                .disabled(!addViewModel.isFormValid)
-                .tint(addViewModel.isFormValid ? Color(CustomColor.MainColor) : Color.gray )
-            })
+                .tint(Color(CustomColor.MainColor))
+            }
+        })
+        .onAppear {
+            editViewModel.fetchAllPets()
         }
+        .background(Color(CustomColor.BackgroundColor))
     }
 }
 
-struct AddTaskView_Previews: PreviewProvider {
+struct EditTaskView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskView()
+        @State var task = NewTask()
+        EditTaskView(editViewModel: EditTaskViewModel(task: task))
     }
 }

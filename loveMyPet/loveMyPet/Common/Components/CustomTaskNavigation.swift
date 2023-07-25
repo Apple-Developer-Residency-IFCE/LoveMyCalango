@@ -8,26 +8,35 @@
 import SwiftUI
 
 struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
-    @ViewBuilder let taskListView: TaskView
+    @ViewBuilder let taskListView: (Binding<Bool>) -> TaskView
     @ViewBuilder let addTaskView: AddTask
     @State private var showingPopover = false
     var update: () -> Void
 
     var body: some View {
         NavigationView {
-            taskListView
+            taskListView($showingPopover)
+                .navigationBarTitle(Text(Constants.Task.title), displayMode: .inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Image(Assets.Image.namedLogo)
                             .padding(.horizontal)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(Assets.Icon.add)
+                        Button {
+                            showingPopover = true
+                        } label: {
+                            Image(Assets.Icon.add)
+                        }
+
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Image(Assets.Icon.calendar)
                             .padding(.horizontal)
                     }
+                    ToolbarItem(placement: .principal, content: {
+                        Rectangle().fill(Color(CustomColor.BackgroundColor))
+                    })
                 }
         }
         .sheet(isPresented: $showingPopover, onDismiss: update) {
@@ -44,6 +53,8 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                             }
                         })
                     }
+                    .toolbarBackground(Color(CustomColor.NavigationBackground), for: .navigationBar)
+                    .toolbarBackground(.visible, for: .navigationBar)
             }
         }
     }

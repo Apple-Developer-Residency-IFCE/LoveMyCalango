@@ -14,19 +14,27 @@ struct LoveMyPetApp: App {
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
+    @State private var splashScreenIsActive: Bool = true
     @ObservedObject var taskViewModel = TaskViewModel()
     @ObservedObject var configViewModel = ConfigViewModel()
 
     var body: some Scene {
         WindowGroup {
-            if showOnBoarding {
+            if splashScreenIsActive {
+                SplashScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+                            self.splashScreenIsActive = false
+                        }
+                    }
+            } else if showOnBoarding {
                 NavigationView {
                     OnBoardView()
                 }
             } else {
                 CustomTabView(selectedTab: $selectedTab) {
-                    CustomHomeNavigation {
-                        HomeView(homeViewModel: homeViewModel)
+                    CustomHomeNavigation { showingPopover in
+                        HomeView(homeViewModel: homeViewModel, addSheet: showingPopover)
                     } addView: {
                         EditPetView(addViewModel: addViewModel)
                             .navigationTitle(Constants.Home.addPetTitle)
@@ -43,18 +51,17 @@ struct LoveMyPetApp: App {
                 ConfigView()
                     .environmentObject(configViewModel)
             } taskView: {
-                CustomTaskNavigation {
-                    TaskView()
+                CustomTaskNavigation { showingPopover in
+                    TaskView(addSheet: showingPopover)
                         .environmentObject(taskViewModel)
                 } addTaskView: {
-
+                AddTaskView()
+                    .navigationTitle(Constants.Task.addTaskTitle)
+                    .navigationBarTitleDisplayMode(.inline)
                 } update: {
-
+                taskViewModel.fetchAllTasks()
                 }
             }
-            .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
-            .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-            .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
             .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
         }
