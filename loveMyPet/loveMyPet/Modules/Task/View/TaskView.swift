@@ -27,6 +27,16 @@ struct TaskView: View {
 
                 if viewModel.tasks.isEmpty {
                     EmptyListView(type: .tasks, addSheet: $addSheet)
+                } else {
+                    List {
+                        Section("Tarefas Pendentes") {
+                            //
+                        }
+
+                        Section("Tarefas Concluídas") {
+                            //
+                        }
+                    }
                 }
             }
         }
