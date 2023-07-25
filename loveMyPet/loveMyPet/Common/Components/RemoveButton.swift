@@ -1,5 +1,5 @@
 //
-//  RemovePetButton.swift
+//  RemoveButton.swift
 //  loveMyPet
 //
 //  Created by Ravi navarro on 03/06/23.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct RemovePetButton: View {
-
-    @StateObject var viewModel: EditPetViewModel
-    @State var showAlert: Bool = true
+struct RemoveButton: View {
+    @State var showAlert: Bool = false
+    var type: RemoveButtonType
+    var deleteFunc: () -> Void
     var dismiss: () -> Void
 
     var body: some View {
@@ -19,7 +19,7 @@ struct RemovePetButton: View {
         } label: {
             ZStack {
                 Color("Red-D12929")
-                Text(Constants.Home.deletePet)
+                Text(type == .pet ? Constants.Home.deletePet : Constants.Task.deleteTaskTitle)
                     .foregroundColor(.white)
                     .font(.custom(Font.SemiBold, size: 16))
             }
@@ -28,8 +28,8 @@ struct RemovePetButton: View {
             .padding(.horizontal, 24)
         }
         .modifier(
-            AlertMessageBuilder(isShowing: $showAlert, handleDelete: {
-                viewModel.removePet(pet: viewModel.selectedPet)
+            AlertMessageBuilder(isShowing: $showAlert, type: type, handleDelete: {
+                deleteFunc()
                 dismiss()
             }))
     }
