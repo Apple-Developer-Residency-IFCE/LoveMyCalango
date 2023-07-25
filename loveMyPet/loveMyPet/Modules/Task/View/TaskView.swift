@@ -29,12 +29,29 @@ struct TaskView: View {
                     EmptyListView(type: .tasks, addSheet: $addSheet)
                 } else {
                     List {
-                        Section("Tarefas Pendentes") {
+                        Section {
                             //
+                        } header: {
+                            Text("Tarefas Pendentes")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .textCase(nil)
                         }
 
-                        Section("Tarefas Concluídas") {
+                        Section {
                             //
+                        } header: {
+                            Label {
+                                Text("Tarefas concluídas")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .textCase(nil)
+                            } icon: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                    .foregroundColor(Color("HelperSuccess"))
+                            }
                         }
                     }
                 }
