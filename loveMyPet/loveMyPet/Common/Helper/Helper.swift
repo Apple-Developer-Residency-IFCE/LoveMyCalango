@@ -27,7 +27,7 @@ final class Helper {
         selectedTab = context
     }
 
-    func buildCuriosityCard() -> Bool {
+    func checkIfUserHasCatOrNot() -> Bool {
         return CoreDataManager.shared.getPetList().contains(where: { newPet in
             newPet.specie == Specie.cat
         })

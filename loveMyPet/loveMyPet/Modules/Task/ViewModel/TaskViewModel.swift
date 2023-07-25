@@ -53,7 +53,7 @@ final class TaskViewModel: ObservableObject {
         }
     }
 
-    func curiosityCardBuildView() {
-        showCuriosityCard = Helper.shared.buildCuriosityCard()
+    func curiosityCardBuildComponent() {
+        showCuriosityCard = Helper.shared.checkIfUserHasCatOrNot()
     }
 }
