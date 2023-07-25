@@ -92,7 +92,7 @@ enum Constants {
         Crie tarefas e as visualize em um calendário.
         """
     }
-    
+
     enum ConfigViewModel {
         static let alertTitle = "loveMyPet Deseja Enviar Notificações"
         static let alertMessage = """

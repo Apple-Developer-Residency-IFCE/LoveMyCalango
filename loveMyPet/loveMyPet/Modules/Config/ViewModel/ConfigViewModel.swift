@@ -11,11 +11,10 @@ final class ConfigViewModel: ObservableObject {
     @Published var isON = false
     private(set) var selectedScheme: Int?
     @AppStorage("preferredColor") var preferredColor: AppColorScheme = .system
-    @AppStorage("notification") var notifications: Bool = false
-    @State private var notificationEnable: Bool = false
+    @AppStorage("notification") var notificationsStatus: Bool = false
 
     init() {
-        isON = notifications
+        isON = notificationsStatus
     }
 
     func changeScheme(index: Int?) {
@@ -33,18 +32,10 @@ final class ConfigViewModel: ObservableObject {
 
     func allowNotification(noticationValue: Bool) {
         if noticationValue {
-            notifications = true
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
-                .sound]) { success, error in
-                if success {
-                    print("All set")
-                } else if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
+            notificationsStatus = true
             checkNotificationPermission(showAlert: true)
         } else {
-            notifications = false
+            notificationsStatus = false
         }
     }
 
@@ -55,6 +46,7 @@ final class ConfigViewModel: ObservableObject {
                     if showAlert {
                         self.showSettingsAlert()
                     } else {
+                        self.isON = false
                     }
                 }
             }
@@ -63,7 +55,7 @@ final class ConfigViewModel: ObservableObject {
 
     private func showSettingsAlert() {
         let alert = UIAlertController(title: Constants.ConfigViewModel.alertTitle,
-                                      message: Constants.ConfigViewModel.alertMessage
+                                      message: Constants.ConfigViewModel.alertMessage,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Constants.ConfigViewModel.dontAllow, style: .default) { _ in
             self.isON = false

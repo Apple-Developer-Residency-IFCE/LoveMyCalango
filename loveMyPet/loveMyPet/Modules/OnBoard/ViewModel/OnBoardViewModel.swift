@@ -8,6 +8,18 @@
 import SwiftUI
 
 final class OnBoardViewModel: ObservableObject {
+
+    init() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge,
+            .sound]) { success, error in
+            if success {
+                print("All set")
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+
     @AppStorage("showOnBoarding") var showOnBoarding: Bool = true
     @Published var currentTab: Int = 0
     @Published var rightText: String = Constants.OnBoard.onBoardRightButton
