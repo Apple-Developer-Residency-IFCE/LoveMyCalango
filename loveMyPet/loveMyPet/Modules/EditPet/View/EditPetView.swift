@@ -69,6 +69,7 @@ struct EditPetView: View {
             viewModel.weight = ""
             viewModel.weightKG = 0
             viewModel.weightG = 0
+            Helper.shared.addButtonDisable = true
         }
         .toolbar {
             if viewModel.isAddPetFlow == false {

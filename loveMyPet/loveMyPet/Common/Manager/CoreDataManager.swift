@@ -25,9 +25,6 @@ class CoreDataManager {
          self.context = container.viewContext
     }
 
-    let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
-    let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
-
     private func saveData() {
         do {
             try context.save()
@@ -39,6 +36,7 @@ class CoreDataManager {
     // PETS
 
     func getPetById(_ id: UUID) -> NewPet? {
+        let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         petRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
         do {
@@ -54,6 +52,7 @@ class CoreDataManager {
     }
 
     func getPetList() -> [NewPet] {
+        let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         do {
             let fetchedPets = try context.fetch(petRequest)
             return fetchedPets.map { pet in
@@ -80,6 +79,7 @@ class CoreDataManager {
     }
 
     func deletePet(pet: NewPet) {
+        let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         petRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
         do {
             let result = try context.fetch(petRequest)
@@ -95,6 +95,7 @@ class CoreDataManager {
     }
 
     func updatePet(_ pet: NewPet) {
+        let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         petRequest.predicate = NSPredicate(format: "id == %@", pet.id as CVarArg)
 
         do {
@@ -121,6 +122,7 @@ class CoreDataManager {
     // TASKS
 
     private func fetchPet(id: UUID) -> Pet? {
+        let petRequest: NSFetchRequest<Pet> = Pet.fetchRequest()
         petRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
         do {
@@ -136,6 +138,7 @@ class CoreDataManager {
     }
 
     func getTaskById(_ id: UUID) -> NewTask? {
+        let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
         taskRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
 
         do {
@@ -151,6 +154,7 @@ class CoreDataManager {
     }
 
     func getTaskList() -> [NewTask] {
+        let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
         do {
             let fetchedTasks = try context.fetch(taskRequest)
             return fetchedTasks.map { task in
@@ -178,6 +182,7 @@ class CoreDataManager {
     }
 
     func deleteTask(task: NewTask) {
+        let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
         taskRequest.predicate = NSPredicate(format: "id == %@", task.id as CVarArg)
         do {
             let result = try context.fetch(taskRequest)
@@ -193,6 +198,7 @@ class CoreDataManager {
     }
 
     func updateTask(_ task: NewTask) {
+        let taskRequest: NSFetchRequest<PetTask> = PetTask.fetchRequest()
         taskRequest.predicate = NSPredicate(format: "id == %@", task.id as CVarArg)
 
         do {

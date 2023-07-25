@@ -25,6 +25,8 @@ enum CustomColor {
     static let DeleteAlert = "DeleteAlert"
     static let AlertBackground = "AlertBackground"
 
+    static let LaunchScreenBackground = "LaunchScreenBG"
+
     enum Gray {
         static let neutral300 = "Neutral300"
     }
@@ -34,4 +36,6 @@ enum CustomColor {
     static let PickerRowBackground = "PickerRowBackground"
     static let WeightValueBackgroun = "WeightValueBackgroun"
     static let TabViewBackground = "TabViewBackground"
+    static let DateTimeInput = "DateTimeInput"
+    static let FontForm = "FontForm"
 }

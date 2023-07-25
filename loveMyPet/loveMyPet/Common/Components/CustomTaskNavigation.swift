@@ -22,7 +22,12 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                             .padding(.horizontal)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(Assets.Icon.add)
+                        Button {
+                            showingPopover = true
+                        } label: {
+                            Image(Assets.Icon.add)
+                        }
+
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Image(Assets.Icon.calendar)

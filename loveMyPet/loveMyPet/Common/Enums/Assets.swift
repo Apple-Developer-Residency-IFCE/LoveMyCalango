@@ -14,6 +14,12 @@ enum Assets {
         static let emptyPet = "EmptyPet"
         static let CuriosityPetFace = "CuriosityPetFace"
         static let namedLogo = "NamedLogo"
+        static let launchScreenFirst = "LauchScreenNamedLogo"
+        static let launchScreenSecond = "LaunchScreenLogo"
+        static let lazyCat = "LazyCat"
+        static let onBoardImageOne = "OnBoardImageOne"
+        static let onBoardImageTwo = "OnBoardImageTwo"
+        static let onBoardImageThree = "OnBoardImageThree"
     }
 
     enum Icon {
@@ -32,5 +38,9 @@ enum Assets {
         static let configSelect = "IconSelect"
         static let add = "IconAdd"
         static let calendar = "IconCalendar"
+        static let calendarAux = "IconCalendarAux"
+        static let circleClock = "IconCircleClock"
+        static let notification = "IconNotification"
+        static let petPaw = "IconPetPaw"
     }
 }
