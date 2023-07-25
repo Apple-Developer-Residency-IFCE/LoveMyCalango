@@ -27,6 +27,12 @@ final class Helper {
         selectedTab = context
     }
 
+    func checkIfUserHasCatOrNot() -> Bool {
+        return CoreDataManager.shared.getPetList().contains(where: { newPet in
+            newPet.specie == Specie.cat
+        })
+    }
+
     var addButtonDisable: Bool = true
 
     func formattedBirthDate(date: Date) -> String {
