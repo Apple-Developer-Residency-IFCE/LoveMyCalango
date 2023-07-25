@@ -75,6 +75,7 @@ enum Constants {
         static let emptyTaskSemibold = "Você não possui nenhuma tarefa pendente! :)"
         static let emptyTaskRegular = "As tarefas que você criar, aparecerão aqui."
         static let addTaskTitle = "Adicionar tarefa"
+        static let title = "Tarefas"
     }
 
     enum TaskForm {

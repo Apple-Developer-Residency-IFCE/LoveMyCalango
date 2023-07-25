@@ -50,22 +50,22 @@ struct TaskDetailView: View {
                 Button("Marcar como concluída") {
                     task.isDone.toggle()
                 }
-                .font(.custom(Font.Regular, size: 16))
+                .font(.custom(Font.SemiBold, size: 16))
                 .padding(.vertical, 15.0)
                 .padding(.horizontal, 40.0)
                 .foregroundColor(.white)
-                .background(Color(red: 0.24, green: 0.2, blue: 0.81))
+                .background(Color(CustomColor.MainColor))
                 .cornerRadius(8)
                 Spacer()
             }
 
             Spacer()
-        }
+        }.background(Color(CustomColor.BackgroundColor))
     }
 }
 
- struct TaskDetailView_Previews: PreviewProvider {
+struct TaskDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TaskDetailView(task: NewTask())
     }
- }
+}

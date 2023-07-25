@@ -38,4 +38,5 @@ enum CustomColor {
     static let TabViewBackground = "TabViewBackground"
     static let DateTimeInput = "DateTimeInput"
     static let FontForm = "FontForm"
+    static let NavigationBackground = "NavigationBackground"
 }

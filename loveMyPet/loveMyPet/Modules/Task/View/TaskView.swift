@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskView: View {
     @EnvironmentObject var viewModel: TaskViewModel
+    @Binding var addSheet: Bool
 
     var body: some View {
             ZStack {
@@ -23,6 +24,10 @@ struct TaskView: View {
                     InlineCalendar(listOfLetterDay: $viewModel.days, selectDay: $viewModel.today)
                         .frame(height: 84)
                 Spacer()
+
+                    if viewModel.tasks.isEmpty {
+                        EmptyListView(type: .tasks, addSheet: $addSheet)
+                    }
                 }
             }
             .onAppear {
@@ -33,7 +38,7 @@ struct TaskView: View {
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskView()
+        TaskView(addSheet: .constant(false))
             .environmentObject(TaskViewModel())
     }
 }

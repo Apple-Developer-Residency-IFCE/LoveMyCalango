@@ -32,8 +32,8 @@ struct LoveMyPetApp: App {
                 }
             } else {
                 CustomTabView(selectedTab: $selectedTab) {
-                    CustomHomeNavigation {
-                        HomeView(homeViewModel: homeViewModel)
+                    CustomHomeNavigation { showingPopover in
+                        HomeView(homeViewModel: homeViewModel, addSheet: showingPopover)
                     } addView: {
                         EditPetView(addViewModel: addViewModel)
                             .navigationTitle(Constants.Home.addPetTitle)
@@ -49,8 +49,8 @@ struct LoveMyPetApp: App {
             configView: {
                 ConfigView()
             } taskView: {
-                CustomTaskNavigation {
-                    TaskView()
+                CustomTaskNavigation { showingPopover in
+                    TaskView(addSheet: showingPopover)
                         .environmentObject(taskViewModel)
                 } addTaskView: {
                 AddTaskView()
@@ -60,9 +60,6 @@ struct LoveMyPetApp: App {
                 taskViewModel.fetchAllTasks()
                 }
             }
-            .toolbar(selectedTab == .pets ? .visible : .hidden, for: .navigationBar)
-            .navigationTitle(selectedTab == .pets ? TabContextView.pets.rawValue : "")
-            .navigationBarTitleDisplayMode(selectedTab == .pets ? .inline : .large)
             .preferredColorScheme(Helper.shared.convertToColorScheme(customColorScheme: preferredColor))
             }
         }
