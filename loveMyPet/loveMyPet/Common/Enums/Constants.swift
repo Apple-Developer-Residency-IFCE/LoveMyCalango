@@ -92,4 +92,14 @@ enum Constants {
         Crie tarefas e as visualize em um calendário.
         """
     }
+    
+    enum ConfigViewModel {
+        static let alertTitle = "loveMyPet Deseja Enviar Notificações"
+        static let alertMessage = """
+        As notificações podem incluir alertas, sons e avisos nos ícones,
+        os quais podem ser configurados nos Ajustes
+        """
+        static let dontAllow = "Não Permitir"
+        static let allow = "Permitir"
+    }
 }

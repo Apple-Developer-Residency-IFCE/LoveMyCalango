@@ -62,16 +62,13 @@ final class ConfigViewModel: ObservableObject {
     }
 
     private func showSettingsAlert() {
-        let alert = UIAlertController(title: "loveMyPet Deseja Enviar Notificações ",
-                                      message: """
-                                      As notificações podem incluir alertas, sons e avisos nos ícones,
-                                      os quais podem ser configurados nos Ajustes
-                                      """
+        let alert = UIAlertController(title: Constants.ConfigViewModel.alertTitle,
+                                      message: Constants.ConfigViewModel.alertMessage
                                       preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Não Permitir", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: Constants.ConfigViewModel.dontAllow, style: .default) { _ in
             self.isON = false
         })
-        alert.addAction(UIAlertAction(title: "Permitir", style: .default) { _ in
+        alert.addAction(UIAlertAction(title: Constants.ConfigViewModel.allow, style: .default) { _ in
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else { return }
             if UIApplication.shared.canOpenURL(settingsUrl) {
                 UIApplication.shared.open(settingsUrl)
