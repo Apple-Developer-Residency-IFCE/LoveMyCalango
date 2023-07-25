@@ -15,15 +15,15 @@ struct EditTaskView: View {
         VStack {
             Form {
                 Section {
-                    TextField("Título", text: $editViewModel.task.title)
+                    TextField(Constants.TaskForm.title, text: $editViewModel.task.title)
 
-                    Picker("Tipo de tarefa", selection: $editViewModel.task.type) {
+                    Picker(Constants.TaskForm.type, selection: $editViewModel.task.type) {
                         ForEach(TaskType.allCases, id: \.self) { task in
                             Text(task.rawValue)
                         }
                     }
 
-                    Picker("Pet", selection: $editViewModel.task.pet) {
+                    Picker(Constants.TaskForm.pet, selection: $editViewModel.task.pet) {
                         ForEach(editViewModel.pets, id: \.id) { pet in
                             Text(pet.name).tag(pet as NewPet)
                         }
@@ -35,13 +35,13 @@ struct EditTaskView: View {
                 Section {
                     DateTimeInput(selectedDate: $editViewModel.task.date, selectedTime: $editViewModel.task.time)
 
-                    Picker("Repetir", selection: $editViewModel.task.replay) {
+                    Picker(Constants.TaskForm.replay, selection: $editViewModel.task.replay) {
                         ForEach(Replay.allCases, id: \.self) { replay in
                             Text(replay.rawValue)
                         }
                     }.font(.custom(Font.Regular, size: 16))
 
-                    Picker("Lembrete", selection: $editViewModel.task.reminder) {
+                    Picker(Constants.TaskForm.remember, selection: $editViewModel.task.reminder) {
                         ForEach(Reminder.allCases, id: \.self) { reminder in
                             Text(reminder.rawValue)
                         }
@@ -52,7 +52,7 @@ struct EditTaskView: View {
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    TextField("Descrição", text: $editViewModel.task.summary, axis: .vertical)
+                    TextField(Constants.TaskForm.summary, text: $editViewModel.task.summary, axis: .vertical)
                         .frame(width: 327, height: 200, alignment: .topLeading)
                         .font(.custom(Font.Regular, size: 16))
                 }

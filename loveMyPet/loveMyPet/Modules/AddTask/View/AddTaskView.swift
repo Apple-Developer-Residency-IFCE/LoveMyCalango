@@ -15,15 +15,15 @@ struct AddTaskView: View {
         VStack {
             Form {
                 Section {
-                    TextField("Título", text: $addViewModel.title)
+                    TextField(Constants.TaskForm.title, text: $addViewModel.title)
 
-                    Picker("Tipo de tarefa", selection: $addViewModel.type) {
+                    Picker(Constants.TaskForm.type, selection: $addViewModel.type) {
                         ForEach(TaskType.allCases, id: \.self) { task in
                             Text(task.rawValue)
                         }
                     }
 
-                    Picker("Pet", selection: $addViewModel.selectedPet) {
+                    Picker(Constants.TaskForm.pet, selection: $addViewModel.selectedPet) {
                         Text("Nao escolhido")
 
                         ForEach(addViewModel.pets, id: \.id) { pet in
@@ -38,13 +38,13 @@ struct AddTaskView: View {
                 Section {
                     DateTimeInput(selectedDate: $addViewModel.selectedDate, selectedTime: $addViewModel.selectedTime)
 
-                    Picker("Repetir", selection: $addViewModel.replay) {
+                    Picker(Constants.TaskForm.replay, selection: $addViewModel.replay) {
                         ForEach(Replay.allCases, id: \.self) { replay in
                             Text(replay.rawValue)
                         }
                     }.font(.custom(Font.Regular, size: 16))
 
-                    Picker("Lembrete", selection: $addViewModel.reminder) {
+                    Picker(Constants.TaskForm.remember, selection: $addViewModel.reminder) {
                         ForEach(Reminder.allCases, id: \.self) { reminder in
                             Text(reminder.rawValue)
                         }
@@ -55,7 +55,7 @@ struct AddTaskView: View {
                 .font(.custom(Font.Regular, size: 16))
 
                 Section {
-                    TextField("Descrição", text: $addViewModel.summary, axis: .vertical)
+                    TextField(Constants.TaskForm.summary, text: $addViewModel.summary, axis: .vertical)
                         .frame(width: 327, height: 200, alignment: .topLeading)
                         .font(.custom(Font.Regular, size: 16))
                 }

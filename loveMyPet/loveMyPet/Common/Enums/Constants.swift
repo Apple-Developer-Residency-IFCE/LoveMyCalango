@@ -77,6 +77,15 @@ enum Constants {
         static let addTaskTitle = "Adicionar tarefa"
     }
 
+    enum TaskForm {
+        static let title = "Título"
+        static let type = "Tipo de tarefa"
+        static let pet = "Pet"
+        static let replay = "Repetir"
+        static let remember = "Lembrete"
+        static let summary = "Descrição"
+    }
+
     enum OnBoard {
         static let onBoardRightButton = "Avançar"
         static let onBoardLeftButton = "Pular"
