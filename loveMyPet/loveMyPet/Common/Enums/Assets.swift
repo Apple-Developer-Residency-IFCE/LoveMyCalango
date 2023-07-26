@@ -42,5 +42,6 @@ enum Assets {
         static let circleClock = "IconCircleClock"
         static let notification = "IconNotification"
         static let petPaw = "IconPetPaw"
+        static let chevronLeft = "IconChevronLeft"
     }
 }
