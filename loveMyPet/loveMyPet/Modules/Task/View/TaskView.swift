@@ -25,6 +25,8 @@ struct TaskView: View {
                     .frame(height: 84)
                 Spacer()
 
+//                                ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
+                                ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
                 if viewModel.tasks.isEmpty {
                     EmptyListView(type: .tasks, addSheet: $addSheet)
                 } else {
@@ -48,11 +50,8 @@ struct TaskView: View {
                                 .textCase(nil)
                         }
 
-                        Section {
-                            ForEach(viewModel.tasks.filter { $0.isDone }) { task in
-                                Card {
-                                    HStack {
-                                        Information(title: task.title, category: task.type, alarm: task.time)
+//                                ForEach(viewModel.tasks.filter { $0.isDone }) { task in
+                                ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
 
                                         Spacer()
 
@@ -156,4 +155,28 @@ struct TaskView_Previews: PreviewProvider {
         TaskView(addSheet: .constant(false))
             .environmentObject(TaskViewModel())
     }
+}
+
+func DEBUG_generateTasks() -> [NewTask] {
+    let task1 = NewTask()
+    task1.title = "Dar banho no Bob 1"
+    task1.isDone = false
+
+    let task2 = NewTask()
+    task2.title = "Dar banho no Bob 2"
+    task2.isDone = false
+
+    let task3 = NewTask()
+    task3.title = "Dar banho no Bob 3"
+    task3.isDone = true
+
+    let task4 = NewTask()
+    task4.title = "Dar banho no Bob 4"
+    task4.isDone = true
+
+    let task5 = NewTask()
+    task5.title = "Dar banho no Bob 5"
+    task5.isDone = true
+
+    return [task1, task2, task3, task4, task5]
 }
