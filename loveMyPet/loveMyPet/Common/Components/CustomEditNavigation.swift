@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomEditNavigation<Detail: View, Edit: View>: View {
-
+    @Environment(\.dismiss) var dismiss
     @ViewBuilder let detailView: Detail
     @ViewBuilder let editView: Edit
     @State private var showingSheet = false
@@ -19,7 +19,23 @@ struct CustomEditNavigation<Detail: View, Edit: View>: View {
         detailView
             .navigationBarTitle(task != nil ? Text(task?.type.rawValue ?? "") :
                                     Text(Constants.Home.infoPetTitle), displayMode: .inline)
+            .navigationBarBackButtonHidden(task != nil ? true : false)
             .toolbar {
+                if task != nil {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            dismiss()
+                        } label: {
+                            HStack(spacing: 5) {
+                                Image(Assets.Icon.chevronLeft)
+                                Text(Constants.Task.title)
+                                    .foregroundColor(Color(CustomColor.MainColor))
+                                    .font(.custom(Font.Regular, size: 16))
+                            }
+
+                        }
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showingSheet = true

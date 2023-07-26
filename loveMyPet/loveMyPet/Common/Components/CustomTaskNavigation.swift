@@ -16,7 +16,6 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
     var body: some View {
         NavigationView {
             taskListView($showingPopover)
-                .navigationBarTitle(Text(Constants.Task.title), displayMode: .inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         Image(Assets.Image.namedLogo)
@@ -34,9 +33,6 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                         Image(Assets.Icon.calendar)
                             .padding(.horizontal)
                     }
-                    ToolbarItem(placement: .principal, content: {
-                        Rectangle().fill(Color(CustomColor.BackgroundColor))
-                    })
                 }
         }
         .sheet(isPresented: $showingPopover, onDismiss: update) {
