@@ -13,78 +13,79 @@ struct TaskView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
-                Color(CustomColor.BackgroundColor)
-                    .ignoresSafeArea()
-                VStack {
-                    if viewModel.showCuriosityCard {
-                        CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
-                            .padding(.vertical)
-                    }
-                    Text("Tarefa")
-                    InlineCalendar(listOfLetterDay: $viewModel.days, selectDay: $viewModel.today)
-                        .frame(height: 84)
-                    Spacer()
+            VStack {
+                if viewModel.showCuriosityCard {
+                    CuriosityCard(title: Constants.Task.cardTitle, description: viewModel.catCuriosity)
+                        .padding(.vertical)
+                }
+                Text("Tarefa")
+                InlineCalendar(listOfLetterDay: $viewModel.days, selectDay: $viewModel.today)
+                    .frame(height: 84)
+                Spacer()
 
-                    if viewModel.tasks.isEmpty {
-                        EmptyListView(type: .tasks, addSheet: $addSheet)
-                    } else {
-                        List {
-                            Section {
-//                                ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
-                                ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
-                                    NavigationLink(destination: Text("Stub location")) {
-                                        Card {
-                                            HStack {
-                                                Information(title: task.title, category: task.type, alarm: task.time)
+                if viewModel.tasks.isEmpty {
+                    EmptyListView(type: .tasks, addSheet: $addSheet)
+                } else {
+                    VStack {
+                        Section {
+//                            ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
+                            ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
+                                NavigationLink(destination: Text("Stub location")) {
+                                    Card {
+                                        HStack {
+                                            Information(title: task.title, category: task.type, alarm: task.time)
 
-                                                Spacer()
+                                            Spacer()
 
-                                                NameAndProfilePicture(pet: task.pet)
-                                            }
+                                            NameAndProfilePicture(pet: task.pet)
                                         }
                                     }
                                 }
-                            } header: {
-                                Text("Tarefas Pendentes")
+                            }
+                        } header: {
+                            Text("Tarefas Pendentes")
+                                .font(.title)
+                                .fontWeight(.bold)
+                                .textCase(nil)
+                        }
+
+                        Section {
+//                            ForEach(viewModel.tasks.filter { $0.isDone }) { task in
+                            ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
+                                NavigationLink(destination: Text("Stub location")) {
+                                    Card {
+                                        HStack {
+                                            Information(title: task.title, category: task.type, alarm: task.time)
+
+                                            Spacer()
+
+                                            NameAndProfilePicture(pet: task.pet)
+                                        }
+                                    }
+                                }
+                            }
+                        } header: {
+                            Label {
+                                Text("Tarefas concluídas")
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .textCase(nil)
-                            }
-
-                            Section {
-//                                ForEach(viewModel.tasks.filter { $0.isDone }) { task in
-                                ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
-                                    NavigationLink(destination: Text("Stub location")) {
-                                        Card {
-                                            HStack {
-                                                Information(title: task.title, category: task.type, alarm: task.time)
-
-                                                Spacer()
-
-                                                NameAndProfilePicture(pet: task.pet)
-                                            }
-                                        }
-                                    }
-                                }
-                            } header: {
-                                Label {
-                                    Text("Tarefas concluídas")
-                                        .font(.title)
-                                        .fontWeight(.bold)
-                                        .textCase(nil)
-                                } icon: {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .resizable()
-                                        .frame(width: 28, height: 28)
-                                        .foregroundColor(Color("HelperSuccess"))
-                                }
+                            } icon: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .resizable()
+                                    .frame(width: 28, height: 28)
+                                    .foregroundColor(Color("HelperSuccess"))
                             }
                         }
-                        .padding()
                     }
+                    .padding()
                 }
             }
+            .background(
+                Color(CustomColor.BackgroundColor)
+                    .ignoresSafeArea()
+            )
+
             .onAppear {
                 viewModel.curiosityCardBuildComponent()
             }
