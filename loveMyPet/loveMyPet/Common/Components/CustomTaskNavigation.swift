@@ -11,6 +11,7 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
     @ViewBuilder let taskListView: TaskView
     @ViewBuilder let addTaskView: AddTask
     @State private var showingPopover = false
+    @ObservedObject var viewModel: TaskViewModel = TaskViewModel()
     var update: () -> Void
 
     var body: some View {
@@ -25,11 +26,20 @@ struct CustomTaskNavigation <TaskView: View, AddTask: View>: View {
                         Image(Assets.Icon.add)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(Assets.Icon.calendar)
-                            .padding(.horizontal)
+                        Button(action: {
+                            viewModel.toogleCalendar()
+                        }) {
+                            Image(viewModel.showCalendar ? Assets.Icon.selectedCalendar : Assets.Icon.calendar)
+                                .resizable()
+                                .frame(width: viewModel.showCalendar ? 33 : 25)
+                                .frame(height: viewModel.showCalendar ? 33 : 25)
+                        }.buttonStyle(.plain)
+//                            .padding(.horizontal)
                     }
                 }
+                .monospaced()
         }
+        .environmentObject(viewModel)
         .sheet(isPresented: $showingPopover, onDismiss: update) {
             NavigationView {
                 addTaskView

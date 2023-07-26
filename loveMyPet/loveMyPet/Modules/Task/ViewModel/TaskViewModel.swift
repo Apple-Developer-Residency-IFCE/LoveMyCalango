@@ -12,6 +12,7 @@ final class TaskViewModel: ObservableObject {
     @Published var catCuriosity: String = ""
     @Published var days: [String] = []
     @Published var today: Int = 1
+    @Published var showCalendar: Bool = false
 
     init() {
         Task {
@@ -50,5 +51,8 @@ final class TaskViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    public func toogleCalendar() {
+        showCalendar.toggle()
     }
 }

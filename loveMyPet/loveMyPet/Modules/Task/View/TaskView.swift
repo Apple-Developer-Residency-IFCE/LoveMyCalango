@@ -13,6 +13,7 @@ struct TaskView: View {
     @EnvironmentObject var viewModel: TaskViewModel
 
     var body: some View {
+        if !viewModel.showCalendar {
             ZStack {
                 Color(CustomColor.BackgroundColor)
                     .ignoresSafeArea()
@@ -21,9 +22,12 @@ struct TaskView: View {
                         .padding(.vertical)
                     InlineCalendar(listOfLetterDay: $listOfLetterDay, selectDay: $today)
                         .frame(height: 84)
-                Spacer()
+                    Spacer()
                 }
             }
+        } else {
+            CustomDatePicker()
+        }
     }
 }
 

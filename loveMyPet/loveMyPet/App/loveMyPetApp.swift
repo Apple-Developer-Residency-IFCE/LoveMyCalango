@@ -14,7 +14,7 @@ struct LoveMyPetApp: App {
     @State var selectedTab: TabContextView = .pets
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var addViewModel = EditPetViewModel()
-    @ObservedObject var taskViewModel = TaskViewModel()
+//    @ObservedObject var taskViewModel = TaskViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -39,7 +39,7 @@ struct LoveMyPetApp: App {
         } taskView: {
             CustomTaskNavigation {
                 TaskView()
-                    .environmentObject(taskViewModel)
+//                    .environmentObject(taskViewModel)
             } addTaskView: {
             } update: {
 
