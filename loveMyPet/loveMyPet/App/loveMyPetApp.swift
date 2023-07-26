@@ -34,7 +34,7 @@ struct LoveMyPetApp: App {
             } else {
                 CustomTabView(selectedTab: $selectedTab) {
                     CustomHomeNavigation { showingPopover in
-                        HomeView(homeViewModel: homeViewModel, addSheet: showingPopover)
+                        HomeView(homeViewModel: homeViewModel, taskViewModel: taskViewModel, addSheet: showingPopover)
                     } addView: {
                         EditPetView(addViewModel: addViewModel)
                             .navigationTitle(Constants.Home.addPetTitle)
