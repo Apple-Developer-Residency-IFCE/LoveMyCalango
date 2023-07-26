@@ -59,6 +59,8 @@ enum Constants {
     enum Config {
         static let title = "Configurações"
         static let appereance = "APARÊNCIA"
+        static let sounds = "SONS"
+        static let notifications = "Notificações"
     }
 
     enum Alert {
@@ -102,5 +104,15 @@ enum Constants {
         Organize as rotinas dos seus pets.
         Crie tarefas e as visualize em um calendário.
         """
+    }
+
+    enum ConfigViewModel {
+        static let alertTitle = "loveMyPet Deseja Enviar Notificações"
+        static let alertMessage = """
+        As notificações podem incluir alertas, sons e avisos nos ícones,
+        os quais podem ser configurados nos Ajustes
+        """
+        static let dontAllow = "Manter desativado"
+        static let allow = "Ativar nas configurações"
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ConfigOptions: View {
-    private var viewModel = ConfigViewModel()
+    @ObservedObject var viewModel: ConfigViewModel
     @State private var selectedButtonIndex: Int?
 
     let configStyle = [
@@ -52,7 +52,7 @@ struct ConfigOptions: View {
 
     struct ConfigOptions_Previews: PreviewProvider {
         static var previews: some View {
-            ConfigOptions()
+            ConfigOptions(viewModel: ConfigViewModel())
         }
     }
 }

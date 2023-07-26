@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ConfigView: View {
+    @EnvironmentObject var viewModel: ConfigViewModel
+    @Environment(\.scenePhase) var scenePhase
     var body: some View {
 
         VStack(alignment: .leading) {
@@ -20,15 +22,37 @@ struct ConfigView: View {
                 .font(.custom(Font.SemiBold, size: 14))
                 .foregroundColor(Color(CustomColor.FontColor))
 
-            ConfigOptions()
-                .padding(.top, 20)
-                .padding(.leading, 8)
+            ConfigOptions(viewModel: viewModel)
+                .padding(EdgeInsets(top: 20, leading: 8, bottom: 32, trailing: 0))
+
+            Text(Constants.Config.sounds)
+                .font(.custom(Font.SemiBold, size: 11))
+
+            ZStack {
+                Toggle(Constants.Config.notifications, isOn: $viewModel.isON)
+                    .font(.custom(Font.Regular, size: 16))
+                    .padding(.trailing, 24)
+                    .padding(.leading, 16)
+                    .tint(Color(CustomColor.toggleActiveColor))
+                    .onChange(of: viewModel.isON) { value in
+                            viewModel.allowNotification(noticationValue: value)
+                    }
+            }
+            .frame(width: 327, height: 40, alignment: .center)
+            .background(Color(CustomColor.White.whiteF4))
+            .cornerRadius(12)
+
             Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 40)
         .padding(.leading, 24)
         .background(Color(CustomColor.BackgroundColor))
+        .onChange(of: scenePhase, perform: {
+            if $0 == .active {
+                viewModel.checkNotificationPermission(showAlert: false)
+            }
+        })
     }
 }
 

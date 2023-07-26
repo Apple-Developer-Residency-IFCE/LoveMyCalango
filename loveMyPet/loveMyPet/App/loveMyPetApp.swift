@@ -16,6 +16,7 @@ struct LoveMyPetApp: App {
     @StateObject var addViewModel = EditPetViewModel()
     @State private var splashScreenIsActive: Bool = true
     @ObservedObject var taskViewModel = TaskViewModel()
+    @ObservedObject var configViewModel = ConfigViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -48,6 +49,7 @@ struct LoveMyPetApp: App {
                 }
             configView: {
                 ConfigView()
+                    .environmentObject(configViewModel)
             } taskView: {
                 CustomTaskNavigation { showingPopover in
                     TaskView(addSheet: showingPopover)
