@@ -62,13 +62,30 @@ struct SwipableCard_Previews: PreviewProvider {
             print("OIa")
         } content: {
             Card {
-                HStack {
+                VStack {
+                    HStack {
+                        Text("Content")
+                        Spacer()
+                    }
                     Text("Content")
-                    Spacer()
+                    Text("Content")
                 }
             }
         } rightButton: {
-            Color.red
+            Button {
+                print("Task deleted! <Fake>")
+            } label: {
+                HStack {
+                    Spacer()
+                    Image(systemName: "trash")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .frame(minWidth: 80, maxHeight: .infinity)
+                }
+            }
+            .background(Color.red)
         }
+        .clipShape(RoundedRectangle(cornerRadius: 12))
+        .padding()
     }
 }

@@ -27,8 +27,8 @@ struct TaskView: View {
                 } else {
                     VStack {
                         Section {
-                            ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
-//                            ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
+//                            ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
+                            ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
                                 NavigationLink(destination: Text("Stub location")) {
                                     SwipableCard {
                                         print("Full-swipe action performed")
@@ -50,10 +50,12 @@ struct TaskView: View {
                                                 Spacer()
                                                 Image(systemName: "trash")
                                                     .font(.title)
-                                                    .foregroundColor(.red)
-                                                    .frame(width: 90, height: 50)
+                                                    .foregroundColor(.white)
+                                                    .frame(minWidth: 80, maxHeight: .infinity)
                                             }
                                         }
+                                        .background(Color.red)
+                                        .clipShape(RoundedRectangle(cornerRadius: 12))
                                     }
                                 }
                             }
@@ -65,8 +67,8 @@ struct TaskView: View {
                         }
 
                         Section {
-                            ForEach(viewModel.tasks.filter { $0.isDone }) { task in
-//                            ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
+//                            ForEach(viewModel.tasks.filter { $0.isDone }) { task in
+                            ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
                                 NavigationLink(destination: Text("Stub location")) {
                                     SwipableCard {
                                         print("Full-swipe action performed")
@@ -88,10 +90,12 @@ struct TaskView: View {
                                                 Spacer()
                                                 Image(systemName: "trash")
                                                     .font(.title)
-                                                    .foregroundColor(.red)
-                                                    .frame(width: 90, height: 50)
+                                                    .foregroundColor(.white)
+                                                    .frame(minWidth: 80, maxHeight: .infinity)
                                             }
                                         }
+                                        .background(Color.red)
+                                        .clipShape(RoundedRectangle(cornerRadius: 12))
                                     }
                                 }
                             }
