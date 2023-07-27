@@ -27,11 +27,10 @@ struct TaskView: View {
                 } else {
                     VStack {
                         Section {
-//                            ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
-                            ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
+                            ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
                                 NavigationLink(destination: Text("Stub location")) {
                                     SwipableCard {
-                                        print("Full-swipe action performed")
+                                        CoreDataManager.shared.deleteTask(task: task)
                                     } content: {
                                         Card {
                                             HStack {
@@ -44,7 +43,7 @@ struct TaskView: View {
                                         }
                                     } rightButton: {
                                         Button {
-                                            print("Task deleted! <Fake>")
+                                            CoreDataManager.shared.deleteTask(task: task)
                                         } label: {
                                             HStack {
                                                 Spacer()
@@ -67,11 +66,10 @@ struct TaskView: View {
                         }
 
                         Section {
-//                            ForEach(viewModel.tasks.filter { $0.isDone }) { task in
-                            ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
+                            ForEach(viewModel.tasks.filter { $0.isDone }) { task in
                                 NavigationLink(destination: Text("Stub location")) {
                                     SwipableCard {
-                                        print("Full-swipe action performed")
+                                        CoreDataManager.shared.deleteTask(task: task)
                                     } content: {
                                         Card {
                                             HStack {
@@ -84,7 +82,7 @@ struct TaskView: View {
                                         }
                                     } rightButton: {
                                         Button {
-                                            print("Task deleted! <Fake>")
+                                            CoreDataManager.shared.deleteTask(task: task)
                                         } label: {
                                             HStack {
                                                 Spacer()
@@ -200,28 +198,4 @@ struct TaskView_Previews: PreviewProvider {
         TaskView(addSheet: .constant(false))
             .environmentObject(TaskViewModel())
     }
-}
-
-func DEBUG_generateTasks() -> [NewTask] {
-    let task1 = NewTask()
-    task1.title = "Dar banho no Bob 1"
-    task1.isDone = false
-
-    let task2 = NewTask()
-    task2.title = "Dar banho no Bob 2"
-    task2.isDone = false
-
-    let task3 = NewTask()
-    task3.title = "Dar banho no Bob 3"
-    task3.isDone = true
-
-    let task4 = NewTask()
-    task4.title = "Dar banho no Bob 4"
-    task4.isDone = true
-
-    let task5 = NewTask()
-    task5.title = "Dar banho no Bob 5"
-    task5.isDone = true
-
-    return [task1, task2, task3, task4, task5]
 }
