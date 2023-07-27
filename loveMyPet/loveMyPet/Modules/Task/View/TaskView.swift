@@ -137,7 +137,6 @@ struct Card<Content: View>: View {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(Color(CustomColor.PetBackground))
             )
-            .padding(.vertical, 4)
     }
 }
 
