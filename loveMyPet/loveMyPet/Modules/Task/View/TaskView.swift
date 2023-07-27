@@ -30,13 +30,29 @@ struct TaskView: View {
                             ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
 //                            ForEach(DEBUG_generateTasks().filter { $0.isDone == false }) { task in
                                 NavigationLink(destination: Text("Stub location")) {
-                                    Card {
-                                        HStack {
-                                            Information(title: task.title, category: task.type, alarm: task.time)
+                                    SwipableCard {
+                                        print("Full-swipe action performed")
+                                    } content: {
+                                        Card {
+                                            HStack {
+                                                Information(title: task.title, category: task.type, alarm: task.time)
 
-                                            Spacer()
+                                                Spacer()
 
-                                            NameAndProfilePicture(pet: task.pet)
+                                                NameAndProfilePicture(pet: task.pet)
+                                            }
+                                        }
+                                    } rightButton: {
+                                        Button {
+                                            print("Task deleted! <Fake>")
+                                        } label: {
+                                            HStack {
+                                                Spacer()
+                                                Image(systemName: "trash")
+                                                    .font(.title)
+                                                    .foregroundColor(.red)
+                                                    .frame(width: 90, height: 50)
+                                            }
                                         }
                                     }
                                 }
@@ -52,13 +68,29 @@ struct TaskView: View {
                             ForEach(viewModel.tasks.filter { $0.isDone }) { task in
 //                            ForEach(DEBUG_generateTasks().filter { $0.isDone }) { task in
                                 NavigationLink(destination: Text("Stub location")) {
-                                    Card {
-                                        HStack {
-                                            Information(title: task.title, category: task.type, alarm: task.time)
+                                    SwipableCard {
+                                        print("Full-swipe action performed")
+                                    } content: {
+                                        Card {
+                                            HStack {
+                                                Information(title: task.title, category: task.type, alarm: task.time)
 
-                                            Spacer()
+                                                Spacer()
 
-                                            NameAndProfilePicture(pet: task.pet)
+                                                NameAndProfilePicture(pet: task.pet)
+                                            }
+                                        }
+                                    } rightButton: {
+                                        Button {
+                                            print("Task deleted! <Fake>")
+                                        } label: {
+                                            HStack {
+                                                Spacer()
+                                                Image(systemName: "trash")
+                                                    .font(.title)
+                                                    .foregroundColor(.red)
+                                                    .frame(width: 90, height: 50)
+                                            }
                                         }
                                     }
                                 }
