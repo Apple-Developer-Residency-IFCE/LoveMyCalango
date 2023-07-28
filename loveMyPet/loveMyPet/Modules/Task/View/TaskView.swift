@@ -60,10 +60,15 @@ struct TaskView: View {
                                 }
                             }
                         } header: {
-                            Text("Tarefas Pendentes")
-                                .font(.custom(Font.SemiBold, size: 20))
-                                .textCase(nil)
+                            HStack {
+                                Text("Tarefas Pendentes")
+                                    .font(.custom(Font.SemiBold, size: 20))
+                                    .textCase(nil)
+
+                                Spacer()
+                            }
                         }
+                        .padding(.bottom)
 
                         Section {
                             ForEach(viewModel.tasks.filter { $0.isDone }) { task in
@@ -99,15 +104,19 @@ struct TaskView: View {
                                 }
                             }
                         } header: {
-                            Label {
-                                Text("Tarefas concluídas")
-                                    .font(.custom(Font.SemiBold, size: 20))
-                                    .textCase(nil)
-                            } icon: {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .resizable()
-                                    .frame(width: 28, height: 28)
-                                    .foregroundColor(Color("HelperSuccess"))
+                            HStack {
+                                Label {
+                                    Text("Tarefas concluídas")
+                                        .font(.custom(Font.SemiBold, size: 20))
+                                        .textCase(nil)
+                                } icon: {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .resizable()
+                                        .frame(width: 28, height: 28)
+                                        .foregroundColor(Color("HelperSuccess"))
+                                }
+
+                                Spacer()
                             }
                         }
                     }
