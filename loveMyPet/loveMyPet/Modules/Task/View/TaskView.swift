@@ -31,6 +31,7 @@ struct TaskView: View {
                                 NavigationLink(destination: Text("Stub location")) {
                                     SwipableCard {
                                         CoreDataManager.shared.deleteTask(task: task)
+                                        viewModel.fetchAllTasks()
                                     } content: {
                                         Card {
                                             HStack {
@@ -44,6 +45,7 @@ struct TaskView: View {
                                     } rightButton: {
                                         Button {
                                             CoreDataManager.shared.deleteTask(task: task)
+                                            viewModel.fetchAllTasks()
                                         } label: {
                                             HStack {
                                                 Spacer()
@@ -70,6 +72,7 @@ struct TaskView: View {
                                 NavigationLink(destination: Text("Stub location")) {
                                     SwipableCard {
                                         CoreDataManager.shared.deleteTask(task: task)
+                                        viewModel.fetchAllTasks()
                                     } content: {
                                         Card {
                                             HStack {
@@ -83,6 +86,7 @@ struct TaskView: View {
                                     } rightButton: {
                                         Button {
                                             CoreDataManager.shared.deleteTask(task: task)
+                                            viewModel.fetchAllTasks()
                                         } label: {
                                             HStack {
                                                 Spacer()
