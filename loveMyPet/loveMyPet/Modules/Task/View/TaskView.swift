@@ -28,7 +28,7 @@ struct TaskView: View {
                     VStack {
                         Section {
                             ForEach(viewModel.tasks.filter { $0.isDone == false }) { task in
-                                NavigationLink(destination: Text("Stub location")) {
+                                NavigationLink(destination: TaskDetailView(task: task)) {
                                     SwipableCard {
                                         CoreDataManager.shared.deleteTask(task: task)
                                         viewModel.fetchAllTasks()
@@ -72,7 +72,7 @@ struct TaskView: View {
 
                         Section {
                             ForEach(viewModel.tasks.filter { $0.isDone }) { task in
-                                NavigationLink(destination: Text("Stub location")) {
+                                NavigationLink(destination: TaskDetailView(task: task)) {
                                     SwipableCard {
                                         CoreDataManager.shared.deleteTask(task: task)
                                         viewModel.fetchAllTasks()
