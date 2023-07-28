@@ -50,7 +50,6 @@ struct TaskView: View {
                                             HStack {
                                                 Spacer()
                                                 Image(systemName: "trash")
-                                                    .font(.title)
                                                     .foregroundColor(.white)
                                                     .frame(minWidth: 80, maxHeight: .infinity)
                                             }
@@ -62,8 +61,7 @@ struct TaskView: View {
                             }
                         } header: {
                             Text("Tarefas Pendentes")
-                                .font(.title)
-                                .fontWeight(.bold)
+                                .font(.custom(Font.SemiBold, size: 20))
                                 .textCase(nil)
                         }
 
@@ -91,7 +89,6 @@ struct TaskView: View {
                                             HStack {
                                                 Spacer()
                                                 Image(systemName: "trash")
-                                                    .font(.title)
                                                     .foregroundColor(.white)
                                                     .frame(minWidth: 80, maxHeight: .infinity)
                                             }
@@ -104,8 +101,7 @@ struct TaskView: View {
                         } header: {
                             Label {
                                 Text("Tarefas concluídas")
-                                    .font(.title)
-                                    .fontWeight(.bold)
+                                    .font(.custom(Font.SemiBold, size: 20))
                                     .textCase(nil)
                             } icon: {
                                 Image(systemName: "checkmark.circle.fill")
@@ -154,9 +150,9 @@ private struct Information: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
-                .font(.title2)
-                .bold()
+                .font(.custom(Font.SemiBold, size: 18))
             Text(category.rawValue)
+                .font(.custom(Font.Regular, size: 13))
             AlarmTime(alarm: alarm)
         }
         .foregroundColor(Color(CustomColor.FontColor))
@@ -170,7 +166,8 @@ private struct NameAndProfilePicture: View {
         VStack {
             ProfilePicture(pet: pet)
             Text(pet.name)
-                .fontWeight(.bold)
+                .font(.custom(Font.SemiBold, size: 13))
+                .foregroundColor(Color(CustomColor.FontColor))
         }
     }
 }
@@ -193,6 +190,7 @@ private struct AlarmTime: View {
         HStack {
             Image("IconCircleClock")
             Text(alarm, style: .time)
+                .font(.custom(Font.Inter.Medium, size: 13))
         }
     }
 }
