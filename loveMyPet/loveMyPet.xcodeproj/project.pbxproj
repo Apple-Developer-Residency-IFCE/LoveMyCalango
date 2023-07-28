@@ -11,6 +11,7 @@
 		1D922D6D2A4E4A4800B938BF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14689FB2A3922760070382B /* Color.swift */; };
 		1D922D6E2A4E4AA900B938BF /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640189C12A296B0B00813E20 /* AlertMessage.swift */; };
 		1D922D6F2A4E4AF300B938BF /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645458C62A29708D008C4B53 /* Fonts.swift */; };
+		1DA3F9122A71DD1D001AE314 /* SwipableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA3F9112A71DD1D001AE314 /* SwipableCard.swift */; };
 		412D00E92A39216000544B21 /* CustomHomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412D00E82A39216000544B21 /* CustomHomeNavigation.swift */; };
 		412D00EB2A392BF000544B21 /* TabContextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412D00EA2A392BF000544B21 /* TabContextView.swift */; };
 		412D00ED2A393CE000544B21 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412D00EC2A393CE000544B21 /* Assets.swift */; };
@@ -119,6 +120,7 @@
 
 /* Begin PBXFileReference section */
 		1D72AE2E2A54E8E200DD5E78 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		1DA3F9112A71DD1D001AE314 /* SwipableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipableCard.swift; sourceTree = "<group>"; };
 		412D00E82A39216000544B21 /* CustomHomeNavigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHomeNavigation.swift; sourceTree = "<group>"; };
 		412D00EA2A392BF000544B21 /* TabContextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContextView.swift; sourceTree = "<group>"; };
 		412D00EC2A393CE000544B21 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -699,6 +701,7 @@
 			isa = PBXGroup;
 			children = (
 				C02F50062A4CE8B3009CB3DF /* TaskView.swift */,
+				1DA3F9112A71DD1D001AE314 /* SwipableCard.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -998,6 +1001,7 @@
 				B178D2DC2A68AA04002CDBA0 /* EmptyType.swift in Sources */,
 				B1054CC02A65CC1E006D7A36 /* AddTaskView.swift in Sources */,
 				41F894882A314C2600C9AE02 /* ImagePicker.swift in Sources */,
+				1DA3F9122A71DD1D001AE314 /* SwipableCard.swift in Sources */,
 				C02F50072A4CE8B3009CB3DF /* TaskView.swift in Sources */,
 				B1054CCC2A65D788006D7A36 /* TaskDetailView.swift in Sources */,
 				412D00ED2A393CE000544B21 /* Assets.swift in Sources */,
